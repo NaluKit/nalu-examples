@@ -81,16 +81,17 @@
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-servlet</artifactId>
     </dependency>
+
     <dependency>
       <groupId>com.github.mvp4g</groupId>
-      <artifactId>nalu-react</artifactId>
+      <artifactId>nalu</artifactId>
       <version>${nalu.version}</version>
     </dependency>
-    <!--<dependency>-->
-      <!--<groupId>com.github.mvp4g</groupId>-->
-      <!--<artifactId>mvp4g2-processor</artifactId>-->
-      <!--<version>${mvp4g2.version}</version>-->
-    <!--</dependency>-->
+    <dependency>
+      <groupId>com.github.mvp4g</groupId>
+      <artifactId>nalu-processor</artifactId>
+      <version>${nalu.version}</version>
+    </dependency>
     <dependency>
       <groupId>org.jboss.gwt.elemento</groupId>
       <artifactId>elemento-core</artifactId>
@@ -133,7 +134,7 @@
             <configuration>
               <proc>only</proc>
               <annotationProcessors>
-                <annotationProcessor>Mvp4g2Processor</annotationProcessor>
+                <annotationProcessor>com.github.mvp4g.nalu.processor.NaluReactProcessor</annotationProcessor>
               </annotationProcessors>
             </configuration>
           </execution>
@@ -185,11 +186,11 @@
         <configuration>
           <classpathScope>compile</classpathScope>
           <moduleName>
-            de.gishmo.gwt.example.mvp4g2.simpleapplication.Mvp4g2SimpleApplicationUsingElementoAndEventHandlerAnnotation
+            de.gishmo.gwt.example.nalu.simpleapplication.Application
           </moduleName>
-          <moduleShortName>Mvp4g2SimpleApplicationUsingElementoAndEventHandlerAnnotation</moduleShortName>
+          <moduleShortName>Application</moduleShortName>
           <modules>
-            de.gishmo.gwt.example.mvp4g2.simpleapplication.Mvp4g2SimpleApplicationUsingElementoAndEventHandlerAnnotation
+            de.gishmo.gwt.example.nalu.simpleapplication.Application
           </modules>
           <failOnError>true</failOnError>
           <!-- GWT 2.8 requires 1.8, hence define sourceLevel here if you use
@@ -213,7 +214,7 @@
             <arg>9876</arg>
           </devmodeArgs>
           <startupUrls>
-            <startupUrl>Mvp4g2SimpleApplicationUsingElementoAndEventHandlerAnnotation.html</startupUrl>
+            <startupUrl>Application.html</startupUrl>
           </startupUrls>
           <devmodeWorkDir>${project.build.directory}/devModeWorkDir</devmodeWorkDir>
           <launcherDir>${project.build.directory}/classes/static</launcherDir>
