@@ -20,15 +20,14 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.shell;
 import com.github.mvp4g.nalu.client.Nalu;
 import com.github.mvp4g.nalu.client.ui.AbstractShell;
 import com.github.mvp4g.nalu.client.ui.annotations.ProvidesSelector;
+import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
 import elemental2.dom.CSSProperties;
 import elemental2.dom.Element;
 import elemental2.dom.HTMLElement;
 
 import static elemental2.dom.DomGlobal.document;
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.footer;
-import static org.jboss.gwt.elemento.core.Elements.header;
+import static org.jboss.gwt.elemento.core.Elements.*;
 
 /**
  * this is the presenter of the shell. The shell divides the browser in
@@ -36,7 +35,7 @@ import static org.jboss.gwt.elemento.core.Elements.header;
  */
 @ProvidesSelector(selector = {Selectors.CONTENT, Selectors.FOOTER, Selectors.HEADER, Selectors.NAVIGATION})
 public class Shell
-  extends AbstractShell {
+  extends AbstractShell<NaluSimpleApplicationContext> {
 
   private HTMLElement status;
 

@@ -18,8 +18,6 @@
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.footer;
 
 import com.github.mvp4g.nalu.client.ui.AbstractComponent;
-import com.github.mvp4g.nalu.client.ui.annotations.Route;
-import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
 import elemental2.dom.HTMLElement;
 
 import static org.jboss.gwt.elemento.core.Elements.*;
@@ -28,13 +26,13 @@ import static org.jboss.gwt.elemento.core.Elements.*;
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
-@Route(route = "/", selector = Selectors.FOOTER)
-public class Footer
-  extends AbstractComponent {
+public class FooterComponent
+  extends AbstractComponent<IFooterComponent.Controller>
+  implements IFooterComponent {
 
   private HTMLElement status;
 
-  public Footer() {
+  public FooterComponent() {
   }
 
   @Override
@@ -50,7 +48,7 @@ public class Footer
   }
 
   @Override
-  public void start() {
-
+  public void setStatus(String status) {
+    this.status.textContent = status;
   }
 }

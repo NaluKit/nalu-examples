@@ -19,7 +19,6 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.search;
 
 import de.gishmo.gwt.example.nalu.simpleapplication.client.Mvp4g2SimpleApplicationUsingElementoAndEventHandlerAnnotationEventBus;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.PersonSearch;
-import de.gishmo.gwt.example.nalu.simpleapplication.client.model.ClientContext;
 import com.github.mvp4g.mvp4g2.core.ui.AbstractPresenter;
 import com.github.mvp4g.mvp4g2.core.ui.IsViewCreator;
 import com.github.mvp4g.mvp4g2.core.ui.annotation.EventHandler;

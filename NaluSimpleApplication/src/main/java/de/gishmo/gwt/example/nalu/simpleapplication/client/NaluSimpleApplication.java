@@ -20,7 +20,6 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client;
 import com.github.mvp4g.nalu.client.application.IsApplication;
 import com.github.mvp4g.nalu.client.application.annotation.Application;
 import com.github.mvp4g.nalu.client.application.annotation.Debug;
-import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Routs;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.shell.Shell;
 
 /**
@@ -33,7 +32,8 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.shell.Shell;
  */
 @Application(shell = Shell.class,
   loader = NaluSimpleApplicationLoader.class,
-  startRoute = Routs.SEARCH)
+  startRoute = "/search",
+  context = NaluSimpleApplicationContext.class)
 @Debug(logLevel = Debug.LogLevel.DETAILED)
 interface NaluSimpleApplication
   extends IsApplication {

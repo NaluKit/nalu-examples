@@ -22,7 +22,6 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Person
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.exception.PersonException;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.exception.PersonNotFoundException;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.service.PersonService;
-import de.gishmo.gwt.example.nalu.simpleapplication.client.model.ClientContext;
 import com.github.mvp4g.mvp4g2.core.history.IsNavigationConfirmation;
 import com.github.mvp4g.mvp4g2.core.history.NavigationEventCommand;
 import com.github.mvp4g.mvp4g2.core.ui.IsViewCreator;

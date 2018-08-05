@@ -18,27 +18,21 @@
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.content.search;
 
 import com.github.mvp4g.nalu.client.ui.AbstractComponent;
-import com.github.mvp4g.nalu.client.ui.annotations.Route;
-import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Routs;
-import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.widgets.TextField;
-import elemental2.dom.HTMLButtonElement;
 import elemental2.dom.HTMLElement;
 
 import static org.jboss.gwt.elemento.core.Elements.button;
 import static org.jboss.gwt.elemento.core.Elements.div;
 import static org.jboss.gwt.elemento.core.EventType.click;
 
-@Route(route = Routs.SEARCH, selector = Selectors.CONTENT)
-public class Search
-  extends AbstractComponent {
+public class SearchComponent
+  extends AbstractComponent<ISearchComponent.Controller>
+  implements ISearchComponent {
 
-  private TextField         searchName;
-  private TextField         searchCity;
-  private HTMLButtonElement searchButton;
-  private HTMLButtonElement resetButton;
+  private TextField searchName;
+  private TextField searchCity;
 
-  public Search() {
+  public SearchComponent() {
   }
 
   @Override
@@ -52,8 +46,8 @@ public class Search
                                     .add(button().css("button")
                                                  .textContent("Search")
                                                  .on(click,
-                                                     event -> clickSearchButton(searchName.getText(),
-                                                                                                 searchCity.getText())))
+                                                     event -> getController().doClickSearchButton(searchName.getText(),
+                                                                                                  searchCity.getText())))
                                     .add(button().css("button")
                                                  .textContent("Reset")
                                                  .on(click,
@@ -66,18 +60,12 @@ public class Search
   }
 
   @Override
-  public void start() {
-
+  public void setSearchName(String searchName) {
+    this.searchName.setText(searchName);
   }
 
-  private void clickSearchButton(String searchName,
-                                  String searchCity) {
-    // fuer NavigatiponPresenter speichern ...
-//    ClientContext.get()
-//                 .setPersonSearch(new PersonSearch(searchName,
-//                                                   searchCity));
-//    eventBus.gotoList(searchName,
-//                      searchCity);
-    this.router.route("/list");
+  @Override
+  public void setSearchCity(String searchCity) {
+    this.searchCity.setText(searchCity);
   }
 }

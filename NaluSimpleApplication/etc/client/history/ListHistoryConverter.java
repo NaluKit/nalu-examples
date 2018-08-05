@@ -21,7 +21,6 @@ import com.github.mvp4g.mvp4g2.core.history.IsHistoryConverter;
 import com.github.mvp4g.mvp4g2.core.history.annotation.History;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.Mvp4g2SimpleApplicationUsingElementoAndEventHandlerAnnotationEventBus;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.PersonSearch;
-import de.gishmo.gwt.example.nalu.simpleapplication.client.model.ClientContext;
 
 /**
  * The ListHistoryConverter of the application.

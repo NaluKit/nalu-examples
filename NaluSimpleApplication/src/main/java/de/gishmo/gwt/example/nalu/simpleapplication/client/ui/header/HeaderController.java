@@ -17,26 +17,17 @@
 
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.header;
 
-import com.github.mvp4g.nalu.client.ui.AbstractComponent;
-import com.github.mvp4g.nalu.client.ui.annotations.Route;
+import com.github.mvp4g.nalu.client.ui.AbstractComponentController;
+import com.github.mvp4g.nalu.client.ui.annotations.Controller;
+import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
-import elemental2.dom.HTMLElement;
 
-import static org.jboss.gwt.elemento.core.Elements.header;
-import static org.jboss.gwt.elemento.core.Elements.img;
+@Controller(route = "/", selector = Selectors.HEADER, componentInterface = IHeaderComponent.class, component = HeaderComponent.class)
+public class HeaderController
+  extends AbstractComponentController<NaluSimpleApplicationContext, IHeaderComponent>
+  implements IHeaderComponent.Controller {
 
-@Route(route = "/", selector = Selectors.HEADER)
-public class Header
-  extends AbstractComponent {
-
-  public Header() {
-  }
-
-  @Override
-  public HTMLElement render() {
-    return header().css("shellHeader")
-                   .add(img("media/images/Gwt-logo.png").css("shellHeaderImage"))
-                   .asElement();
+  public HeaderController() {
   }
 
   @Override

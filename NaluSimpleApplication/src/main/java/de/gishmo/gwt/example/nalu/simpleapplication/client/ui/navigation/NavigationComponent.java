@@ -18,21 +18,18 @@
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.navigation;
 
 import com.github.mvp4g.nalu.client.ui.AbstractComponent;
-import com.github.mvp4g.nalu.client.ui.annotations.Route;
-import de.gishmo.gwt.example.nalu.simpleapplication.client.model.ClientContext;
-import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
 import elemental2.dom.HTMLElement;
 
 import static org.jboss.gwt.elemento.core.Elements.button;
 import static org.jboss.gwt.elemento.core.Elements.div;
 import static org.jboss.gwt.elemento.core.EventType.click;
 
-@Route(route = "/", selector = Selectors.NAVIGATION)
-public class Navigation
-  extends AbstractComponent {
+public class NavigationComponent
+  extends AbstractComponent<INavigationComponent.Controller>
+  implements INavigationComponent {
 
 
-  public Navigation() {
+  public NavigationComponent() {
   }
 
   @Override
@@ -50,36 +47,11 @@ public class Navigation
                 .asElement();
   }
 
-  @Override
-  public void start() {
-
-  }
-
   private void showSearch() {
-    if (ClientContext.get()
-                     .getPersonSearch() != null) {
-//      eventBus.gotoSearch(ClientContext.get()
-//                                       .getPersonSearch()
-//                                       .getName(),
-//                          ClientContext.get()
-//                                       .getPersonSearch()
-//                                       .getCity());
-    } else {
-      this.router.route("/search");
-    }
+    getController().doShowSearch();
   }
 
   private void showList() {
-    if (ClientContext.get()
-                     .getPersonSearch() != null) {
-//      eventBus.gotoList(ClientContext.get()
-//                                     .getPersonSearch()
-//                                     .getName(),
-//                        ClientContext.get()
-//                                     .getPersonSearch()
-//                                     .getCity());
-    } else {
-      this.router.route("/list");
-    }
+    getController().doShowList();
   }
 }

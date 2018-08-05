@@ -36,7 +36,7 @@ public class SimpleApplicationHandler02
 
   @EventHandler
   public void onSetNavigation(Element element) {
-    DomGlobal.window.alert("SimpleApplicationHandler02: -> Navigation is set!");
+    DomGlobal.window.alert("SimpleApplicationHandler02: -> NavigationController is set!");
   }
 
   @EventHandler
