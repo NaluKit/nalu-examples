@@ -27,10 +27,10 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.shell.Shell;
 /**
  * Implemantation of the NaluSimpleApplication class.
  * <p>
- * <p>Use the @IsApplication annotation to perform configuration informations.</p>
+ * <p>Use the @Application annotation to perform configuration informations.</p>
  * <p>In this case we use 'NaluSimpleApplicationLoader' as loader!</p>
  * <p>Please keep in mind, the services are simulated inside the client (because this is not part of the
- * framework). You can use any technique to call the serner!</p>
+ * framework). You can use any technique to call the server!</p>
  */
 @Application(shell = Shell.class,
   loader = NaluSimpleApplicationLoader.class,

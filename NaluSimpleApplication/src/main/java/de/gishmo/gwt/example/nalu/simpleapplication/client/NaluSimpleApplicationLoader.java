@@ -21,7 +21,7 @@ import com.github.mvp4g.nalu.client.application.IsApplicationLoader;
 import elemental2.dom.DomGlobal;
 
 /**
- * A application loader of the Mvp4g2MailApplication
+ * A application loader of the NaluSimpleApplication
  */
 public class NaluSimpleApplicationLoader
   implements IsApplicationLoader {
