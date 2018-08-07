@@ -19,4 +19,4 @@ I have tested the examples on OS X with Safari, Chrome and FireFox.
 Some things are nonsens and only implemented to test the features.
 
 
-If Bart Simpson is selected from the list, the application will route to the search view. This is the desired behavior: see ```BartSimpsonFilter````
+If Bart Simpson is selected from the list, the application will route to the search view. This is the desired behavior: see ```BartSimpsonFilter```-class.
