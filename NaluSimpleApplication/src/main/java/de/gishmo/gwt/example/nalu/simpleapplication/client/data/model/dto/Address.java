@@ -19,6 +19,7 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Address
   implements Serializable {
 

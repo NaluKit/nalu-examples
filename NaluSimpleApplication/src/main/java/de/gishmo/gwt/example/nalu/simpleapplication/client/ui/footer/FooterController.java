@@ -18,10 +18,10 @@
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.footer;
 
 import com.github.mvp4g.nalu.client.ui.AbstractComponentController;
-import com.github.mvp4g.nalu.client.ui.annotations.Controller;
+import com.github.mvp4g.nalu.client.ui.annotation.Controller;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
+import de.gishmo.gwt.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
-import elemental2.dom.HTMLElement;
 
 /**
  * this is the presenter of the shell. The shell divides the browser in
@@ -32,9 +32,14 @@ public class FooterController
   extends AbstractComponentController<NaluSimpleApplicationContext, IFooterComponent>
   implements IFooterComponent.Controller {
 
-  private HTMLElement status;
 
   public FooterController() {
+  }
+
+  @Override
+  public void bind() {
+    this.eventBus.addHandler(StatusChangeEvent.TYPE,
+                             e -> component.setStatus(e.getStatus()));
   }
 
   @Override

@@ -19,7 +19,7 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.shell;
 
 import com.github.mvp4g.nalu.client.Nalu;
 import com.github.mvp4g.nalu.client.ui.AbstractShell;
-import com.github.mvp4g.nalu.client.ui.annotations.ProvidesSelector;
+import com.github.mvp4g.nalu.client.ui.annotation.ProvidesSelector;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
 import elemental2.dom.CSSProperties;
@@ -33,11 +33,12 @@ import static org.jboss.gwt.elemento.core.Elements.*;
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
-@ProvidesSelector(selector = {Selectors.CONTENT, Selectors.FOOTER, Selectors.HEADER, Selectors.NAVIGATION})
+@ProvidesSelector(selector = {Selectors.CONTENT,
+                              Selectors.FOOTER,
+                              Selectors.HEADER,
+                              Selectors.NAVIGATION})
 public class Shell
   extends AbstractShell<NaluSimpleApplicationContext> {
-
-  private HTMLElement status;
 
   public Shell() {
   }
@@ -45,7 +46,7 @@ public class Shell
   /**
    * The ShellPresenter has to implemented this method, because the framework
    * can not do this. (It does not know, what to use).
-   *
+   * <p>
    * We append the ShellView to the browser body.
    */
   @Override
@@ -68,27 +69,31 @@ public class Shell
     document.body.style.margin = CSSProperties.MarginUnionType.of(0);
 
     return div().css("shell")
-                 .add(createNorth())
-                 .add(createSouth())
-                 .add(div().css("shellNavigation")
-                                        .attr(Nalu.NALU_ID_ATTRIBUTE, "navigation")
-                                        .asElement())
-                 .add(div().css("shellContent")
-                                     .attr(Nalu.NALU_ID_ATTRIBUTE, "content")
-                                     .asElement())
-                 .asElement();
+                .add(createNorth())
+                .add(createSouth())
+                .add(div().css("shellNavigation")
+                          .attr(Nalu.NALU_ID_ATTRIBUTE,
+                                "navigation")
+                          .asElement())
+                .add(div().css("shellContent")
+                          .attr(Nalu.NALU_ID_ATTRIBUTE,
+                                "content")
+                          .asElement())
+                .asElement();
   }
 
   private Element createNorth() {
     return header().css("shellHeader")
-                   .attr(Nalu.NALU_ID_ATTRIBUTE, "header")
+                   .attr(Nalu.NALU_ID_ATTRIBUTE,
+                         "header")
 //                   .add(img("media/images/Gwt-logo.png").css("shellHeaderImage"))
                    .asElement();
   }
 
   private Element createSouth() {
     return footer().css("shellFooter")
-                   .attr(Nalu.NALU_ID_ATTRIBUTE, "footer")
+                   .attr(Nalu.NALU_ID_ATTRIBUTE,
+                         "footer")
 //                   .add(div().add(div().css("shellFooterLeft")
 //                                       .add(label().css("shellFooterLabel")
 //                                                   .textContent("GWT Basic training")))

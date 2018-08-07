@@ -20,6 +20,8 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client;
 import com.github.mvp4g.nalu.client.application.IsApplication;
 import com.github.mvp4g.nalu.client.application.annotation.Application;
 import com.github.mvp4g.nalu.client.application.annotation.Debug;
+import com.github.mvp4g.nalu.client.application.annotation.Filters;
+import de.gishmo.gwt.example.nalu.simpleapplication.client.filters.BartSimpsonFilter;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.shell.Shell;
 
 /**
@@ -34,6 +36,7 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.shell.Shell;
   loader = NaluSimpleApplicationLoader.class,
   startRoute = "/search",
   context = NaluSimpleApplicationContext.class)
+@Filters(filterClasses = BartSimpsonFilter.class)
 @Debug(logLevel = Debug.LogLevel.DETAILED)
 interface NaluSimpleApplication
   extends IsApplication {

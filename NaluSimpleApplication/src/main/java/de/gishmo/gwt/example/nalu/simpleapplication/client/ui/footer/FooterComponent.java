@@ -19,6 +19,8 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.footer;
 
 import com.github.mvp4g.nalu.client.ui.AbstractComponent;
 import elemental2.dom.HTMLElement;
+import elemental2.dom.HTMLLabelElement;
+import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;
 
 import static org.jboss.gwt.elemento.core.Elements.*;
 
@@ -30,7 +32,7 @@ public class FooterComponent
   extends AbstractComponent<IFooterComponent.Controller>
   implements IFooterComponent {
 
-  private HTMLElement status;
+  private HtmlContentBuilder<HTMLLabelElement> status;
 
   public FooterComponent() {
   }
@@ -39,16 +41,16 @@ public class FooterComponent
   public HTMLElement render() {
     return footer().css("shellFooter")
                    .add(div().add(div().css("shellFooterLeft")
-                                       .add(label().css("shellFooterLabel")
+                                       .add(status = label().css("shellFooterLabel")
                                                    .textContent("GWT Basic training")))
                              .add(div().css("shellFooterRight")
-                                       .add(status = div().css("shellFooterStatus")
+                                       .add(div().css("shellFooterStatus")
                                                           .asElement())))
                    .asElement();
   }
 
   @Override
   public void setStatus(String status) {
-    this.status.textContent = status;
+    this.status.textContent(status);
   }
 }

@@ -18,23 +18,20 @@
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.content.list;
 
 import com.github.mvp4g.nalu.client.ui.AbstractComponentController;
-import com.github.mvp4g.nalu.client.ui.annotations.Controller;
+import com.github.mvp4g.nalu.client.ui.annotation.Controller;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Person;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.PersonSearch;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.service.PersonService;
+import de.gishmo.gwt.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
-import elemental2.dom.HTMLElement;
 
 import java.util.List;
-
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.click;
 
 @Controller(route = "/list/:name/:city", selector = Selectors.CONTENT, componentInterface = IListComponent.class, component = ListComponent.class)
 public class ListController
   extends AbstractComponentController<NaluSimpleApplicationContext, IListComponent>
-  implements IListComponent.Controller{
+  implements IListComponent.Controller {
 
   private String name;
   private String city;
@@ -45,19 +42,17 @@ public class ListController
   @Override
   public void start() {
     List<Person> result = PersonService.get()
-                                                 .get(new PersonSearch(this.name,
-                                                                       this.city));
+                                       .get(new PersonSearch(this.name,
+                                                             this.city));
     this.component.resetTable();
     this.component.setData(result);
-//    view.setData(result);
-//    eventBus.setContent(view.asElement());
-//    if (result.size() == 0) {
-//      eventBus.setStatus("No person found");
-//    } else if (result.size() == 1) {
-//      eventBus.setStatus("Found one person");
-//    } else {
-//      eventBus.setStatus("Found " + Integer.toString(result.size()) + " persons");
-//    }
+    if (result.size() == 0) {
+      this.eventBus.fireEvent(new StatusChangeEvent("No person found"));
+    } else if (result.size() == 1) {
+      this.eventBus.fireEvent(new StatusChangeEvent("Found one person"));
+    } else {
+      this.eventBus.fireEvent(new StatusChangeEvent("Found " + Integer.toString(result.size()) + " persons"));
+    }
   }
 
 

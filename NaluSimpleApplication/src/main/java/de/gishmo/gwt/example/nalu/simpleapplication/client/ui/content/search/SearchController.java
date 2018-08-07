@@ -18,15 +18,10 @@
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.content.search;
 
 import com.github.mvp4g.nalu.client.ui.AbstractComponentController;
-import com.github.mvp4g.nalu.client.ui.annotations.Controller;
+import com.github.mvp4g.nalu.client.ui.annotation.Controller;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
+import de.gishmo.gwt.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
-import de.gishmo.gwt.example.nalu.simpleapplication.client.widgets.TextField;
-import elemental2.dom.HTMLElement;
-
-import static org.jboss.gwt.elemento.core.Elements.button;
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.EventType.click;
 
 @Controller(route = "/search/:searchName/:searchCity", selector = Selectors.CONTENT, component = SearchComponent.class, componentInterface = ISearchComponent.class)
 public class SearchController
@@ -38,6 +33,7 @@ implements ISearchComponent.Controller{
 
   @Override
   public void start() {
+    this.eventBus.fireEvent(new StatusChangeEvent("Please enter data!"));
   }
 
   @Override

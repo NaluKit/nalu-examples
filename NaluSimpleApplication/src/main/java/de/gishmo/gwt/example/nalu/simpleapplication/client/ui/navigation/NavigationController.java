@@ -18,7 +18,7 @@
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.navigation;
 
 import com.github.mvp4g.nalu.client.ui.AbstractComponentController;
-import com.github.mvp4g.nalu.client.ui.annotations.Controller;
+import com.github.mvp4g.nalu.client.ui.annotation.Controller;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
 

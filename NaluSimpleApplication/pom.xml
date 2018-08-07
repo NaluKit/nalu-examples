@@ -31,10 +31,12 @@
     <!-- Convenience property to set the GWT version -->
     <gwtVersion>2.8.2</gwtVersion>
 
-    <!-- mvp4g2 version -->
+    <!-- nalu version -->
     <nalu.version>0.0.1</nalu.version>
 
     <elemento.version>0.8.0</elemento.version>
+
+    <gwt-events.version>HEAD-SNAPSHOT</gwt-events.version>
 
     <!-- GWT needs at least java 1.6 -->
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -80,6 +82,12 @@
     <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-servlet</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.gwtproject.event</groupId>
+      <artifactId>gwt-event</artifactId>
+      <version>${gwt-events.version}</version>
     </dependency>
 
     <dependency>
@@ -134,7 +142,7 @@
             <configuration>
               <proc>only</proc>
               <annotationProcessors>
-                <annotationProcessor>com.github.mvp4g.nalu.processor.NaluReactProcessor</annotationProcessor>
+                <annotationProcessor>com.github.mvp4g.nalu.processor.NaluProcessor</annotationProcessor>
               </annotationProcessors>
             </configuration>
           </execution>

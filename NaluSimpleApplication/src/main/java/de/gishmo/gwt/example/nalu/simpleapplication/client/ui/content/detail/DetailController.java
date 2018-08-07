@@ -19,12 +19,13 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.content.detail;
 
 import com.github.mvp4g.nalu.client.ui.AbstractComponentController;
 import com.github.mvp4g.nalu.client.ui.IsConfirmator;
-import com.github.mvp4g.nalu.client.ui.annotations.Controller;
+import com.github.mvp4g.nalu.client.ui.annotation.Controller;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Person;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.exception.PersonException;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.exception.PersonNotFoundException;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.service.PersonService;
+import de.gishmo.gwt.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
 import elemental2.dom.DomGlobal;
 
@@ -42,6 +43,11 @@ public class DetailController
   }
 
   @Override
+  public String mayStop() {
+    return this.component.isDirty() ? "Would youlike to cancel your edits?" : null;
+  }
+
+  @Override
   public void start() {
     if (this.id == 0) {
       this.router.route("/search");
@@ -50,16 +56,11 @@ public class DetailController
       this.person = PersonService.get()
                                  .get(id);
       this.component.edit(this.person);
-//      eventBus.setStatus("Edit person data");
+      this.eventBus.fireEvent(new StatusChangeEvent("Edit person data with id: " + this.person.getId()));
     } catch (PersonNotFoundException e) {
       DomGlobal.window.alert("Panic!");
     }
 
-  }
-
-  @Override
-  public String mayStop() {
-    return this.component.isDirty() ? "Would youlike to cancel your edits?" : null;
   }
 
   public void setId(String id) {
