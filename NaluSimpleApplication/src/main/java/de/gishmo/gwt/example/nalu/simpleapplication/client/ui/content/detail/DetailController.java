@@ -60,8 +60,13 @@ public class DetailController
     } catch (PersonNotFoundException e) {
       DomGlobal.window.alert("Panic!");
     }
-
   }
+
+  @Override
+  public void stop() {
+    this.eventBus.fireEvent(new StatusChangeEvent(""));
+  }
+
 
   public void setId(String id) {
     try {
