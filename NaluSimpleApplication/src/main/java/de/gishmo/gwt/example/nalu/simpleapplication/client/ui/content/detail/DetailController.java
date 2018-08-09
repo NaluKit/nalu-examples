@@ -17,6 +17,7 @@
 
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.content.detail;
 
+import com.github.mvp4g.nalu.client.internal.exception.RoutingInterceptionByControllerException;
 import com.github.mvp4g.nalu.client.ui.AbstractComponentController;
 import com.github.mvp4g.nalu.client.ui.IsConfirmator;
 import com.github.mvp4g.nalu.client.ui.annotation.Controller;
@@ -68,14 +69,16 @@ public class DetailController
   }
 
 
-  public void setId(String id) {
+  public void setId(String id)
+    throws RoutingInterceptionByControllerException {
     try {
       this.id = Long.parseLong(id);
     } catch (NumberFormatException e) {
-      DomGlobal.window.alert("id is not valid ->  mocing to search");
-      this.router.route("/search",
-                        this.context.getSearchName(),
-                        this.context.getSearchCity());
+      DomGlobal.window.alert("id is not valid ->  moving to search");
+      throw new RoutingInterceptionByControllerException(this.getClass().getCanonicalName(),
+                                                         "/search",
+                                                         this.context.getSearchName(),
+                                                         this.context.getSearchCity());
     }
   }
 
