@@ -54,16 +54,6 @@ public class Shell
     document.body.appendChild(this.render());
   }
 
-//  /**
-//   * Set the status to the footer and displays it!
-//   *
-//   * @param status The new message to display.
-//   */
-//  @EventHandler
-//  public void onSetStatus(String status) {
-//    view.setStatus(status);
-//  }
-
 
   private HTMLElement render() {
     document.body.style.margin = CSSProperties.MarginUnionType.of(0);
@@ -86,7 +76,6 @@ public class Shell
     return header().css("shellHeader")
                    .attr(Nalu.NALU_ID_ATTRIBUTE,
                          "header")
-//                   .add(img("media/images/Gwt-logo.png").css("shellHeaderImage"))
                    .asElement();
   }
 
@@ -94,12 +83,6 @@ public class Shell
     return footer().css("shellFooter")
                    .attr(Nalu.NALU_ID_ATTRIBUTE,
                          "footer")
-//                   .add(div().add(div().css("shellFooterLeft")
-//                                       .add(label().css("shellFooterLabel")
-//                                                   .textContent("GWT Basic training")))
-//                             .add(div().css("shellFooterRight")
-//                                       .add(status = div().css("shellFooterStatus")
-//                                                          .asElement())))
                    .asElement();
   }
 }

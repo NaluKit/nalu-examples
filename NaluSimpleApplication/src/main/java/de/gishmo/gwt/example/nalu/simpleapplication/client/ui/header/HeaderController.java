@@ -29,9 +29,4 @@ public class HeaderController
 
   public HeaderController() {
   }
-
-  @Override
-  public void start() {
-
-  }
 }

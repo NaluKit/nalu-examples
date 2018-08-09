@@ -41,11 +41,10 @@ public class FooterComponent
   public HTMLElement render() {
     return footer().css("shellFooter")
                    .add(div().add(div().css("shellFooterLeft")
-                                       .add(status = label().css("shellFooterLabel")
+                                       .add(label().css("shellFooterLabel")
                                                    .textContent("GWT Basic training")))
                              .add(div().css("shellFooterRight")
-                                       .add(div().css("shellFooterStatus")
-                                                          .asElement())))
+                                       .add(status = label().css("shellFooterStatus"))))
                    .asElement();
   }
 

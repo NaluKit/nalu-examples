@@ -32,11 +32,6 @@ public class NavigationController
   }
 
   @Override
-  public void start() {
-
-  }
-
-  @Override
   public void doShowSearch() {
     this.router.route("/search",
                       this.context.getSearchName(),

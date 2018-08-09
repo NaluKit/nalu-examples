@@ -26,7 +26,7 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
 @Controller(route = "/search/:searchName/:searchCity", selector = Selectors.CONTENT, component = SearchComponent.class, componentInterface = ISearchComponent.class)
 public class SearchController
   extends AbstractComponentController<NaluSimpleApplicationContext, ISearchComponent>
-implements ISearchComponent.Controller{
+  implements ISearchComponent.Controller {
 
   public SearchController() {
   }
@@ -39,7 +39,6 @@ implements ISearchComponent.Controller{
   @Override
   public void doClickSearchButton(String searchName,
                                   String searchCity) {
-    // fuer NavigatiponPresenter speichern ...
     this.context.setSearchCity(searchCity);
     this.context.setSearchName(searchName);
     this.router.route("/list",
@@ -48,7 +47,7 @@ implements ISearchComponent.Controller{
   }
 
   public void setSearchName(String searchName) {
-    if ("undefined".equals(searchName) &&
+    if (!"undefined".equals(searchName) &&
         searchName.trim()
                   .length() > 0) {
       this.component.setSearchName(searchName);
@@ -56,7 +55,7 @@ implements ISearchComponent.Controller{
   }
 
   public void setSearchCity(String searchCity) {
-    if ("undefined".equals(searchCity) &&
+    if (!"undefined".equals(searchCity) &&
         searchCity.trim()
                   .length() > 0) {
       this.component.setSearchCity(searchCity);

@@ -72,8 +72,10 @@ public class DetailController
     try {
       this.id = Long.parseLong(id);
     } catch (NumberFormatException e) {
-//      this.router.route("/search");
-      DomGlobal.window.alert("Ups ... ");
+      DomGlobal.window.alert("id is not valid ->  mocing to search");
+      this.router.route("/search",
+                        this.context.getSearchName(),
+                        this.context.getSearchCity());
     }
   }
 
