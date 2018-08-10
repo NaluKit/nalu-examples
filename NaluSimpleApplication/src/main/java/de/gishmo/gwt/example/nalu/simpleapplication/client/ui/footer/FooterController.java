@@ -39,7 +39,7 @@ public class FooterController
   }
 
   @Override
-  public void bind() {
+  public void start() {
     this.registration = this.eventBus.addHandler(StatusChangeEvent.TYPE,
                              e -> component.setStatus(e.getStatus()));
   }

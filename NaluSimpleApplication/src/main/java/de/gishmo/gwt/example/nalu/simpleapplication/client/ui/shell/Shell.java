@@ -50,7 +50,7 @@ public class Shell
    * We append the ShellView to the browser body.
    */
   @Override
-  public void setShell() {
+  public void attachShell() {
     document.body.appendChild(this.render());
   }
 

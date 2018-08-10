@@ -12,7 +12,7 @@ public class BartSimpsonFilter
                         String... parms) {
     if ("/detail".equals(route)) {
       if ("3".equals(parms[0])) {
-        DomGlobal.window.alert("Bart Simpsons is not selected -> we move to the search view!");
+        DomGlobal.window.alert("Bart Simpsons is not selecteable -> redirecting to search!");
 
         return false;
       }

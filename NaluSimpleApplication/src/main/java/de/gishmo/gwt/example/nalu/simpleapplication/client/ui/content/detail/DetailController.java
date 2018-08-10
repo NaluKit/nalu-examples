@@ -17,9 +17,8 @@
 
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.content.detail;
 
-import com.github.mvp4g.nalu.client.internal.exception.RoutingInterceptionByControllerException;
+import com.github.mvp4g.nalu.client.internal.exception.RoutingInterceptionException;
 import com.github.mvp4g.nalu.client.ui.AbstractComponentController;
-import com.github.mvp4g.nalu.client.ui.IsConfirmator;
 import com.github.mvp4g.nalu.client.ui.annotation.Controller;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Person;
@@ -33,8 +32,7 @@ import elemental2.dom.DomGlobal;
 @Controller(route = "/detail/:id", selector = Selectors.CONTENT, componentInterface = IDetailComponent.class, component = DetailComponent.class)
 public class DetailController
   extends AbstractComponentController<NaluSimpleApplicationContext, IDetailComponent>
-  implements IDetailComponent.Controller,
-             IsConfirmator {
+  implements IDetailComponent.Controller {
 
   private Person person;
 
@@ -70,15 +68,15 @@ public class DetailController
 
 
   public void setId(String id)
-    throws RoutingInterceptionByControllerException {
+    throws RoutingInterceptionException {
     try {
       this.id = Long.parseLong(id);
     } catch (NumberFormatException e) {
       DomGlobal.window.alert("id is not valid ->  moving to search");
-      throw new RoutingInterceptionByControllerException(this.getClass().getCanonicalName(),
-                                                         "/search",
-                                                         this.context.getSearchName(),
-                                                         this.context.getSearchCity());
+      throw new RoutingInterceptionException(this.getClass().getCanonicalName(),
+                                             "/search",
+                                             this.context.getSearchName(),
+                                             this.context.getSearchCity());
     }
   }
 
