@@ -17,8 +17,8 @@
 
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.footer;
 
-import com.github.mvp4g.nalu.client.ui.AbstractComponentController;
-import com.github.mvp4g.nalu.client.ui.annotation.Controller;
+import com.github.mvp4g.nalu.client.component.AbstractComponentController;
+import com.github.mvp4g.nalu.client.component.annotation.Controller;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;

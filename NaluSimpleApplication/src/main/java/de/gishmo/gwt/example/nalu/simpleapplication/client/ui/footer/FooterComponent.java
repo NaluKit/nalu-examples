@@ -17,7 +17,7 @@
 
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.footer;
 
-import com.github.mvp4g.nalu.client.ui.AbstractComponent;
+import com.github.mvp4g.nalu.client.component.AbstractComponent;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLLabelElement;
 import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;

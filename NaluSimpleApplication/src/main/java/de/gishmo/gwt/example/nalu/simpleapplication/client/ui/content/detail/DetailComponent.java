@@ -17,7 +17,7 @@
 
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.content.detail;
 
-import com.github.mvp4g.nalu.client.ui.AbstractComponent;
+import com.github.mvp4g.nalu.client.component.AbstractComponent;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Person;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.widgets.TextField;
 import elemental2.dom.HTMLButtonElement;

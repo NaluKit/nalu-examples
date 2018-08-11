@@ -18,8 +18,8 @@
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.content.detail;
 
 import com.github.mvp4g.nalu.client.internal.exception.RoutingInterceptionException;
-import com.github.mvp4g.nalu.client.ui.AbstractComponentController;
-import com.github.mvp4g.nalu.client.ui.annotation.Controller;
+import com.github.mvp4g.nalu.client.component.AbstractComponentController;
+import com.github.mvp4g.nalu.client.component.annotation.Controller;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Person;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.exception.PersonException;

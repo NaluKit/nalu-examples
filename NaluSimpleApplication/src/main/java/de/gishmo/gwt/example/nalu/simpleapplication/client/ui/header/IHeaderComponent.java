@@ -17,7 +17,7 @@
 
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.header;
 
-import com.github.mvp4g.nalu.client.ui.IsComponent;
+import com.github.mvp4g.nalu.client.component.IsComponent;
 
 public interface IHeaderComponent
   extends IsComponent<IHeaderComponent.Controller> {

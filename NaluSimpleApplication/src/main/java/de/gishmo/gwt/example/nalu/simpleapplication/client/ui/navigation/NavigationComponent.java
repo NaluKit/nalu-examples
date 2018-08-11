@@ -17,7 +17,7 @@
 
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.navigation;
 
-import com.github.mvp4g.nalu.client.ui.AbstractComponent;
+import com.github.mvp4g.nalu.client.component.AbstractComponent;
 import elemental2.dom.HTMLElement;
 
 import static org.jboss.gwt.elemento.core.Elements.button;

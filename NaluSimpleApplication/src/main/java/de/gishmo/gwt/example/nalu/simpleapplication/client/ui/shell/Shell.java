@@ -18,8 +18,8 @@
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.shell;
 
 import com.github.mvp4g.nalu.client.Nalu;
-import com.github.mvp4g.nalu.client.ui.AbstractShell;
-import com.github.mvp4g.nalu.client.ui.annotation.ProvidesSelector;
+import com.github.mvp4g.nalu.client.component.AbstractShell;
+import com.github.mvp4g.nalu.client.component.annotation.ProvidesSelector;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
 import elemental2.dom.CSSProperties;

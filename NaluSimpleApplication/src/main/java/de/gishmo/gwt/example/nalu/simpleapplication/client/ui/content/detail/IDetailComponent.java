@@ -17,7 +17,7 @@
 
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.content.detail;
 
-import com.github.mvp4g.nalu.client.ui.IsComponent;
+import com.github.mvp4g.nalu.client.component.IsComponent;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Person;
 
 public interface IDetailComponent
