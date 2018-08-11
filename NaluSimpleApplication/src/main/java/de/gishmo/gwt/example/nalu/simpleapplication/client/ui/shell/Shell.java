@@ -17,7 +17,7 @@
 
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.shell;
 
-import com.github.mvp4g.nalu.client.Nalu;
+import com.github.mvp4g.nalu.ui.client.Nalu;
 import com.github.mvp4g.nalu.client.component.AbstractShell;
 import com.github.mvp4g.nalu.client.component.annotation.ProvidesSelector;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
