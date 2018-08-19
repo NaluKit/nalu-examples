@@ -34,9 +34,9 @@ import static org.jboss.gwt.elemento.core.EventType.focus;
 public class TextField
     implements IsElement<HTMLElement> {
 
-  private HTMLElement      container;
+  private HTMLElement container;
 
-  private HTMLDivElement   label;
+  private HTMLDivElement label;
 
   private HTMLInputElement textBox;
 

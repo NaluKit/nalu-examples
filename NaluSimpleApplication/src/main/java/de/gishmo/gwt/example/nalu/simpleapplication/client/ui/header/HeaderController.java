@@ -20,11 +20,10 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.header;
 import com.github.mvp4g.nalu.client.component.AbstractComponentController;
 import com.github.mvp4g.nalu.client.component.annotation.Controller;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
-import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
 import elemental2.dom.HTMLElement;
 
 @Controller(route = "/",
-            selector = Selectors.HEADER,
+            selector = "header",
             componentInterface = IHeaderComponent.class,
             component = HeaderComponent.class)
 public class HeaderController

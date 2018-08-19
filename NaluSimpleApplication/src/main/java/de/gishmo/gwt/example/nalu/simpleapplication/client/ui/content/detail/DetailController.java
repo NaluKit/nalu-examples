@@ -26,12 +26,11 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.exception.
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.exception.PersonNotFoundException;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.service.PersonService;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.event.StatusChangeEvent;
-import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
 import elemental2.dom.DomGlobal;
 import elemental2.dom.HTMLElement;
 
 @Controller(route = "/detail/:id",
-            selector = Selectors.CONTENT,
+            selector = "content",
             componentInterface = IDetailComponent.class,
             component = DetailComponent.class)
 public class DetailController

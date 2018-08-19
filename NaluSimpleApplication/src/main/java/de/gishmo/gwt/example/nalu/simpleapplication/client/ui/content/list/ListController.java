@@ -24,13 +24,12 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Person
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.PersonSearch;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.service.PersonService;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.event.StatusChangeEvent;
-import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
 import elemental2.dom.HTMLElement;
 
 import java.util.List;
 
 @Controller(route = "/list/:name/:city",
-            selector = Selectors.CONTENT,
+            selector = "content",
             componentInterface = IListComponent.class,
             component = ListComponent.class)
 public class ListController

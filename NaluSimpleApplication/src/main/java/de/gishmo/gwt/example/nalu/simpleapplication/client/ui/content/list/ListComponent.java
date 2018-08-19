@@ -30,9 +30,9 @@ public class ListComponent
     extends AbstractComponent<IListComponent.Controller, HTMLElement>
     implements IListComponent {
 
-  private String      name;
+  private String name;
 
-  private String      city;
+  private String city;
 
   private HTMLElement container;
 
