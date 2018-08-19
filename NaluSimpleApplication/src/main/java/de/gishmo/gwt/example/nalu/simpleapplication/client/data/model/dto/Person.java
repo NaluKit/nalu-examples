@@ -21,11 +21,12 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class Person
-  implements Serializable {
+    implements Serializable {
 
   private long id;
 
   private String name;
+
   private String firstName;
 
   private Address address;

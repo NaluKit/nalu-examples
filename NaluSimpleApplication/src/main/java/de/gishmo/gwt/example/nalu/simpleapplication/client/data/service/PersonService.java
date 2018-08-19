@@ -23,11 +23,7 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Person
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.exception.PersonException;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.exception.PersonNotFoundException;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Due to the fact, that there is currently no J2Cl based server framework and to proof mvp4g2 is working,
@@ -49,6 +45,13 @@ public class PersonService {
       persons = new HashMap<Long, Person>();
       initList();
     }
+  }
+
+  public static PersonService get() {
+    if (instance == null) {
+      instance = new PersonService();
+    }
+    return instance;
   }
 
   private void initList() {
@@ -116,15 +119,8 @@ public class PersonService {
                            address03));
   }
 
-  public static PersonService get() {
-    if (instance == null) {
-      instance = new PersonService();
-    }
-    return instance;
-  }
-
   public Person get(long id)
-    throws PersonNotFoundException {
+      throws PersonNotFoundException {
     if (persons.containsKey(new Long(id))) {
       return persons.get(id);
     } else {
@@ -144,20 +140,22 @@ public class PersonService {
 
   public List<Person> get(PersonSearch search) {
     List<Person> list = new ArrayList<Person>();
-    if ((search.getName() != null && search.getName()
-                                           .length() != 0
-        ) ||
-        (search.getCity() != null && search.getCity()
-                                           .length() != 0
-        )) {
+    if ((search.getName() != null &&
+             search.getName()
+                   .length() != 0) ||
+        (search.getCity() != null &&
+             search.getCity()
+                   .length() != 0)) {
       Iterator<Long> iterator = persons.keySet()
                                        .iterator();
       while (iterator.hasNext()) {
         Person person = persons.get(iterator.next());
-        if (search.getName() != null && search.getName()
-                                              .length() != 0 &&
-            search.getCity() != null && search.getCity()
-                                              .length() != 0) {
+        if (search.getName() != null &&
+            search.getName()
+                  .length() != 0 &&
+            search.getCity() != null &&
+            search.getCity()
+                  .length() != 0) {
           if (person.getName()
                     .toLowerCase()
                     .contains(search.getName()
@@ -169,16 +167,18 @@ public class PersonService {
                                     .toLowerCase())) {
             list.add(person);
           }
-        } else if (search.getName() != null && search.getName()
-                                                     .length() != 0) {
+        } else if (search.getName() != null &&
+            search.getName()
+                  .length() != 0) {
           if (person.getName()
                     .toLowerCase()
                     .contains(search.getName()
                                     .toLowerCase())) {
             list.add(person);
           }
-        } else if (search.getCity() != null && search.getCity()
-                                                     .length() != 0) {
+        } else if (search.getCity() != null &&
+            search.getCity()
+                  .length() != 0) {
           if (person.getAddress()
                     .getCity()
                     .toLowerCase()
@@ -193,7 +193,7 @@ public class PersonService {
   }
 
   public void insert(Person person)
-    throws PersonException {
+      throws PersonException {
     Iterator<Person> iter = persons.values()
                                    .iterator();
     long maxKey = 0;
@@ -210,7 +210,7 @@ public class PersonService {
   }
 
   public void update(Person person)
-    throws PersonException {
+      throws PersonException {
     Person value = persons.get(new Long(person.getId()));
     if (value != null) {
       persons.remove(new Long(person.getId()));

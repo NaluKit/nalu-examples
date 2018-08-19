@@ -21,8 +21,8 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class PersonException
-  extends Exception
-  implements Serializable {
+    extends Exception
+    implements Serializable {
 
   /* for serialization only */
   @SuppressWarnings("unused")

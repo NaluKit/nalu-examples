@@ -28,16 +28,21 @@ import static org.jboss.gwt.elemento.core.Elements.div;
 import static org.jboss.gwt.elemento.core.EventType.click;
 
 public class DetailComponent
-  extends AbstractComponent<IDetailComponent.Controller>
-  implements IDetailComponent {
+    extends AbstractComponent<IDetailComponent.Controller, HTMLElement>
+    implements IDetailComponent {
 
   private TextField detailFirstName;
+
   private TextField detailName;
+
   private TextField detailStreet;
+
   private TextField detailZip;
+
   private TextField detailCity;
 
   private HTMLButtonElement saveButton;
+
   private HTMLButtonElement revertButton;
 
   public DetailComponent() {
@@ -87,27 +92,22 @@ public class DetailComponent
   public boolean isDirty() {
     boolean notDirty = (getController().getPerson()
                                        .getFirstName()
-                                       .equals(detailFirstName.getText())
-                       ) &&
-                       (getController().getPerson()
-                                       .getName()
-                                       .equals(detailName.getText())
-                       ) &&
-                       (getController().getPerson()
-                                       .getAddress()
-                                       .getStreet()
-                                       .equals(detailStreet.getText())
-                       ) &&
-                       (getController().getPerson()
-                                       .getAddress()
-                                       .getZip()
-                                       .equals(detailZip.getText())
-                       ) &&
-                       (getController().getPerson()
-                                       .getAddress()
-                                       .getCity()
-                                       .equals(detailCity.getText())
-                       );
+                                       .equals(detailFirstName.getText())) &&
+        (getController().getPerson()
+                        .getName()
+                        .equals(detailName.getText())) &&
+        (getController().getPerson()
+                        .getAddress()
+                        .getStreet()
+                        .equals(detailStreet.getText())) &&
+        (getController().getPerson()
+                        .getAddress()
+                        .getZip()
+                        .equals(detailZip.getText())) &&
+        (getController().getPerson()
+                        .getAddress()
+                        .getCity()
+                        .equals(detailCity.getText()));
     return !notDirty;
   }
 

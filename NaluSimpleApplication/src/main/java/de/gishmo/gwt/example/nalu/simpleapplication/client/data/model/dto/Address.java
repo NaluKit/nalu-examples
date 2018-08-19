@@ -21,12 +21,14 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class Address
-  implements Serializable {
+    implements Serializable {
 
   private long id;
 
   private String street;
+
   private String zip;
+
   private String city;
 
   /* for serialization only */

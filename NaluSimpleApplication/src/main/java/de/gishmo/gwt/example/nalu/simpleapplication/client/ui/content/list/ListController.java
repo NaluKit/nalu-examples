@@ -25,15 +25,20 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Person
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.service.PersonService;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
+import elemental2.dom.HTMLElement;
 
 import java.util.List;
 
-@Controller(route = "/list/:name/:city", selector = Selectors.CONTENT, componentInterface = IListComponent.class, component = ListComponent.class)
+@Controller(route = "/list/:name/:city",
+            selector = Selectors.CONTENT,
+            componentInterface = IListComponent.class,
+            component = ListComponent.class)
 public class ListController
-  extends AbstractComponentController<NaluSimpleApplicationContext, IListComponent>
-  implements IListComponent.Controller {
+    extends AbstractComponentController<NaluSimpleApplicationContext, IListComponent, HTMLElement>
+    implements IListComponent.Controller {
 
   private String name;
+
   private String city;
 
   public ListController() {
@@ -54,7 +59,6 @@ public class ListController
       this.eventBus.fireEvent(new StatusChangeEvent("Found " + Integer.toString(result.size()) + " persons"));
     }
   }
-
 
   @Override
   public void doUpdate(Person object) {

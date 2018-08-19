@@ -19,18 +19,19 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.content.list;
 
 import com.github.mvp4g.nalu.client.component.IsComponent;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Person;
+import elemental2.dom.HTMLElement;
 
 import java.util.List;
 
 public interface IListComponent
-  extends IsComponent<IListComponent.Controller> {
+    extends IsComponent<IListComponent.Controller, HTMLElement> {
 
   void resetTable();
 
   void setData(List<Person> result);
 
   interface Controller
-    extends IsComponent.Controller {
+      extends IsComponent.Controller {
 
     void doUpdate(Person object);
 

@@ -17,11 +17,9 @@
 
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.shell;
 
-import com.github.mvp4g.nalu.ui.client.Nalu;
+import com.github.mvp4g.nalu.client.Nalu;
 import com.github.mvp4g.nalu.client.component.AbstractShell;
-import com.github.mvp4g.nalu.client.component.annotation.ProvidesSelector;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
-import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
 import elemental2.dom.CSSProperties;
 import elemental2.dom.Element;
 import elemental2.dom.HTMLElement;
@@ -33,12 +31,8 @@ import static org.jboss.gwt.elemento.core.Elements.*;
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
-@ProvidesSelector(selector = {Selectors.CONTENT,
-                              Selectors.FOOTER,
-                              Selectors.HEADER,
-                              Selectors.NAVIGATION})
 public class Shell
-  extends AbstractShell<NaluSimpleApplicationContext> {
+    extends AbstractShell<NaluSimpleApplicationContext> {
 
   public Shell() {
   }
@@ -53,7 +47,6 @@ public class Shell
   public void attachShell() {
     document.body.appendChild(this.render());
   }
-
 
   private HTMLElement render() {
     document.body.style.margin = CSSProperties.MarginUnionType.of(0);

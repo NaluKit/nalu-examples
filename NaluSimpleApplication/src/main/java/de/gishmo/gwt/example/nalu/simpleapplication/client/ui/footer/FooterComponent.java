@@ -29,8 +29,8 @@ import static org.jboss.gwt.elemento.core.Elements.*;
  * severeal areas.
  */
 public class FooterComponent
-  extends AbstractComponent<IFooterComponent.Controller>
-  implements IFooterComponent {
+    extends AbstractComponent<IFooterComponent.Controller, HTMLElement>
+    implements IFooterComponent {
 
   private HtmlContentBuilder<HTMLLabelElement> status;
 

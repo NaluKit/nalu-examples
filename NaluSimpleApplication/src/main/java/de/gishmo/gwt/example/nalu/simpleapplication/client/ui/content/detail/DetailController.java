@@ -17,9 +17,9 @@
 
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.content.detail;
 
-import com.github.mvp4g.nalu.client.internal.exception.RoutingInterceptionException;
 import com.github.mvp4g.nalu.client.component.AbstractComponentController;
 import com.github.mvp4g.nalu.client.component.annotation.Controller;
+import com.github.mvp4g.nalu.client.exception.RoutingInterceptionException;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Person;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.exception.PersonException;
@@ -28,11 +28,15 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.data.service.PersonSe
 import de.gishmo.gwt.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
 import elemental2.dom.DomGlobal;
+import elemental2.dom.HTMLElement;
 
-@Controller(route = "/detail/:id", selector = Selectors.CONTENT, componentInterface = IDetailComponent.class, component = DetailComponent.class)
+@Controller(route = "/detail/:id",
+            selector = Selectors.CONTENT,
+            componentInterface = IDetailComponent.class,
+            component = DetailComponent.class)
 public class DetailController
-  extends AbstractComponentController<NaluSimpleApplicationContext, IDetailComponent>
-  implements IDetailComponent.Controller {
+    extends AbstractComponentController<NaluSimpleApplicationContext, IDetailComponent, HTMLElement>
+    implements IDetailComponent.Controller {
 
   private Person person;
 
@@ -66,14 +70,14 @@ public class DetailController
     this.eventBus.fireEvent(new StatusChangeEvent(""));
   }
 
-
   public void setId(String id)
-    throws RoutingInterceptionException {
+      throws RoutingInterceptionException {
     try {
       this.id = Long.parseLong(id);
     } catch (NumberFormatException e) {
       DomGlobal.window.alert("id is not valid ->  moving to search");
-      throw new RoutingInterceptionException(this.getClass().getCanonicalName(),
+      throw new RoutingInterceptionException(this.getClass()
+                                                 .getCanonicalName(),
                                              "/search",
                                              this.context.getSearchName(),
                                              this.context.getSearchCity());

@@ -22,16 +22,20 @@ import com.github.mvp4g.nalu.client.component.annotation.Controller;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
+import elemental2.dom.HTMLElement;
 import org.gwtproject.event.shared.HandlerRegistration;
 
 /**
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
-@Controller(route = "/", selector = Selectors.FOOTER, componentInterface = IFooterComponent.class, component = FooterComponent.class)
+@Controller(route = "/",
+            selector = Selectors.FOOTER,
+            componentInterface = IFooterComponent.class,
+            component = FooterComponent.class)
 public class FooterController
-  extends AbstractComponentController<NaluSimpleApplicationContext, IFooterComponent>
-  implements IFooterComponent.Controller {
+    extends AbstractComponentController<NaluSimpleApplicationContext, IFooterComponent, HTMLElement>
+    implements IFooterComponent.Controller {
 
   private HandlerRegistration registration;
 
@@ -41,7 +45,7 @@ public class FooterController
   @Override
   public void start() {
     this.registration = this.eventBus.addHandler(StatusChangeEvent.TYPE,
-                             e -> component.setStatus(e.getStatus()));
+                                                 e -> component.setStatus(e.getStatus()));
   }
 
   @Override

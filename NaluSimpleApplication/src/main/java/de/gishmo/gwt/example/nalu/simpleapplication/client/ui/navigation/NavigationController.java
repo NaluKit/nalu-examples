@@ -21,12 +21,15 @@ import com.github.mvp4g.nalu.client.component.AbstractComponentController;
 import com.github.mvp4g.nalu.client.component.annotation.Controller;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
+import elemental2.dom.HTMLElement;
 
-@Controller(route = "/", selector = Selectors.NAVIGATION, componentInterface = INavigationComponent.class, component = NavigationComponent.class)
+@Controller(route = "/",
+            selector = Selectors.NAVIGATION,
+            componentInterface = INavigationComponent.class,
+            component = NavigationComponent.class)
 public class NavigationController
-  extends AbstractComponentController<NaluSimpleApplicationContext, INavigationComponent>
-  implements INavigationComponent.Controller {
-
+    extends AbstractComponentController<NaluSimpleApplicationContext, INavigationComponent, HTMLElement>
+    implements INavigationComponent.Controller {
 
   public NavigationController() {
   }

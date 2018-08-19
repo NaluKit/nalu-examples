@@ -26,10 +26,11 @@ import static org.jboss.gwt.elemento.core.Elements.div;
 import static org.jboss.gwt.elemento.core.EventType.click;
 
 public class SearchComponent
-  extends AbstractComponent<ISearchComponent.Controller>
-  implements ISearchComponent {
+    extends AbstractComponent<ISearchComponent.Controller, HTMLElement>
+    implements ISearchComponent {
 
   private TextField searchName;
+
   private TextField searchCity;
 
   public SearchComponent() {

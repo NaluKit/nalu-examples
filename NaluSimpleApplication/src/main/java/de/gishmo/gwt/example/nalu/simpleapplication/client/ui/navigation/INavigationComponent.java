@@ -18,12 +18,13 @@
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.navigation;
 
 import com.github.mvp4g.nalu.client.component.IsComponent;
+import elemental2.dom.HTMLElement;
 
 public interface INavigationComponent
-  extends IsComponent<INavigationComponent.Controller> {
+    extends IsComponent<INavigationComponent.Controller, HTMLElement> {
 
   interface Controller
-    extends IsComponent.Controller {
+      extends IsComponent.Controller {
 
     void doShowSearch();
 

@@ -5,7 +5,7 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplication
 import elemental2.dom.DomGlobal;
 
 public class BartSimpsonFilter
-  extends AbstractFilter<NaluSimpleApplicationContext> {
+    extends AbstractFilter<NaluSimpleApplicationContext> {
 
   @Override
   public boolean filter(String route,
@@ -27,9 +27,6 @@ public class BartSimpsonFilter
 
   @Override
   public String[] parameters() {
-    return new String[] {
-      this.context.getSearchName(),
-      this.context.getSearchCity()
-    };
+    return new String[] { this.context.getSearchName(), this.context.getSearchCity() };
   }
 }

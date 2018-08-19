@@ -21,11 +21,15 @@ import com.github.mvp4g.nalu.client.component.AbstractComponentController;
 import com.github.mvp4g.nalu.client.component.annotation.Controller;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.Selectors;
+import elemental2.dom.HTMLElement;
 
-@Controller(route = "/", selector = Selectors.HEADER, componentInterface = IHeaderComponent.class, component = HeaderComponent.class)
+@Controller(route = "/",
+            selector = Selectors.HEADER,
+            componentInterface = IHeaderComponent.class,
+            component = HeaderComponent.class)
 public class HeaderController
-  extends AbstractComponentController<NaluSimpleApplicationContext, IHeaderComponent>
-  implements IHeaderComponent.Controller {
+    extends AbstractComponentController<NaluSimpleApplicationContext, IHeaderComponent, HTMLElement>
+    implements IHeaderComponent.Controller {
 
   public HeaderController() {
   }

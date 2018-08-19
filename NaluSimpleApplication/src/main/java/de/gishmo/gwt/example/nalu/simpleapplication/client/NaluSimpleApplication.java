@@ -21,6 +21,7 @@ import com.github.mvp4g.nalu.client.application.IsApplication;
 import com.github.mvp4g.nalu.client.application.annotation.Application;
 import com.github.mvp4g.nalu.client.application.annotation.Debug;
 import com.github.mvp4g.nalu.client.application.annotation.Filters;
+import com.github.mvp4g.nalu.plugin.elemental2.client.DefaultElemental2Logger;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.filters.BartSimpsonFilter;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.shell.Shell;
 
@@ -33,11 +34,11 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.shell.Shell;
  * framework). You can use any technique to call the server!</p>
  */
 @Application(shell = Shell.class,
-  loader = NaluSimpleApplicationLoader.class,
-  startRoute = "/search",
-  context = NaluSimpleApplicationContext.class)
+             loader = NaluSimpleApplicationLoader.class,
+             startRoute = "/search",
+             context = NaluSimpleApplicationContext.class)
 @Filters(filterClasses = BartSimpsonFilter.class)
-@Debug(logLevel = Debug.LogLevel.DETAILED)
+@Debug(logLevel = Debug.LogLevel.DETAILED, logger = DefaultElemental2Logger.class)
 interface NaluSimpleApplication
-  extends IsApplication {
+    extends IsApplication {
 }

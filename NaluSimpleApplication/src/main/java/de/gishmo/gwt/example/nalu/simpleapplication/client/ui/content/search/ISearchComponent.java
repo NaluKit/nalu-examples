@@ -18,16 +18,17 @@
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.content.search;
 
 import com.github.mvp4g.nalu.client.component.IsComponent;
+import elemental2.dom.HTMLElement;
 
 public interface ISearchComponent
-  extends IsComponent<ISearchComponent.Controller> {
+    extends IsComponent<ISearchComponent.Controller, HTMLElement> {
 
   void setSearchName(String searchName);
 
   void setSearchCity(String searchCity);
 
   interface Controller
-    extends IsComponent.Controller {
+      extends IsComponent.Controller {
 
     void doClickSearchButton(String searchName,
                              String searchCity);

@@ -25,9 +25,8 @@ import static org.jboss.gwt.elemento.core.Elements.div;
 import static org.jboss.gwt.elemento.core.EventType.click;
 
 public class NavigationComponent
-  extends AbstractComponent<INavigationComponent.Controller>
-  implements INavigationComponent {
-
+    extends AbstractComponent<INavigationComponent.Controller, HTMLElement>
+    implements INavigationComponent {
 
   public NavigationComponent() {
   }
