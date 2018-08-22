@@ -1,0 +1,25 @@
+package de.gishmo.gwt.example.nalu.simpleapplication.client.handler;
+
+import com.github.mvp4g.nalu.client.handler.AbstractHandler;
+import com.github.mvp4g.nalu.client.handler.annotation.Handler;
+import com.google.gwt.user.client.Window;
+import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
+import de.gishmo.gwt.example.nalu.simpleapplication.client.event.StatusChangeEvent;
+import elemental2.dom.DomGlobal;
+
+@Handler
+public class SimpleApplicationHandler01
+    extends AbstractHandler<NaluSimpleApplicationContext> {
+
+  public SimpleApplicationHandler01() {
+  }
+
+  @Override
+  public void bind() {
+    this.eventBus.addHandler(StatusChangeEvent.TYPE,
+                             e -> {
+                               // Stupid idea! It should only show, that the event was catched by the handler!
+                               Window.alert("new Status:" + e.getStatus());
+                             });
+  }
+}
