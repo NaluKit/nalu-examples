@@ -37,6 +37,7 @@ public class SelectEvent
 
   public enum Select {
     SEARCH,
-    LIST
+    LIST,
+    DETAIL
   }
 }

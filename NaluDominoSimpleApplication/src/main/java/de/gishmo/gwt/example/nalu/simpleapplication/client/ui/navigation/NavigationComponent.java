@@ -59,6 +59,10 @@ public class NavigationComponent
         this.listItem.activate();
         this.searchItem.deactivate();
         break;
+      default:
+        this.listItem.deactivate();
+        this.searchItem.deactivate();
+        break;
     }
   }
 }

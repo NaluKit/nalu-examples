@@ -25,6 +25,7 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Person
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.exception.PersonException;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.exception.PersonNotFoundException;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.service.PersonService;
+import de.gishmo.gwt.example.nalu.simpleapplication.client.event.SelectEvent;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import elemental2.dom.DomGlobal;
 import elemental2.dom.HTMLElement;
@@ -59,6 +60,8 @@ public class DetailController
                                  .get(id);
       this.component.edit(this.person);
       this.eventBus.fireEvent(new StatusChangeEvent("Edit person data with id: " + this.person.getId()));
+
+      this.eventBus.fireEvent(new SelectEvent(SelectEvent.Select.DETAIL));
     } catch (PersonNotFoundException e) {
       DomGlobal.window.alert("Panic!");
     }
