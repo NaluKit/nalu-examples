@@ -18,6 +18,8 @@
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.shell;
 
 import com.github.mvp4g.nalu.client.component.AbstractShell;
+import com.github.mvp4g.nalu.plugin.gwt.client.annotation.Selector;
+import com.github.mvp4g.nalu.plugin.gwt.client.selector.IsSelectorProvider;
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.user.client.ui.*;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
@@ -33,6 +35,18 @@ public class Shell
 
   private ResizeLayoutPanel shell;
   private ApplicationCss style;
+
+  @Selector("header")
+  SimpleLayoutPanel headerWidget;
+
+  @Selector("footer")
+  ResizeLayoutPanel footerWidget;
+
+  @Selector("navigation")
+  SimpleLayoutPanel navigationWidget;
+
+  @Selector("content")
+  SimpleLayoutPanel contentWidget;
 
   public Shell() {
     super();
@@ -64,40 +78,40 @@ public class Shell
                   "100%");
     shell.add(panel);
 
-    Widget header = createNorth();
-    panel.addNorth(header,
+    this.headerWidget = createNorth();
+    panel.addNorth(this.headerWidget,
                    128);
 
-    Widget footer = createSouth();
-    panel.addSouth(footer,
+    this.footerWidget = createSouth();
+    panel.addSouth(this.footerWidget,
                    42);
 
-    Widget navigation = createNavigation();
-    panel.addWest(navigation,
+    this.navigationWidget = createNavigation();
+    panel.addWest(this.navigationWidget,
                   212);
 
-    Widget content = createContent();
-    panel.add(content);
+    this.contentWidget = createContent();
+    panel.add(this.contentWidget);
 
     return panel;
   }
 
-  private Widget createContent() {
-    FlowPanel panel = new FlowPanel();
+  private SimpleLayoutPanel createContent() {
+    SimpleLayoutPanel panel = new SimpleLayoutPanel();
     panel.getElement()
          .setId("content");
     return panel;
   }
 
-  private Widget createNavigation() {
-    FlowPanel panel = new FlowPanel();
+  private SimpleLayoutPanel createNavigation() {
+    SimpleLayoutPanel panel = new SimpleLayoutPanel();
     panel.addStyleName(style.navigationPanel());
     panel.getElement()
          .setId("navigation");
     return panel;
   }
 
-  private Widget createNorth() {
+  private SimpleLayoutPanel createNorth() {
     SimpleLayoutPanel panel = new SimpleLayoutPanel();
     panel.addStyleName(style.headerPanel());
     panel.getElement()
@@ -105,7 +119,7 @@ public class Shell
     return panel;
   }
 
-  private Widget createSouth() {
+  private ResizeLayoutPanel createSouth() {
     ResizeLayoutPanel footerPanel = new ResizeLayoutPanel();
     footerPanel.getElement()
                .setId("footer");
@@ -121,4 +135,10 @@ public class Shell
 //        }
 //      }
 //    }
+
+  @Override
+  public void bind() {
+    IsSelectorProvider<Shell> provider = new ShellSelectorProviderImpl();
+    provider.initialize(this);
+  }
 }

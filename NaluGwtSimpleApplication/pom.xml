@@ -32,7 +32,7 @@
     <gwtVersion>2.8.2</gwtVersion>
 
     <!-- nalu version -->
-    <nalu.version>0.0.2</nalu.version>
+    <nalu.version>0.0.3</nalu.version>
 
     <elemento.version>0.8.0</elemento.version>
 
@@ -105,6 +105,11 @@
       <artifactId>nalu-plugin-gwt</artifactId>
       <version>${nalu.version}</version>
     </dependency>
+    <dependency>
+      <groupId>com.github.mvp4g</groupId>
+      <artifactId>nalu-plugin-gwt-processor</artifactId>
+      <version>${nalu.version}</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -141,9 +146,6 @@
             </goals>
             <configuration>
               <proc>only</proc>
-              <annotationProcessors>
-                <annotationProcessor>com.github.mvp4g.nalu.processor.NaluProcessor</annotationProcessor>
-              </annotationProcessors>
             </configuration>
           </execution>
           <execution>
