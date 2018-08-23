@@ -42,7 +42,7 @@ public class Shell
   @Override
   public void attachShell() {
     Layout layout = Layout.create("Nalu - Simple Application using Domino-UI")
-                          .show(ColorScheme.BLUE);
+                          .show(ColorScheme.INDIGO);
 
     layout.showFooter()
           .fixFooter()

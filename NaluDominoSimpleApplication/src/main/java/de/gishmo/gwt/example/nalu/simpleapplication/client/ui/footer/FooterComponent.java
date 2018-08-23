@@ -23,7 +23,6 @@ import org.dominokit.domino.ui.column.Column;
 import org.dominokit.domino.ui.row.Row;
 import org.dominokit.domino.ui.style.Style;
 
-import static org.jboss.gwt.elemento.core.Elements.div;
 import static org.jboss.gwt.elemento.core.Elements.h;
 
 /**
@@ -49,14 +48,11 @@ public class FooterComponent
               .setMargin("0px")
               .css("demo-footer")
               .get()
-              .addColumn(Style.of(Column.span5())
+              .addColumn(Style.of(Column.span6())
                               .setMarginBottom("20px")
                               .get()
                               .addElement(h(4).textContent("Nalu example application using Domnio-UI")))
-              .addColumn(Style.of(Column.span2())
-                              .get()
-                              .addElement(div().asElement()))
-              .addColumn(Style.of(Column.span5())
+              .addColumn(Style.of(Column.span6())
                               .setMarginBottom("20px")
                               .setTextAlign("right")
                               .get()
