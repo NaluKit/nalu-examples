@@ -47,7 +47,7 @@ public class Shell
     layout.showFooter()
           .fixFooter()
           .getFooter()
-          .asElement().style.height = CSSProperties.HeightUnionType.of("42px");
+          .asElement().style.minHeight = CSSProperties.MinHeightUnionType.of("42px");
 
     layout.getFooter()
           .asElement().id = "footer";
