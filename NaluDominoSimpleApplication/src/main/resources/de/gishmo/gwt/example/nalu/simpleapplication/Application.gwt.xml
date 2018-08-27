@@ -38,7 +38,6 @@
   <inherits name='com.github.mvp4g.nalu.Nalu'/>
   <inherits name='com.github.mvp4g.nalu.plugin.elemental2.NaluPluginElemental2'/>
   <inherits name="org.dominokit.domino.ui.DominoUI"/>
-  <inherits name="org.gwtproject.event.Event"/>
 
   <!-- Specify the app entry point class.                         -->
   <entry-point class='de.gishmo.gwt.example.nalu.simpleapplication.client.Application'/>

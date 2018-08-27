@@ -84,11 +84,11 @@
       <artifactId>gwt-servlet</artifactId>
     </dependency>
 
-    <dependency>
-      <groupId>org.gwtproject.event</groupId>
-      <artifactId>gwt-event</artifactId>
-      <version>${gwt-events.version}</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.gwtproject.event</groupId>-->
+      <!--<artifactId>gwt-event</artifactId>-->
+      <!--<version>${gwt-events.version}</version>-->
+    <!--</dependency>-->
 
     <dependency>
       <groupId>com.github.mvp4g</groupId>
