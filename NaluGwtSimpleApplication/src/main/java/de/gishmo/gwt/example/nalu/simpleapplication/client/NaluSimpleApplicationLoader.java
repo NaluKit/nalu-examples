@@ -17,17 +17,17 @@
 
 package de.gishmo.gwt.example.nalu.simpleapplication.client;
 
-import com.github.mvp4g.nalu.client.application.IsApplicationLoader;
+import com.github.mvp4g.nalu.client.application.AbstractApplicationLoader;
 import com.google.gwt.user.client.Window;
 
 /**
  * A application loader of the NaluSimpleApplication
  */
 public class NaluSimpleApplicationLoader
-    implements IsApplicationLoader {
+  extends AbstractApplicationLoader<NaluSimpleApplicationContext> {
 
   /**
-   * The laoder of the applciation.
+   * The laoder of the application.
    * <p>
    * Will be executed at the start of the application
    * and before the first event is executed.
