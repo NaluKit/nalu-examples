@@ -226,7 +226,7 @@
             <arg>PRETTY</arg>
           </devmodeArgs>
           <startupUrls>
-            <startupUrl>Application.html</startupUrl>
+            <startupUrl>index.html</startupUrl>
           </startupUrls>
           <devmodeWorkDir>${project.build.directory}/devModeWorkDir</devmodeWorkDir>
           <launcherDir>${project.build.directory}/classes/static</launcherDir>
