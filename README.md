@@ -16,7 +16,7 @@ Please, keep in mind, Nalu ist a client side framework, so all server calls are 
 ## Domino Example
 The Domino example has three screens, a search-, list- and deatil-screen. You can navigatge between those screens, update data, etc. This example uses the Nalu-Plugin-Elemental2 and DominoUI as widget library. 
 
-The Domino example is deployed on the mvp4g server. The deplyed version can be found [here](http://localhost:8080/NaluDominoSimpleApplication-1.0.0/index.html).
+The Domino example is deployed on the mvp4g server. The deplyed version can be found [here](http://www.mvp4g.org/NaluDominoSimpleApplication-1.0.0/index.html).
 
 ## Elemento Example
 The Elemento example is similar to the Domino example, except that is uses Elemento instead of Domino-UI as widget library. This example uses the Nalu-Plugin-Elemental2. 
