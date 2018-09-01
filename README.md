@@ -24,6 +24,9 @@ The Elemento example is similar to the Domino example, except that is uses Eleme
 ## Native GWT Example
 The native GWT example is similar to the Elemento example, except that is uses native GWT widgets. This example uses the Nalu-Plugin-GWT. 
 
+## GXT Example
+The GXT example is different. It is a mail box simulation using GXT 4.0 widgets. This example uses the Nalu-Plugin-GWT. 
+
 ## Notes
 
 Some things are nonsens and only implemented to show the features of Nalu.
