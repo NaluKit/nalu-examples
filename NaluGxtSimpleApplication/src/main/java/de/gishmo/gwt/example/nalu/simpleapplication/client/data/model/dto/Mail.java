@@ -27,15 +27,15 @@ public final class Mail
   implements IsSerializable {
 
   /* uniques id */
-  private String id;
+  private String  id;
   /* The sender's name */
-  private String sender;
+  private String  sender;
   /* The sender's email */
-  private String email;
+  private String  email;
   /* The email subject line */
-  private String subject;
+  private String  subject;
   /* The email's HTML body */
-  private String body;
+  private String  body;
   /* Read flag */
   private boolean read;
 
@@ -53,6 +53,45 @@ public final class Mail
     this.subject = subject;
     this.body = body;
     this.read = false;
+  }
+
+  public boolean isRead() {
+    return read;
+  }
+
+  public void setRead(boolean read) {
+    this.read = read;
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(getId(),
+                        getSender(),
+                        getEmail(),
+                        getSubject(),
+                        getBody());
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (!(o instanceof Mail)) {
+      return false;
+    }
+    Mail mail = (Mail) o;
+    return Objects.equals(getId(),
+                          mail.getId()) &&
+           Objects.equals(getSender(),
+                          mail.getSender()) &&
+           Objects.equals(getEmail(),
+                          mail.getEmail()) &&
+           Objects.equals(getSubject(),
+                          mail.getSubject()) &&
+           Objects.equals(getBody(),
+                          mail.getBody());
   }
 
   public String getId() {
@@ -93,44 +132,5 @@ public final class Mail
 
   public void setBody(String body) {
     this.body = body;
-  }
-
-  public boolean isRead() {
-    return read;
-  }
-
-  public void setRead(boolean read) {
-    this.read = read;
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (!(o instanceof Mail)) {
-      return false;
-    }
-    Mail mail = (Mail) o;
-    return Objects.equals(getId(),
-                          mail.getId()) &&
-           Objects.equals(getSender(),
-                          mail.getSender()) &&
-           Objects.equals(getEmail(),
-                          mail.getEmail()) &&
-           Objects.equals(getSubject(),
-                          mail.getSubject()) &&
-           Objects.equals(getBody(),
-                          mail.getBody());
-  }
-
-  @Override
-  public int hashCode() {
-
-    return Objects.hash(getId(),
-                        getSender(),
-                        getEmail(),
-                        getSubject(),
-                        getBody());
   }
 }

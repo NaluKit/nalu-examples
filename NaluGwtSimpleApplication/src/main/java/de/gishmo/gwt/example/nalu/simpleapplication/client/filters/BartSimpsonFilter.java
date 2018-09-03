@@ -3,10 +3,9 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client.filters;
 import com.github.mvp4g.nalu.client.filter.AbstractFilter;
 import com.google.gwt.user.client.Window;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
-import elemental2.dom.DomGlobal;
 
 public class BartSimpsonFilter
-    extends AbstractFilter<NaluSimpleApplicationContext> {
+  extends AbstractFilter<NaluSimpleApplicationContext> {
 
   @Override
   public boolean filter(String route,
@@ -27,6 +26,7 @@ public class BartSimpsonFilter
 
   @Override
   public String[] parameters() {
-    return new String[] { this.context.getSearchName(), this.context.getSearchCity() };
+    return new String[]{this.context.getSearchName(),
+                        this.context.getSearchCity()};
   }
 }

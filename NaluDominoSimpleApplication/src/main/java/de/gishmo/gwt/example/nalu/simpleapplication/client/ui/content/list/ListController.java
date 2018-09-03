@@ -30,12 +30,12 @@ import elemental2.dom.HTMLElement;
 import java.util.List;
 
 @Controller(route = "/list/:name/:city",
-            selector = "content",
-            componentInterface = IListComponent.class,
-            component = ListComponent.class)
+  selector = "content",
+  componentInterface = IListComponent.class,
+  component = ListComponent.class)
 public class ListController
-    extends AbstractComponentController<NaluSimpleApplicationContext, IListComponent, HTMLElement>
-    implements IListComponent.Controller {
+  extends AbstractComponentController<NaluSimpleApplicationContext, IListComponent, HTMLElement>
+  implements IListComponent.Controller {
 
   private String name;
 

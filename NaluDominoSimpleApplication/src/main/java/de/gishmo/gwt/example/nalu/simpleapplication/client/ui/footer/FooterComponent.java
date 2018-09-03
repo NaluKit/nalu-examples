@@ -39,23 +39,23 @@ public class FooterComponent
   }
 
   @Override
-  public HTMLElement render() {
+  public void render() {
     this.messageInfo = h(4).textContent("loading application ...")
                            .asElement();
 
-    return Row.create()
-              .style()
-              .setMargin("0px")
-              .css("demo-footer")
-              .get()
-              .addColumn(Style.of(Column.span6())
-                              .get()
-                              .addElement(h(4).textContent("Nalu example application using Domnio-UI")))
-              .addColumn(Style.of(Column.span6())
-                              .setTextAlign("right")
-                              .get()
-                              .addElement(this.messageInfo))
-              .asElement();
+    initElement(Row.create()
+                   .style()
+                   .setMargin("0px")
+                   .css("demo-footer")
+                   .get()
+                   .addColumn(Style.of(Column.span6())
+                                   .get()
+                                   .addElement(h(4).textContent("Nalu example application using Domnio-UI")))
+                   .addColumn(Style.of(Column.span6())
+                                   .setTextAlign("right")
+                                   .get()
+                                   .addElement(this.messageInfo))
+                   .asElement());
   }
 
   @Override

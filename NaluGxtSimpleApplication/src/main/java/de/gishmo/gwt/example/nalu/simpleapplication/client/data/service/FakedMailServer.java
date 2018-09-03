@@ -35,7 +35,7 @@ public class FakedMailServer {
   private static final int NUM_ITEMS           = 64;
   private static final int FRAGMENTS_PER_EMAIL = 10;
 
-  private static       int senderIdx           = 0, emailIdx = 0, subjectIdx = 0, fragmentIdx = 0;
+  private static int senderIdx = 0, emailIdx = 0, subjectIdx = 0, fragmentIdx = 0;
   private final String[]        senders      = new String[]{"markboland05",
                                                             "Hollie Voss",
                                                             "boticario",

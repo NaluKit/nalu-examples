@@ -24,7 +24,7 @@ public interface ApplicationMessages
   extends Messages {
 
   ApplicationMessages MESSAGES = GWT.create(ApplicationMessages.class);
- 
+
   String statusListMany(int size);
 
 }

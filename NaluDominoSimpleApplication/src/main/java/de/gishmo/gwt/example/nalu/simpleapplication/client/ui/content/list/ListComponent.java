@@ -43,7 +43,7 @@ public class ListComponent
   }
 
   @Override
-  public HTMLElement render() {
+  public void render() {
     TableConfig<Person> tableConfig = new TableConfig<>();
     tableConfig.addColumn(ColumnConfig.<Person>create("name",
                                                       "Name")
@@ -87,7 +87,7 @@ public class ListComponent
     this.table = new DataTable<>(tableConfig,
                                  store);
 
-    return this.table.asElement();
+    initElement(this.table.asElement());
   }
 
   @Override

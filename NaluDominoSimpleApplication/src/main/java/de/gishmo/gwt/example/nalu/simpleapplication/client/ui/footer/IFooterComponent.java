@@ -21,12 +21,12 @@ import com.github.mvp4g.nalu.client.component.IsComponent;
 import elemental2.dom.HTMLElement;
 
 public interface IFooterComponent
-    extends IsComponent<IFooterComponent.Controller, HTMLElement> {
+  extends IsComponent<IFooterComponent.Controller, HTMLElement> {
 
   void setStatus(String status);
 
   interface Controller
-      extends IsComponent.Controller {
+    extends IsComponent.Controller {
 
   }
 }

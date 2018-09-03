@@ -22,8 +22,6 @@ import com.google.gwt.core.client.Scheduler.ScheduledCommand;
 import com.google.gwt.core.shared.GWT;
 import com.google.gwt.editor.client.IsEditor;
 import com.google.gwt.editor.ui.client.adapters.ValueBoxEditor;
-import com.google.gwt.event.logical.shared.ResizeEvent;
-import com.google.gwt.event.logical.shared.ResizeHandler;
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.user.client.ui.*;
 

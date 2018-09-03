@@ -28,8 +28,8 @@ import static org.jboss.gwt.elemento.core.Elements.div;
 import static org.jboss.gwt.elemento.core.EventType.click;
 
 public class DetailComponent
-    extends AbstractComponent<IDetailComponent.Controller, HTMLElement>
-    implements IDetailComponent {
+  extends AbstractComponent<IDetailComponent.Controller, HTMLElement>
+  implements IDetailComponent {
 
   private TextField detailFirstName;
 
@@ -49,29 +49,29 @@ public class DetailComponent
   }
 
   @Override
-  public HTMLElement render() {
-    return div().add(div().style("width: 100%;")
-                          .add(div().css("headline")
-                                    .textContent("Details"))
-                          .add(detailFirstName = new TextField("Firstname"))
-                          .add(detailName = new TextField("Name"))
-                          .add(detailStreet = new TextField("Street"))
-                          .add(detailZip = new TextField("Zip"))
-                          .add(detailCity = new TextField("City"))
-                          .add(div().css("buttonBar")
-                                    .add(button().css("button")
-                                                 .textContent("Save")
-                                                 .on(click,
-                                                     event -> {
-                                                       getController().doUpdate();
-                                                     }))
-                                    .add(button().css("button")
-                                                 .textContent("Revert")
-                                                 .on(click,
-                                                     event -> {
-                                                       getController().doRevert();
-                                                     }))))
-                .asElement();
+  public void render() {
+    initElement(div().add(div().style("width: 100%;")
+                               .add(div().css("headline")
+                                         .textContent("Details"))
+                               .add(detailFirstName = new TextField("Firstname"))
+                               .add(detailName = new TextField("Name"))
+                               .add(detailStreet = new TextField("Street"))
+                               .add(detailZip = new TextField("Zip"))
+                               .add(detailCity = new TextField("City"))
+                               .add(div().css("buttonBar")
+                                         .add(button().css("button")
+                                                      .textContent("Save")
+                                                      .on(click,
+                                                          event -> {
+                                                            getController().doUpdate();
+                                                          }))
+                                         .add(button().css("button")
+                                                      .textContent("Revert")
+                                                      .on(click,
+                                                          event -> {
+                                                            getController().doRevert();
+                                                          }))))
+                     .asElement());
   }
 
   @Override
@@ -92,22 +92,27 @@ public class DetailComponent
   public boolean isDirty() {
     boolean notDirty = (getController().getPerson()
                                        .getFirstName()
-                                       .equals(detailFirstName.getText())) &&
-        (getController().getPerson()
-                        .getName()
-                        .equals(detailName.getText())) &&
-        (getController().getPerson()
-                        .getAddress()
-                        .getStreet()
-                        .equals(detailStreet.getText())) &&
-        (getController().getPerson()
-                        .getAddress()
-                        .getZip()
-                        .equals(detailZip.getText())) &&
-        (getController().getPerson()
-                        .getAddress()
-                        .getCity()
-                        .equals(detailCity.getText()));
+                                       .equals(detailFirstName.getText())
+                       ) &&
+                       (getController().getPerson()
+                                       .getName()
+                                       .equals(detailName.getText())
+                       ) &&
+                       (getController().getPerson()
+                                       .getAddress()
+                                       .getStreet()
+                                       .equals(detailStreet.getText())
+                       ) &&
+                       (getController().getPerson()
+                                       .getAddress()
+                                       .getZip()
+                                       .equals(detailZip.getText())
+                       ) &&
+                       (getController().getPerson()
+                                       .getAddress()
+                                       .getCity()
+                                       .equals(detailCity.getText())
+                       );
     return !notDirty;
   }
 

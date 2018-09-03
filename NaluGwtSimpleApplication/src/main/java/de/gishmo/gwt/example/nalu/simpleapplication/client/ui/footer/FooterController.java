@@ -22,7 +22,6 @@ import com.github.mvp4g.nalu.client.component.annotation.Controller;
 import com.google.gwt.user.client.ui.Widget;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.event.StatusChangeEvent;
-import elemental2.dom.HTMLElement;
 import org.gwtproject.event.shared.HandlerRegistration;
 
 /**
@@ -30,12 +29,12 @@ import org.gwtproject.event.shared.HandlerRegistration;
  * severeal areas.
  */
 @Controller(route = "/",
-            selector = "footer",
-            componentInterface = IFooterComponent.class,
-            component = FooterComponent.class)
+  selector = "footer",
+  componentInterface = IFooterComponent.class,
+  component = FooterComponent.class)
 public class FooterController
-    extends AbstractComponentController<NaluSimpleApplicationContext, IFooterComponent, Widget>
-    implements IFooterComponent.Controller {
+  extends AbstractComponentController<NaluSimpleApplicationContext, IFooterComponent, Widget>
+  implements IFooterComponent.Controller {
 
   private HandlerRegistration registration;
 

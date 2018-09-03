@@ -26,14 +26,14 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.resources.Application
 import de.gishmo.gwt.example.nalu.simpleapplication.client.resources.ImageResources;
 
 public class HeaderComponent
-    extends AbstractComponent<IHeaderComponent.Controller, Widget>
-    implements IHeaderComponent {
+  extends AbstractComponent<IHeaderComponent.Controller, Widget>
+  implements IHeaderComponent {
 
   public HeaderComponent() {
   }
 
   @Override
-  public Widget render() {
+  public void render() {
     ApplicationCss style = ApplicationStyleFactory.get()
                                                   .getStyle();
 
@@ -44,6 +44,6 @@ public class HeaderComponent
     image.addStyleName(style.header());
     panel.add(image);
 
-    return panel;
+    initElement(panel);
   }
 }

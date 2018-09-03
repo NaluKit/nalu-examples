@@ -3,9 +3,9 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client.event;
 import org.gwtproject.event.shared.Event;
 
 public class StatusChangeEvent
-    extends Event<StatusChangeEvent.StatusChangeHandler> {
+  extends Event<StatusChangeEvent.StatusChangeHandler> {
 
-  public static Type<StatusChangeEvent.StatusChangeHandler> TYPE = new Type<StatusChangeEvent.StatusChangeHandler>();
+  public static Type<StatusChangeEvent.StatusChangeHandler> TYPE = new Type<>();
 
   private String status;
 

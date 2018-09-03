@@ -31,12 +31,12 @@ import elemental2.dom.DomGlobal;
 import elemental2.dom.HTMLElement;
 
 @Controller(route = "/detail/:id",
-            selector = "content",
-            componentInterface = IDetailComponent.class,
-            component = DetailComponent.class)
+  selector = "content",
+  componentInterface = IDetailComponent.class,
+  component = DetailComponent.class)
 public class DetailController
-    extends AbstractComponentController<NaluSimpleApplicationContext, IDetailComponent, HTMLElement>
-    implements IDetailComponent.Controller {
+  extends AbstractComponentController<NaluSimpleApplicationContext, IDetailComponent, HTMLElement>
+  implements IDetailComponent.Controller {
 
   private Person person;
 
@@ -73,7 +73,7 @@ public class DetailController
   }
 
   public void setId(String id)
-      throws RoutingInterceptionException {
+    throws RoutingInterceptionException {
     try {
       this.id = Long.parseLong(id);
     } catch (NumberFormatException e) {

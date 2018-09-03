@@ -22,7 +22,7 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Person
 import elemental2.dom.HTMLElement;
 
 public interface IDetailComponent
-    extends IsComponent<IDetailComponent.Controller, HTMLElement> {
+  extends IsComponent<IDetailComponent.Controller, HTMLElement> {
 
   void edit(Person result);
 
@@ -31,7 +31,7 @@ public interface IDetailComponent
   Person flush(Person person);
 
   interface Controller
-      extends IsComponent.Controller {
+    extends IsComponent.Controller {
 
     Person getPerson();
 

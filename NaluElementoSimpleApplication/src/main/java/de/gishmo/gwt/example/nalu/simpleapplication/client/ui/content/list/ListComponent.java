@@ -27,8 +27,8 @@ import static org.jboss.gwt.elemento.core.Elements.*;
 import static org.jboss.gwt.elemento.core.EventType.click;
 
 public class ListComponent
-    extends AbstractComponent<IListComponent.Controller, HTMLElement>
-    implements IListComponent {
+  extends AbstractComponent<IListComponent.Controller, HTMLElement>
+  implements IListComponent {
 
   private String name;
 
@@ -42,18 +42,20 @@ public class ListComponent
   }
 
   @Override
-  public HTMLElement render() {
-    return this.container = div().add(div().style("width: 100%"))
-                                 .add(div().css("headline")
-                                           .textContent("Search Results"))
-                                 .asElement();
+  public void render() {
+    initElement(this.container = div().add(div().style("width: 100%"))
+                                      .add(div().css("headline")
+                                                .textContent("Search Results"))
+                                      .asElement());
   }
 
   public void setName(String name) {
     this.name = name;
   }
 
-  @Override
+  public void setCity(String city) {
+    this.city = city;
+  }  @Override
   public void resetTable() {
     if (resultTable != null) {
       container.removeChild(resultTable);
@@ -61,9 +63,7 @@ public class ListComponent
     }
   }
 
-  public void setCity(String city) {
-    this.city = city;
-  }
+
 
   @Override
   public void setData(List<Person> result) {

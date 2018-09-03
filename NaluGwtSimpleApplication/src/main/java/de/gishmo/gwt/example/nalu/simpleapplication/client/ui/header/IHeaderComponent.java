@@ -19,13 +19,12 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.header;
 
 import com.github.mvp4g.nalu.client.component.IsComponent;
 import com.google.gwt.user.client.ui.Widget;
-import elemental2.dom.HTMLElement;
 
 public interface IHeaderComponent
-    extends IsComponent<IHeaderComponent.Controller, Widget> {
+  extends IsComponent<IHeaderComponent.Controller, Widget> {
 
   interface Controller
-      extends IsComponent.Controller {
+    extends IsComponent.Controller {
 
   }
 }

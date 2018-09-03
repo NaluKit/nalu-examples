@@ -37,32 +37,32 @@ public class SearchComponent
   }
 
   @Override
-  public HTMLElement render() {
+  public void render() {
     this.searchName = TextBox.create("Name");
     this.searchCity = TextBox.create("City");
 
-    return Card.create("Search Parameter (search for: 'S' or 'D')")
-               .appendContent(Row.create()
-                                 .addColumn(Column.create(12)
-                                                  .addElement(this.searchName)))
-               .appendContent(Row.create()
-                                 .addColumn(Column.create(12)
-                                                  .addElement(this.searchCity)))
-               .appendContent(Row.create()
-                                 .addColumn(Column.create(12)
-                                                  .addElement(Button.createPrimary("Search")
-                                                                    .setStyleProperty("margin-right",
-                                                                                      "20px")
-                                                                    .addClickListener(e -> getController().doClickSearchButton(this.searchName.getValue(),
-                                                                                                                               this.searchCity.getValue())))
-                                                  .addElement(Button.create("Reset")
-                                                                    .addClickListener(e -> {
-                                                                      searchName.setValue("");
-                                                                      searchCity.setValue("");
-                                                                    })))
-                                 .style()
-                                 .setTextAlign("right"))
-               .asElement();
+    initElement(Card.create("Search Parameter (search for: 'S' or 'D')")
+                    .appendContent(Row.create()
+                                      .addColumn(Column.create(12)
+                                                       .addElement(this.searchName)))
+                    .appendContent(Row.create()
+                                      .addColumn(Column.create(12)
+                                                       .addElement(this.searchCity)))
+                    .appendContent(Row.create()
+                                      .addColumn(Column.create(12)
+                                                       .addElement(Button.createPrimary("Search")
+                                                                         .setStyleProperty("margin-right",
+                                                                                           "20px")
+                                                                         .addClickListener(e -> getController().doClickSearchButton(this.searchName.getValue(),
+                                                                                                                                    this.searchCity.getValue())))
+                                                       .addElement(Button.create("Reset")
+                                                                         .addClickListener(e -> {
+                                                                           searchName.setValue("");
+                                                                           searchCity.setValue("");
+                                                                         })))
+                                      .style()
+                                      .setTextAlign("right"))
+                    .asElement());
   }
 
   @Override

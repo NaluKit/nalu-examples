@@ -29,8 +29,8 @@ import static org.jboss.gwt.elemento.core.Elements.*;
  * severeal areas.
  */
 public class FooterComponent
-    extends AbstractComponent<IFooterComponent.Controller, HTMLElement>
-    implements IFooterComponent {
+  extends AbstractComponent<IFooterComponent.Controller, HTMLElement>
+  implements IFooterComponent {
 
   private HtmlContentBuilder<HTMLLabelElement> status;
 
@@ -38,14 +38,14 @@ public class FooterComponent
   }
 
   @Override
-  public HTMLElement render() {
-    return footer().css("shellFooter")
-                   .add(div().add(div().css("shellFooterLeft")
-                                       .add(label().css("shellFooterLabel")
-                                                   .textContent("GWT Basic training")))
-                             .add(div().css("shellFooterRight")
-                                       .add(status = label().css("shellFooterStatus"))))
-                   .asElement();
+  public void render() {
+    initElement(footer().css("shellFooter")
+                        .add(div().add(div().css("shellFooterLeft")
+                                            .add(label().css("shellFooterLabel")
+                                                        .textContent("GWT Basic training")))
+                                  .add(div().css("shellFooterRight")
+                                            .add(status = label().css("shellFooterStatus"))))
+                        .asElement());
   }
 
   @Override

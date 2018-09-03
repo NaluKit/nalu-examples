@@ -37,7 +37,7 @@ public class StatusComponent
   }
 
   @Override
-  public Widget render() {
+  public void render() {
     SimpleContainer container = new SimpleContainer();
 
     container.getElement()
@@ -65,7 +65,7 @@ public class StatusComponent
                   new MarginData(6));
 
 
-    return container;
+    initElement(container);
   }
 
   @Override

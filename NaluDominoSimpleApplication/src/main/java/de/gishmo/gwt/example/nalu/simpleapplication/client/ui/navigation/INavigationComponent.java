@@ -21,12 +21,12 @@ import com.github.mvp4g.nalu.client.component.IsComponent;
 import elemental2.dom.HTMLElement;
 
 public interface INavigationComponent
-    extends IsComponent<INavigationComponent.Controller, HTMLElement> {
+  extends IsComponent<INavigationComponent.Controller, HTMLElement> {
 
   void select(String toString);
 
   interface Controller
-      extends IsComponent.Controller {
+    extends IsComponent.Controller {
 
     void doShowSearch();
 

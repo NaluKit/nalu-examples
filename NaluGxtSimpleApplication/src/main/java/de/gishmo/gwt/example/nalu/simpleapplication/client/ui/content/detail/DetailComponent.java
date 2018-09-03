@@ -48,7 +48,7 @@ public class DetailComponent
   }
 
   @Override
-  public Widget render() {
+  public void render() {
     ContentPanel container = new ContentPanel();
     container.setHeaderVisible(false);
     container.setBodyStyle("padding: 12px;");
@@ -88,7 +88,7 @@ public class DetailComponent
             new VerticalLayoutContainer.VerticalLayoutData(1,
                                                            1));
 
-    return container;
+    initElement(container);
   }
 
   @Override

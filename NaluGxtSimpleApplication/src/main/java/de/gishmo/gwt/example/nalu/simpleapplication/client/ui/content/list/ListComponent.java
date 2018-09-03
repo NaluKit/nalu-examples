@@ -47,7 +47,7 @@ public class ListComponent
   }
 
   @Override
-  public Widget render() {
+  public void render() {
     SimpleContainer container = new SimpleContainer();
 
     this.createStore();
@@ -55,7 +55,7 @@ public class ListComponent
 
     container.add(this.grid);
 
-    return container;
+    initElement(container);
   }
 
   private void createStore() {

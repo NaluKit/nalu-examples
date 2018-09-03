@@ -33,16 +33,16 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplication
  * severeal areas.
  */
 public class Shell
-    extends AbstractShell<NaluSimpleApplicationContext> {
+  extends AbstractShell<NaluSimpleApplicationContext> {
 
-  private Viewport              viewport;
-  private BorderLayoutContainer shell;
   @Selector("north")
   protected ContentPanel          northContainer;
   @Selector("south")
   protected ContentPanel          southContainer;
   @Selector("content")
   protected SimpleContainer       centerContainer;
+  private   Viewport              viewport;
+  private   BorderLayoutContainer shell;
 
   public Shell() {
     super();

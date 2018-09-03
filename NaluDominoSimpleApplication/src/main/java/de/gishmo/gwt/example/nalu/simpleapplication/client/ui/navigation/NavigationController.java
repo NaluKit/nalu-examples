@@ -24,12 +24,12 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.event.SelectEvent;
 import elemental2.dom.HTMLElement;
 
 @Controller(route = "/",
-            selector = "navigation",
-            componentInterface = INavigationComponent.class,
-            component = NavigationComponent.class)
+  selector = "navigation",
+  componentInterface = INavigationComponent.class,
+  component = NavigationComponent.class)
 public class NavigationController
-    extends AbstractComponentController<NaluSimpleApplicationContext, INavigationComponent, HTMLElement>
-    implements INavigationComponent.Controller {
+  extends AbstractComponentController<NaluSimpleApplicationContext, INavigationComponent, HTMLElement>
+  implements INavigationComponent.Controller {
 
   public NavigationController() {
   }
@@ -37,7 +37,8 @@ public class NavigationController
   @Override
   public void start() {
     this.eventBus.addHandler(SelectEvent.TYPE,
-                             e -> component.select(e.getSelect().toString()));
+                             e -> component.select(e.getSelect()
+                                                    .toString()));
   }
 
   @Override

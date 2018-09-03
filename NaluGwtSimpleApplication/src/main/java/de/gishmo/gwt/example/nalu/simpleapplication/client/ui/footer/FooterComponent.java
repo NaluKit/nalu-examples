@@ -31,16 +31,16 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.resources.Application
  * severeal areas.
  */
 public class FooterComponent
-    extends AbstractComponent<IFooterComponent.Controller, Widget>
-    implements IFooterComponent {
+  extends AbstractComponent<IFooterComponent.Controller, Widget>
+  implements IFooterComponent {
 
-  private Label          status;
+  private Label status;
 
   public FooterComponent() {
   }
 
   @Override
-  public Widget render() {
+  public void render() {
     ApplicationCss style = ApplicationStyleFactory.get()
                                                   .getStyle();
     ResizeLayoutPanel footerPanel = new ResizeLayoutPanel();
@@ -65,7 +65,7 @@ public class FooterComponent
     status.addStyleName(style.footerStatus());
     right.add(status);
 
-    return footerPanel;
+    initElement(footerPanel);
   }
 
   @Override

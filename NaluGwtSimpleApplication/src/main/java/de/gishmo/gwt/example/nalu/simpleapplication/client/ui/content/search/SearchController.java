@@ -22,15 +22,14 @@ import com.github.mvp4g.nalu.client.component.annotation.Controller;
 import com.google.gwt.user.client.ui.Widget;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.event.StatusChangeEvent;
-import elemental2.dom.HTMLElement;
 
 @Controller(route = "/search/:searchName/:searchCity",
-            selector = "content",
-            component = SearchComponent.class,
-            componentInterface = ISearchComponent.class)
+  selector = "content",
+  component = SearchComponent.class,
+  componentInterface = ISearchComponent.class)
 public class SearchController
-    extends AbstractComponentController<NaluSimpleApplicationContext, ISearchComponent, Widget>
-    implements ISearchComponent.Controller {
+  extends AbstractComponentController<NaluSimpleApplicationContext, ISearchComponent, Widget>
+  implements ISearchComponent.Controller {
 
   public SearchController() {
   }

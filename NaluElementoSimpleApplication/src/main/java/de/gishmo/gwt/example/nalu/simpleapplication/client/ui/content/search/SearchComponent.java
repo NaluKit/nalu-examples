@@ -26,8 +26,8 @@ import static org.jboss.gwt.elemento.core.Elements.div;
 import static org.jboss.gwt.elemento.core.EventType.click;
 
 public class SearchComponent
-    extends AbstractComponent<ISearchComponent.Controller, HTMLElement>
-    implements ISearchComponent {
+  extends AbstractComponent<ISearchComponent.Controller, HTMLElement>
+  implements ISearchComponent {
 
   private TextField searchName;
 
@@ -37,27 +37,27 @@ public class SearchComponent
   }
 
   @Override
-  public HTMLElement render() {
-    return div().add(div().style("width: 100%;")
-                          .add(div().css("headline")
-                                    .textContent("Search Parameter (search for: 'S' or 'D')"))
-                          .add(searchName = new TextField("Name"))
-                          .add(searchCity = new TextField("City"))
-                          .add(div().css("buttonBar")
-                                    .add(button().css("button")
-                                                 .textContent("Search")
-                                                 .on(click,
-                                                     event -> getController().doClickSearchButton(searchName.getText(),
-                                                                                                  searchCity.getText())))
-                                    .add(button().css("button")
-                                                 .textContent("Reset")
-                                                 .on(click,
-                                                     event -> {
-                                                       searchName.setText("");
-                                                       searchCity.setText("");
-                                                     }))
-                                    .asElement()))
-                .asElement();
+  public void render() {
+    initElement(div().add(div().style("width: 100%;")
+                               .add(div().css("headline")
+                                         .textContent("Search Parameter (search for: 'S' or 'D')"))
+                               .add(searchName = new TextField("Name"))
+                               .add(searchCity = new TextField("City"))
+                               .add(div().css("buttonBar")
+                                         .add(button().css("button")
+                                                      .textContent("Search")
+                                                      .on(click,
+                                                          event -> getController().doClickSearchButton(searchName.getText(),
+                                                                                                       searchCity.getText())))
+                                         .add(button().css("button")
+                                                      .textContent("Reset")
+                                                      .on(click,
+                                                          event -> {
+                                                            searchName.setText("");
+                                                            searchCity.setText("");
+                                                          }))
+                                         .asElement()))
+                     .asElement());
   }
 
   @Override

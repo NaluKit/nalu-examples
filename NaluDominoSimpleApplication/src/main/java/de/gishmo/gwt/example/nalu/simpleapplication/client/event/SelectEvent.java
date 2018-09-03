@@ -3,7 +3,7 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client.event;
 import org.gwtproject.event.shared.Event;
 
 public class SelectEvent
-    extends Event<SelectEvent.StatusChangeHandler> {
+  extends Event<SelectEvent.StatusChangeHandler> {
 
   public static Type<SelectEvent.StatusChangeHandler> TYPE = new Type<SelectEvent.StatusChangeHandler>();
 
@@ -29,15 +29,15 @@ public class SelectEvent
     handler.onStatusChange(this);
   }
 
-  public interface StatusChangeHandler {
-
-    void onStatusChange(SelectEvent event);
-
-  }
-
   public enum Select {
     SEARCH,
     LIST,
     DETAIL
+  }
+
+  public interface StatusChangeHandler {
+
+    void onStatusChange(SelectEvent event);
+
   }
 }

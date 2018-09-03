@@ -5,11 +5,10 @@ import com.github.mvp4g.nalu.client.handler.annotation.Handler;
 import com.google.gwt.user.client.Window;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.event.StatusChangeEvent;
-import elemental2.dom.DomGlobal;
 
 @Handler
 public class SimpleApplicationHandler01
-    extends AbstractHandler<NaluSimpleApplicationContext> {
+  extends AbstractHandler<NaluSimpleApplicationContext> {
 
   public SimpleApplicationHandler01() {
   }

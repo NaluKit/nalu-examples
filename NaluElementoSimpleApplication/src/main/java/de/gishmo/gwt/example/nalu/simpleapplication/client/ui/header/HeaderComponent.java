@@ -24,16 +24,16 @@ import static org.jboss.gwt.elemento.core.Elements.header;
 import static org.jboss.gwt.elemento.core.Elements.img;
 
 public class HeaderComponent
-    extends AbstractComponent<IHeaderComponent.Controller, HTMLElement>
-    implements IHeaderComponent {
+  extends AbstractComponent<IHeaderComponent.Controller, HTMLElement>
+  implements IHeaderComponent {
 
   public HeaderComponent() {
   }
 
   @Override
-  public HTMLElement render() {
-    return header().css("shellHeader")
-                   .add(img("media/images/Gwt-logo.png").css("shellHeaderImage"))
-                   .asElement();
+  public void render() {
+    initElement(header().css("shellHeader")
+                        .add(img("media/images/Gwt-logo.png").css("shellHeaderImage"))
+                        .asElement());
   }
 }

@@ -18,24 +18,16 @@
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.content.detail;
 
 import com.github.mvp4g.nalu.client.component.AbstractComponent;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.*;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Person;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.resources.ApplicationConstants;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.resources.ApplicationCss;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.resources.ApplicationStyleFactory;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.widgets.TextField;
-import elemental2.dom.HTMLButtonElement;
-import elemental2.dom.HTMLElement;
-
-import static org.jboss.gwt.elemento.core.Elements.button;
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.EventType.click;
 
 public class DetailComponent
-    extends AbstractComponent<IDetailComponent.Controller, Widget>
-    implements IDetailComponent {
+  extends AbstractComponent<IDetailComponent.Controller, Widget>
+  implements IDetailComponent {
 
   private TextField detailFirstName;
   private TextField detailName;
@@ -52,7 +44,7 @@ public class DetailComponent
   }
 
   @Override
-  public Widget render() {
+  public void render() {
     ApplicationCss style = ApplicationStyleFactory.get()
                                                   .getStyle();
 
@@ -93,7 +85,7 @@ public class DetailComponent
     revertButton.addStyleName(style.button());
     buttonBar.add(revertButton);
 
-    return panel;
+    initElement(panel);
   }
 
   public void bind() {
@@ -122,22 +114,27 @@ public class DetailComponent
   public boolean isDirty() {
     boolean notDirty = (getController().getPerson()
                                        .getFirstName()
-                                       .equals(detailFirstName.getText())) &&
-        (getController().getPerson()
-                        .getName()
-                        .equals(detailName.getText())) &&
-        (getController().getPerson()
-                        .getAddress()
-                        .getStreet()
-                        .equals(detailStreet.getText())) &&
-        (getController().getPerson()
-                        .getAddress()
-                        .getZip()
-                        .equals(detailZip.getText())) &&
-        (getController().getPerson()
-                        .getAddress()
-                        .getCity()
-                        .equals(detailCity.getText()));
+                                       .equals(detailFirstName.getText())
+                       ) &&
+                       (getController().getPerson()
+                                       .getName()
+                                       .equals(detailName.getText())
+                       ) &&
+                       (getController().getPerson()
+                                       .getAddress()
+                                       .getStreet()
+                                       .equals(detailStreet.getText())
+                       ) &&
+                       (getController().getPerson()
+                                       .getAddress()
+                                       .getZip()
+                                       .equals(detailZip.getText())
+                       ) &&
+                       (getController().getPerson()
+                                       .getAddress()
+                                       .getCity()
+                                       .equals(detailCity.getText())
+                       );
     return !notDirty;
   }
 

@@ -34,12 +34,12 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.shell.Shell;
  * framework). You can use any technique to call the server!</p>
  */
 @Application(shell = Shell.class,
-             loader = NaluSimpleApplicationLoader.class,
-             startRoute = "/search",
-             context = NaluSimpleApplicationContext.class)
+  loader = NaluSimpleApplicationLoader.class,
+  startRoute = "/search",
+  context = NaluSimpleApplicationContext.class)
 @Filters(filterClasses = BartSimpsonFilter.class)
 @Debug(logLevel = Debug.LogLevel.DETAILED,
-       logger = DefaultGWTLogger.class)
+  logger = DefaultGWTLogger.class)
 interface NaluSimpleApplication
-    extends IsApplication {
+  extends IsApplication {
 }

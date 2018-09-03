@@ -26,8 +26,8 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.resources.Application
 import de.gishmo.gwt.example.nalu.simpleapplication.client.resources.ApplicationStyleFactory;
 
 public class NavigationComponent
-    extends AbstractComponent<INavigationComponent.Controller, Widget>
-    implements INavigationComponent {
+  extends AbstractComponent<INavigationComponent.Controller, Widget>
+  implements INavigationComponent {
 
   private Button searchButton;
 
@@ -37,7 +37,7 @@ public class NavigationComponent
   }
 
   @Override
-  public Widget render() {
+  public void render() {
     ApplicationCss style = ApplicationStyleFactory.get()
                                                   .getStyle();
     FlowPanel panel = new FlowPanel();
@@ -50,11 +50,11 @@ public class NavigationComponent
     listButton.addStyleName(style.navigationButton());
     panel.add(listButton);
 
-    return panel;
+    initElement(panel);
   }
 
   @Override
-  protected void bind() {
+  public void bind() {
     searchButton.addClickHandler(event -> getController().doShowSearch());
     listButton.addClickHandler(event -> getController().doShowList());
   }

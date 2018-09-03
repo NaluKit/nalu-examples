@@ -29,12 +29,12 @@ import org.gwtproject.event.shared.HandlerRegistration;
  * severeal areas.
  */
 @Controller(route = "/",
-            selector = "footer",
-            componentInterface = IFooterComponent.class,
-            component = FooterComponent.class)
+  selector = "footer",
+  componentInterface = IFooterComponent.class,
+  component = FooterComponent.class)
 public class FooterController
-    extends AbstractComponentController<NaluSimpleApplicationContext, IFooterComponent, HTMLElement>
-    implements IFooterComponent.Controller {
+  extends AbstractComponentController<NaluSimpleApplicationContext, IFooterComponent, HTMLElement>
+  implements IFooterComponent.Controller {
 
   private HandlerRegistration registration;
 

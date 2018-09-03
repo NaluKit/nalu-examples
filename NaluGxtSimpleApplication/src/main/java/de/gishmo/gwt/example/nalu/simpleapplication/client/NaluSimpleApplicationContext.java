@@ -24,7 +24,7 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.data.service.FakedMai
  * A application context of the Mvp4g2MailApplication
  */
 public class NaluSimpleApplicationContext
-    implements IsContext {
+  implements IsContext {
 
   private String version;
 

@@ -25,12 +25,12 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.event.StatusChangeEve
 import elemental2.dom.HTMLElement;
 
 @Controller(route = "/search/:searchName/:searchCity",
-            selector = "content",
-            component = SearchComponent.class,
-            componentInterface = ISearchComponent.class)
+  selector = "content",
+  component = SearchComponent.class,
+  componentInterface = ISearchComponent.class)
 public class SearchController
-    extends AbstractComponentController<NaluSimpleApplicationContext, ISearchComponent, HTMLElement>
-    implements ISearchComponent.Controller {
+  extends AbstractComponentController<NaluSimpleApplicationContext, ISearchComponent, HTMLElement>
+  implements ISearchComponent.Controller {
 
   public SearchController() {
   }

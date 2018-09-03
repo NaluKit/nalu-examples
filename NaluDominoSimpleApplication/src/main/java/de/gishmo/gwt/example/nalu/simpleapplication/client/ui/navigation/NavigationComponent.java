@@ -34,7 +34,7 @@ public class NavigationComponent
   }
 
   @Override
-  public HTMLElement render() {
+  public void render() {
     this.searchItem = TreeItem.create("Search persons",
                                       Icons.ALL.search())
                               .addClickListener(e -> getController().doShowSearch());
@@ -42,10 +42,10 @@ public class NavigationComponent
     this.listItem = TreeItem.create("List persons",
                                     Icons.ALL.list())
                             .addClickListener(e -> getController().doShowList());
-    return Tree.create("Navigation")
-               .addTreeItem(this.searchItem)
-               .addTreeItem(this.listItem)
-               .asElement();
+    initElement(Tree.create("Navigation")
+                    .addTreeItem(this.searchItem)
+                    .addTreeItem(this.listItem)
+                    .asElement());
   }
 
   @Override

@@ -25,8 +25,8 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.resources.Application
 import de.gishmo.gwt.example.nalu.simpleapplication.client.widgets.TextField;
 
 public class SearchComponent
-    extends AbstractComponent<ISearchComponent.Controller, Widget>
-    implements ISearchComponent {
+  extends AbstractComponent<ISearchComponent.Controller, Widget>
+  implements ISearchComponent {
 
   private TextField searchName;
 
@@ -40,13 +40,7 @@ public class SearchComponent
   }
 
   @Override
-  public void onAttach() {
-    searchName.forceLayout();
-    searchCity.forceLayout();
-  }
-
-  @Override
-  public Widget render() {
+  public void render() {
     ApplicationCss style = ApplicationStyleFactory.get()
                                                   .getStyle();
     ScrollPanel panel = new ScrollPanel();
@@ -77,17 +71,7 @@ public class SearchComponent
     resetButton.addStyleName(style.button());
     buttonBar.add(resetButton);
 
-    return panel;
-  }
-
-  @Override
-  public void setSearchName(String searchName) {
-    this.searchName.setText(searchName);
-  }
-
-  @Override
-  public void setSearchCity(String searchCity) {
-    this.searchCity.setText(searchCity);
+    initElement(panel);
   }
 
   @Override
@@ -99,5 +83,21 @@ public class SearchComponent
       searchName.setText("");
       searchCity.setText("");
     });
+  }
+
+  @Override
+  public void onAttach() {
+    searchName.forceLayout();
+    searchCity.forceLayout();
+  }
+
+  @Override
+  public void setSearchName(String searchName) {
+    this.searchName.setText(searchName);
+  }
+
+  @Override
+  public void setSearchCity(String searchCity) {
+    this.searchCity.setText(searchCity);
   }
 }

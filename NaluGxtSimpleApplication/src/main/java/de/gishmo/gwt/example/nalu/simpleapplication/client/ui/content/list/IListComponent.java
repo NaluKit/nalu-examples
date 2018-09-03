@@ -24,7 +24,7 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Mail;
 import java.util.List;
 
 public interface IListComponent
-    extends IsComponent<IListComponent.Controller, Widget> {
+  extends IsComponent<IListComponent.Controller, Widget> {
 
   void edit(List<Mail> listOfEmails);
 

@@ -25,25 +25,25 @@ import static org.jboss.gwt.elemento.core.Elements.div;
 import static org.jboss.gwt.elemento.core.EventType.click;
 
 public class NavigationComponent
-    extends AbstractComponent<INavigationComponent.Controller, HTMLElement>
-    implements INavigationComponent {
+  extends AbstractComponent<INavigationComponent.Controller, HTMLElement>
+  implements INavigationComponent {
 
   public NavigationComponent() {
   }
 
   @Override
-  public HTMLElement render() {
-    return div().add(button().css("navigationButton")
-                             .textContent("Search")
-                             .on(click,
-                                 event -> showSearch())
-                             .asElement())
-                .add(button().css("navigationButton")
-                             .textContent("List")
-                             .on(click,
-                                 event -> showList())
-                             .asElement())
-                .asElement();
+  public void render() {
+    initElement(div().add(button().css("navigationButton")
+                                  .textContent("Search")
+                                  .on(click,
+                                      event -> showSearch())
+                                  .asElement())
+                     .add(button().css("navigationButton")
+                                  .textContent("List")
+                                  .on(click,
+                                      event -> showList())
+                                  .asElement())
+                     .asElement());
   }
 
   private void showSearch() {

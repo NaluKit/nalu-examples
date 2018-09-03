@@ -20,10 +20,9 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.content.detail;
 import com.github.mvp4g.nalu.client.component.IsComponent;
 import com.google.gwt.user.client.ui.Widget;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Person;
-import elemental2.dom.HTMLElement;
 
 public interface IDetailComponent
-    extends IsComponent<IDetailComponent.Controller, Widget> {
+  extends IsComponent<IDetailComponent.Controller, Widget> {
 
   void edit(Person result);
 
@@ -32,7 +31,7 @@ public interface IDetailComponent
   Person flush(Person person);
 
   interface Controller
-      extends IsComponent.Controller {
+    extends IsComponent.Controller {
 
     Person getPerson();
 

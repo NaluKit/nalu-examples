@@ -31,22 +31,18 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.resources.Application
  * severeal areas.
  */
 public class Shell
-    extends AbstractShell<NaluSimpleApplicationContext> {
-
-  private ResizeLayoutPanel shell;
-  private ApplicationCss style;
+  extends AbstractShell<NaluSimpleApplicationContext> {
 
   @Selector("header")
   SimpleLayoutPanel headerWidget;
-
   @Selector("footer")
   ResizeLayoutPanel footerWidget;
-
   @Selector("navigation")
   SimpleLayoutPanel navigationWidget;
-
   @Selector("content")
   SimpleLayoutPanel contentWidget;
+  private ResizeLayoutPanel shell;
+  private ApplicationCss    style;
 
   public Shell() {
     super();
@@ -56,7 +52,7 @@ public class Shell
    * The ShellPresenter has to implemented this method, because the framework
    * can not do this. (It does not know, what to use).
    * <p>
-   * We append the ShellView to the browser body.
+   * We append the shell to the browser body.
    */
   @Override
   public void attachShell() {
@@ -96,21 +92,6 @@ public class Shell
     return panel;
   }
 
-  private SimpleLayoutPanel createContent() {
-    SimpleLayoutPanel panel = new SimpleLayoutPanel();
-    panel.getElement()
-         .setId("content");
-    return panel;
-  }
-
-  private SimpleLayoutPanel createNavigation() {
-    SimpleLayoutPanel panel = new SimpleLayoutPanel();
-    panel.addStyleName(style.navigationPanel());
-    panel.getElement()
-         .setId("navigation");
-    return panel;
-  }
-
   private SimpleLayoutPanel createNorth() {
     SimpleLayoutPanel panel = new SimpleLayoutPanel();
     panel.addStyleName(style.headerPanel());
@@ -124,6 +105,21 @@ public class Shell
     footerPanel.getElement()
                .setId("footer");
     return footerPanel;
+  }
+
+  private SimpleLayoutPanel createNavigation() {
+    SimpleLayoutPanel panel = new SimpleLayoutPanel();
+    panel.addStyleName(style.navigationPanel());
+    panel.getElement()
+         .setId("navigation");
+    return panel;
+  }
+
+  private SimpleLayoutPanel createContent() {
+    SimpleLayoutPanel panel = new SimpleLayoutPanel();
+    panel.getElement()
+         .setId("content");
+    return panel;
   }
 
 //    private void forceLayout() {

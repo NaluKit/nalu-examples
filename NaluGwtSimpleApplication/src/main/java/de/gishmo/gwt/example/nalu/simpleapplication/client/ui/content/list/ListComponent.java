@@ -34,8 +34,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListComponent
-    extends AbstractComponent<IListComponent.Controller, Widget>
-    implements IListComponent {
+  extends AbstractComponent<IListComponent.Controller, Widget>
+  implements IListComponent {
 
   private CellTable<Person> resultTable;
 
@@ -43,7 +43,7 @@ public class ListComponent
   }
 
   @Override
-  public Widget render() {
+  public void render() {
     ApplicationCss style = ApplicationStyleFactory.get()
                                                   .getStyle();
     ScrollPanel panel = new ScrollPanel();
@@ -96,31 +96,7 @@ public class ListComponent
 
     resetTable();
 
-    return resultTable;
-  }
-
-  @Override
-  public void resetTable() {
-    // Row-Count zurück setzen
-    resultTable.setRowCount(0,
-                            true);
-    // Mit leerer Liste fuellen ... Brauch man das wirklich ... ?????
-    resultTable.setRowData(0,
-                           new ArrayList<>());
-  }
-
-  @Override
-  public void setData(List<Person> result) {
-    resultTable.setRowData(result);
-  }
-
-  /**
-   * Get a cell value from a record.
-   *
-   * @param <C> the cell generator
-   */
-  private interface GetValue<C> {
-    C getValue(Person person);
+    initElement(resultTable);
   }
 
   /**
@@ -145,5 +121,29 @@ public class ListComponent
     resultTable.addColumn(column,
                           headerText);
     return column;
+  }
+
+  @Override
+  public void resetTable() {
+    // Row-Count zurück setzen
+    resultTable.setRowCount(0,
+                            true);
+    // Mit leerer Liste fuellen ... Brauch man das wirklich ... ?????
+    resultTable.setRowData(0,
+                           new ArrayList<>());
+  }
+
+  @Override
+  public void setData(List<Person> result) {
+    resultTable.setRowData(result);
+  }
+
+  /**
+   * Get a cell value from a record.
+   *
+   * @param <C> the cell generator
+   */
+  private interface GetValue<C> {
+    C getValue(Person person);
   }
 }

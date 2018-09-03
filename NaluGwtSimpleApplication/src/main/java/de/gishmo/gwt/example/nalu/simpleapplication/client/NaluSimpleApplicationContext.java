@@ -23,7 +23,7 @@ import com.github.mvp4g.nalu.client.application.IsContext;
  * A application context of the Mvp4g2MailApplication
  */
 public class NaluSimpleApplicationContext
-    implements IsContext {
+  implements IsContext {
 
   private String version;
 
