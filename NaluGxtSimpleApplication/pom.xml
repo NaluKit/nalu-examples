@@ -34,7 +34,7 @@
     <gxt.version>4.0.0</gxt.version>
 
     <!-- nalu version -->
-    <nalu.version>0.7.0</nalu.version>
+    <nalu.version>1.0.0-SNAPSHOT</nalu.version>
 
     <elemento.version>0.8.0</elemento.version>
 

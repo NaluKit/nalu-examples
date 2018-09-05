@@ -43,12 +43,10 @@ public class FooterController
 
   @Override
   public void start() {
-    this.registration = this.eventBus.addHandler(StatusChangeEvent.TYPE,
-                                                 e -> component.setStatus(e.getStatus()));
-  }
-
-  @Override
-  public void stop() {
-    this.registration.removeHandler();
+    // add the handler registration to the HandlerRegistrations class of this controller
+    // Doing that will help that once the controller gets stops all handler registrations
+    // will be removed!
+    this.handlerRegistrations.add(this.eventBus.addHandler(StatusChangeEvent.TYPE,
+                                                           e -> component.setStatus(e.getStatus())));
   }
 }

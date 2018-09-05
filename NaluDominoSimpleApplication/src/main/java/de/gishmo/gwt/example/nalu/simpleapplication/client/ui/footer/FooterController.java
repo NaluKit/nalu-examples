@@ -22,7 +22,6 @@ import com.github.mvp4g.nalu.client.component.annotation.Controller;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import elemental2.dom.HTMLElement;
-import org.gwtproject.event.shared.HandlerRegistration;
 
 /**
  * this is the presenter of the shell. The shell divides the browser in
@@ -36,19 +35,15 @@ public class FooterController
   extends AbstractComponentController<NaluSimpleApplicationContext, IFooterComponent, HTMLElement>
   implements IFooterComponent.Controller {
 
-  private HandlerRegistration registration;
-
   public FooterController() {
   }
 
   @Override
   public void start() {
-    this.registration = this.eventBus.addHandler(StatusChangeEvent.TYPE,
-                                                 e -> component.setStatus(e.getStatus()));
-  }
-
-  @Override
-  public void stop() {
-    this.registration.removeHandler();
+    // add the handler registration to the HandlerRegistrations class of this controller
+    // Doing that will help that once the controller gets stops all handler registrations
+    // will be removed!
+    this.handlerRegistrations.add(this.eventBus.addHandler(StatusChangeEvent.TYPE,
+                                                           e -> component.setStatus(e.getStatus())));
   }
 }
