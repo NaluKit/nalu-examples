@@ -24,7 +24,7 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.event.SelectEvent;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import elemental2.dom.HTMLElement;
 
-@Controller(route = "/search/:searchName/:searchCity",
+@Controller(route = "/person/search/:searchName/:searchCity",
   selector = "content",
   component = SearchComponent.class,
   componentInterface = ISearchComponent.class)
@@ -47,7 +47,7 @@ public class SearchController
                                   String searchCity) {
     this.context.setSearchCity(searchCity);
     this.context.setSearchName(searchName);
-    this.router.route("/list",
+    this.router.route("/person/list",
                       searchName,
                       searchCity);
   }

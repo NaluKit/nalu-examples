@@ -35,7 +35,7 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.ui.shell.Shell;
  */
 @Application(shell = Shell.class,
   loader = NaluSimpleApplicationLoader.class,
-  startRoute = "/search",
+  startRoute = "/person/search",
   context = NaluSimpleApplicationContext.class)
 @Filters(filterClasses = BartSimpsonFilter.class)
 @Debug(logLevel = Debug.LogLevel.SIMPLE,
