@@ -30,7 +30,7 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.event.StatusChangeEve
 import elemental2.dom.DomGlobal;
 import elemental2.dom.HTMLElement;
 
-@Controller(route = "/detail/:id",
+@Controller(route = "/person/detail/:id",
   selector = "content",
   componentInterface = IDetailComponent.class,
   component = DetailComponent.class)
@@ -53,7 +53,7 @@ public class DetailController
   @Override
   public void start() {
     if (this.id == 0) {
-      this.router.route("/search");
+      this.router.route("/person/search");
     }
     try {
       this.person = PersonService.get()
@@ -80,7 +80,7 @@ public class DetailController
       DomGlobal.window.alert("id is not valid ->  moving to search");
       throw new RoutingInterceptionException(this.getClass()
                                                  .getCanonicalName(),
-                                             "/search",
+                                             "/person/search",
                                              this.context.getSearchName(),
                                              this.context.getSearchCity());
     }
@@ -93,7 +93,7 @@ public class DetailController
 
   @Override
   public void doRevert() {
-    this.router.route("/list",
+    this.router.route("/person/list",
                       this.context.getSearchName(),
                       this.context.getSearchCity());
   }
@@ -104,9 +104,9 @@ public class DetailController
       PersonService.get()
                    .update(this.component.flush(this.person));
       if (this.context.getSearchName() == null && this.context.getSearchCity() == null) {
-        this.router.route("/search");
+        this.router.route("/person/search");
       } else {
-        this.router.route("/list",
+        this.router.route("/person/list",
                           this.context.getSearchName(),
                           this.context.getSearchCity());
       }
