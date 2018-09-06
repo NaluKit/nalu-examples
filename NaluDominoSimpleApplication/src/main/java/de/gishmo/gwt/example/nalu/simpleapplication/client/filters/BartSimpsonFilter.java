@@ -10,7 +10,7 @@ public class BartSimpsonFilter
   @Override
   public boolean filter(String route,
                         String... parms) {
-    if ("/detail".equals(route)) {
+    if ("/person/detail".equals(route)) {
       if ("3".equals(parms[0])) {
         DomGlobal.window.alert("Bart Simpsons is not selecteable -> redirecting to search!");
 
@@ -22,7 +22,7 @@ public class BartSimpsonFilter
 
   @Override
   public String redirectTo() {
-    return "/search";
+    return "/person/search";
   }
 
   @Override
