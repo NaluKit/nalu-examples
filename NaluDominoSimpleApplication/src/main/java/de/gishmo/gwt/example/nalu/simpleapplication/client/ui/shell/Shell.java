@@ -51,7 +51,7 @@ public class Shell
 
     layout.getFooter()
           .asElement().id = "footer";
-    layout.getLeftPanel().id = "navigation";
-    layout.getContentPanel().id = "content";
+    layout.getLeftPanel().setId("navigation");
+    layout.getContentPanel().setId("content");
   }
 }
