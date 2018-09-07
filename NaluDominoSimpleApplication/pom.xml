@@ -224,6 +224,9 @@
             <arg>8888</arg>
             <arg>-codeServerPort</arg>
             <arg>9876</arg>
+            <arg>-bindAddress</arg>
+            <arg>0.0.0.0</arg>
+            <arg></arg>
           </devmodeArgs>
           <startupUrls>
             <startupUrl>index.html</startupUrl>

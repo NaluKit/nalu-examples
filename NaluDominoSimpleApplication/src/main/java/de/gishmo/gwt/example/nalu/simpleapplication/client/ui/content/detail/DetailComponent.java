@@ -28,116 +28,117 @@ import org.dominokit.domino.ui.forms.TextBox;
 import org.dominokit.domino.ui.row.Row;
 
 public class DetailComponent
-  extends AbstractComponent<IDetailComponent.Controller, HTMLElement>
-  implements IDetailComponent {
+        extends AbstractComponent<IDetailComponent.Controller, HTMLElement>
+        implements IDetailComponent {
 
-  private TextBox detailFirstName;
+    private TextBox detailFirstName;
 
-  private TextBox detailName;
+    private TextBox detailName;
 
-  private TextBox detailStreet;
+    private TextBox detailStreet;
 
-  private TextBox detailZip;
+    private TextBox detailZip;
 
-  private TextBox detailCity;
+    private TextBox detailCity;
 
-  private HTMLButtonElement saveButton;
+    private HTMLButtonElement saveButton;
 
-  private HTMLButtonElement revertButton;
+    private HTMLButtonElement revertButton;
 
-  public DetailComponent() {
-  }
-
-  @Override
-  public void render() {
-    this.detailFirstName = TextBox.create("First name");
-    this.detailName = TextBox.create("Name");
-    this.detailStreet = TextBox.create("Name");
-    this.detailZip = TextBox.create("Name");
-    this.detailCity = TextBox.create("Name");
-
-
-    initElement(Card.create("Details")
-                    .appendContent(Row.create()
-                                      .addColumn(Column.create(12)
-                                                       .addElement(this.detailFirstName)))
-                    .appendContent(Row.create()
-                                      .addColumn(Column.create(12)
-                                                       .addElement(this.detailName)))
-                    .appendContent(Row.create()
-                                      .addColumn(Column.create(12)
-                                                       .addElement(this.detailStreet)))
-                    .appendContent(Row.create()
-                                      .addColumn(Column.create(12)
-                                                       .addElement(this.detailZip)))
-                    .appendContent(Row.create()
-                                      .addColumn(Column.create(12)
-                                                       .addElement(this.detailCity)))
-                    .appendContent(Row.create()
-                                      .addColumn(Column.create(12)
-                                                       .addElement(Button.createPrimary("Save")
-                                                                         .setStyleProperty("margin-right",
-                                                                                           "20px")
-                                                                         .addClickListener(e -> getController().doUpdate()))
-                                                       .addElement(Button.create("Reset")
-                                                                         .addClickListener(e -> getController().doRevert())))
-                                      .style()
-                                      .setTextAlign("right"))
-                    .asElement());
-  }
-
-  @Override
-  public void edit(Person result) {
-    if (result != null) {
-      detailFirstName.setValue(result.getFirstName());
-      detailName.setValue(result.getName());
-      detailStreet.setValue(result.getAddress()
-                                  .getStreet());
-      detailZip.setValue(result.getAddress()
-                               .getZip());
-      detailCity.setValue(result.getAddress()
-                                .getCity());
+    public DetailComponent() {
     }
-  }
 
-  @Override
-  public boolean isDirty() {
-    boolean notDirty = (getController().getPerson()
-                                       .getFirstName()
-                                       .equals(detailFirstName.getValue())
-                       ) &&
-                       (getController().getPerson()
-                                       .getName()
-                                       .equals(detailName.getValue())
-                       ) &&
-                       (getController().getPerson()
-                                       .getAddress()
-                                       .getStreet()
-                                       .equals(detailStreet.getValue())
-                       ) &&
-                       (getController().getPerson()
-                                       .getAddress()
-                                       .getZip()
-                                       .equals(detailZip.getValue())
-                       ) &&
-                       (getController().getPerson()
-                                       .getAddress()
-                                       .getCity()
-                                       .equals(detailCity.getValue())
-                       );
-    return !notDirty;
-  }
+    @Override
+    public void render() {
+        this.detailFirstName = TextBox.create("First name");
+        this.detailName = TextBox.create("Name");
+        this.detailStreet = TextBox.create("Name");
+        this.detailZip = TextBox.create("Name");
+        this.detailCity = TextBox.create("Name");
 
-  @Override
-  public Person flush(Person person) {
-    person.setFirstName(detailFirstName.getValue());
-    person.setName(detailName.getValue());
-    person.getAddress()
-          .setStreet(detailStreet.getValue());
-    person.getAddress()
-          .setZip(detailZip.getValue());
-    person.getAddress()
-          .setCity(detailCity.getValue());
-    return person;
-  }
+
+        initElement(Card.create("Details")
+                .appendContent(Row.create()
+                        .addColumn(Column.create(12)
+                                .addElement(this.detailFirstName)))
+                .appendContent(Row.create()
+                        .addColumn(Column.create(12)
+                                .addElement(this.detailName)))
+                .appendContent(Row.create()
+                        .addColumn(Column.create(12)
+                                .addElement(this.detailStreet)))
+                .appendContent(Row.create()
+                        .addColumn(Column.create(12)
+                                .addElement(this.detailZip)))
+                .appendContent(Row.create()
+                        .addColumn(Column.create(12)
+                                .addElement(this.detailCity)))
+                .appendContent(Row.create()
+                        .addColumn(Column.create(12)
+                                .addElement(Button.createPrimary("Save")
+                                        .style()
+                                        .setMarginRight("20px")
+                                        .get()
+                                        .addClickListener(e -> getController().doUpdate()))
+                                .addElement(Button.create("Reset")
+                                        .addClickListener(e -> getController().doRevert())))
+                        .style()
+                        .setTextAlign("right"))
+                .asElement());
+    }
+
+    @Override
+    public void edit(Person result) {
+        if (result != null) {
+            detailFirstName.setValue(result.getFirstName());
+            detailName.setValue(result.getName());
+            detailStreet.setValue(result.getAddress()
+                    .getStreet());
+            detailZip.setValue(result.getAddress()
+                    .getZip());
+            detailCity.setValue(result.getAddress()
+                    .getCity());
+        }
+    }
+
+    @Override
+    public boolean isDirty() {
+        boolean notDirty = (getController().getPerson()
+                .getFirstName()
+                .equals(detailFirstName.getValue())
+        ) &&
+                (getController().getPerson()
+                        .getName()
+                        .equals(detailName.getValue())
+                ) &&
+                (getController().getPerson()
+                        .getAddress()
+                        .getStreet()
+                        .equals(detailStreet.getValue())
+                ) &&
+                (getController().getPerson()
+                        .getAddress()
+                        .getZip()
+                        .equals(detailZip.getValue())
+                ) &&
+                (getController().getPerson()
+                        .getAddress()
+                        .getCity()
+                        .equals(detailCity.getValue())
+                );
+        return !notDirty;
+    }
+
+    @Override
+    public Person flush(Person person) {
+        person.setFirstName(detailFirstName.getValue());
+        person.setName(detailName.getValue());
+        person.getAddress()
+                .setStreet(detailStreet.getValue());
+        person.getAddress()
+                .setZip(detailZip.getValue());
+        person.getAddress()
+                .setCity(detailCity.getValue());
+        return person;
+    }
 }
