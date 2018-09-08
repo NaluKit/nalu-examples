@@ -20,10 +20,13 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.content.search;
 import com.github.mvp4g.nalu.client.component.AbstractComponent;
 import elemental2.dom.HTMLElement;
 import org.dominokit.domino.ui.button.Button;
+import org.dominokit.domino.ui.button.ButtonSize;
 import org.dominokit.domino.ui.cards.Card;
-import org.dominokit.domino.ui.column.Column;
+import org.dominokit.domino.ui.forms.FieldsGrouping;
 import org.dominokit.domino.ui.forms.TextBox;
-import org.dominokit.domino.ui.row.Row;
+import org.dominokit.domino.ui.grid.Column;
+import org.dominokit.domino.ui.grid.Row;
+import org.dominokit.domino.ui.icons.Icons;
 
 public class SearchComponent
         extends AbstractComponent<ISearchComponent.Controller, HTMLElement>
@@ -33,34 +36,48 @@ public class SearchComponent
 
     private TextBox searchCity;
 
+    private FieldsGrouping fieldsGrouping = FieldsGrouping.create();
+
     public SearchComponent() {
     }
 
     @Override
     public void render() {
-        this.searchName = TextBox.create("Name");
-        this.searchCity = TextBox.create("City");
+        this.searchName = TextBox.create("Name")
+                .groupBy(fieldsGrouping)
+                .setHelperText("search for: 'S' or 'D'")
+                .setLeftAddon(Icons.ALL.label());
 
-        initElement(Card.create("Search Parameter (search for: 'S' or 'D')")
-                .appendContent(Row.create()
-                        .addColumn(Column.create(12)
-                                .addElement(this.searchName)))
-                .appendContent(Row.create()
-                        .addColumn(Column.create(12)
-                                .addElement(this.searchCity)))
-                .appendContent(Row.create()
-                        .addColumn(Column.create(12)
-                                .addElement(Button.createPrimary("Search")
+        this.searchCity = TextBox.create("City")
+                .groupBy(fieldsGrouping)
+                .setLeftAddon(Icons.ALL.location_on());
+
+        initElement(Card.create("Search Parameter")
+                .appendChild(Row.create()
+                        .addColumn(Column.span12()
+                                .appendChild(this.searchName)))
+                .appendChild(Row.create()
+                        .addColumn(Column.span12()
+                                .appendChild(this.searchCity)))
+                .appendChild(Row.create()
+                        .setGap("10px")
+                        .addColumn(Column.span12()
+                                .appendChild(Button.create("Reset")
+                                        .linkify()
                                         .style()
-                                        .setMarginRight("20px")
+                                        .setMinWidth("120px")
+                                        .get()
+                                        .addClickListener(e -> {
+                                            fieldsGrouping.clear();
+                                        }))
+                                .appendChild(Button.createPrimary("Search")
+                                        .setSize(ButtonSize.LARGE)
+                                        .style()
+                                        .setMinWidth("120px")
                                         .get()
                                         .addClickListener(e -> getController().doClickSearchButton(this.searchName.getValue(),
                                                 this.searchCity.getValue())))
-                                .addElement(Button.create("Reset")
-                                        .addClickListener(e -> {
-                                            searchName.setValue("");
-                                            searchCity.setValue("");
-                                        })))
+                        )
                         .style()
                         .setTextAlign("right"))
                 .asElement());

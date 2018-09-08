@@ -19,13 +19,12 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.content.detail;
 
 import com.github.mvp4g.nalu.client.component.AbstractComponent;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Person;
-import elemental2.dom.HTMLButtonElement;
 import elemental2.dom.HTMLElement;
 import org.dominokit.domino.ui.button.Button;
 import org.dominokit.domino.ui.cards.Card;
-import org.dominokit.domino.ui.column.Column;
 import org.dominokit.domino.ui.forms.TextBox;
-import org.dominokit.domino.ui.row.Row;
+import org.dominokit.domino.ui.grid.Column;
+import org.dominokit.domino.ui.grid.Row;
 
 public class DetailComponent
         extends AbstractComponent<IDetailComponent.Controller, HTMLElement>
@@ -41,10 +40,6 @@ public class DetailComponent
 
     private TextBox detailCity;
 
-    private HTMLButtonElement saveButton;
-
-    private HTMLButtonElement revertButton;
-
     public DetailComponent() {
     }
 
@@ -58,29 +53,29 @@ public class DetailComponent
 
 
         initElement(Card.create("Details")
-                .appendContent(Row.create()
-                        .addColumn(Column.create(12)
-                                .addElement(this.detailFirstName)))
-                .appendContent(Row.create()
-                        .addColumn(Column.create(12)
-                                .addElement(this.detailName)))
-                .appendContent(Row.create()
-                        .addColumn(Column.create(12)
-                                .addElement(this.detailStreet)))
-                .appendContent(Row.create()
-                        .addColumn(Column.create(12)
-                                .addElement(this.detailZip)))
-                .appendContent(Row.create()
-                        .addColumn(Column.create(12)
-                                .addElement(this.detailCity)))
-                .appendContent(Row.create()
-                        .addColumn(Column.create(12)
-                                .addElement(Button.createPrimary("Save")
+                .appendChild(Row.create()
+                        .addColumn(Column.span12()
+                                .appendChild(this.detailFirstName)))
+                .appendChild(Row.create()
+                        .addColumn(Column.span12()
+                                .appendChild(this.detailName)))
+                .appendChild(Row.create()
+                        .addColumn(Column.span12()
+                                .appendChild(this.detailStreet)))
+                .appendChild(Row.create()
+                        .addColumn(Column.span12()
+                                .appendChild(this.detailZip)))
+                .appendChild(Row.create()
+                        .addColumn(Column.span12()
+                                .appendChild(this.detailCity)))
+                .appendChild(Row.create()
+                        .addColumn(Column.span12()
+                                .appendChild(Button.createPrimary("Save")
                                         .style()
                                         .setMarginRight("20px")
                                         .get()
                                         .addClickListener(e -> getController().doUpdate()))
-                                .addElement(Button.create("Reset")
+                                .appendChild(Button.create("Reset")
                                         .addClickListener(e -> getController().doRevert())))
                         .style()
                         .setTextAlign("right"))
@@ -92,35 +87,33 @@ public class DetailComponent
         if (result != null) {
             detailFirstName.setValue(result.getFirstName());
             detailName.setValue(result.getName());
-            detailStreet.setValue(result.getAddress()
-                    .getStreet());
-            detailZip.setValue(result.getAddress()
-                    .getZip());
-            detailCity.setValue(result.getAddress()
-                    .getCity());
+            detailStreet.setValue(result.getAddress().getStreet());
+            detailZip.setValue(result.getAddress().getZip());
+            detailCity.setValue(result.getAddress().getCity());
         }
     }
 
     @Override
     public boolean isDirty() {
-        boolean notDirty = (getController().getPerson()
-                .getFirstName()
-                .equals(detailFirstName.getValue())
-        ) &&
+        boolean notDirty = (
+                getController().getPerson()
+                        .getFirstName()
+                        .equals(detailFirstName.getValue())) &&
+
                 (getController().getPerson()
                         .getName()
-                        .equals(detailName.getValue())
-                ) &&
+                        .equals(detailName.getValue())) &&
+
                 (getController().getPerson()
                         .getAddress()
                         .getStreet()
-                        .equals(detailStreet.getValue())
-                ) &&
+                        .equals(detailStreet.getValue())) &&
+
                 (getController().getPerson()
                         .getAddress()
                         .getZip()
-                        .equals(detailZip.getValue())
-                ) &&
+                        .equals(detailZip.getValue())) &&
+
                 (getController().getPerson()
                         .getAddress()
                         .getCity()
@@ -133,12 +126,9 @@ public class DetailComponent
     public Person flush(Person person) {
         person.setFirstName(detailFirstName.getValue());
         person.setName(detailName.getValue());
-        person.getAddress()
-                .setStreet(detailStreet.getValue());
-        person.getAddress()
-                .setZip(detailZip.getValue());
-        person.getAddress()
-                .setCity(detailCity.getValue());
+        person.getAddress().setStreet(detailStreet.getValue());
+        person.getAddress().setZip(detailZip.getValue());
+        person.getAddress().setCity(detailCity.getValue());
         return person;
     }
 }

@@ -42,9 +42,10 @@ public class NavigationComponent
     this.listItem = TreeItem.create("List persons",
                                     Icons.ALL.list())
                             .addClickListener(e -> getController().doShowList());
+
     initElement(Tree.create("Navigation")
-                    .addTreeItem(this.searchItem)
-                    .addTreeItem(this.listItem)
+                    .appendChild(this.searchItem)
+                    .appendChild(this.listItem)
                     .asElement());
   }
 
