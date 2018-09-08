@@ -1,0 +1,13 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:gwt.material.design.client.ui" xmlns:m.table='urn:import:gwt.material.design.client.ui.table'>
+
+	<m:MaterialContainer>
+		<m.table:MaterialDataTable ui:field="last28SummaryTable" height="100%" selectionType="NONE" />
+		<m:MaterialFAB>
+			<m:MaterialButton ui:field="refresh" type="FLOATING" backgroundColor="RED" iconType="REFRESH" size="LARGE" waves="LIGHT" />
+		</m:MaterialFAB>
+	</m:MaterialContainer>
+
+
+</ui:UiBinder> 
