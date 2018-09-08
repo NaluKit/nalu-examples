@@ -96,4 +96,9 @@ public class Shell
     IsSelectorProvider<Shell> provider = new ShellSelectorProviderImpl();
     provider.initialize(this);
   }
+
+  @Override
+  public void onAttachedChild() {
+    this.shell.forceLayout();
+  }
 }
