@@ -21,10 +21,13 @@ import com.github.mvp4g.nalu.client.component.AbstractComponent;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Person;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.Text;
+import org.dominokit.domino.ui.cards.Card;
 import org.dominokit.domino.ui.datatable.ColumnConfig;
 import org.dominokit.domino.ui.datatable.DataTable;
 import org.dominokit.domino.ui.datatable.TableConfig;
 import org.dominokit.domino.ui.datatable.store.LocalListDataStore;
+import org.dominokit.domino.ui.grid.Column;
+import org.dominokit.domino.ui.grid.Row;
 import org.jboss.gwt.elemento.core.EventType;
 
 import java.util.ArrayList;
@@ -33,72 +36,71 @@ import java.util.List;
 import static org.jboss.gwt.elemento.core.Elements.a;
 
 public class ListComponent
-  extends AbstractComponent<IListComponent.Controller, HTMLElement>
-  implements IListComponent {
+        extends AbstractComponent<IListComponent.Controller, HTMLElement>
+        implements IListComponent {
 
-  private DataTable<Person>          table;
-  private LocalListDataStore<Person> store;
+    private DataTable<Person> table;
+    private LocalListDataStore<Person> store;
 
-  public ListComponent() {
-  }
+    public ListComponent() {
+    }
 
-  @Override
-  public void render() {
-    TableConfig<Person> tableConfig = new TableConfig<>();
-    tableConfig.addColumn(ColumnConfig.<Person>create("name",
-                                                      "Name")
-                            .setCellRenderer(cell -> a().textContent(cell.getTableRow()
-                                                                         .getRecord()
-                                                                         .getName() + ", " + cell.getTableRow()
-                                                                                                 .getRecord()
-                                                                                                 .getFirstName())
-                                                        .on(EventType.click,
-                                                            e -> getController().doUpdate(cell.getTableRow()
-                                                                                              .getRecord()))
-                                                        .asElement()))
-               .addColumn(ColumnConfig.<Person>create("street",
-                                                      "Street")
-                            .setCellRenderer(cell -> new Text(cell.getTableRow()
-                                                                  .getRecord()
-                                                                  .getAddress()
-                                                                  .getStreet())))
-               .addColumn(ColumnConfig.<Person>create("zip",
-                                                      "ZIP")
-                            .textAlign("right")
-                            .setCellRenderer(cell -> new Text(cell.getTableRow()
-                                                                  .getRecord()
-                                                                  .getAddress()
-                                                                  .getZip())))
-               .addColumn(ColumnConfig.<Person>create("street",
-                                                      "Street")
-                            .setCellRenderer(cell -> new Text(cell.getTableRow()
-                                                                  .getRecord()
-                                                                  .getAddress()
-                                                                  .getStreet())))
-               .addColumn(ColumnConfig.<Person>create("city",
-                                                      "City")
-                            .setCellRenderer(cell -> new Text(cell.getTableRow()
-                                                                  .getRecord()
-                                                                  .getAddress()
-                                                                  .getCity())));
+    @Override
+    public void render() {
+        TableConfig<Person> tableConfig = new TableConfig<>();
+        tableConfig.addColumn(ColumnConfig.<Person>create("name", "Name")
+                .setCellRenderer(cell -> a().textContent(cell.getTableRow()
+                        .getRecord()
+                        .getName() + ", " + cell.getTableRow()
+                        .getRecord()
+                        .getFirstName())
+                        .on(EventType.click,
+                                e -> getController().doUpdate(cell.getTableRow()
+                                        .getRecord()))
+                        .asElement()))
+                .addColumn(ColumnConfig.<Person>create("street", "Street")
+                        .setCellRenderer(cell -> new Text(cell.getTableRow()
+                                .getRecord()
+                                .getAddress()
+                                .getStreet())))
+                .addColumn(ColumnConfig.<Person>create("zip", "ZIP")
+                        .textAlign("right")
+                        .setCellRenderer(cell -> new Text(cell.getTableRow()
+                                .getRecord()
+                                .getAddress()
+                                .getZip())))
+                .addColumn(ColumnConfig.<Person>create("street", "Street")
+                        .setCellRenderer(cell -> new Text(cell.getTableRow()
+                                .getRecord()
+                                .getAddress()
+                                .getStreet())))
+                .addColumn(ColumnConfig.<Person>create("city", "City")
+                        .setCellRenderer(cell -> new Text(cell.getTableRow()
+                                .getRecord()
+                                .getAddress()
+                                .getCity())));
 
-    this.store = new LocalListDataStore<>();
+        this.store = new LocalListDataStore<>();
 
-    this.table = new DataTable<>(tableConfig,
-                                 store);
+        this.table = new DataTable<>(tableConfig, store);
 
-    initElement(this.table.asElement());
-  }
+        initElement(Card.create("SEARCH RESULTS")
+                .appendChild(Row.create()
+                        .appendChild(Column.span12()
+                                .appendChild(this.table)))
+                .asElement());
 
-  @Override
-  public void resetTable() {
-    this.store.setData(new ArrayList<>());
-  }
+    }
 
-  @Override
-  public void setData(List<Person> result) {
-    resetTable();
-    this.store.setData(result);
-    this.table.load();
-  }
+    @Override
+    public void resetTable() {
+        this.store.setData(new ArrayList<>());
+    }
+
+    @Override
+    public void setData(List<Person> result) {
+        resetTable();
+        this.store.setData(result);
+        this.table.load();
+    }
 }

@@ -19,8 +19,10 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.shell;
 
 import com.github.mvp4g.nalu.client.component.AbstractShell;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
-import elemental2.dom.CSSProperties;
+import org.dominokit.domino.ui.grid.Column;
+import org.dominokit.domino.ui.grid.Row;
 import org.dominokit.domino.ui.layout.Layout;
+import org.dominokit.domino.ui.mediaquery.MediaQuery;
 import org.dominokit.domino.ui.style.ColorScheme;
 
 /**
@@ -28,30 +30,37 @@ import org.dominokit.domino.ui.style.ColorScheme;
  * severeal areas.
  */
 public class Shell
-  extends AbstractShell<NaluSimpleApplicationContext> {
+        extends AbstractShell<NaluSimpleApplicationContext> {
 
-  public Shell() {
-  }
+    public Shell() {
+    }
 
-  /**
-   * The ShellPresenter has to implemented this method, because the framework
-   * can not do this. (It does not know, what to use).
-   * <p>
-   * We append the ShellView to the browser body.
-   */
-  @Override
-  public void attachShell() {
-    Layout layout = Layout.create("Nalu - Simple Application using Domino-UI")
-                          .show(ColorScheme.INDIGO);
+    /**
+     * The ShellPresenter has to implemented this method, because the framework
+     * can not do this. (It does not know, what to use).
+     * <p>
+     * We append the ShellView to the browser body.
+     */
+    @Override
+    public void attachShell() {
+        Layout layout = Layout.create("Nalu - Simple Application using Domino-UI")
+                .show(ColorScheme.INDIGO);
 
-    layout.showFooter()
-          .fixFooter()
-          .getFooter()
-          .asElement().style.minHeight = CSSProperties.MinHeightUnionType.of("42px");
+        layout.showFooter()
+                .fixFooter()
+                .getFooter()
+                .setId("footer")
+                .style()
+                .setMinHeight("42px");
 
-    layout.getFooter()
-          .asElement().id = "footer";
-    layout.getLeftPanel().setId("navigation");
-    layout.getContentPanel().setId("content");
-  }
+        layout.getLeftPanel().setId("navigation");
+        layout.getContentPanel()
+                .appendChild(Row.create()
+                        .appendChild(Column.span8()
+                                .offset2()
+                                .setId("content")));
+
+        MediaQuery.addOnMediumAndDownListener(layout::unfixLeftPanelPosition);
+        MediaQuery.addOnLargeAndUpListener(layout::fixLeftPanelPosition);
+    }
 }

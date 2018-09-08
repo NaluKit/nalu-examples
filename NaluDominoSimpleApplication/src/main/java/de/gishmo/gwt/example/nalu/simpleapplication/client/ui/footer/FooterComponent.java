@@ -19,9 +19,11 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.footer;
 
 import com.github.mvp4g.nalu.client.component.AbstractComponent;
 import elemental2.dom.HTMLElement;
-import org.dominokit.domino.ui.column.Column;
-import org.dominokit.domino.ui.row.Row;
-import org.dominokit.domino.ui.style.Style;
+import elemental2.dom.HTMLHeadingElement;
+import org.dominokit.domino.ui.grid.Column;
+import org.dominokit.domino.ui.grid.Row;
+import org.dominokit.domino.ui.style.Styles;
+import org.dominokit.domino.ui.utils.DominoElement;
 
 import static org.jboss.gwt.elemento.core.Elements.h;
 
@@ -30,36 +32,36 @@ import static org.jboss.gwt.elemento.core.Elements.h;
  * severeal areas.
  */
 public class FooterComponent
-  extends AbstractComponent<IFooterComponent.Controller, HTMLElement>
-  implements IFooterComponent {
+        extends AbstractComponent<IFooterComponent.Controller, HTMLElement>
+        implements IFooterComponent {
 
-  private HTMLElement messageInfo;
+    private DominoElement<HTMLHeadingElement> messageInfo;
 
-  public FooterComponent() {
-  }
+    public FooterComponent() {
+    }
 
-  @Override
-  public void render() {
-    this.messageInfo = h(4).textContent("loading application ...")
-                           .asElement();
+    @Override
+    public void render() {
+        this.messageInfo = DominoElement.of(h(4))
+                .setTextContent("loading application ...")
+                .style()
+                .add(Styles.font_15, Styles.align_center)
+                .get();
 
-    initElement(Row.create()
-                   .style()
-                   .setMargin("0px")
-                   .css("demo-footer")
-                   .get()
-                   .addColumn(Style.of(Column.span6())
-                                   .get()
-                                   .addElement(h(4).textContent("Nalu example application using Domnio-UI")))
-                   .addColumn(Style.of(Column.span6())
-                                   .setTextAlign("right")
-                                   .get()
-                                   .addElement(this.messageInfo))
-                   .asElement());
-  }
+        initElement(Row.create()
+                .style()
+                .setMargin("0px")
+                .get()
+                .addColumn(Column.span5()
+                        .offset1()
+                        .appendChild(h(4).css(Styles.font_15, Styles.align_center).textContent("Nalu example application using Domnio-UI")))
+                .addColumn(Column.span5()
+                        .appendChild(this.messageInfo))
+                .asElement());
+    }
 
-  @Override
-  public void setStatus(String status) {
-    this.messageInfo.textContent = status;
-  }
+    @Override
+    public void setStatus(String status) {
+        this.messageInfo.setTextContent(status);
+    }
 }
