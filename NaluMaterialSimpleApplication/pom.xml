@@ -30,7 +30,7 @@
   <properties>
     <!-- Convenience property to set the GWT version -->
     <gwtVersion>2.8.2</gwtVersion>
-    
+
     <!-- GWT-Material version -->
     <gwt-material.version>2.1.1</gwt-material.version>
 
@@ -67,33 +67,32 @@
   </dependencyManagement>
 
   <dependencies>
-  
-          <!-- GwtMaterial -->
-        <dependency>
-            <groupId>com.github.gwtmaterialdesign</groupId>
-            <artifactId>gwt-material</artifactId>
-            <version>${gwt-material.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.gwtmaterialdesign</groupId>
-            <artifactId>gwt-material-themes</artifactId>
-            <version>${gwt-material.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.gwtmaterialdesign</groupId>
-            <artifactId>gwt-material-addins</artifactId>
-            <version>${gwt-material.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.gwtmaterialdesign</groupId>
-            <artifactId>gwt-material-table</artifactId>
-            <version>${gwt-material.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        
+    <!-- GwtMaterial -->
+    <dependency>
+      <groupId>com.github.gwtmaterialdesign</groupId>
+      <artifactId>gwt-material</artifactId>
+      <version>${gwt-material.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.gwtmaterialdesign</groupId>
+      <artifactId>gwt-material-themes</artifactId>
+      <version>${gwt-material.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.gwtmaterialdesign</groupId>
+      <artifactId>gwt-material-addins</artifactId>
+      <version>${gwt-material.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.gwtmaterialdesign</groupId>
+      <artifactId>gwt-material-table</artifactId>
+      <version>${gwt-material.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- Gwt-Material -->
     <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-user</artifactId>
@@ -254,6 +253,8 @@
             <arg>9876</arg>
             <arg>-style</arg>
             <arg>PRETTY</arg>
+            <arg>-bindAddress</arg>
+            <arg>0.0.0.0</arg>
           </devmodeArgs>
           <startupUrls>
             <startupUrl>index.html</startupUrl>
@@ -293,4 +294,16 @@
       </plugin>
     </plugins>
   </build>
+
+  <repositories>
+    <repository>
+      <id>sonatype-snapshots-repo</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+        <checksumPolicy>fail</checksumPolicy>
+      </snapshots>
+    </repository>
+  </repositories>
 </project>
