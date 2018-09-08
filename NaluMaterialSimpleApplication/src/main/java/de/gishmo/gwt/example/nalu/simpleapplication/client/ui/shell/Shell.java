@@ -1,26 +1,47 @@
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.shell;
 
-import com.github.mvp4g.nalu.client.component.AbstractShell;
 import com.github.mvp4g.nalu.plugin.gwt.client.annotation.Selector;
+import com.github.mvp4g.nalu.plugin.gwt.client.component.AbstractCompositeShell;
 import com.github.mvp4g.nalu.plugin.gwt.client.selector.IsSelectorProvider;
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
+import com.google.gwt.user.client.ui.Widget;
 
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import gwt.material.design.client.ui.MaterialContainer;
+import gwt.material.design.client.ui.MaterialLabel;
 import gwt.material.design.client.ui.MaterialSideNavDrawer;
+import gwt.material.design.client.ui.MaterialToast;
 
-public class Shell extends AbstractShell<NaluSimpleApplicationContext> {
+public class Shell extends AbstractCompositeShell<NaluSimpleApplicationContext> {
+
+    private static ShellUiBinder uiBinder = GWT.create(ShellUiBinder.class);
+
+    interface ShellUiBinder extends UiBinder<Widget, Shell> {
+    }
+
+    @UiField
+    MaterialLabel userName;
 
     @Selector("content")
+    @UiField
     MaterialContainer content;
-    
-    //TODO: Por ahora el componente de la navegación está en la propia shell pero hay que sacarlo
-    // a un componente especifico. Aqui dejo ya el selector para ser utilizado y este recordatorio.
+
+    //TODO: right now sideNav component is on the shell 
+    // but should be extracted to a different component.
+    // Selector already available for that extraction.
     @Selector("sideNav")
+    @UiField
     MaterialSideNavDrawer sideNav;
 
-    private ShellComponent shellComponent;
-
+    @UiHandler("logout")
+    void onClick(ClickEvent e) {
+        MaterialToast.fireToast("loging out!");
+    }
 
     public Shell() {
         super();
@@ -34,12 +55,12 @@ public class Shell extends AbstractShell<NaluSimpleApplicationContext> {
      */
     @Override
     public void attachShell() {
-        
-        shellComponent = new ShellComponent(this.context);
-        content = shellComponent.getContent();
-        sideNav = shellComponent.getSideNav();
+    	
+        initWidget(uiBinder.createAndBindUi(this));
 
-        RootLayoutPanel.get().add(shellComponent);
+        userName.setText("Nalu Simple Application");
+        
+        RootLayoutPanel.get().add(this);
     }
     
     @Override
