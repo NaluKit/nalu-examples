@@ -98,7 +98,7 @@ public class Shell
   }
 
   @Override
-  public void onAttachedChild() {
+  public void onAttachedComponent() {
     this.shell.forceLayout();
   }
 }
