@@ -18,6 +18,7 @@
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.content.search;
 
 import com.github.mvp4g.nalu.client.component.AbstractComponentController;
+import com.github.mvp4g.nalu.client.component.annotation.AcceptParameter;
 import com.github.mvp4g.nalu.client.component.annotation.Controller;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.event.SelectEvent;
@@ -52,6 +53,7 @@ public class SearchController
                       searchCity);
   }
 
+  @AcceptParameter("searchName")
   public void setSearchName(String searchName) {
     if (!"undefined".equals(searchName) &&
         searchName.trim()
@@ -60,6 +62,7 @@ public class SearchController
     }
   }
 
+  @AcceptParameter("searchCity")
   public void setSearchCity(String searchCity) {
     if (!"undefined".equals(searchCity) &&
         searchCity.trim()

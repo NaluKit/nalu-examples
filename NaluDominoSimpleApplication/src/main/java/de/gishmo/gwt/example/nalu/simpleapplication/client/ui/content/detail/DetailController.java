@@ -18,6 +18,7 @@
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.content.detail;
 
 import com.github.mvp4g.nalu.client.component.AbstractComponentController;
+import com.github.mvp4g.nalu.client.component.annotation.AcceptParameter;
 import com.github.mvp4g.nalu.client.component.annotation.Controller;
 import com.github.mvp4g.nalu.client.exception.RoutingInterceptionException;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
@@ -72,6 +73,7 @@ public class DetailController
     this.eventBus.fireEvent(new StatusChangeEvent(""));
   }
 
+  @AcceptParameter("id")
   public void setId(String id)
     throws RoutingInterceptionException {
     try {

@@ -18,6 +18,7 @@
 package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.content.list;
 
 import com.github.mvp4g.nalu.client.component.AbstractComponentController;
+import com.github.mvp4g.nalu.client.component.annotation.AcceptParameter;
 import com.github.mvp4g.nalu.client.component.annotation.Controller;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import de.gishmo.gwt.example.nalu.simpleapplication.client.data.model.dto.Person;
@@ -68,10 +69,12 @@ public class ListController
                       Long.toString(object.getId()));
   }
 
+  @AcceptParameter("name")
   public void setName(String name) {
     this.name = name;
   }
 
+  @AcceptParameter("city")
   public void setCity(String city) {
     this.city = city;
   }
