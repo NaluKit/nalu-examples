@@ -33,13 +33,9 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.resources.Application
 public class Shell
   extends AbstractShell<NaluSimpleApplicationContext> {
 
-  @Selector("header")
   SimpleLayoutPanel headerWidget;
-  @Selector("footer")
   ResizeLayoutPanel footerWidget;
-  @Selector("navigation")
   SimpleLayoutPanel navigationWidget;
-  @Selector("content")
   SimpleLayoutPanel contentWidget;
   private ResizeLayoutPanel shell;
   private ApplicationCss    style;
@@ -136,5 +132,29 @@ public class Shell
   public void bind() {
     IsSelectorProvider<Shell> provider = new ShellSelectorProviderImpl();
     provider.initialize(this);
+  }
+
+  @Selector("header")
+  public void setHeader(Widget widget) {
+    this.headerWidget.clear();
+    this.headerWidget.add(widget);
+  }
+
+  @Selector("footer")
+  public void setFooter(Widget widget) {
+    this.footerWidget.clear();
+    this.footerWidget.add(widget);
+  }
+
+  @Selector("navigation")
+  public void setNavigation(Widget widget) {
+    this.navigationWidget.clear();
+    this.navigationWidget.add(widget);
+  }
+
+  @Selector("content")
+  public void setContent(Widget widget) {
+    this.contentWidget.clear();
+    this.contentWidget.add(widget);
   }
 }

@@ -20,6 +20,7 @@ package de.gishmo.gwt.example.nalu.simpleapplication.client.ui.shell;
 import com.github.mvp4g.nalu.client.component.AbstractShell;
 import com.github.mvp4g.nalu.plugin.gwt.client.annotation.Selector;
 import com.github.mvp4g.nalu.plugin.gwt.client.selector.IsSelectorProvider;
+import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.sencha.gxt.widget.core.client.ContentPanel;
@@ -35,11 +36,8 @@ import de.gishmo.gwt.example.nalu.simpleapplication.client.NaluSimpleApplication
 public class Shell
   extends AbstractShell<NaluSimpleApplicationContext> {
 
-  @Selector("north")
   protected ContentPanel          northContainer;
-  @Selector("south")
   protected ContentPanel          southContainer;
-  @Selector("content")
   protected SimpleContainer       centerContainer;
   private   Viewport              viewport;
   private   BorderLayoutContainer shell;
@@ -100,5 +98,20 @@ public class Shell
   @Override
   public void onAttachedComponent() {
     this.shell.forceLayout();
+  }
+
+  @Selector("north")
+  public void setNorthContainer(IsWidget widget) {
+    this.northContainer.add(widget);
+  }
+
+  @Selector("south")
+  public void setSouthContainer(IsWidget widget) {
+    this.southContainer.add(widget);
+  }
+
+  @Selector("content")
+  public void setContent(IsWidget widget) {
+    this.centerContainer.add(widget);
   }
 }
