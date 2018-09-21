@@ -21,7 +21,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>de.gishmo.gwt.example.nalu</groupId>
+  <groupId>com.github.nalukit.example.nalu</groupId>
   <artifactId>NaluGxtSimpleApplication</artifactId>
   <version>1.0.0</version>
 
@@ -34,7 +34,7 @@
     <gxt.version>4.0.0</gxt.version>
 
     <!-- nalu version -->
-    <nalu.version>1.0.0-SNAPSHOT</nalu.version>
+    <nalu.version>1.0.0-RC-1</nalu.version>
 
     <elemento.version>0.8.0</elemento.version>
 
@@ -106,22 +106,22 @@
     </dependency>
 
     <dependency>
-      <groupId>com.github.mvp4g</groupId>
+      <groupId>com.github.nalukit</groupId>
       <artifactId>nalu</artifactId>
       <version>${nalu.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.github.mvp4g</groupId>
+      <groupId>com.github.nalukit</groupId>
       <artifactId>nalu-processor</artifactId>
       <version>${nalu.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.github.mvp4g</groupId>
+      <groupId>com.github.nalukit</groupId>
       <artifactId>nalu-plugin-gwt</artifactId>
       <version>${nalu.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.github.mvp4g</groupId>
+      <groupId>com.github.nalukit</groupId>
       <artifactId>nalu-plugin-gwt-processor</artifactId>
       <version>${nalu.version}</version>
     </dependency>
@@ -231,11 +231,11 @@
         <configuration>
           <classpathScope>compile</classpathScope>
           <moduleName>
-            de.gishmo.gwt.example.nalu.simpleapplication.Application
+            com.github.nalukit.example.nalu.simpleapplication.Application
           </moduleName>
           <moduleShortName>Application</moduleShortName>
           <modules>
-            de.gishmo.gwt.example.nalu.simpleapplication.Application
+            com.github.nalukit.example.nalu.simpleapplication.Application
           </modules>
           <failOnError>true</failOnError>
           <!-- GWT 2.8 requires 1.8, hence define sourceLevel here if you use
