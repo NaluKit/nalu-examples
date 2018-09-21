@@ -3,7 +3,7 @@ To help you to understand how the framework works, Nalu comes with some examples
 
 To run the examples:
 
-* install nalu: [https://github.com/mvp4g/nalu-parent] and follow the instructions
+* install nalu: [https://github.com/nalukit/nalu] and follow the instructions
 
 * clone the repository
 
@@ -32,4 +32,4 @@ The GXT example is different. It is a mail box simulation using GXT 4.0 widgets.
 Some things are nonsens and only implemented to show the features of Nalu.
 
 For example: 
-* If Bart Simpson is selected from the list, the application will route to the search view. This is the desired behavior: see [BartSimpsonFilter-class](https://github.com/mvp4g/nalu-examples/blob/master/NaluDominoSimpleApplication/src/main/java/de/gishmo/gwt/example/nalu/simpleapplication/client/filters/BartSimpsonFilter.java) for more informations.
+* If Bart Simpson is selected from the list, the application will route to the search view. This is the desired behavior: see [BartSimpsonFilter-class](https://github.com/nalukit/nalu-examples/blob/master/NaluDominoSimpleApplication/src/main/java/de/gishmo/gwt/example/nalu/simpleapplication/client/filters/BartSimpsonFilter.java) for more informations.
