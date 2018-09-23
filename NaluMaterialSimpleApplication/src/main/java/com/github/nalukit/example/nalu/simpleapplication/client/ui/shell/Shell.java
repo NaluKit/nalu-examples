@@ -69,11 +69,17 @@ public class Shell extends AbstractCompositeShell<NaluSimpleApplicationContext> 
 
     @Selector("content")
     public void setContent(Widget widget) {
+        if (this.content.getWidgetCount() > 0) {
+            this.content.getChildren().forEach(c -> c.removeFromParent());
+        }
         this.content.add(widget);
     }
 
     @Selector("sideNav")
     public void setNavigation(Widget widget) {
+        if (this.sideNav.getWidgetCount() > 0) {
+            this.sideNav.getChildren().forEach(c -> c.removeFromParent());
+        }
         this.sideNav.add(widget);
     }
 }
