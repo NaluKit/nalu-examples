@@ -35,7 +35,7 @@
     <gwt-material.version>2.1.1</gwt-material.version>
 
     <!-- nalu version -->
-    <nalu.version>1.0.0-RC-1</nalu.version>
+    <nalu.version>1.0.0-rc-2-SNAPSHOT</nalu.version>
 
     <elemento.version>0.8.0</elemento.version>
 
