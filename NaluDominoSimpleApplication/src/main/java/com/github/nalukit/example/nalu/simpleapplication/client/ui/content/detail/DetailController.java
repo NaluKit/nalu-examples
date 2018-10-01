@@ -64,7 +64,7 @@ public class DetailController
                                       .isDirty(this.person);
     boolean isAddressSplitterDirty = super.<AddressSplitter>getSplitter("AddressSplitter")
                                        .isDirty(this.person);
-    return isPersonSplitterDirty || isAddressSplitterDirty ? "Would youlike to cancel your edits?" : null;
+    return isPersonSplitterDirty || isAddressSplitterDirty ? "Would you like to cancel your edits?" : null;
   }
 
   @Override
