@@ -32,12 +32,10 @@
     <gwtVersion>2.8.2</gwtVersion>
 
     <!-- nalu version -->
-    <nalu.version>1.0.0-rc-2-SNAPSHOT</nalu.version>
+    <nalu.version>1.0.0-rc-3-SNAPSHOT</nalu.version>
 
     <domino.version>1.0-SNAPSHOT</domino.version>
     <elemento.version>0.8.0</elemento.version>
-
-    <gwt-events.version>HEAD-SNAPSHOT</gwt-events.version>
 
     <!-- GWT needs at least java 1.6 -->
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -165,22 +163,22 @@
         </executions>
       </plugin>
       <!--<plugin>-->
-        <!--<groupId>org.codehaus.mojo</groupId>-->
-        <!--<artifactId>build-helper-maven-plugin</artifactId>-->
-        <!--<executions>-->
-          <!--<execution>-->
-            <!--<id>add-source</id>-->
-            <!--<phase>generate-sources</phase>-->
-            <!--<goals>-->
-              <!--<goal>add-source</goal>-->
-            <!--</goals>-->
-            <!--<configuration>-->
-              <!--<sources>-->
-                <!--<source>${generated.source.directory}</source>-->
-              <!--</sources>-->
-            <!--</configuration>-->
-          <!--</execution>-->
-        <!--</executions>-->
+      <!--<groupId>org.codehaus.mojo</groupId>-->
+      <!--<artifactId>build-helper-maven-plugin</artifactId>-->
+      <!--<executions>-->
+      <!--<execution>-->
+      <!--<id>add-source</id>-->
+      <!--<phase>generate-sources</phase>-->
+      <!--<goals>-->
+      <!--<goal>add-source</goal>-->
+      <!--</goals>-->
+      <!--<configuration>-->
+      <!--<sources>-->
+      <!--<source>${generated.source.directory}</source>-->
+      <!--</sources>-->
+      <!--</configuration>-->
+      <!--</execution>-->
+      <!--</executions>-->
       <!--</plugin>-->
       <plugin>
         <groupId>net.ltgt.gwt.maven</groupId>
@@ -214,7 +212,6 @@
             <arg>-compileReport</arg>
             <arg>-XcompilerMetrics</arg>
             <arg>-setProperty</arg>
-            <arg>mvp4g2.logging=true</arg>
           </compilerArgs>
           <logLevel>TRACE</logLevel>
           <skipModule>true</skipModule>

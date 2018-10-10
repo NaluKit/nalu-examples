@@ -4,7 +4,7 @@ Here you find examples that implement the [Nalu application framework](ToDo).
 ## Using
 To run the examples:
 
-* install nalu: [https://github.com/mvp4g/nalu-parent] and follow the instructions
+* install nalu: [https://github.com/nalukit/nalu] and follow the instructions
 
 * clone the repository
 

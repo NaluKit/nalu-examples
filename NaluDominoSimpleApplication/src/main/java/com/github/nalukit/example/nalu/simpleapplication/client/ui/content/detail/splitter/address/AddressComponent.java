@@ -43,9 +43,9 @@ public class AddressComponent
 
   @Override
   public void render() {
-    this.detailStreet = TextBox.create("Name");
-    this.detailZip = TextBox.create("Name");
-    this.detailCity = TextBox.create("Name");
+    this.detailStreet = TextBox.create("Street");
+    this.detailZip = TextBox.create("ZIP");
+    this.detailCity = TextBox.create("City");
 
 
     HTMLDivElement divElemet = Elements.div()

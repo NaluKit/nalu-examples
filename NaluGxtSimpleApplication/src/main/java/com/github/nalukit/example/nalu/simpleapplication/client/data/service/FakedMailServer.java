@@ -22,9 +22,9 @@ import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.M
 import java.util.ArrayList;
 
 /**
- * Due to the fact, that there is currently no J2Cl based server framework and to proof mvp4g2 is working,
+ * Due to the fact, that there is currently no J2Cl based server framework and to proof Nalu is working,
  * There is no need to do real server calls. So, we will simulate the server calls, to concentrate on
- * mvp4g2.
+ * Nalu.
  * <p>
  * It is up to you to decide which way you use to talk to the server!
  * <p>

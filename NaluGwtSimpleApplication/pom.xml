@@ -32,7 +32,7 @@
     <gwtVersion>2.8.2</gwtVersion>
 
     <!-- nalu version -->
-    <nalu.version>1.0.0-rc-2-SNAPSHOT</nalu.version>
+    <nalu.version>1.0.0-rc-3-SNAPSHOT</nalu.version>
 
     <elemento.version>0.8.0</elemento.version>
 
@@ -206,7 +206,6 @@
             <arg>-compileReport</arg>
             <arg>-XcompilerMetrics</arg>
             <arg>-setProperty</arg>
-            <arg>mvp4g2.logging=true</arg>
           </compilerArgs>
           <logLevel>TRACE</logLevel>
           <skipModule>true</skipModule>
