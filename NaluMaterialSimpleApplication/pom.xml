@@ -35,9 +35,7 @@
     <gwt-material.version>2.1.1</gwt-material.version>
 
     <!-- nalu version -->
-    <nalu.version>1.0.0-rc-3-SNAPSHOT</nalu.version>
-
-    <elemento.version>0.8.0</elemento.version>
+    <nalu.version>1.0.0-rc-4</nalu.version>
 
     <gwt-events.version>HEAD-SNAPSHOT</gwt-events.version>
 
@@ -113,11 +111,11 @@
       <artifactId>gwt-servlet</artifactId>
     </dependency>
 
-    <dependency>
-      <groupId>org.gwtproject.event</groupId>
-      <artifactId>gwt-event</artifactId>
-      <version>${gwt-events.version}</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.gwtproject.event</groupId>-->
+      <!--<artifactId>gwt-event</artifactId>-->
+      <!--<version>${gwt-events.version}</version>-->
+    <!--</dependency>-->
 
     <dependency>
       <groupId>com.github.nalukit</groupId>

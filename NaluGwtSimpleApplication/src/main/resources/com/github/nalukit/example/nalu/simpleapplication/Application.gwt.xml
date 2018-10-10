@@ -38,7 +38,6 @@
   <inherits name='com.github.nalukit.nalu.Nalu'/>
   <inherits name='com.github.nalukit.nalu.plugin.gwt.NaluPluginGWT'/>
   <inherits name="org.gwtproject.event.Event"/>
-  <inherits name="org.jboss.gwt.elemento.Core"/>
 
   <!-- Specify the app entry point class.                         -->
   <entry-point class='com.github.nalukit.example.nalu.simpleapplication.client.Application'/>
