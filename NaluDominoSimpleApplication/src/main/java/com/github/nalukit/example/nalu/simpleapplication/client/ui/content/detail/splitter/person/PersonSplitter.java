@@ -19,14 +19,14 @@ package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.deta
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
-import com.github.nalukit.nalu.client.component.AbstractSplitterController;
-import com.github.nalukit.nalu.client.component.annotation.SplitterController;
+import com.github.nalukit.nalu.client.component.AbstractCompositeController;
+import com.github.nalukit.nalu.client.component.annotation.CompositeController;
 import elemental2.dom.HTMLElement;
 
-@SplitterController(componentInterface = IPersonComponent.class,
-  component = PersonComponent.class)
+@CompositeController(componentInterface = IPersonComponent.class,
+                     component = PersonComponent.class)
 public class PersonSplitter
-  extends AbstractSplitterController<NaluSimpleApplicationContext, IPersonComponent, HTMLElement>
+    extends AbstractCompositeController<NaluSimpleApplicationContext, IPersonComponent, HTMLElement>
   implements IPersonComponent.Controller {
 
   public PersonSplitter() {

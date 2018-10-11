@@ -21,8 +21,8 @@ import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplic
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
-import com.github.nalukit.nalu.client.component.annotation.Splitter;
-import com.github.nalukit.nalu.client.component.annotation.Splitters;
+import com.github.nalukit.nalu.client.component.annotation.Composite;
+import com.github.nalukit.nalu.client.component.annotation.Composites;
 import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.exception.PersonException;
@@ -39,13 +39,13 @@ import elemental2.dom.HTMLElement;
   selector = "content",
   componentInterface = IDetailComponent.class,
   component = DetailComponent.class)
-@Splitters({
-  @Splitter(name = "personSplitter",
-    splitterController = PersonSplitter.class,
-    selector = "splitterPerson"),
-  @Splitter(name = "AddressSplitter",
-    splitterController = AddressSplitter.class,
-    selector = "splitterAddress")
+@Composites({
+  @Composite(name = "personSplitter",
+             compositeController = PersonSplitter.class,
+             selector = "splitterPerson"),
+  @Composite(name = "AddressSplitter",
+             compositeController = AddressSplitter.class,
+             selector = "splitterAddress")
 })
 public class DetailController
   extends AbstractComponentController<NaluSimpleApplicationContext, IDetailComponent, HTMLElement>
@@ -60,9 +60,9 @@ public class DetailController
 
   @Override
   public String mayStop() {
-    boolean isPersonSplitterDirty = super.<PersonSplitter>getSplitter("personSplitter")
+    boolean isPersonSplitterDirty = super.<PersonSplitter>getComposite("personSplitter")
                                       .isDirty(this.person);
-    boolean isAddressSplitterDirty = super.<AddressSplitter>getSplitter("AddressSplitter")
+    boolean isAddressSplitterDirty = super.<AddressSplitter>getComposite("AddressSplitter")
                                        .isDirty(this.person);
     return isPersonSplitterDirty || isAddressSplitterDirty ? "Would you like to cancel your edits?" : null;
   }
@@ -75,9 +75,9 @@ public class DetailController
     try {
       this.person = PersonService.get()
                                  .get(id);
-      super.<PersonSplitter>getSplitter("personSplitter")
+      super.<PersonSplitter>getComposite("personSplitter")
         .edit(this.person);
-      super.<AddressSplitter>getSplitter("AddressSplitter")
+      super.<AddressSplitter>getComposite("AddressSplitter")
         .edit(this.person);
       this.eventBus.fireEvent(new StatusChangeEvent("Edit person data with id: " + this.person.getId()));
 
@@ -121,9 +121,9 @@ public class DetailController
 
   @Override
   public void doUpdate() {
-    this.person = super.<PersonSplitter>getSplitter("personSplitter")
+    this.person = super.<PersonSplitter>getComposite("personSplitter")
       .flush(this.person);
-    this.person = super.<AddressSplitter>getSplitter("AddressSplitter")
+    this.person = super.<AddressSplitter>getComposite("AddressSplitter")
       .flush(this.person);
     try {
       PersonService.get()
