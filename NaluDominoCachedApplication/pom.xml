@@ -22,7 +22,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.nalukit.example.nalu</groupId>
-  <artifactId>NaluGwtSimpleApplication</artifactId>
+  <artifactId>NaluDominoCachedApplication</artifactId>
   <version>1.0.0</version>
 
   <packaging>gwt-app</packaging>
@@ -34,7 +34,8 @@
     <!-- nalu version -->
     <nalu.version>1.0.0-rc-6-SNAPSHOT</nalu.version>
 
-    <gwt-events.version>HEAD-SNAPSHOT</gwt-events.version>
+    <domino.version>1.0-SNAPSHOT</domino.version>
+    <elemento.version>0.8.0</elemento.version>
 
     <!-- GWT needs at least java 1.6 -->
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -94,17 +95,25 @@
     </dependency>
     <dependency>
       <groupId>com.github.nalukit</groupId>
-      <artifactId>nalu-plugin-gwt</artifactId>
+      <artifactId>nalu-plugin-elemental2</artifactId>
       <version>${nalu.version}</version>
     </dependency>
+
     <dependency>
-      <groupId>com.github.nalukit</groupId>
-      <artifactId>nalu-plugin-gwt-processor</artifactId>
-      <version>${nalu.version}</version>
+      <groupId>org.dominokit</groupId>
+      <artifactId>domino-ui</artifactId>
+      <version>${domino.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.dominokit</groupId>
+      <artifactId>domino-ui</artifactId>
+      <version>${domino.version}</version>
+      <classifier>sources</classifier>
     </dependency>
   </dependencies>
 
   <build>
+    <finalName>NaluDominoCachedApplication</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -154,24 +163,24 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>add-source</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>add-source</goal>
-            </goals>
-            <configuration>
-              <sources>
-                <source>${generated.source.directory}</source>
-              </sources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
+      <!--<plugin>-->
+      <!--<groupId>org.codehaus.mojo</groupId>-->
+      <!--<artifactId>build-helper-maven-plugin</artifactId>-->
+      <!--<executions>-->
+      <!--<execution>-->
+      <!--<id>add-source</id>-->
+      <!--<phase>generate-sources</phase>-->
+      <!--<goals>-->
+      <!--<goal>add-source</goal>-->
+      <!--</goals>-->
+      <!--<configuration>-->
+      <!--<sources>-->
+      <!--<source>${generated.source.directory}</source>-->
+      <!--</sources>-->
+      <!--</configuration>-->
+      <!--</execution>-->
+      <!--</executions>-->
+      <!--</plugin>-->
       <plugin>
         <groupId>net.ltgt.gwt.maven</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
@@ -181,7 +190,6 @@
           <execution>
             <goals>
               <goal>compile</goal>
-              <goal>package-app</goal>
             </goals>
           </execution>
         </executions>
@@ -202,8 +210,6 @@
           <compilerArgs>
             <!--Ask GWT to create the Story of Your Compile (SOYC) (gwt:compile)-->
             <arg>-compileReport</arg>
-            <arg>-XcompilerMetrics</arg>
-            <arg>-setProperty</arg>
           </compilerArgs>
           <logLevel>TRACE</logLevel>
           <skipModule>true</skipModule>
@@ -213,8 +219,6 @@
             <arg>8888</arg>
             <arg>-codeServerPort</arg>
             <arg>9876</arg>
-            <arg>-style</arg>
-            <arg>PRETTY</arg>
             <arg>-bindAddress</arg>
             <arg>0.0.0.0</arg>
           </devmodeArgs>
