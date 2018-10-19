@@ -35,7 +35,7 @@
     <gwt-material.version>2.1.1</gwt-material.version>
 
     <!-- nalu version -->
-    <nalu.version>1.0.0-rc-5</nalu.version>
+    <nalu.version>1.0.0-rc-6-SNAPSHOT</nalu.version>
 
     <gwt-events.version>HEAD-SNAPSHOT</gwt-events.version>
 

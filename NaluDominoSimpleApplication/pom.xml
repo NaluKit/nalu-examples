@@ -32,7 +32,7 @@
     <gwtVersion>2.8.2</gwtVersion>
 
     <!-- nalu version -->
-    <nalu.version>1.0.0-rc-5</nalu.version>
+    <nalu.version>1.0.0-rc-6-SNAPSHOT</nalu.version>
 
     <domino.version>1.0-SNAPSHOT</domino.version>
     <elemento.version>0.8.0</elemento.version>
@@ -189,7 +189,6 @@
           <execution>
             <goals>
               <goal>compile</goal>
-              <goal>package-app</goal>
             </goals>
           </execution>
         </executions>
