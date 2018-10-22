@@ -20,6 +20,7 @@ package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.deta
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
 import com.github.nalukit.nalu.client.component.AbstractCompositeController;
+import com.github.nalukit.nalu.client.component.IsComponentCreator;
 import com.github.nalukit.nalu.client.component.annotation.CompositeController;
 import elemental2.dom.HTMLElement;
 
@@ -27,7 +28,8 @@ import elemental2.dom.HTMLElement;
                      component = PersonComponent.class)
 public class PersonSplitter
     extends AbstractCompositeController<NaluSimpleApplicationContext, IPersonComponent, HTMLElement>
-  implements IPersonComponent.Controller {
+  implements IPersonComponent.Controller,
+             IsComponentCreator<IPersonComponent> {
 
   public PersonSplitter() {
   }
@@ -42,5 +44,10 @@ public class PersonSplitter
 
   public Person flush(Person person) {
     return this.component.flush(person);
+  }
+
+  @Override
+  public IPersonComponent createComponent() {
+    return new PersonComponent();
   }
 }

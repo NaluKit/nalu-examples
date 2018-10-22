@@ -19,6 +19,7 @@ package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.deta
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
+import com.github.nalukit.nalu.client.component.IsComponentCreator;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import com.github.nalukit.nalu.client.component.annotation.Composite;
@@ -49,7 +50,8 @@ import elemental2.dom.HTMLElement;
 })
 public class DetailController
   extends AbstractComponentController<NaluSimpleApplicationContext, IDetailComponent, HTMLElement>
-  implements IDetailComponent.Controller {
+  implements IDetailComponent.Controller,
+             IsComponentCreator<IDetailComponent> {
 
   private Person person;
 
@@ -139,5 +141,10 @@ public class DetailController
       DomGlobal.window.alert("Panic!");
     }
 
+  }
+
+  @Override
+  public IDetailComponent createComponent() {
+    return new DetailComponent();
   }
 }
