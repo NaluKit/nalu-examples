@@ -18,8 +18,8 @@
 package com.github.nalukit.example.nalu.loginapplication.client;
 
 import com.github.nalukit.example.nalu.loginapplication.client.filters.LoginFilter;
-import com.github.nalukit.example.nalu.loginapplication.client.ui.viewport.applicaitonviewport.ApplicationShell;
-import com.github.nalukit.example.nalu.loginapplication.client.ui.viewport.loginviewport.LoginShell;
+import com.github.nalukit.example.nalu.loginapplication.client.ui.shell.application.ApplicationShell;
+import com.github.nalukit.example.nalu.loginapplication.client.ui.shell.login.LoginShell;
 import com.github.nalukit.nalu.client.application.IsApplication;
 import com.github.nalukit.nalu.client.application.annotation.*;
 import com.github.nalukit.nalu.client.application.annotation.Application;
@@ -35,11 +35,11 @@ import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
  * framework). You can use any technique to call the server!</p>
  */
 @Application(loader = NaluLoginApplicationLoader.class,
-             startRoute = "/loginViewport/login",
+             startRoute = "/loginShell/login",
              context = NaluLoginApplicationContext.class)
-@Shells({ @Shell(name = "loginViewport",
+@Shells({ @Shell(name = "loginShell",
                  shell = LoginShell.class),
-          @Shell(name = "applicationViewport",
+          @Shell(name = "applicationShell",
                  shell = ApplicationShell.class) })
 @Filters(filterClasses = LoginFilter.class)
 @Debug(logLevel = Debug.LogLevel.DETAILED,

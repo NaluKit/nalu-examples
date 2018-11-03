@@ -36,7 +36,7 @@ import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
 import elemental2.dom.DomGlobal;
 import elemental2.dom.HTMLElement;
 
-@Controller(route = "/applicationViewport/person/detail/:id",
+@Controller(route = "/applicationShell/person/detail/:id",
             selector = "content",
             componentInterface = IDetailComponent.class,
             component = DetailComponent.class)
@@ -68,7 +68,7 @@ public class DetailController
   @Override
   public void start() {
     if (this.id == 0) {
-      this.router.route("applicationViewport/person/search");
+      this.router.route("applicationShell/person/search");
     }
     try {
       this.person = PersonService.get()
@@ -97,7 +97,7 @@ public class DetailController
       DomGlobal.window.alert("id is not valid ->  moving to search");
       throw new RoutingInterceptionException(this.getClass()
                                                  .getCanonicalName(),
-                                             "/applicationViewport/person/search",
+                                             "/applicationShell/person/search",
                                              this.context.getSearchName(),
                                              this.context.getSearchCity());
     }
@@ -110,7 +110,7 @@ public class DetailController
 
   @Override
   public void doRevert() {
-    this.router.route("/applicationViewport/person/list",
+    this.router.route("/applicationShell/person/list",
                       this.context.getSearchName(),
                       this.context.getSearchCity());
   }
@@ -123,9 +123,9 @@ public class DetailController
       PersonService.get()
                    .update(this.person);
       if (this.context.getSearchName() == null && this.context.getSearchCity() == null) {
-        this.router.route("/applicationViewport/person/search");
+        this.router.route("/applicationShell/person/search");
       } else {
-        this.router.route("/applicationViewport/person/list",
+        this.router.route("/applicationShell/person/list",
                           this.context.getSearchName(),
                           this.context.getSearchCity());
       }

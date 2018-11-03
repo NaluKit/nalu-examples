@@ -14,7 +14,7 @@
  *  the License.
  */
 
-package com.github.nalukit.example.nalu.loginapplication.client.ui.viewport.footer;
+package com.github.nalukit.example.nalu.loginapplication.client.ui.shell.footer;
 
 import com.github.nalukit.example.nalu.loginapplication.client.NaluLoginApplicationContext;
 import com.github.nalukit.example.nalu.loginapplication.client.event.StatusChangeEvent;
@@ -26,7 +26,7 @@ import elemental2.dom.HTMLElement;
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
-@Controller(route = "/[loginViewport|applicationViewport]",
+@Controller(route = "/[loginShell|applicationShell]",
             selector = "footer",
             componentInterface = IFooterComponent.class,
             component = FooterComponent.class)

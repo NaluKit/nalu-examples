@@ -25,7 +25,7 @@ import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import elemental2.dom.HTMLElement;
 
-@Controller(route = "/applicationViewport/person/search/:searchName/:searchCity",
+@Controller(route = "/applicationShell/person/search/:searchName/:searchCity",
             selector = "content",
             component = SearchComponent.class,
             componentInterface = ISearchComponent.class)
@@ -48,7 +48,7 @@ public class SearchController
                                   String searchCity) {
     this.context.setSearchCity(searchCity);
     this.context.setSearchName(searchName);
-    this.router.route("/applicationViewport/person/list",
+    this.router.route("/applicationShell/person/list",
                       searchName,
                       searchCity);
   }

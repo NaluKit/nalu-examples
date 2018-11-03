@@ -10,7 +10,7 @@ public class LoginFilter
   @Override
   public boolean filter(String route,
                         String... parms) {
-    if (!"/loginViewport/login".equals(route)) {
+    if (!"/loginShell/login".equals(route)) {
       if (!this.context.isLoggedIn()) {
         DomGlobal.window.alert("User is not logged in! Redirect to Login screen!");
         return false;
@@ -21,7 +21,7 @@ public class LoginFilter
 
   @Override
   public String redirectTo() {
-    return "/loginViewport/login";
+    return "/loginShell/login";
   }
 
   @Override

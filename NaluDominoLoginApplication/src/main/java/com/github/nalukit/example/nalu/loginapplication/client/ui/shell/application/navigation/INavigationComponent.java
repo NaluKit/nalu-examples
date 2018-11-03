@@ -14,18 +14,22 @@
  *  the License.
  */
 
-package com.github.nalukit.example.nalu.loginapplication.client.ui.viewport.footer;
+package com.github.nalukit.example.nalu.loginapplication.client.ui.shell.application.navigation;
 
 import com.github.nalukit.nalu.client.component.IsComponent;
 import elemental2.dom.HTMLElement;
 
-public interface IFooterComponent
-  extends IsComponent<IFooterComponent.Controller, HTMLElement> {
+public interface INavigationComponent
+    extends IsComponent<INavigationComponent.Controller, HTMLElement> {
 
-  void setStatus(String status);
+  void select(String toString);
 
   interface Controller
-    extends IsComponent.Controller {
+      extends IsComponent.Controller {
+
+    void doShowSearch();
+
+    void doShowList();
 
   }
 }

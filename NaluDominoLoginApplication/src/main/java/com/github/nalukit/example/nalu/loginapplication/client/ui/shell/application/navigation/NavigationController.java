@@ -14,7 +14,7 @@
  *  the License.
  */
 
-package com.github.nalukit.example.nalu.loginapplication.client.ui.viewport.applicaitonviewport.navigation;
+package com.github.nalukit.example.nalu.loginapplication.client.ui.shell.application.navigation;
 
 import com.github.nalukit.example.nalu.loginapplication.client.NaluLoginApplicationContext;
 import com.github.nalukit.example.nalu.loginapplication.client.event.SelectEvent;
@@ -22,7 +22,7 @@ import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import elemental2.dom.HTMLElement;
 
-@Controller(route = "/applicationViewport",
+@Controller(route = "/applicationShell",
             selector = "navigation",
             componentInterface = INavigationComponent.class,
             component = NavigationComponent.class)
@@ -42,14 +42,14 @@ public class NavigationController
 
   @Override
   public void doShowSearch() {
-    this.router.route("/applicationViewport/person/search",
+    this.router.route("/applicationShell/person/search",
                       this.context.getSearchName(),
                       this.context.getSearchCity());
   }
 
   @Override
   public void doShowList() {
-    this.router.route("/applicationViewport/person/list",
+    this.router.route("/applicationShell/person/list",
                       this.context.getSearchName(),
                       this.context.getSearchCity());
   }

@@ -30,7 +30,7 @@ import elemental2.dom.HTMLElement;
 
 import java.util.List;
 
-@Controller(route = "/applicationViewport/person/list/:name/:city",
+@Controller(route = "/applicationShell/person/list/:name/:city",
             selector = "content",
             componentInterface = IListComponent.class,
             component = ListComponent.class)
@@ -65,7 +65,7 @@ public class ListController
 
   @Override
   public void doUpdate(Person object) {
-    this.router.route("/applicationViewport/person/detail",
+    this.router.route("/applicationShell/person/detail",
                       Long.toString(object.getId()));
   }
 

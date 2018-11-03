@@ -14,7 +14,7 @@
  *  the License.
  */
 
-package com.github.nalukit.example.nalu.loginapplication.client.ui.viewport.footer;
+package com.github.nalukit.example.nalu.loginapplication.client.ui.shell.footer;
 
 import com.github.nalukit.nalu.client.component.AbstractComponent;
 import elemental2.dom.HTMLElement;

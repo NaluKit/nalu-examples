@@ -23,7 +23,7 @@ import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import elemental2.dom.HTMLElement;
 
-@Controller(route = "/loginViewport/login",
+@Controller(route = "/loginShell/login",
             selector = "content",
             component = LoginComponent.class,
             componentInterface = ILoginComponent.class)
@@ -44,6 +44,6 @@ public class LoginController
                       String password) {
     this.context.setLoggedIn(true);
     // we are always happy with the credential ....
-    this.router.route("/applicationViewport/person/search");
+    this.router.route("/applicationShell/person/search");
   }
 }

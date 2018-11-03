@@ -14,7 +14,7 @@
  *  the License.
  */
 
-package com.github.nalukit.example.nalu.loginapplication.client.ui.viewport.loginviewport;
+package com.github.nalukit.example.nalu.loginapplication.client.ui.shell.login;
 
 import com.github.nalukit.example.nalu.loginapplication.client.NaluLoginApplicationContext;
 import com.github.nalukit.nalu.client.component.AbstractShell;
