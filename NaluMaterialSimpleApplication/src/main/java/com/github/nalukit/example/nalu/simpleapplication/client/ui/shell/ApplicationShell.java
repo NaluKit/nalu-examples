@@ -27,7 +27,6 @@ public class ApplicationShell
   @UiField
   MaterialContainer content;
 
-  //TODO: right now sideNav component is on the shell
   // but should be extracted to a different component.
   // Selector already available for that extraction.
   @UiField
