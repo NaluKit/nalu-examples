@@ -22,7 +22,7 @@ import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import elemental2.dom.HTMLElement;
 
-@Controller(route = "/",
+@Controller(route = "/application",
             selector = "header",
             componentInterface = IHeaderComponent.class,
             component = HeaderComponent.class)

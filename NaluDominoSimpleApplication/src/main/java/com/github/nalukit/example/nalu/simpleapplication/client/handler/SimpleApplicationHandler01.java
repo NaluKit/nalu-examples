@@ -8,7 +8,7 @@ import elemental2.dom.DomGlobal;
 
 @Handler
 public class SimpleApplicationHandler01
-  extends AbstractHandler<NaluSimpleApplicationContext> {
+    extends AbstractHandler<NaluSimpleApplicationContext> {
 
   public SimpleApplicationHandler01() {
   }

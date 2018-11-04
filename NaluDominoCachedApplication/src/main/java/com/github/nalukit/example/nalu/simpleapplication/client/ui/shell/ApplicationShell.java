@@ -29,38 +29,39 @@ import org.dominokit.domino.ui.style.ColorScheme;
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
-public class Shell
-        extends AbstractShell<NaluSimpleApplicationContext> {
+public class ApplicationShell
+    extends AbstractShell<NaluSimpleApplicationContext> {
 
-    public Shell() {
-    }
+  public ApplicationShell() {
+  }
 
-    /**
-     * The ShellPresenter has to implemented this method, because the framework
-     * can not do this. (It does not know, what to use).
-     * <p>
-     * We append the ShellView to the browser body.
-     */
-    @Override
-    public void attachShell() {
-        Layout layout = Layout.create("Nalu - Simple Application using Domino-UI")
-                .show(ColorScheme.INDIGO);
+  /**
+   * The ShellPresenter has to implemented this method, because the framework
+   * can not do this. (It does not know, what to use).
+   * <p>
+   * We append the ShellView to the browser body.
+   */
+  @Override
+  public void attachShell() {
+    Layout layout = Layout.create("Nalu - Simple Application using Domino-UI")
+                          .show(ColorScheme.INDIGO);
 
-        layout.showFooter()
-                .fixFooter()
-                .getFooter()
-                .setId("footer")
-                .style()
-                .setMinHeight("42px");
+    layout.showFooter()
+          .fixFooter()
+          .getFooter()
+          .setId("footer")
+          .style()
+          .setMinHeight("42px");
 
-        layout.getLeftPanel().setId("navigation");
-        layout.getContentPanel()
-                .appendChild(Row.create()
-                        .appendChild(Column.span8()
-                                .offset2()
-                                .setId("content")));
+    layout.getLeftPanel()
+          .setId("navigation");
+    layout.getContentPanel()
+          .appendChild(Row.create()
+                          .appendChild(Column.span8()
+                                             .offset2()
+                                             .setId("content")));
 
-        MediaQuery.addOnMediumAndDownListener(layout::unfixLeftPanelPosition);
-        MediaQuery.addOnLargeAndUpListener(layout::fixLeftPanelPosition);
-    }
+    MediaQuery.addOnMediumAndDownListener(layout::unfixLeftPanelPosition);
+    MediaQuery.addOnLargeAndUpListener(layout::fixLeftPanelPosition);
+  }
 }

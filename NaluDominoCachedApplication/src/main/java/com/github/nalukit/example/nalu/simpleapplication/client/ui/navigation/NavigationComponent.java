@@ -24,10 +24,11 @@ import org.dominokit.domino.ui.tree.Tree;
 import org.dominokit.domino.ui.tree.TreeItem;
 
 public class NavigationComponent
-  extends AbstractComponent<INavigationComponent.Controller, HTMLElement>
-  implements INavigationComponent {
+    extends AbstractComponent<INavigationComponent.Controller, HTMLElement>
+    implements INavigationComponent {
 
   private TreeItem searchItem;
+
   private TreeItem listItem;
 
   public NavigationComponent() {

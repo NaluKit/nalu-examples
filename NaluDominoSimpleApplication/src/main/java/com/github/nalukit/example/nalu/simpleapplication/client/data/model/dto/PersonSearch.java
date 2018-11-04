@@ -21,7 +21,7 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class PersonSearch
-  implements Serializable {
+    implements Serializable {
 
   private String name;
 

@@ -18,12 +18,11 @@
 package com.github.nalukit.example.nalu.simpleapplication.client;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.filters.BartSimpsonFilter;
+import com.github.nalukit.example.nalu.simpleapplication.client.ui.shell.ApplicationShell;
 import com.github.nalukit.nalu.client.application.IsApplication;
+import com.github.nalukit.nalu.client.application.annotation.*;
 import com.github.nalukit.nalu.client.application.annotation.Application;
-import com.github.nalukit.nalu.client.application.annotation.Debug;
-import com.github.nalukit.nalu.client.application.annotation.Filters;
 import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
-import com.github.nalukit.example.nalu.simpleapplication.client.ui.shell.Shell;
 
 /**
  * Implemantation of the NaluSimpleApplication class.
@@ -33,13 +32,14 @@ import com.github.nalukit.example.nalu.simpleapplication.client.ui.shell.Shell;
  * <p>Please keep in mind, the services are simulated inside the client (because this is not part of the
  * framework). You can use any technique to call the server!</p>
  */
-@Application(shell = Shell.class,
-             loader = NaluSimpleApplicationLoader.class,
-             startRoute = "/search",
+@Application(loader = NaluSimpleApplicationLoader.class,
+             startRoute = "/application/search",
              context = NaluSimpleApplicationContext.class)
 @Filters(filterClasses = BartSimpsonFilter.class)
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = DefaultElemental2Logger.class)
+@Shells(@Shell(name = "application",
+               shell = ApplicationShell.class))
 interface NaluSimpleApplication
     extends IsApplication {
 }

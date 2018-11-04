@@ -17,8 +17,8 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client;
 
-import com.github.nalukit.nalu.client.application.IsContext;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.service.FakedService;
+import com.github.nalukit.nalu.client.application.IsContext;
 
 /**
  * A application context of the NaluMailApplication

@@ -17,16 +17,16 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.search;
 
-import com.github.nalukit.nalu.client.component.AbstractComponent;
-import com.google.gwt.user.client.ui.*;
 import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationConstants;
 import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationCss;
 import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationStyleFactory;
 import com.github.nalukit.example.nalu.simpleapplication.client.widgets.TextField;
+import com.github.nalukit.nalu.client.component.AbstractComponent;
+import com.google.gwt.user.client.ui.*;
 
 public class SearchComponent
-  extends AbstractComponent<ISearchComponent.Controller, Widget>
-  implements ISearchComponent {
+    extends AbstractComponent<ISearchComponent.Controller, Widget>
+    implements ISearchComponent {
 
   private TextField searchName;
 

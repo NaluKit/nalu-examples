@@ -26,23 +26,24 @@ import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.user.client.ui.*;
 
 public class TextField
-  extends Composite
-  implements HasText,
-             IsEditor<ValueBoxEditor<String>>,
-             Focusable {
-
+    extends Composite
+    implements HasText,
+               IsEditor<ValueBoxEditor<String>>,
+               Focusable {
 
   private TextFieldStyle    style;
-  private Label             label;
-  private TextBox           textBox;
-  private FlowPanel         panel;
-  private ResizeLayoutPanel widgetPanel;
 
+  private Label             label;
+
+  private TextBox           textBox;
+
+  private FlowPanel         panel;
+
+  private ResizeLayoutPanel widgetPanel;
 
   public TextField() {
     this(null);
   }
-
 
   public TextField(String label) {
     Resources resources = GWT.create(Resources.class);
@@ -108,6 +109,11 @@ public class TextField
   }
 
   @Override
+  public void setTabIndex(int index) {
+    textBox.setTabIndex(index);
+  }
+
+  @Override
   public void setAccessKey(char key) {
     textBox.setAccessKey(key);
   }
@@ -115,11 +121,6 @@ public class TextField
   @Override
   public void setFocus(boolean focused) {
     textBox.setFocus(focused);
-  }
-
-  @Override
-  public void setTabIndex(int index) {
-    textBox.setTabIndex(index);
   }
 
   @Override
@@ -153,7 +154,7 @@ public class TextField
   }
 
   public interface Resources
-    extends ClientBundle {
+      extends ClientBundle {
 
     @Source("TextFieldStyle.css")
     TextFieldStyle style();

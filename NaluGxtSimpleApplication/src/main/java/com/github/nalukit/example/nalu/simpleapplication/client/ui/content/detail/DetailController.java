@@ -24,13 +24,13 @@ import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import com.google.gwt.user.client.ui.Widget;
 
-@Controller(route = "/mail/:id",
-  selector = "content",
-  componentInterface = IDetailComponent.class,
-  component = DetailComponent.class)
+@Controller(route = "/application/mail/:id",
+            selector = "content",
+            componentInterface = IDetailComponent.class,
+            component = DetailComponent.class)
 public class DetailController
-  extends AbstractComponentController<NaluSimpleApplicationContext, IDetailComponent, Widget>
-  implements IDetailComponent.Controller {
+    extends AbstractComponentController<NaluSimpleApplicationContext, IDetailComponent, Widget>
+    implements IDetailComponent.Controller {
 
   public DetailController() {
   }

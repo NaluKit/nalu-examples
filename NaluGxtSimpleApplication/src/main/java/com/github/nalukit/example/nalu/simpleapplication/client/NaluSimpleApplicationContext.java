@@ -24,7 +24,7 @@ import com.github.nalukit.nalu.client.application.IsContext;
  * A application context of the NaluMailApplication
  */
 public class NaluSimpleApplicationContext
-  implements IsContext {
+    implements IsContext {
 
   private String version;
 

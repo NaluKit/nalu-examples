@@ -32,7 +32,7 @@
     <gwtVersion>2.8.2</gwtVersion>
 
     <!-- nalu version -->
-    <nalu.version>1.0.0-rc-7</nalu.version>
+    <nalu.version>1.0.0-rc-8</nalu.version>
 
     <gwt-events.version>HEAD-SNAPSHOT</gwt-events.version>
 

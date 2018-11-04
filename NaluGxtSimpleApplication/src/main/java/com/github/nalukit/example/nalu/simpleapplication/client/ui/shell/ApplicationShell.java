@@ -17,6 +17,7 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.shell;
 
+import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.nalu.client.component.AbstractShell;
 import com.github.nalukit.nalu.plugin.gwt.client.annotation.Selector;
 import com.github.nalukit.nalu.plugin.gwt.client.selector.IsSelectorProvider;
@@ -27,22 +28,25 @@ import com.sencha.gxt.widget.core.client.ContentPanel;
 import com.sencha.gxt.widget.core.client.container.BorderLayoutContainer;
 import com.sencha.gxt.widget.core.client.container.SimpleContainer;
 import com.sencha.gxt.widget.core.client.container.Viewport;
-import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 
 /**
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
-public class Shell
-  extends AbstractShell<NaluSimpleApplicationContext> {
+public class ApplicationShell
+    extends AbstractShell<NaluSimpleApplicationContext> {
 
   protected ContentPanel          northContainer;
+
   protected ContentPanel          southContainer;
+
   protected SimpleContainer       centerContainer;
+
   private   Viewport              viewport;
+
   private   BorderLayoutContainer shell;
 
-  public Shell() {
+  public ApplicationShell() {
     super();
   }
 
@@ -91,7 +95,7 @@ public class Shell
   @Override
   public void bind() {
     // create the sleecgtor provider so set Nalu works!
-    IsSelectorProvider<Shell> provider = new ShellSelectorProviderImpl();
+    IsSelectorProvider<ApplicationShell> provider = new ApplicationShellSelectorProviderImpl();
     provider.initialize(this);
   }
 

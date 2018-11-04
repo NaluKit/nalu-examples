@@ -1,0 +1,29 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:m="urn:import:gwt.material.design.client.ui" xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+  <m:MaterialContainer>
+    <m:MaterialNavBar activates="sideNav" ui:field="navBar" backgroundColor="BLUE" shadow="1">
+      <m:MaterialNavBrand text="Nalu Simple Application"/>
+    </m:MaterialNavBar>
+
+    <m:MaterialSideNavDrawer ui:field="sideNav" m:id="sideNav" closeOnClick="true" width="200"
+                             alwaysShowActivator="true">
+      <ma:sideprofile.MaterialSideProfile
+              url="http://static1.squarespace.com/static/51609147e4b0715db61d32b6/521b97cee4b05f031fd12dde/5519e33de4b06a1002802805/1431718693701/?format=1500w">
+        <m:MaterialImage url="http://b.vimeocdn.com/ps/339/488/3394886_300.jpg"/>
+        <m:MaterialLabel ui:field="userName" textColor="WHITE"/>
+        <m:MaterialLink text="gwt-material@gmail.com" activates="dropProfile" iconType="ARROW_DROP_DOWN"
+                        iconPosition="RIGHT" textColor="WHITE"/>
+      </ma:sideprofile.MaterialSideProfile>
+
+      <m:MaterialLink text="Dashboard" textColor="BLUE" iconType="DASHBOARD" targetHistoryToken="application/dashboard"/>
+      <m:MaterialLink text="On Route" textColor="BLUE" iconType="MAP" targetHistoryToken="application/onroutemap"/>
+      <m:MaterialLink ui:field="logout" text="Logout" textColor="BLUE" iconType="EXIT_TO_APP"/>
+
+    </m:MaterialSideNavDrawer>
+
+
+    <m:MaterialContainer ui:field="content"/>
+
+  </m:MaterialContainer>
+</ui:UiBinder>

@@ -17,17 +17,17 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.navigation;
 
+import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationConstants;
+import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationCss;
+import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationStyleFactory;
 import com.github.nalukit.nalu.client.component.AbstractComponent;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
-import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationConstants;
-import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationCss;
-import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationStyleFactory;
 
 public class NavigationComponent
-  extends AbstractComponent<INavigationComponent.Controller, Widget>
-  implements INavigationComponent {
+    extends AbstractComponent<INavigationComponent.Controller, Widget>
+    implements INavigationComponent {
 
   private Button searchButton;
 

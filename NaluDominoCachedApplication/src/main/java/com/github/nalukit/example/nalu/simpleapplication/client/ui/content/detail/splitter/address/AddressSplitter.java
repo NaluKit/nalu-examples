@@ -27,7 +27,7 @@ import elemental2.dom.HTMLElement;
                      component = AddressComponent.class)
 public class AddressSplitter
     extends AbstractCompositeController<NaluSimpleApplicationContext, IAddressComponent, HTMLElement>
-  implements IAddressComponent.Controller {
+    implements IAddressComponent.Controller {
 
   public AddressSplitter() {
   }

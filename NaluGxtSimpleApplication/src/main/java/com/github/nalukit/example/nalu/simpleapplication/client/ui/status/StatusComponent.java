@@ -26,8 +26,8 @@ import com.sencha.gxt.widget.core.client.container.MarginData;
 import com.sencha.gxt.widget.core.client.container.SimpleContainer;
 
 public class StatusComponent
-  extends AbstractComponent<IStatusComponent.Controller, Widget>
-  implements IStatusComponent {
+    extends AbstractComponent<IStatusComponent.Controller, Widget>
+    implements IStatusComponent {
 
   private static ThemeDetails themeDetails = GWT.create(ThemeDetails.class);
 
@@ -63,7 +63,6 @@ public class StatusComponent
 
     container.add(this.label,
                   new MarginData(6));
-
 
     initElement(container);
   }

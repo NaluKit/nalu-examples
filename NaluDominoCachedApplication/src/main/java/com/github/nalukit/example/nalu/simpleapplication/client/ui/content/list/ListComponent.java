@@ -95,10 +95,10 @@ public class ListComponent
                                                       "Name").setCellRenderer(cell -> a().textContent(cell.getTableRow()
                                                                                                           .getRecord()
                                                                                                           .getName() +
-                                                                                                          ", " +
-                                                                                                          cell.getTableRow()
-                                                                                                              .getRecord()
-                                                                                                              .getFirstName())
+                                                                                                      ", " +
+                                                                                                      cell.getTableRow()
+                                                                                                          .getRecord()
+                                                                                                          .getFirstName())
                                                                                          .on(EventType.click,
                                                                                              e -> getController().doUpdate(cell.getTableRow()
                                                                                                                                .getRecord()))

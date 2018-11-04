@@ -24,8 +24,8 @@ import static org.jboss.gwt.elemento.core.Elements.header;
 import static org.jboss.gwt.elemento.core.Elements.img;
 
 public class HeaderComponent
-  extends AbstractComponent<IHeaderComponent.Controller, HTMLElement>
-  implements IHeaderComponent {
+    extends AbstractComponent<IHeaderComponent.Controller, HTMLElement>
+    implements IHeaderComponent {
 
   public HeaderComponent() {
   }

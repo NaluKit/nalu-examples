@@ -20,6 +20,7 @@ package com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto;
 public class Contact {
 
   private String email;
+
   private String name;
 
   public Contact() {

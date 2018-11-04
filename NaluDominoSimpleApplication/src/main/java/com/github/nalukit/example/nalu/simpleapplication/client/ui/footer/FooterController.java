@@ -18,22 +18,22 @@
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.footer;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
+import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
-import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import elemental2.dom.HTMLElement;
 
 /**
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
-@Controller(route = "/",
-  selector = "footer",
-  componentInterface = IFooterComponent.class,
-  component = FooterComponent.class)
+@Controller(route = "/application",
+            selector = "footer",
+            componentInterface = IFooterComponent.class,
+            component = FooterComponent.class)
 public class FooterController
-  extends AbstractComponentController<NaluSimpleApplicationContext, IFooterComponent, HTMLElement>
-  implements IFooterComponent.Controller {
+    extends AbstractComponentController<NaluSimpleApplicationContext, IFooterComponent, HTMLElement>
+    implements IFooterComponent.Controller {
 
   public FooterController() {
   }

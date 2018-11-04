@@ -141,11 +141,11 @@ public class PersonService {
   public List<Person> get(PersonSearch search) {
     List<Person> list = new ArrayList<Person>();
     if ((search.getName() != null &&
-             search.getName()
-                   .length() != 0) ||
+         search.getName()
+               .length() != 0) ||
         (search.getCity() != null &&
-             search.getCity()
-                   .length() != 0)) {
+         search.getCity()
+               .length() != 0)) {
       Iterator<Long> iterator = persons.keySet()
                                        .iterator();
       while (iterator.hasNext()) {
@@ -168,8 +168,8 @@ public class PersonService {
             list.add(person);
           }
         } else if (search.getName() != null &&
-            search.getName()
-                  .length() != 0) {
+                   search.getName()
+                         .length() != 0) {
           if (person.getName()
                     .toLowerCase()
                     .contains(search.getName()
@@ -177,8 +177,8 @@ public class PersonService {
             list.add(person);
           }
         } else if (search.getCity() != null &&
-            search.getCity()
-                  .length() != 0) {
+                   search.getCity()
+                         .length() != 0) {
           if (person.getAddress()
                     .getCity()
                     .toLowerCase()

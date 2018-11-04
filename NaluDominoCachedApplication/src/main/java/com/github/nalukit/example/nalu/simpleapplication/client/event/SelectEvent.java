@@ -3,7 +3,7 @@ package com.github.nalukit.example.nalu.simpleapplication.client.event;
 import org.gwtproject.event.shared.Event;
 
 public class SelectEvent
-  extends Event<SelectEvent.StatusChangeHandler> {
+    extends Event<SelectEvent.StatusChangeHandler> {
 
   public static Type<SelectEvent.StatusChangeHandler> TYPE = new Type<SelectEvent.StatusChangeHandler>();
 
@@ -34,6 +34,8 @@ public class SelectEvent
     LIST,
     DETAIL
   }
+
+
 
   public interface StatusChangeHandler {
 

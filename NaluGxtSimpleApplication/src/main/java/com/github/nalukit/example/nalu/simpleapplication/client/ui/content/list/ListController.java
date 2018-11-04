@@ -17,22 +17,22 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.list;
 
+import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Mail;
 import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import com.google.gwt.user.client.ui.Widget;
-import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 
 import java.util.List;
 
-@Controller(route = "/",
-  selector = "north",
-  componentInterface = IListComponent.class,
-  component = ListComponent.class)
+@Controller(route = "/application/list",
+            selector = "north",
+            componentInterface = IListComponent.class,
+            component = ListComponent.class)
 public class ListController
-  extends AbstractComponentController<NaluSimpleApplicationContext, IListComponent, Widget>
-  implements IListComponent.Controller {
+    extends AbstractComponentController<NaluSimpleApplicationContext, IListComponent, Widget>
+    implements IListComponent.Controller {
 
   public ListController() {
   }
@@ -47,7 +47,7 @@ public class ListController
 
   @Override
   public void doSelectRow(String id) {
-    this.router.route("/mail",
+    this.router.route("/application/mail",
                       id);
   }
 }

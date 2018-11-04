@@ -21,7 +21,6 @@ import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.P
 import com.github.nalukit.nalu.client.component.AbstractComponent;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.Text;
-import org.dominokit.domino.ui.button.Button;
 import org.dominokit.domino.ui.cards.Card;
 import org.dominokit.domino.ui.datatable.ColumnConfig;
 import org.dominokit.domino.ui.datatable.DataTable;
@@ -40,7 +39,7 @@ public class ListComponent
     extends AbstractComponent<IListComponent.Controller, HTMLElement>
     implements IListComponent {
 
-  private DataTable<Person>          table;
+  private DataTable<Person> table;
 
   private LocalListDataStore<Person> store;
 
@@ -54,10 +53,10 @@ public class ListComponent
                                                       "Name").setCellRenderer(cell -> a().textContent(cell.getTableRow()
                                                                                                           .getRecord()
                                                                                                           .getName() +
-                                                                                                          ", " +
-                                                                                                          cell.getTableRow()
-                                                                                                              .getRecord()
-                                                                                                              .getFirstName())
+                                                                                                      ", " +
+                                                                                                      cell.getTableRow()
+                                                                                                          .getRecord()
+                                                                                                          .getFirstName())
                                                                                          .on(EventType.click,
                                                                                              e -> getController().doUpdate(cell.getTableRow()
                                                                                                                                .getRecord()))

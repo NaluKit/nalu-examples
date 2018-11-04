@@ -18,29 +18,34 @@
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.shell;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
+import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationCss;
+import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationStyleFactory;
 import com.github.nalukit.nalu.client.component.AbstractShell;
 import com.github.nalukit.nalu.plugin.gwt.client.annotation.Selector;
 import com.github.nalukit.nalu.plugin.gwt.client.selector.IsSelectorProvider;
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.user.client.ui.*;
-import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationCss;
-import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationStyleFactory;
 
 /**
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
-public class Shell
-  extends AbstractShell<NaluSimpleApplicationContext> {
+public class ApplicationShell
+    extends AbstractShell<NaluSimpleApplicationContext> {
 
   SimpleLayoutPanel headerWidget;
+
   ResizeLayoutPanel footerWidget;
+
   SimpleLayoutPanel navigationWidget;
+
   SimpleLayoutPanel contentWidget;
+
   private ResizeLayoutPanel shell;
+
   private ApplicationCss    style;
 
-  public Shell() {
+  public ApplicationShell() {
     super();
   }
 
@@ -118,19 +123,19 @@ public class Shell
     return panel;
   }
 
-//    private void forceLayout() {
-//      if (shell.isAttached()) {
-//        Widget parent = shell.getParent();
-//        if (parent != null) {
-//          int parentWidth = parent.getOffsetWidth();
-//          footerPanel.setWidth(Integer.toString(parentWidth) + "px");
-//        }
-//      }
-//    }
+  //    private void forceLayout() {
+  //      if (shell.isAttached()) {
+  //        Widget parent = shell.getParent();
+  //        if (parent != null) {
+  //          int parentWidth = parent.getOffsetWidth();
+  //          footerPanel.setWidth(Integer.toString(parentWidth) + "px");
+  //        }
+  //      }
+  //    }
 
   @Override
   public void bind() {
-    IsSelectorProvider<Shell> provider = new ShellSelectorProviderImpl();
+    IsSelectorProvider<ApplicationShell> provider = new ApplicationShellSelectorProviderImpl();
     provider.initialize(this);
   }
 

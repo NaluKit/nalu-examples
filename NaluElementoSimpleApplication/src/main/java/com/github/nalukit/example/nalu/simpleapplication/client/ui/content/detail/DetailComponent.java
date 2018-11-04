@@ -17,9 +17,9 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail;
 
-import com.github.nalukit.nalu.client.component.AbstractComponent;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
 import com.github.nalukit.example.nalu.simpleapplication.client.widgets.TextField;
+import com.github.nalukit.nalu.client.component.AbstractComponent;
 import elemental2.dom.HTMLButtonElement;
 import elemental2.dom.HTMLElement;
 
@@ -28,8 +28,8 @@ import static org.jboss.gwt.elemento.core.Elements.div;
 import static org.jboss.gwt.elemento.core.EventType.click;
 
 public class DetailComponent
-  extends AbstractComponent<IDetailComponent.Controller, HTMLElement>
-  implements IDetailComponent {
+    extends AbstractComponent<IDetailComponent.Controller, HTMLElement>
+    implements IDetailComponent {
 
   private TextField detailFirstName;
 
@@ -92,27 +92,22 @@ public class DetailComponent
   public boolean isDirty() {
     boolean notDirty = (getController().getPerson()
                                        .getFirstName()
-                                       .equals(detailFirstName.getText())
-                       ) &&
+                                       .equals(detailFirstName.getText())) &&
                        (getController().getPerson()
                                        .getName()
-                                       .equals(detailName.getText())
-                       ) &&
+                                       .equals(detailName.getText())) &&
                        (getController().getPerson()
                                        .getAddress()
                                        .getStreet()
-                                       .equals(detailStreet.getText())
-                       ) &&
+                                       .equals(detailStreet.getText())) &&
                        (getController().getPerson()
                                        .getAddress()
                                        .getZip()
-                                       .equals(detailZip.getText())
-                       ) &&
+                                       .equals(detailZip.getText())) &&
                        (getController().getPerson()
                                        .getAddress()
                                        .getCity()
-                                       .equals(detailCity.getText())
-                       );
+                                       .equals(detailCity.getText()));
     return !notDirty;
   }
 

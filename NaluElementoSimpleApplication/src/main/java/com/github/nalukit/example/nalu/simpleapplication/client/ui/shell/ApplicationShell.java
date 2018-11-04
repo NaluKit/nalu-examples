@@ -31,10 +31,10 @@ import static org.jboss.gwt.elemento.core.Elements.*;
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
-public class Shell
+public class ApplicationShell
     extends AbstractShell<NaluSimpleApplicationContext> {
 
-  public Shell() {
+  public ApplicationShell() {
   }
 
   /**

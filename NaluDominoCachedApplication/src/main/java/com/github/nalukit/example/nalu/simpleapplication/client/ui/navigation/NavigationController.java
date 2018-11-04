@@ -18,18 +18,18 @@
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.navigation;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
+import com.github.nalukit.example.nalu.simpleapplication.client.event.SelectEvent;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
-import com.github.nalukit.example.nalu.simpleapplication.client.event.SelectEvent;
 import elemental2.dom.HTMLElement;
 
-@Controller(route = "/",
-  selector = "navigation",
-  componentInterface = INavigationComponent.class,
-  component = NavigationComponent.class)
+@Controller(route = "/application",
+            selector = "navigation",
+            componentInterface = INavigationComponent.class,
+            component = NavigationComponent.class)
 public class NavigationController
-  extends AbstractComponentController<NaluSimpleApplicationContext, INavigationComponent, HTMLElement>
-  implements INavigationComponent.Controller {
+    extends AbstractComponentController<NaluSimpleApplicationContext, INavigationComponent, HTMLElement>
+    implements INavigationComponent.Controller {
 
   public NavigationController() {
   }
@@ -43,14 +43,14 @@ public class NavigationController
 
   @Override
   public void doShowSearch() {
-    this.router.route("/person/search",
+    this.router.route("/application/person/search",
                       this.context.getSearchName(),
                       this.context.getSearchCity());
   }
 
   @Override
   public void doShowList() {
-    this.router.route("/person/list",
+    this.router.route("/application/person/list",
                       this.context.getSearchName(),
                       this.context.getSearchCity());
   }

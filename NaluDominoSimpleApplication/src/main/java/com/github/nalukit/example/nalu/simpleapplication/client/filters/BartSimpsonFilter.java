@@ -5,7 +5,7 @@ import com.github.nalukit.nalu.client.filter.AbstractFilter;
 import elemental2.dom.DomGlobal;
 
 public class BartSimpsonFilter
-  extends AbstractFilter<NaluSimpleApplicationContext> {
+    extends AbstractFilter<NaluSimpleApplicationContext> {
 
   @Override
   public boolean filter(String route,
@@ -22,12 +22,12 @@ public class BartSimpsonFilter
 
   @Override
   public String redirectTo() {
-    return "/person/search";
+    return "/application/person/search";
   }
 
   @Override
   public String[] parameters() {
-    return new String[]{this.context.getSearchName(),
-                        this.context.getSearchCity()};
+    return new String[] { this.context.getSearchName(),
+                          this.context.getSearchCity() };
   }
 }

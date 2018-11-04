@@ -21,7 +21,7 @@ import com.google.gwt.core.shared.GWT;
 import com.google.gwt.i18n.client.Constants;
 
 public interface ApplicationConstants
-  extends Constants {
+    extends Constants {
 
   ApplicationConstants CONSTANTS = GWT.create(ApplicationConstants.class);
 

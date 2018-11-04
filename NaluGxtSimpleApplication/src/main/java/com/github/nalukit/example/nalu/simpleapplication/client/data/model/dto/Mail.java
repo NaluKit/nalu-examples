@@ -24,18 +24,23 @@ import java.util.Objects;
  * A simple structure containing the basic components of an email.
  */
 public final class Mail
-  implements IsSerializable {
+    implements IsSerializable {
 
   /* uniques id */
   private String  id;
+
   /* The sender's name */
   private String  sender;
+
   /* The sender's email */
   private String  email;
+
   /* The email subject line */
   private String  subject;
+
   /* The email's HTML body */
   private String  body;
+
   /* Read flag */
   private boolean read;
 

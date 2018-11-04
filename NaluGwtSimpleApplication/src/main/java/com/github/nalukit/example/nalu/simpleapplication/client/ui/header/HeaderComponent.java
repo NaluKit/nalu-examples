@@ -17,17 +17,17 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.header;
 
+import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationCss;
+import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationStyleFactory;
+import com.github.nalukit.example.nalu.simpleapplication.client.resources.ImageResources;
 import com.github.nalukit.nalu.client.component.AbstractComponent;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Widget;
-import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationCss;
-import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationStyleFactory;
-import com.github.nalukit.example.nalu.simpleapplication.client.resources.ImageResources;
 
 public class HeaderComponent
-  extends AbstractComponent<IHeaderComponent.Controller, Widget>
-  implements IHeaderComponent {
+    extends AbstractComponent<IHeaderComponent.Controller, Widget>
+    implements IHeaderComponent {
 
   public HeaderComponent() {
   }

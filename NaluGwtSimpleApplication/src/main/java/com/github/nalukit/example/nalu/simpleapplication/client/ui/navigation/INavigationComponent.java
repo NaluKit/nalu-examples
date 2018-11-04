@@ -21,10 +21,10 @@ import com.github.nalukit.nalu.client.component.IsComponent;
 import com.google.gwt.user.client.ui.Widget;
 
 public interface INavigationComponent
-  extends IsComponent<INavigationComponent.Controller, Widget> {
+    extends IsComponent<INavigationComponent.Controller, Widget> {
 
   interface Controller
-    extends IsComponent.Controller {
+      extends IsComponent.Controller {
 
     void doShowSearch();
 

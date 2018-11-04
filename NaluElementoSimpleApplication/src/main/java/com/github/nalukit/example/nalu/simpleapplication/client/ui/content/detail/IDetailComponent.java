@@ -17,8 +17,8 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail;
 
-import com.github.nalukit.nalu.client.component.IsComponent;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
+import com.github.nalukit.nalu.client.component.IsComponent;
 import elemental2.dom.HTMLElement;
 
 public interface IDetailComponent

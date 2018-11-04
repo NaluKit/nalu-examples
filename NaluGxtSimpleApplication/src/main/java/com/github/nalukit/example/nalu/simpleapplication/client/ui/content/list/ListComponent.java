@@ -35,12 +35,13 @@ import java.util.Comparator;
 import java.util.List;
 
 public class ListComponent
-  extends AbstractComponent<IListComponent.Controller, Widget>
-  implements IListComponent {
+    extends AbstractComponent<IListComponent.Controller, Widget>
+    implements IListComponent {
 
   private MailProperties mailProperties;
 
   private Grid<Mail>      grid;
+
   private ListStore<Mail> store;
 
   public ListComponent() {

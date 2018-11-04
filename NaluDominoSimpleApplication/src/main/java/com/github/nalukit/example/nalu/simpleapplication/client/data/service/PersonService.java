@@ -47,6 +47,13 @@ public class PersonService {
     }
   }
 
+  public static PersonService get() {
+    if (instance == null) {
+      instance = new PersonService();
+    }
+    return instance;
+  }
+
   private void initList() {
     Address address01 = new Address(1,
                                     "Evergreen Terrace",
@@ -112,15 +119,8 @@ public class PersonService {
                            address03));
   }
 
-  public static PersonService get() {
-    if (instance == null) {
-      instance = new PersonService();
-    }
-    return instance;
-  }
-
   public Person get(long id)
-    throws PersonNotFoundException {
+      throws PersonNotFoundException {
     if (persons.containsKey(new Long(id))) {
       return persons.get(id);
     } else {
@@ -142,12 +142,10 @@ public class PersonService {
     List<Person> list = new ArrayList<Person>();
     if ((search.getName() != null &&
          search.getName()
-               .length() != 0
-        ) ||
+               .length() != 0) ||
         (search.getCity() != null &&
          search.getCity()
-               .length() != 0
-        )) {
+               .length() != 0)) {
       Iterator<Long> iterator = persons.keySet()
                                        .iterator();
       while (iterator.hasNext()) {
@@ -195,7 +193,7 @@ public class PersonService {
   }
 
   public void insert(Person person)
-    throws PersonException {
+      throws PersonException {
     Iterator<Person> iter = persons.values()
                                    .iterator();
     long maxKey = 0;
@@ -212,7 +210,7 @@ public class PersonService {
   }
 
   public void update(Person person)
-    throws PersonException {
+      throws PersonException {
     Person value = persons.get(new Long(person.getId()));
     if (value != null) {
       persons.remove(new Long(person.getId()));

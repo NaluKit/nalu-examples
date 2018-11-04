@@ -28,8 +28,8 @@ import org.dominokit.domino.ui.grid.Row;
 import org.jboss.gwt.elemento.core.Elements;
 
 public class PersonComponent
-  extends AbstractComponent<IPersonComponent.Controller, HTMLElement>
-  implements IPersonComponent {
+    extends AbstractComponent<IPersonComponent.Controller, HTMLElement>
+    implements IPersonComponent {
 
   private TextBox detailFirstName;
 
@@ -68,14 +68,11 @@ public class PersonComponent
 
   @Override
   public boolean isDirty(Person person) {
-    boolean notDirty = (
-                         person.getFirstName()
-                               .equals(detailFirstName.getValue())
-                       ) &&
+    boolean notDirty = (person.getFirstName()
+                              .equals(detailFirstName.getValue())) &&
 
                        (person.getName()
-                              .equals(detailName.getValue())
-                       );
+                              .equals(detailName.getValue()));
     return !notDirty;
   }
 

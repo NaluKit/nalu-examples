@@ -21,14 +21,14 @@ import com.github.nalukit.nalu.client.component.IsComponent;
 import com.google.gwt.user.client.ui.Widget;
 
 public interface ISearchComponent
-  extends IsComponent<ISearchComponent.Controller, Widget> {
+    extends IsComponent<ISearchComponent.Controller, Widget> {
 
   void setSearchName(String searchName);
 
   void setSearchCity(String searchCity);
 
   interface Controller
-    extends IsComponent.Controller {
+      extends IsComponent.Controller {
 
     void doClickSearchButton(String searchName,
                              String searchCity);

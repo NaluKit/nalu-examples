@@ -18,20 +18,20 @@
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.search;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
+import com.github.nalukit.example.nalu.simpleapplication.client.event.SelectEvent;
+import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
-import com.github.nalukit.example.nalu.simpleapplication.client.event.SelectEvent;
-import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import elemental2.dom.HTMLElement;
 
-@Controller(route = "/person/search/:searchName/:searchCity",
-  selector = "content",
-  component = SearchComponent.class,
-  componentInterface = ISearchComponent.class)
+@Controller(route = "/application/person/search/:searchName/:searchCity",
+            selector = "content",
+            component = SearchComponent.class,
+            componentInterface = ISearchComponent.class)
 public class SearchController
-  extends AbstractComponentController<NaluSimpleApplicationContext, ISearchComponent, HTMLElement>
-  implements ISearchComponent.Controller {
+    extends AbstractComponentController<NaluSimpleApplicationContext, ISearchComponent, HTMLElement>
+    implements ISearchComponent.Controller {
 
   public SearchController() {
   }
@@ -48,7 +48,7 @@ public class SearchController
                                   String searchCity) {
     this.context.setSearchCity(searchCity);
     this.context.setSearchName(searchName);
-    this.router.route("/person/list",
+    this.router.route("/application/person/list",
                       searchName,
                       searchCity);
   }

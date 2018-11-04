@@ -5,15 +5,18 @@ import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import com.google.gwt.user.client.ui.Widget;
 
-@Controller(route = "/onroutemap", selector = "content", componentInterface = IOnRouteMapComponent.class, component = OnRouteMapComponent.class)
-public class OnRouteMapController extends
-        AbstractComponentController<NaluSimpleApplicationContext, IOnRouteMapComponent, Widget> implements
-        IOnRouteMapComponent.Controller {
+@Controller(route = "/application/onroutemap",
+            selector = "content",
+            componentInterface = IOnRouteMapComponent.class,
+            component = OnRouteMapComponent.class)
+public class OnRouteMapController
+    extends AbstractComponentController<NaluSimpleApplicationContext, IOnRouteMapComponent, Widget>
+    implements IOnRouteMapComponent.Controller {
 
-    public OnRouteMapController() {
-    }
+  public OnRouteMapController() {
+  }
 
-    @Override
-    public void start() {
-    }
+  @Override
+  public void start() {
+  }
 }

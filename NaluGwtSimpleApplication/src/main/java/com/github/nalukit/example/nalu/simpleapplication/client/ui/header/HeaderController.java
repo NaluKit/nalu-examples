@@ -22,13 +22,13 @@ import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import com.google.gwt.user.client.ui.Widget;
 
-@Controller(route = "/",
-  selector = "header",
-  componentInterface = IHeaderComponent.class,
-  component = HeaderComponent.class)
+@Controller(route = "/application",
+            selector = "header",
+            componentInterface = IHeaderComponent.class,
+            component = HeaderComponent.class)
 public class HeaderController
-  extends AbstractComponentController<NaluSimpleApplicationContext, IHeaderComponent, Widget>
-  implements IHeaderComponent.Controller {
+    extends AbstractComponentController<NaluSimpleApplicationContext, IHeaderComponent, Widget>
+    implements IHeaderComponent.Controller {
 
   public HeaderController() {
   }

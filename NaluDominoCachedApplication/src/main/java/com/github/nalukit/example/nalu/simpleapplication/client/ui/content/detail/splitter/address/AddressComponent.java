@@ -28,9 +28,8 @@ import org.dominokit.domino.ui.grid.Row;
 import org.jboss.gwt.elemento.core.Elements;
 
 public class AddressComponent
-  extends AbstractComponent<IAddressComponent.Controller, HTMLElement>
-  implements IAddressComponent {
-
+    extends AbstractComponent<IAddressComponent.Controller, HTMLElement>
+    implements IAddressComponent {
 
   private TextBox detailStreet;
 
@@ -46,7 +45,6 @@ public class AddressComponent
     this.detailStreet = TextBox.create("Street");
     this.detailZip = TextBox.create("ZIP");
     this.detailCity = TextBox.create("City");
-
 
     HTMLDivElement divElemet = Elements.div()
                                        .asElement();
@@ -80,22 +78,17 @@ public class AddressComponent
 
   @Override
   public boolean isDirty(Person person) {
-    boolean notDirty = (
-      (person.getAddress()
-             .getStreet()
-             .equals(detailStreet.getValue())
-      ) &&
+    boolean notDirty = ((person.getAddress()
+                               .getStreet()
+                               .equals(detailStreet.getValue())) &&
 
-      (person.getAddress()
-             .getZip()
-             .equals(detailZip.getValue())
-      ) &&
+                        (person.getAddress()
+                               .getZip()
+                               .equals(detailZip.getValue())) &&
 
-      (person.getAddress()
-             .getCity()
-             .equals(detailCity.getValue())
-      )
-    );
+                        (person.getAddress()
+                               .getCity()
+                               .equals(detailCity.getValue())));
     return !notDirty;
   }
 

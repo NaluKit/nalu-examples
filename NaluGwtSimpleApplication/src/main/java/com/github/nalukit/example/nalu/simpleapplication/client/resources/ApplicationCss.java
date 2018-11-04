@@ -20,7 +20,7 @@ package com.github.nalukit.example.nalu.simpleapplication.client.resources;
 import com.google.gwt.resources.client.CssResource;
 
 public interface ApplicationCss
-  extends CssResource {
+    extends CssResource {
 
   String button();
 

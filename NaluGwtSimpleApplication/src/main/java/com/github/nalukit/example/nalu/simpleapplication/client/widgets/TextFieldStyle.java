@@ -20,7 +20,7 @@ package com.github.nalukit.example.nalu.simpleapplication.client.widgets;
 import com.google.gwt.resources.client.CssResource;
 
 public interface TextFieldStyle
-  extends CssResource {
+    extends CssResource {
 
   String panel();
 

@@ -18,23 +18,23 @@
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.footer;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
+import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import com.google.gwt.user.client.ui.Widget;
-import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import org.gwtproject.event.shared.HandlerRegistration;
 
 /**
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
-@Controller(route = "/",
-  selector = "footer",
-  componentInterface = IFooterComponent.class,
-  component = FooterComponent.class)
+@Controller(route = "/application",
+            selector = "footer",
+            componentInterface = IFooterComponent.class,
+            component = FooterComponent.class)
 public class FooterController
-  extends AbstractComponentController<NaluSimpleApplicationContext, IFooterComponent, Widget>
-  implements IFooterComponent.Controller {
+    extends AbstractComponentController<NaluSimpleApplicationContext, IFooterComponent, Widget>
+    implements IFooterComponent.Controller {
 
   private HandlerRegistration registration;
 

@@ -31,17 +31,19 @@ import com.sencha.gxt.widget.core.client.form.FieldLabel;
 import com.sencha.gxt.widget.core.client.form.TextField;
 
 public class DetailComponent
-  extends AbstractComponent<IDetailComponent.Controller, Widget>
-  implements IDetailComponent,
-             Editor<Mail> {
+    extends AbstractComponent<IDetailComponent.Controller, Widget>
+    implements IDetailComponent,
+               Editor<Mail> {
 
   /* fields */
   @Path("sender")
   TextField sender;
+
   @Path("email")
   TextField emailSender;
 
   private HTML   body;
+
   private Driver driver;
 
   public DetailComponent() {
@@ -105,6 +107,6 @@ public class DetailComponent
   }
 
   interface Driver
-    extends SimpleBeanEditorDriver<Mail, DetailComponent> {
+      extends SimpleBeanEditorDriver<Mail, DetailComponent> {
   }
 }

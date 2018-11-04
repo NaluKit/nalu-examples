@@ -17,14 +17,14 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.search;
 
+import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
+import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
-import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
-import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import elemental2.dom.HTMLElement;
 
-@Controller(route = "/search/:searchName/:searchCity",
+@Controller(route = "/application/search/:searchName/:searchCity",
             selector = "content",
             component = SearchComponent.class,
             componentInterface = ISearchComponent.class)
@@ -45,7 +45,7 @@ public class SearchController
                                   String searchCity) {
     this.context.setSearchCity(searchCity);
     this.context.setSearchName(searchName);
-    this.router.route("/list",
+    this.router.route("/application/list",
                       searchName,
                       searchCity);
   }

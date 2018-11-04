@@ -22,7 +22,7 @@ import com.github.nalukit.nalu.client.component.IsComponent;
 import elemental2.dom.HTMLElement;
 
 public interface IAddressComponent
-  extends IsComponent<IAddressComponent.Controller, HTMLElement> {
+    extends IsComponent<IAddressComponent.Controller, HTMLElement> {
 
   void edit(Person result);
 
@@ -31,7 +31,7 @@ public interface IAddressComponent
   Person flush(Person person);
 
   interface Controller
-    extends IsComponent.Controller {
+      extends IsComponent.Controller {
 
   }
 }

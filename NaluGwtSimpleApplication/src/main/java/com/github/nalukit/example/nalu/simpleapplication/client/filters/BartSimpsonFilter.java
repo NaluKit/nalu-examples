@@ -5,12 +5,12 @@ import com.github.nalukit.nalu.client.filter.AbstractFilter;
 import com.google.gwt.user.client.Window;
 
 public class BartSimpsonFilter
-  extends AbstractFilter<NaluSimpleApplicationContext> {
+    extends AbstractFilter<NaluSimpleApplicationContext> {
 
   @Override
   public boolean filter(String route,
                         String... parms) {
-    if ("/detail".equals(route)) {
+    if ("/application/detail".equals(route)) {
       if ("3".equals(parms[0])) {
         Window.alert("Bart Simpsons is not selecteable -> redirecting to search!");
         return false;
@@ -21,12 +21,12 @@ public class BartSimpsonFilter
 
   @Override
   public String redirectTo() {
-    return "/search";
+    return "/application/search";
   }
 
   @Override
   public String[] parameters() {
-    return new String[]{this.context.getSearchName(),
-                        this.context.getSearchCity()};
+    return new String[] { this.context.getSearchName(),
+                          this.context.getSearchCity() };
   }
 }

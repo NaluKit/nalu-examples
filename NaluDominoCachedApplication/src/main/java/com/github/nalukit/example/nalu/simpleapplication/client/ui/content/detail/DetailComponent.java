@@ -27,8 +27,8 @@ import org.dominokit.domino.ui.grid.Row;
 import org.jboss.gwt.elemento.core.Elements;
 
 public class DetailComponent
-  extends AbstractComponent<IDetailComponent.Controller, HTMLElement>
-  implements IDetailComponent {
+    extends AbstractComponent<IDetailComponent.Controller, HTMLElement>
+    implements IDetailComponent {
 
   public DetailComponent() {
   }
@@ -55,8 +55,7 @@ public class DetailComponent
                                                                                   .addClickListener(e -> getController().doRevert())))
                                               .style()
                                               .setTextAlign("right")
-                                              .setMarginTop("20px")
-                              )
+                                              .setMarginTop("20px"))
                               .asElement());
 
     initElement(divElemet);

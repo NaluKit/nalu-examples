@@ -17,22 +17,22 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.footer;
 
+import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationConstants;
+import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationCss;
+import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationStyleFactory;
 import com.github.nalukit.nalu.client.component.AbstractComponent;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ResizeLayoutPanel;
 import com.google.gwt.user.client.ui.Widget;
-import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationConstants;
-import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationCss;
-import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationStyleFactory;
 
 /**
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
 public class FooterComponent
-  extends AbstractComponent<IFooterComponent.Controller, Widget>
-  implements IFooterComponent {
+    extends AbstractComponent<IFooterComponent.Controller, Widget>
+    implements IFooterComponent {
 
   private Label status;
 

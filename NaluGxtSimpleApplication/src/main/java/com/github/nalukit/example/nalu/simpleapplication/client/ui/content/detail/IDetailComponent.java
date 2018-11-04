@@ -22,11 +22,11 @@ import com.github.nalukit.nalu.client.component.IsComponent;
 import com.google.gwt.user.client.ui.Widget;
 
 public interface IDetailComponent
-  extends IsComponent<IDetailComponent.Controller, Widget> {
+    extends IsComponent<IDetailComponent.Controller, Widget> {
 
   void edit(Mail mail);
 
   interface Controller
-    extends IsComponent.Controller {
+      extends IsComponent.Controller {
   }
 }

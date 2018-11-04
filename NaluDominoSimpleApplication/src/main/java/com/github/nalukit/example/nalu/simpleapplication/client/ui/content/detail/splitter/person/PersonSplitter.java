@@ -28,8 +28,8 @@ import elemental2.dom.HTMLElement;
                      component = PersonComponent.class)
 public class PersonSplitter
     extends AbstractCompositeController<NaluSimpleApplicationContext, IPersonComponent, HTMLElement>
-  implements IPersonComponent.Controller,
-             IsComponentCreator<IPersonComponent> {
+    implements IPersonComponent.Controller,
+               IsComponentCreator<IPersonComponent> {
 
   public PersonSplitter() {
   }

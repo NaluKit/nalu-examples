@@ -24,12 +24,12 @@ import com.github.nalukit.nalu.client.component.annotation.Controller;
 import com.google.gwt.user.client.ui.Widget;
 
 @Controller(route = "/",
-  selector = "south",
-  componentInterface = IStatusComponent.class,
-  component = StatusComponent.class)
+            selector = "south",
+            componentInterface = IStatusComponent.class,
+            component = StatusComponent.class)
 public class StatusController
-  extends AbstractComponentController<NaluSimpleApplicationContext, IStatusComponent, Widget>
-  implements IStatusComponent.Controller {
+    extends AbstractComponentController<NaluSimpleApplicationContext, IStatusComponent, Widget>
+    implements IStatusComponent.Controller {
 
   public StatusController() {
   }

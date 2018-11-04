@@ -21,7 +21,7 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class Address
-  implements Serializable {
+    implements Serializable {
 
   private long id;
 

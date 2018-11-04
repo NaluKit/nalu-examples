@@ -17,8 +17,8 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.search;
 
-import com.github.nalukit.nalu.client.component.AbstractComponent;
 import com.github.nalukit.example.nalu.simpleapplication.client.widgets.TextField;
+import com.github.nalukit.nalu.client.component.AbstractComponent;
 import elemental2.dom.HTMLElement;
 
 import static org.jboss.gwt.elemento.core.Elements.button;
@@ -26,8 +26,8 @@ import static org.jboss.gwt.elemento.core.Elements.div;
 import static org.jboss.gwt.elemento.core.EventType.click;
 
 public class SearchComponent
-  extends AbstractComponent<ISearchComponent.Controller, HTMLElement>
-  implements ISearchComponent {
+    extends AbstractComponent<ISearchComponent.Controller, HTMLElement>
+    implements ISearchComponent {
 
   private TextField searchName;
 

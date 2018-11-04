@@ -17,6 +17,10 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.list;
 
+import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
+import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationConstants;
+import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationCss;
+import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationStyleFactory;
 import com.github.nalukit.nalu.client.component.AbstractComponent;
 import com.google.gwt.cell.client.Cell;
 import com.google.gwt.cell.client.ClickableTextCell;
@@ -25,17 +29,13 @@ import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.Column;
 import com.google.gwt.user.client.ui.*;
-import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
-import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationConstants;
-import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationCss;
-import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationStyleFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListComponent
-  extends AbstractComponent<IListComponent.Controller, Widget>
-  implements IListComponent {
+    extends AbstractComponent<IListComponent.Controller, Widget>
+    implements IListComponent {
 
   private CellTable<Person> resultTable;
 

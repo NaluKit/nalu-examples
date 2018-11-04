@@ -1,7 +1,7 @@
 package com.github.nalukit.example.nalu.simpleapplication.client.filters;
 
-import com.github.nalukit.nalu.client.filter.AbstractFilter;
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
+import com.github.nalukit.nalu.client.filter.AbstractFilter;
 import elemental2.dom.DomGlobal;
 
 public class BartSimpsonFilter
@@ -10,7 +10,7 @@ public class BartSimpsonFilter
   @Override
   public boolean filter(String route,
                         String... parms) {
-    if ("/detail".equals(route)) {
+    if ("/application/detail".equals(route)) {
       if ("3".equals(parms[0])) {
         DomGlobal.window.alert("Bart Simpsons is not selecteable -> redirecting to search!");
 
@@ -22,11 +22,12 @@ public class BartSimpsonFilter
 
   @Override
   public String redirectTo() {
-    return "/search";
+    return "/application/search";
   }
 
   @Override
   public String[] parameters() {
-    return new String[] { this.context.getSearchName(), this.context.getSearchCity() };
+    return new String[] { this.context.getSearchName(),
+                          this.context.getSearchCity() };
   }
 }

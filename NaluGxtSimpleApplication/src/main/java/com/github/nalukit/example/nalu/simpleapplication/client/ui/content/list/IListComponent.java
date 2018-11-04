@@ -24,12 +24,12 @@ import com.google.gwt.user.client.ui.Widget;
 import java.util.List;
 
 public interface IListComponent
-  extends IsComponent<IListComponent.Controller, Widget> {
+    extends IsComponent<IListComponent.Controller, Widget> {
 
   void edit(List<Mail> listOfEmails);
 
   interface Controller
-    extends IsComponent.Controller {
+      extends IsComponent.Controller {
 
     void doSelectRow(String id);
 

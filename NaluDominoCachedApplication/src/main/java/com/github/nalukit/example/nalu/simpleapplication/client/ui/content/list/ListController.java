@@ -18,25 +18,24 @@
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.list;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
-import com.github.nalukit.nalu.client.component.AbstractComponentController;
-import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
-import com.github.nalukit.nalu.client.component.annotation.Controller;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.PersonSearch;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.service.PersonService;
-import com.github.nalukit.example.nalu.simpleapplication.client.event.SelectEvent;
 import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
+import com.github.nalukit.nalu.client.component.AbstractComponentController;
+import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
+import com.github.nalukit.nalu.client.component.annotation.Controller;
 import elemental2.dom.HTMLElement;
 
 import java.util.List;
 
-@Controller(route = "/person/list/:name/:city",
-  selector = "content",
-  componentInterface = IListComponent.class,
-  component = ListComponent.class)
+@Controller(route = "/application/person/list/:name/:city",
+            selector = "content",
+            componentInterface = IListComponent.class,
+            component = ListComponent.class)
 public class ListController
-  extends AbstractComponentController<NaluSimpleApplicationContext, IListComponent, HTMLElement>
-  implements IListComponent.Controller {
+    extends AbstractComponentController<NaluSimpleApplicationContext, IListComponent, HTMLElement>
+    implements IListComponent.Controller {
 
   private String name;
 
@@ -71,7 +70,7 @@ public class ListController
 
   @Override
   public void doUpdate(Person object) {
-    this.router.route("/person/detail",
+    this.router.route("/application/person/detail",
                       Long.toString(object.getId()));
   }
 

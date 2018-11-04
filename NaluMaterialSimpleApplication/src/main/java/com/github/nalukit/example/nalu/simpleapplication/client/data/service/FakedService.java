@@ -17,42 +17,43 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client.data.service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.github.nalukit.example.nalu.simpleapplication.client.data.BeanFactory;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.FlightHoursSummary;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FakedService {
 
-	private ArrayList<FlightHoursSummary> summaries = new ArrayList<>();
+  private ArrayList<FlightHoursSummary> summaries = new ArrayList<>();
 
-	public FakedService() {
-		this.init();
-	}
+  public FakedService() {
+    this.init();
+  }
 
-	private void init() {
-		this.summaries = new ArrayList<>();
-		for (int i = 0; i < 20; ++i) {
-			summaries.add(createFlightHoursSummary(i));
-		}
-	}
+  private void init() {
+    this.summaries = new ArrayList<>();
+    for (int i = 0; i < 20; ++i) {
+      summaries.add(createFlightHoursSummary(i));
+    }
+  }
 
-	private FlightHoursSummary createFlightHoursSummary(int i) {
+  private FlightHoursSummary createFlightHoursSummary(int i) {
 
-		FlightHoursSummary summary = BeanFactory.INSTANCE.flightHoursSummary().as();
-		summary.setTotalTime((int) ((double) i * 11.25));
-		summary.setRealTime((int) ((double) i * 7.64));
-		summary.setNvisTime((int) ((double) i * 8.21));
-		summary.setIfrTime((int) ((double) i * 2.33));
-		summary.setDiurnalLandings(2);
-		summary.setNocturnalTime((int) ((double) i * 3.2));
-		summary.setNocturnalLandings(1);
-		return summary;
-	}
+    FlightHoursSummary summary = BeanFactory.INSTANCE.flightHoursSummary()
+                                                     .as();
+    summary.setTotalTime((int) ((double) i * 11.25));
+    summary.setRealTime((int) ((double) i * 7.64));
+    summary.setNvisTime((int) ((double) i * 8.21));
+    summary.setIfrTime((int) ((double) i * 2.33));
+    summary.setDiurnalLandings(2);
+    summary.setNocturnalTime((int) ((double) i * 3.2));
+    summary.setNocturnalLandings(1);
+    return summary;
+  }
 
-	public List<FlightHoursSummary> getFlightHoursSummaries() {
-		return summaries;
-	}
+  public List<FlightHoursSummary> getFlightHoursSummaries() {
+    return summaries;
+  }
 
 }

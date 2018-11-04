@@ -32,36 +32,39 @@ import static org.jboss.gwt.elemento.core.Elements.h;
  * severeal areas.
  */
 public class FooterComponent
-        extends AbstractComponent<IFooterComponent.Controller, HTMLElement>
-        implements IFooterComponent {
+    extends AbstractComponent<IFooterComponent.Controller, HTMLElement>
+    implements IFooterComponent {
 
-    private DominoElement<HTMLHeadingElement> messageInfo;
+  private DominoElement<HTMLHeadingElement> messageInfo;
 
-    public FooterComponent() {
-    }
+  public FooterComponent() {
+  }
 
-    @Override
-    public void render() {
-        this.messageInfo = DominoElement.of(h(4))
-                .setTextContent("loading application ...")
-                .style()
-                .add(Styles.font_15, Styles.align_center)
-                .get();
+  @Override
+  public void render() {
+    this.messageInfo = DominoElement.of(h(4))
+                                    .setTextContent("loading application ...")
+                                    .style()
+                                    .add(Styles.font_15,
+                                         Styles.align_center)
+                                    .get();
 
-        initElement(Row.create()
-                .style()
-                .setMargin("0px")
-                .get()
-                .addColumn(Column.span5()
-                        .offset1()
-                        .appendChild(h(4).css(Styles.font_15, Styles.align_center).textContent("Nalu example application using Domnio-UI")))
-                .addColumn(Column.span5()
-                        .appendChild(this.messageInfo))
-                .asElement());
-    }
+    initElement(Row.create()
+                   .style()
+                   .setMargin("0px")
+                   .get()
+                   .addColumn(Column.span5()
+                                    .offset1()
+                                    .appendChild(h(4).css(Styles.font_15,
+                                                          Styles.align_center)
+                                                     .textContent("Nalu example application using Domnio-UI")))
+                   .addColumn(Column.span5()
+                                    .appendChild(this.messageInfo))
+                   .asElement());
+  }
 
-    @Override
-    public void setStatus(String status) {
-        this.messageInfo.setTextContent(status);
-    }
+  @Override
+  public void setStatus(String status) {
+    this.messageInfo.setTextContent(status);
+  }
 }

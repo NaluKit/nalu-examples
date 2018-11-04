@@ -17,14 +17,14 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client.data.model;
 
+import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Mail;
 import com.google.gwt.editor.client.Editor;
 import com.sencha.gxt.core.client.ValueProvider;
 import com.sencha.gxt.data.shared.ModelKeyProvider;
 import com.sencha.gxt.data.shared.PropertyAccess;
-import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Mail;
 
 public interface MailProperties
-  extends PropertyAccess<Mail> {
+    extends PropertyAccess<Mail> {
 
   @Editor.Path("id")
   ModelKeyProvider<Mail> key();

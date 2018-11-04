@@ -28,7 +28,7 @@ import org.gwtproject.event.shared.HandlerRegistration;
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
-@Controller(route = "/",
+@Controller(route = "/application",
             selector = "footer",
             componentInterface = IFooterComponent.class,
             component = FooterComponent.class)

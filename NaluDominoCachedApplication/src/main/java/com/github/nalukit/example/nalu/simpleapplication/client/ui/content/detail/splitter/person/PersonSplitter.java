@@ -27,7 +27,7 @@ import elemental2.dom.HTMLElement;
                      component = PersonComponent.class)
 public class PersonSplitter
     extends AbstractCompositeController<NaluSimpleApplicationContext, IPersonComponent, HTMLElement>
-  implements IPersonComponent.Controller {
+    implements IPersonComponent.Controller {
 
   public PersonSplitter() {
   }

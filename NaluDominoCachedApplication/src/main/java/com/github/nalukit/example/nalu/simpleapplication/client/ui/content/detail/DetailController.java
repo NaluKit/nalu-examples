@@ -18,12 +18,6 @@
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
-import com.github.nalukit.nalu.client.component.AbstractComponentController;
-import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
-import com.github.nalukit.nalu.client.component.annotation.Controller;
-import com.github.nalukit.nalu.client.component.annotation.Composite;
-import com.github.nalukit.nalu.client.component.annotation.Composites;
-import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.exception.PersonException;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.exception.PersonNotFoundException;
@@ -32,24 +26,28 @@ import com.github.nalukit.example.nalu.simpleapplication.client.event.SelectEven
 import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.splitter.address.AddressSplitter;
 import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.splitter.person.PersonSplitter;
+import com.github.nalukit.nalu.client.component.AbstractComponentController;
+import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
+import com.github.nalukit.nalu.client.component.annotation.Composite;
+import com.github.nalukit.nalu.client.component.annotation.Composites;
+import com.github.nalukit.nalu.client.component.annotation.Controller;
+import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
 import elemental2.dom.DomGlobal;
 import elemental2.dom.HTMLElement;
 
-@Controller(route = "/person/detail/:id",
-  selector = "content",
-  componentInterface = IDetailComponent.class,
-  component = DetailComponent.class)
-@Composites({
-  @Composite(name = "personSplitter",
-             compositeController = PersonSplitter.class,
-             selector = "splitterPerson"),
-  @Composite(name = "AddressSplitter",
-             compositeController = AddressSplitter.class,
-             selector = "splitterAddress")
-})
+@Controller(route = "/application/person/detail/:id",
+            selector = "content",
+            componentInterface = IDetailComponent.class,
+            component = DetailComponent.class)
+@Composites({ @Composite(name = "personSplitter",
+                         compositeController = PersonSplitter.class,
+                         selector = "splitterPerson"),
+              @Composite(name = "AddressSplitter",
+                         compositeController = AddressSplitter.class,
+                         selector = "splitterAddress") })
 public class DetailController
-  extends AbstractComponentController<NaluSimpleApplicationContext, IDetailComponent, HTMLElement>
-  implements IDetailComponent.Controller {
+    extends AbstractComponentController<NaluSimpleApplicationContext, IDetailComponent, HTMLElement>
+    implements IDetailComponent.Controller {
 
   private Person person;
 
@@ -60,10 +58,8 @@ public class DetailController
 
   @Override
   public String mayStop() {
-    boolean isPersonSplitterDirty = super.<PersonSplitter>getComposite("personSplitter")
-                                      .isDirty(this.person);
-    boolean isAddressSplitterDirty = super.<AddressSplitter>getComposite("AddressSplitter")
-                                       .isDirty(this.person);
+    boolean isPersonSplitterDirty = super.<PersonSplitter>getComposite("personSplitter").isDirty(this.person);
+    boolean isAddressSplitterDirty = super.<AddressSplitter>getComposite("AddressSplitter").isDirty(this.person);
     return isPersonSplitterDirty || isAddressSplitterDirty ? "Would you like to cancel your edits?" : null;
   }
 
@@ -75,10 +71,8 @@ public class DetailController
     try {
       this.person = PersonService.get()
                                  .get(id);
-      super.<PersonSplitter>getComposite("personSplitter")
-        .edit(this.person);
-      super.<AddressSplitter>getComposite("AddressSplitter")
-        .edit(this.person);
+      super.<PersonSplitter>getComposite("personSplitter").edit(this.person);
+      super.<AddressSplitter>getComposite("AddressSplitter").edit(this.person);
       this.eventBus.fireEvent(new StatusChangeEvent("Edit person data with id: " + this.person.getId()));
 
       this.eventBus.fireEvent(new SelectEvent(SelectEvent.Select.DETAIL));
@@ -94,14 +88,14 @@ public class DetailController
 
   @AcceptParameter("id")
   public void setId(String id)
-    throws RoutingInterceptionException {
+      throws RoutingInterceptionException {
     try {
       this.id = Long.parseLong(id);
     } catch (NumberFormatException e) {
       DomGlobal.window.alert("id is not valid ->  moving to search");
       throw new RoutingInterceptionException(this.getClass()
                                                  .getCanonicalName(),
-                                             "/person/search",
+                                             "/application/person/search",
                                              this.context.getSearchName(),
                                              this.context.getSearchCity());
     }
@@ -114,24 +108,22 @@ public class DetailController
 
   @Override
   public void doRevert() {
-    this.router.route("/person/list",
+    this.router.route("/application/person/list",
                       this.context.getSearchName(),
                       this.context.getSearchCity());
   }
 
   @Override
   public void doUpdate() {
-    this.person = super.<PersonSplitter>getComposite("personSplitter")
-      .flush(this.person);
-    this.person = super.<AddressSplitter>getComposite("AddressSplitter")
-      .flush(this.person);
+    this.person = super.<PersonSplitter>getComposite("personSplitter").flush(this.person);
+    this.person = super.<AddressSplitter>getComposite("AddressSplitter").flush(this.person);
     try {
       PersonService.get()
                    .update(this.person);
       if (this.context.getSearchName() == null && this.context.getSearchCity() == null) {
-        this.router.route("/person/search");
+        this.router.route("/application/person/search");
       } else {
-        this.router.route("/person/list",
+        this.router.route("/application/person/list",
                           this.context.getSearchName(),
                           this.context.getSearchCity());
       }

@@ -18,25 +18,25 @@
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
-import com.github.nalukit.nalu.client.component.AbstractComponentController;
-import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
-import com.github.nalukit.nalu.client.component.annotation.Controller;
-import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
-import com.google.gwt.user.client.ui.Widget;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.exception.PersonException;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.exception.PersonNotFoundException;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.service.PersonService;
 import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
+import com.github.nalukit.nalu.client.component.AbstractComponentController;
+import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
+import com.github.nalukit.nalu.client.component.annotation.Controller;
+import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
+import com.google.gwt.user.client.ui.Widget;
 import elemental2.dom.DomGlobal;
 
-@Controller(route = "/detail/:id",
-  selector = "content",
-  componentInterface = IDetailComponent.class,
-  component = DetailComponent.class)
+@Controller(route = "/application/detail/:id",
+            selector = "content",
+            componentInterface = IDetailComponent.class,
+            component = DetailComponent.class)
 public class DetailController
-  extends AbstractComponentController<NaluSimpleApplicationContext, IDetailComponent, Widget>
-  implements IDetailComponent.Controller {
+    extends AbstractComponentController<NaluSimpleApplicationContext, IDetailComponent, Widget>
+    implements IDetailComponent.Controller {
 
   private Person person;
 
@@ -53,7 +53,7 @@ public class DetailController
   @Override
   public void start() {
     if (this.id == 0) {
-      this.router.route("/search");
+      this.router.route("/application/search");
     }
     try {
       this.person = PersonService.get()
@@ -72,14 +72,14 @@ public class DetailController
 
   @AcceptParameter("id")
   public void setId(String id)
-    throws RoutingInterceptionException {
+      throws RoutingInterceptionException {
     try {
       this.id = Long.parseLong(id);
     } catch (NumberFormatException e) {
       DomGlobal.window.alert("id is not valid ->  moving to search");
       throw new RoutingInterceptionException(this.getClass()
                                                  .getCanonicalName(),
-                                             "/search",
+                                             "/application/search",
                                              this.context.getSearchName(),
                                              this.context.getSearchCity());
     }
@@ -92,7 +92,7 @@ public class DetailController
 
   @Override
   public void doRevert() {
-    this.router.route("/list",
+    this.router.route("/application/list",
                       this.context.getSearchName(),
                       this.context.getSearchCity());
   }
@@ -103,9 +103,9 @@ public class DetailController
       PersonService.get()
                    .update(this.component.flush(this.person));
       if (this.context.getSearchName() == null && this.context.getSearchCity() == null) {
-        this.router.route("/search");
+        this.router.route("/application/search");
       } else {
-        this.router.route("/list",
+        this.router.route("/application/list",
                           this.context.getSearchName(),
                           this.context.getSearchCity());
       }

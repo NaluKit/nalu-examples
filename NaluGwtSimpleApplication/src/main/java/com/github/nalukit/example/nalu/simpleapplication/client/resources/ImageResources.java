@@ -22,7 +22,7 @@ import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.ImageResource;
 
 public interface ImageResources
-  extends ClientBundle {
+    extends ClientBundle {
 
   ImageResources INSTANCE = (ImageResources) GWT.create(ImageResources.class);
 

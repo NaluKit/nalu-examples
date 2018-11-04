@@ -24,7 +24,7 @@ import elemental2.dom.DomGlobal;
  * A application loader of the NaluSimpleApplication
  */
 public class NaluSimpleApplicationLoader
-  extends AbstractApplicationLoader<NaluSimpleApplicationContext> {
+    extends AbstractApplicationLoader<NaluSimpleApplicationContext> {
 
   /**
    * The laoder of the application.

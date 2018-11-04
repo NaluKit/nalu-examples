@@ -17,12 +17,12 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.navigation;
 
+import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
-import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import elemental2.dom.HTMLElement;
 
-@Controller(route = "/",
+@Controller(route = "/application",
             selector = "navigation",
             componentInterface = INavigationComponent.class,
             component = NavigationComponent.class)
@@ -35,14 +35,14 @@ public class NavigationController
 
   @Override
   public void doShowSearch() {
-    this.router.route("/search",
+    this.router.route("/application/search",
                       this.context.getSearchName(),
                       this.context.getSearchCity());
   }
 
   @Override
   public void doShowList() {
-    this.router.route("/list",
+    this.router.route("/application/list",
                       this.context.getSearchName(),
                       this.context.getSearchCity());
   }

@@ -21,11 +21,11 @@ import com.github.nalukit.nalu.client.component.IsComponent;
 import com.google.gwt.user.client.ui.Widget;
 
 public interface IStatusComponent
-  extends IsComponent<IStatusComponent.Controller, Widget> {
+    extends IsComponent<IStatusComponent.Controller, Widget> {
 
   void setStatus(String status);
 
   interface Controller
-    extends IsComponent.Controller {
+      extends IsComponent.Controller {
   }
 }

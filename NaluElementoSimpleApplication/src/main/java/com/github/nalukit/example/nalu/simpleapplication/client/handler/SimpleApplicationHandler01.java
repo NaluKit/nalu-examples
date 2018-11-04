@@ -1,9 +1,9 @@
 package com.github.nalukit.example.nalu.simpleapplication.client.handler;
 
+import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import com.github.nalukit.nalu.client.handler.AbstractHandler;
 import com.github.nalukit.nalu.client.handler.annotation.Handler;
-import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import elemental2.dom.DomGlobal;
 
 @Handler

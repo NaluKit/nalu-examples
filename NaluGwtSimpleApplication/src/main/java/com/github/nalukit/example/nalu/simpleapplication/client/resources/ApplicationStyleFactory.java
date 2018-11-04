@@ -23,6 +23,7 @@ import com.google.gwt.resources.client.ClientBundle;
 public class ApplicationStyleFactory {
 
   private static ApplicationStyleFactory factory;
+
   private        ApplicationCss          style;
 
   private ApplicationStyleFactory() {
@@ -43,9 +44,8 @@ public class ApplicationStyleFactory {
     return style;
   }
 
-
   public interface Resources
-    extends ClientBundle {
+      extends ClientBundle {
 
     @Source("ApplicationCss.css")
     ApplicationCss style();

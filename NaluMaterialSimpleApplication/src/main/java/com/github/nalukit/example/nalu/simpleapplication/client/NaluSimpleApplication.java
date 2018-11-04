@@ -17,10 +17,12 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client;
 
-import com.github.nalukit.example.nalu.simpleapplication.client.ui.shell.Shell;
+import com.github.nalukit.example.nalu.simpleapplication.client.ui.shell.ApplicationShell;
 import com.github.nalukit.nalu.client.application.IsApplication;
 import com.github.nalukit.nalu.client.application.annotation.Application;
 import com.github.nalukit.nalu.client.application.annotation.Debug;
+import com.github.nalukit.nalu.client.application.annotation.Shell;
+import com.github.nalukit.nalu.client.application.annotation.Shells;
 import com.github.nalukit.nalu.plugin.gwt.client.DefaultGWTLogger;
 
 /**
@@ -31,11 +33,12 @@ import com.github.nalukit.nalu.plugin.gwt.client.DefaultGWTLogger;
  * <p>Please keep in mind, the services are simulated inside the client (because this is not part of the
  * framework). You can use any technique to call the server!</p>
  */
-@Application(shell = Shell.class,
-             startRoute = "/dashboard",
+@Application(startRoute = "/application/dashboard",
              context = NaluSimpleApplicationContext.class)
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = DefaultGWTLogger.class)
+@Shells(@Shell(name = "application",
+               shell = ApplicationShell.class))
 interface NaluSimpleApplication
     extends IsApplication {
 }

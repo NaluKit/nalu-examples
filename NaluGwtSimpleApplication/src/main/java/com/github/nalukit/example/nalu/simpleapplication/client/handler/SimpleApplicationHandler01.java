@@ -8,7 +8,7 @@ import com.google.gwt.user.client.Window;
 
 @Handler
 public class SimpleApplicationHandler01
-  extends AbstractHandler<NaluSimpleApplicationContext> {
+    extends AbstractHandler<NaluSimpleApplicationContext> {
 
   public SimpleApplicationHandler01() {
   }
