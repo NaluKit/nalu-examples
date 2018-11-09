@@ -17,14 +17,14 @@
 
 package com.github.nalukit.example.nalu.loginapplication.client;
 
+import com.github.nalukit.example.nalu.loginapplication.client.filters.BartSimpsonFilter;
 import com.github.nalukit.example.nalu.loginapplication.client.filters.LoginFilter;
 import com.github.nalukit.example.nalu.loginapplication.client.ui.shell.application.ApplicationShell;
 import com.github.nalukit.example.nalu.loginapplication.client.ui.shell.error.ErrorShell;
 import com.github.nalukit.example.nalu.loginapplication.client.ui.shell.login.LoginShell;
 import com.github.nalukit.nalu.client.application.IsApplication;
-import com.github.nalukit.nalu.client.application.annotation.*;
 import com.github.nalukit.nalu.client.application.annotation.Application;
-import com.github.nalukit.nalu.client.application.annotation.Shells;
+import com.github.nalukit.nalu.client.application.annotation.*;
 import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
 
 /**
@@ -45,7 +45,8 @@ import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
                  shell = ApplicationShell.class),
           @Shell(name = "errorShell",
                  shell = ErrorShell.class) })
-@Filters(filterClasses = LoginFilter.class)
+@Filters(filterClasses = { LoginFilter.class,
+                           BartSimpsonFilter.class })
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = DefaultElemental2Logger.class)
 interface NaluLoginApplication
