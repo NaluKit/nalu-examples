@@ -14,19 +14,20 @@
  *  the License.
  */
 
-package com.github.nalukit.example.nalu.loginapplication.client.ui.content.login;
+package com.github.nalukit.example.nalu.loginapplication.client.ui.content.error;
 
 import com.github.nalukit.nalu.client.component.IsComponent;
 import elemental2.dom.HTMLElement;
 
-public interface ILoginComponent
-    extends IsComponent<ILoginComponent.Controller, HTMLElement> {
+public interface IErrorComponent
+    extends IsComponent<IErrorComponent.Controller, HTMLElement> {
+
+  void setErrorText(String errorMessage);
 
   interface Controller
       extends IsComponent.Controller {
 
-    void doLogin(String UserId,
-                 String password);
+    void doRouteHome();
 
   }
 }

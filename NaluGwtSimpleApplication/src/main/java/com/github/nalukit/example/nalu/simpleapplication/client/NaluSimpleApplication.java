@@ -34,7 +34,8 @@ import com.github.nalukit.nalu.plugin.gwt.client.DefaultGWTLogger;
  */
 @Application(loader = NaluSimpleApplicationLoader.class,
              startRoute = "/application/search",
-             context = NaluSimpleApplicationContext.class)
+             context = NaluSimpleApplicationContext.class,
+             routeError = "/application/search")
 @Filters(filterClasses = BartSimpsonFilter.class)
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = DefaultGWTLogger.class)

@@ -19,6 +19,7 @@ package com.github.nalukit.example.nalu.simpleapplication.client.ui.shell;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.nalu.client.component.AbstractShell;
+import elemental2.dom.DomGlobal;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
 import org.dominokit.domino.ui.layout.Layout;
@@ -63,5 +64,10 @@ public class ApplicationShell
 
     MediaQuery.addOnMediumAndDownListener(layout::unfixLeftPanelPosition);
     MediaQuery.addOnLargeAndUpListener(layout::fixLeftPanelPosition);
+  }
+
+  @Override
+  public void onAttachedComponent() {
+    DomGlobal.window.console.log("ApplicationShell: 'onAttachedComponent' called");
   }
 }

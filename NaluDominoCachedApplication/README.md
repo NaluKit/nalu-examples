@@ -29,6 +29,17 @@ The content area will be used to show the three different components:
 * a list component (the result from the search)
 * a detail comonent (a selected person from the list)
 
-Some things may look a bit strange or have no real sense. F.e.: If Bart Simpson is selected from the list, the application will route to the search view. This is the desired behavior: see [```BartSimpsonFilter```](ToDo)
+Some things may look a bit strange or have no real sense. F.e.: If Bart Simpson is selected from the list, the application will route to the search view. This is the desired behavior: see [```BartSimpsonFilter```](https://github.com/NaluKit/nalu-examples/blob/master/NaluDominoCachedApplication/src/main/java/com/github/nalukit/example/nalu/simpleapplication/client/filters/BartSimpsonFilter.java)
 
+#### The Chache Feature
+This example implements the cache feature.
 
+To see the cache working,
+
+* search for persons
+* press 'Store in Chache'
+* select a person
+* change a value
+* press 'Save'
+
+This example will route back to the list. In case 'Store in Cache' is active, the change is not visible, because Nalu uses the saved component instead of creating a new one. After pressing 'Reload', the updates gets visible.

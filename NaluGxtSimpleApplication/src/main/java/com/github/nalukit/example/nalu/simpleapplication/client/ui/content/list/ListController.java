@@ -22,9 +22,11 @@ import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.M
 import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Widget;
 
 import java.util.List;
+import java.util.Objects;
 
 @Controller(route = "/application/list",
             selector = "north",
@@ -39,6 +41,11 @@ public class ListController
 
   @Override
   public void start() {
+    if (!Objects.isNull(this.router.getNaluErrorMessage())) {
+      Window.alert(this.router.getNaluErrorMessage()
+                              .getErrorMessage());
+    }
+
     List<Mail> listOfEmails = this.context.getFakedMailServer()
                                           .getAllMails();
     this.component.edit(listOfEmails);

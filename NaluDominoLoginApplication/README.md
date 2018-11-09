@@ -23,12 +23,20 @@ Full featured example providing a shell with for areas:
 * a navigation area
 * a content area
 
+a login shell to get user-id and password and a error shell.
+
 The content area will be used to show the three different components:
 
 * a search componnt
 * a list component (the result from the search)
 * a detail comonent (a selected person from the list)
 
-Some things may look a bit strange or have no real sense. F.e.: If Bart Simpson is selected from the list, the application will route to the search view. This is the desired behavior: see [```LoginFilter```](ToDo)
+#### The Login example
+
+Starting the application, the login shell gets visible. The credentials will not get validate, so enter a string for user-id and password, and press 'Login'. The example will a login flag inside the context.
+
+In case the application gets reloaded, the flag is not and - instead showing the book marked page - the example routes to the login screen.
+
+The login feature is implemented using a [Login Filter](https://github.com/NaluKit/nalu-examples/blob/master/NaluDominoLoginApplication/src/main/java/com/github/nalukit/example/nalu/loginapplication/client/filters/LoginFilter.java).
 
 

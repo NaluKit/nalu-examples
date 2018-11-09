@@ -22,7 +22,10 @@ import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChan
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
+import com.google.gwt.user.client.Window;
 import elemental2.dom.HTMLElement;
+
+import java.util.Objects;
 
 @Controller(route = "/application/search/:searchName/:searchCity",
             selector = "content",
@@ -38,6 +41,11 @@ public class SearchController
   @Override
   public void start() {
     this.eventBus.fireEvent(new StatusChangeEvent("Please enter data!"));
+
+    if (!Objects.isNull(this.router.getNaluErrorMessage())) {
+      Window.alert(this.router.getNaluErrorMessage()
+                              .getErrorMessage());
+    }
   }
 
   @Override

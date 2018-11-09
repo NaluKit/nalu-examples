@@ -14,27 +14,26 @@
  *  the License.
  */
 
-package com.github.nalukit.example.nalu.loginapplication.client.ui.shell.application;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.shell.error;
 
-import com.github.nalukit.example.nalu.loginapplication.client.NaluLoginApplicationContext;
+import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.nalu.client.component.AbstractShell;
 import elemental2.dom.DomGlobal;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
 import org.dominokit.domino.ui.layout.Layout;
-import org.dominokit.domino.ui.mediaquery.MediaQuery;
 import org.dominokit.domino.ui.style.ColorScheme;
 
 /**
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
-public class ApplicationShell
-    extends AbstractShell<NaluLoginApplicationContext> {
+public class ErrorShell
+    extends AbstractShell<NaluSimpleApplicationContext> {
 
   private Layout layout;
 
-  public ApplicationShell() {
+  public ErrorShell() {
   }
 
   /**
@@ -46,30 +45,24 @@ public class ApplicationShell
   @Override
   public void attachShell() {
     this.layout = Layout.create("Nalu - Simple Application using Domino-UI")
-                          .show(ColorScheme.INDIGO);
+                        .show(ColorScheme.INDIGO);
 
-    this.layout.showFooter()
-          .fixFooter()
-          .getFooter()
-          .setId("footer")
-          .style()
-          .setMinHeight("42px");
+    this.layout.hideLeftPanel();
+    this.layout.getLeftPanel().remove();
 
-    this.layout.getLeftPanel()
-          .setId("navigation");
+    this.layout.hideFooter();
+
     this.layout.getContentPanel()
-          .appendChild(Row.create()
-                          .appendChild(Column.span8()
-                                             .offset2()
-                                             .setId("content")));
+               .appendChild(Row.create()
+                               .appendChild(Column.span8()
+                                                  .offset2()
+                                                  .setId("content")));
 
-    MediaQuery.addOnMediumAndDownListener(layout::unfixLeftPanelPosition);
-    MediaQuery.addOnLargeAndUpListener(layout::fixLeftPanelPosition);
   }
 
   @Override
   public void onAttachedComponent() {
-    DomGlobal.window.console.log("ApplicationShell: 'onAttachedComponent' called");
+    DomGlobal.window.console.log("ErrorShell: 'onAttachedComponent' called");
   }
 
   @Override

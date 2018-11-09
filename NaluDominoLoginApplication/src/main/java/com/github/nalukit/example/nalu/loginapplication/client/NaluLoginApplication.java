@@ -19,6 +19,7 @@ package com.github.nalukit.example.nalu.loginapplication.client;
 
 import com.github.nalukit.example.nalu.loginapplication.client.filters.LoginFilter;
 import com.github.nalukit.example.nalu.loginapplication.client.ui.shell.application.ApplicationShell;
+import com.github.nalukit.example.nalu.loginapplication.client.ui.shell.error.ErrorShell;
 import com.github.nalukit.example.nalu.loginapplication.client.ui.shell.login.LoginShell;
 import com.github.nalukit.nalu.client.application.IsApplication;
 import com.github.nalukit.nalu.client.application.annotation.*;
@@ -36,11 +37,14 @@ import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
  */
 @Application(loader = NaluLoginApplicationLoader.class,
              startRoute = "/loginShell/login",
-             context = NaluLoginApplicationContext.class)
+             context = NaluLoginApplicationContext.class,
+             routeError = "/errorShell/error")
 @Shells({ @Shell(name = "loginShell",
                  shell = LoginShell.class),
           @Shell(name = "applicationShell",
-                 shell = ApplicationShell.class) })
+                 shell = ApplicationShell.class),
+          @Shell(name = "errorShell",
+                 shell = ErrorShell.class) })
 @Filters(filterClasses = LoginFilter.class)
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = DefaultElemental2Logger.class)
