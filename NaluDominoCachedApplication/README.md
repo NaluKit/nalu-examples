@@ -15,7 +15,7 @@ To run the examples:
 ## Examples
 The examples implement different features or use different widget libs. All examples are using client side data services. Of course, you can replace them with your prefered way getting data from the server.
 
-### NaluSimpleApplication
+### NaluDominoCachedApplication
 Full featured example providing a shell with for areas:
 
 * a header area
