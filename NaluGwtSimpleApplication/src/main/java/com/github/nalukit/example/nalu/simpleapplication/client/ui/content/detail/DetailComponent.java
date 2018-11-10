@@ -23,6 +23,7 @@ import com.github.nalukit.example.nalu.simpleapplication.client.resources.Applic
 import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationStyleFactory;
 import com.github.nalukit.example.nalu.simpleapplication.client.widgets.TextField;
 import com.github.nalukit.nalu.client.component.AbstractComponent;
+import com.google.gwt.dom.client.Style;
 import com.google.gwt.user.client.ui.*;
 
 public class DetailComponent
@@ -89,6 +90,14 @@ public class DetailComponent
     revertButton = new Button(ApplicationConstants.CONSTANTS.revertButton());
     revertButton.addStyleName(style.button());
     buttonBar.add(revertButton);
+
+    Anchor anchor = new Anchor("Quick link to search screen");
+    anchor.getElement()
+          .getStyle()
+          .setMarginLeft(6,
+                         Style.Unit.PX);
+    anchor.setHref(getController().getHRef());
+    detailPanel.add(anchor);
 
     initElement(panel);
   }

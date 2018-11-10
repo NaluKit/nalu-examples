@@ -39,5 +39,7 @@ public interface IDetailComponent
 
     void doUpdate();
 
+    String getHRef();
+
   }
 }
