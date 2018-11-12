@@ -26,7 +26,6 @@ public class LoginFilter
 
   @Override
   public String[] parameters() {
-    return new String[] { this.context.getSearchName(),
-                          this.context.getSearchCity() };
+    return new String[]{};
   }
 }

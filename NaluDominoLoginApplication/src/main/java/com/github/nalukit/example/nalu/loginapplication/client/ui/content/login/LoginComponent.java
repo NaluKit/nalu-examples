@@ -44,7 +44,6 @@ public class LoginComponent
   public void render() {
     this.userId = TextBox.create("User ID")
                          .groupBy(fieldsGrouping)
-                         .setHelperText("search for: 'S' or 'D'")
                          .setLeftAddon(Icons.ALL.label());
 
     this.password = TextBox.password("Password")

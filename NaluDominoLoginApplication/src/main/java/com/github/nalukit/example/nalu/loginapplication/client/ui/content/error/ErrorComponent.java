@@ -19,13 +19,7 @@ package com.github.nalukit.example.nalu.loginapplication.client.ui.content.error
 import com.github.nalukit.nalu.client.component.AbstractComponent;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.Text;
-import org.dominokit.domino.ui.button.Button;
-import org.dominokit.domino.ui.button.ButtonSize;
 import org.dominokit.domino.ui.cards.Card;
-import org.dominokit.domino.ui.forms.FieldsGrouping;
-import org.dominokit.domino.ui.forms.TextBox;
-import org.dominokit.domino.ui.grid.Column;
-import org.dominokit.domino.ui.grid.Row;
 import org.dominokit.domino.ui.icons.Icons;
 import org.dominokit.domino.ui.style.Color;
 
@@ -34,8 +28,6 @@ public class ErrorComponent
     implements IErrorComponent {
 
   private Text errorText;
-
-  private FieldsGrouping fieldsGrouping = FieldsGrouping.create();
 
   public ErrorComponent() {
   }
