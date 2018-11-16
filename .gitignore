@@ -220,3 +220,10 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+/NaluDominoLoginPluginApplication/target
+/NaluDominoLoginPluginApplication/NaluDominoLoginPluginApplication-core/target/maven-status
+/NaluDominoLoginPluginApplication/NaluDominoLoginPluginApplication-core/target
+/NaluDominoLoginPluginApplication/NaluDominoLoginPluginApplication-client/target
+/NaluDominoLoginPluginApplication/NaluDominoLoginPluginApplication-plugin-login/target
+/NaluDominoLoginPluginApplication/NaluDominoLoginPluginApplication-server/target
+/NaluDominoLoginPluginApplication/NaluDominoLoginPluginApplication-shared/target
