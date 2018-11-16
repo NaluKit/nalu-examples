@@ -72,18 +72,17 @@
       <classifier>sources</classifier>
     </dependency>
 
-    <!--<dependency>-->
-      <!--<groupId>com.github.nalukit.example.nalu</groupId>-->
-      <!--<artifactId>NaluDominoLoginPluginApplication-plugin-error</artifactId>-->
-      <!--<version>${project.version}</version>-->
-      <!--<type>gwt-lib</type>-->
-    <!--</dependency>-->
-    <!--<dependency>-->
-      <!--<groupId>com.github.nalukit.example.nalu</groupId>-->
-      <!--<artifactId>NaluDominoLoginPluginApplication-plugin-error</artifactId>-->
-      <!--<version>${project.version}</version>-->
-      <!--<classifier>sources</classifier>-->
-    <!--</dependency>-->
+    <dependency>
+      <groupId>com.github.nalukit.example.nalu</groupId>
+      <artifactId>NaluDominoLoginPluginApplication-plugin-error</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.nalukit.example.nalu</groupId>
+      <artifactId>NaluDominoLoginPluginApplication-plugin-error</artifactId>
+      <version>${project.version}</version>
+      <classifier>sources</classifier>
+    </dependency>
 
     <dependency>
       <groupId>com.github.nalukit.example.nalu</groupId>
@@ -119,6 +118,12 @@
       <artifactId>domino-ui</artifactId>
       <version>${domino.version}</version>
       <classifier>sources</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.github.nalukit.example.nalu</groupId>
+      <artifactId>NaluDominoLoginPluginApplication-plugin-error</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 
