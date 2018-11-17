@@ -38,14 +38,12 @@ public class BartSimpsonFilter
 
   @Override
   public String redirectTo() {
-    return "/applicationShell/person/detail";
-//    return "/applicationShell/person/search";
+    return "/applicationShell/person/search";
   }
 
   @Override
   public String[] parameters() {
-    return new String[] { "3" };
-//    return new String[] { this.context.getSearchName(),
-//                          this.context.getSearchCity() };
+    return new String[] { this.context.getSearchName(),
+                          this.context.getSearchCity() };
   }
 }
