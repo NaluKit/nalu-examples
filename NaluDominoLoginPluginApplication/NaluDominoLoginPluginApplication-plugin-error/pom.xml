@@ -114,6 +114,7 @@
         <extensions>true</extensions>
         <configuration>
           <moduleName>com.github.nalukit.example.nalu.loginapplication.plugin.error.ErrorPlugin</moduleName>
+          <logLevel>TRACE</logLevel>
         </configuration>
       </plugin>
       <plugin>

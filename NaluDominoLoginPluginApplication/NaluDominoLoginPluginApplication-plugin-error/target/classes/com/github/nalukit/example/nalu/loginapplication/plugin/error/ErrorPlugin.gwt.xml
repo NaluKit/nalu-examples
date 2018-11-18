@@ -1,5 +1,5 @@
 <module>
-  <inherits name="com.github.nalukit.example.naluloginapplication.core.Core"/>
+  <inherits name="com.github.nalukit.example.nalu.loginapplication.core.Core"/>
   <inherits name="org.dominokit.domino.ui.DominoUI"/>
   <inherits name="com.google.gwt.user.User"/>
   <inherits name="com.github.nalukit.nalu.Nalu"/>

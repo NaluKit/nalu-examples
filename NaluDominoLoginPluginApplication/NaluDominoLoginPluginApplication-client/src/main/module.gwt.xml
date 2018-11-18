@@ -31,6 +31,7 @@
   <inherits name='com.github.nalukit.nalu.plugin.elemental2.NaluPluginElemental2'/>
   <inherits name="org.dominokit.domino.ui.DominoUI"/>
   <inherits name="com.github.nalukit.example.naluloginapplication.core.Core"/>
+  <inherits name="com.github.nalukit.example.nalu.loginapplication.plugin.error.ErrorPlugin"/>
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>

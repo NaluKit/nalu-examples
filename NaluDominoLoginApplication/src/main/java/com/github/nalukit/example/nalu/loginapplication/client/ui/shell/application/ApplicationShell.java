@@ -30,8 +30,7 @@ import org.dominokit.domino.ui.style.ColorScheme;
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
-@Shell(name = "applicationShell",
-       shell = ApplicationShell.class)
+@Shell("applicationShell")
 public class ApplicationShell
     extends AbstractShell<NaluLoginApplicationContext> {
 

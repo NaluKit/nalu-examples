@@ -113,6 +113,7 @@
         <extensions>true</extensions>
         <configuration>
           <moduleName>com.github.nalukit.example.naluplugin.login.LoginPlugin</moduleName>
+          <logLevel>TRACE</logLevel>
         </configuration>
       </plugin>
       <plugin>

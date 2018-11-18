@@ -91,7 +91,7 @@
         <artifactId>gwt-maven-plugin</artifactId>
         <extensions>true</extensions>
         <configuration>
-          <moduleName>com.github.nalukit.example.naluloginapplication.core.Core</moduleName>
+          <moduleName>com.github.nalukit.example.nalu.loginapplication.core.Core</moduleName>
         </configuration>
       </plugin>
       <plugin>

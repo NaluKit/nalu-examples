@@ -74,6 +74,18 @@
 
     <dependency>
       <groupId>com.github.nalukit.example.nalu</groupId>
+      <artifactId>NaluDominoLoginPluginApplication-shared</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.nalukit.example.nalu</groupId>
+      <artifactId>NaluDominoLoginPluginApplication-shared</artifactId>
+      <version>${project.version}</version>
+      <classifier>sources</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>com.github.nalukit.example.nalu</groupId>
       <artifactId>NaluDominoLoginPluginApplication-plugin-error</artifactId>
       <version>${project.version}</version>
     </dependency>
@@ -97,18 +109,6 @@
     </dependency>
 
     <dependency>
-      <groupId>com.github.nalukit.example.nalu</groupId>
-      <artifactId>NaluDominoLoginPluginApplication-shared</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.github.nalukit.example.nalu</groupId>
-      <artifactId>NaluDominoLoginPluginApplication-shared</artifactId>
-      <version>${project.version}</version>
-      <classifier>sources</classifier>
-    </dependency>
-
-    <dependency>
       <groupId>org.dominokit</groupId>
       <artifactId>domino-ui</artifactId>
       <version>${domino.version}</version>
@@ -118,12 +118,6 @@
       <artifactId>domino-ui</artifactId>
       <version>${domino.version}</version>
       <classifier>sources</classifier>
-    </dependency>
-    <dependency>
-      <groupId>com.github.nalukit.example.nalu</groupId>
-      <artifactId>NaluDominoLoginPluginApplication-plugin-error</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
-      <scope>compile</scope>
     </dependency>
   </dependencies>
 
@@ -135,6 +129,7 @@
         <configuration>
           <moduleName>com.github.nalukit.example.nalu.Application</moduleName>
           <moduleShortName>Application</moduleShortName>
+          <logLevel>TRACE</logLevel>
         </configuration>
       </plugin>
       <plugin>

@@ -29,8 +29,7 @@ import org.dominokit.domino.ui.style.ColorScheme;
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
-@Shell(name = "errorShell",
-       shell = ErrorShell.class)
+@Shell("errorShell")
 public class ErrorShell
     extends AbstractShell<NaluLoginApplicationContext> {
 

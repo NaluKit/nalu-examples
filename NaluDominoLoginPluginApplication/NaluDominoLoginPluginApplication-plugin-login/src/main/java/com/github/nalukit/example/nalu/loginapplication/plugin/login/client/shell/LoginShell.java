@@ -17,6 +17,7 @@
 package com.github.nalukit.example.nalu.loginapplication.plugin.login.client.shell;
 
 import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
+import com.github.nalukit.nalu.client.application.annotation.Shell;
 import com.github.nalukit.nalu.client.component.AbstractShell;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
@@ -27,6 +28,7 @@ import org.dominokit.domino.ui.style.ColorScheme;
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
+@Shell("loginShell")
 public class LoginShell
     extends AbstractShell<NaluLoginApplicationContext> {
 

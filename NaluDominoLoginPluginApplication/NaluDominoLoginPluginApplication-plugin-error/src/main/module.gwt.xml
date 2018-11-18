@@ -31,7 +31,6 @@
   <inherits name="org.dominokit.domino.ui.DominoUI"/>
   <inherits name="com.github.nalukit.example.naluloginapplication.core.Core"/>
 
-
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>
 </module>
