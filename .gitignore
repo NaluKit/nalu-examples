@@ -228,3 +228,4 @@ fabric.properties
 /NaluDominoLoginPluginApplication/NaluDominoLoginPluginApplication-server/target
 /NaluDominoLoginPluginApplication/NaluDominoLoginPluginApplication-shared/target
 /NaluDominoLoginPluginApplication/NaluDominoLoginPluginApplication-plugin-error/target/maven-status
+target
