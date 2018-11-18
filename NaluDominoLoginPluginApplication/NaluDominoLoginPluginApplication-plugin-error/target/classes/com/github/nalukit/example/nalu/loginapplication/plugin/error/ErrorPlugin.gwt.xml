@@ -1,0 +1,9 @@
+<module>
+  <inherits name="com.github.nalukit.example.naluloginapplication.core.Core"/>
+  <inherits name="org.dominokit.domino.ui.DominoUI"/>
+  <inherits name="com.google.gwt.user.User"/>
+  <inherits name="com.github.nalukit.nalu.Nalu"/>
+  <inherits name="org.dominokit.domino.ui.DominoUI"/>
+  <inherits name="com.github.nalukit.example.naluloginapplication.core.Core"/>
+  <source path="client"/>
+</module>

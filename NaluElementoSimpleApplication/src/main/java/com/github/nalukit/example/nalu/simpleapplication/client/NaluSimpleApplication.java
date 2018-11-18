@@ -18,7 +18,6 @@
 package com.github.nalukit.example.nalu.simpleapplication.client;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.filters.BartSimpsonFilter;
-import com.github.nalukit.example.nalu.simpleapplication.client.ui.shell.ApplicationShell;
 import com.github.nalukit.nalu.client.application.IsApplication;
 import com.github.nalukit.nalu.client.application.annotation.*;
 import com.github.nalukit.nalu.client.application.annotation.Application;
@@ -39,8 +38,6 @@ import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
 @Filters(filterClasses = BartSimpsonFilter.class)
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = DefaultElemental2Logger.class)
-@Shells(@Shell(name = "application",
-               shell = ApplicationShell.class))
 interface NaluSimpleApplication
     extends IsApplication {
 }
