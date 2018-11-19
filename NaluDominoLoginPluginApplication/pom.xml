@@ -91,6 +91,7 @@
           <configuration>
             <sourceLevel>1.8</sourceLevel>
             <failOnError>true</failOnError>
+            <!--<logLevel>TRACE</logLevel>-->
           </configuration>
         </plugin>
         <plugin>

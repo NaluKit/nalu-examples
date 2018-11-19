@@ -58,6 +58,7 @@
       <groupId>com.github.nalukit.example.nalu</groupId>
       <artifactId>NaluDominoLoginPluginApplication-core</artifactId>
       <version>${project.version}</version>
+      <type>gwt-lib</type>
     </dependency>
     <dependency>
       <groupId>com.github.nalukit.example.nalu</groupId>
@@ -80,24 +81,6 @@
   </dependencies>
 
   <build>
-    <!--<resources>-->
-      <!--<resource>-->
-        <!--<directory>src/main/java</directory>-->
-        <!--<includes>-->
-          <!--<include>**/error/**</include>-->
-        <!--</includes>-->
-      <!--</resource>-->
-      <!--<resource>-->
-        <!--<directory>src/main/resources</directory>-->
-        <!--<includes>-->
-          <!--<include>**/error/**</include>-->
-          <!--<include>**/*.gwt.xml</include>-->
-          <!--<include>**/*.html</include>-->
-          <!--<include>**/public/**</include>-->
-        <!--</includes>-->
-      <!--</resource>-->
-    <!--</resources>-->
-
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -114,7 +97,6 @@
         <extensions>true</extensions>
         <configuration>
           <moduleName>com.github.nalukit.example.nalu.loginapplication.plugin.error.ErrorPlugin</moduleName>
-          <logLevel>TRACE</logLevel>
         </configuration>
       </plugin>
       <plugin>

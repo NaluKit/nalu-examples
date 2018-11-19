@@ -43,39 +43,14 @@
       <artifactId>gwt-dev</artifactId>
     </dependency>
 
-    <!--<dependency>-->
-      <!--<groupId>com.google.gwt</groupId>-->
-      <!--<artifactId>gwt-dev</artifactId>-->
-      <!--<scope>provided</scope>-->
-    <!--</dependency>-->
-
     <dependency>
       <groupId>com.github.nalukit</groupId>
       <artifactId>nalu</artifactId>
       <version>${nalu.version}</version>
     </dependency>
-
   </dependencies>
 
   <build>
-    <!--<resources>-->
-      <!--<resource>-->
-        <!--<directory>src/main/java</directory>-->
-        <!--<includes>-->
-          <!--<include>**/core/**</include>-->
-        <!--</includes>-->
-      <!--</resource>-->
-      <!--<resource>-->
-        <!--<directory>src/main/resources</directory>-->
-        <!--<includes>-->
-          <!--<include>**/core/**</include>-->
-          <!--<include>**/*.gwt.xml</include>-->
-          <!--<include>**/*.html</include>-->
-          <!--<include>**/public/**</include>-->
-        <!--</includes>-->
-      <!--</resource>-->
-    <!--</resources>-->
-
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

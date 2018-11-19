@@ -64,6 +64,7 @@
       <groupId>com.github.nalukit.example.nalu</groupId>
       <artifactId>NaluDominoLoginPluginApplication-core</artifactId>
       <version>${project.version}</version>
+      <type>gwt-lib</type>
     </dependency>
     <dependency>
       <groupId>com.github.nalukit.example.nalu</groupId>
@@ -76,6 +77,7 @@
       <groupId>com.github.nalukit.example.nalu</groupId>
       <artifactId>NaluDominoLoginPluginApplication-shared</artifactId>
       <version>${project.version}</version>
+      <type>gwt-lib</type>
     </dependency>
     <dependency>
       <groupId>com.github.nalukit.example.nalu</groupId>
@@ -88,6 +90,7 @@
       <groupId>com.github.nalukit.example.nalu</groupId>
       <artifactId>NaluDominoLoginPluginApplication-plugin-error</artifactId>
       <version>${project.version}</version>
+      <type>gwt-lib</type>
     </dependency>
     <dependency>
       <groupId>com.github.nalukit.example.nalu</groupId>
@@ -100,6 +103,7 @@
       <groupId>com.github.nalukit.example.nalu</groupId>
       <artifactId>NaluDominoLoginPluginApplication-plugin-login</artifactId>
       <version>${project.version}</version>
+      <type>gwt-lib</type>
     </dependency>
     <dependency>
       <groupId>com.github.nalukit.example.nalu</groupId>
@@ -129,7 +133,6 @@
         <configuration>
           <moduleName>com.github.nalukit.example.nalu.loginapplication.Application</moduleName>
           <moduleShortName>Application</moduleShortName>
-          <logLevel>TRACE</logLevel>
         </configuration>
       </plugin>
       <plugin>

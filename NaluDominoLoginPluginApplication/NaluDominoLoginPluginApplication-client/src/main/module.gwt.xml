@@ -33,6 +33,7 @@
   <inherits name="com.github.nalukit.example.nalu.loginapplication.core.Core"/>
   <inherits name="com.github.nalukit.example.nalu.loginapplication.plugin.error.ErrorPlugin"/>
   <inherits name="com.github.nalukit.example.nalu.loginapplication.plugin.login.LoginPlugin"/>
+  <inherits name="com.github.nalukit.example.nalu.loginapplication.Shared" />
 
   <!-- Specify the app entry point class.                         -->
   <entry-point class='com.github.nalukit.example.nalu.loginapplication.client.Application'/>

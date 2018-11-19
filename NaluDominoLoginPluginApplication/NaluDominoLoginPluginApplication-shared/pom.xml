@@ -30,18 +30,29 @@
   </parent>
 
   <artifactId>NaluDominoLoginPluginApplication-shared</artifactId>
-
-  <!--<dependencies>-->
-    <!--<dependency>-->
-      <!--<groupId>com.google.gwt</groupId>-->
-      <!--<artifactId>gwt-servlet</artifactId>-->
-      <!--<scope>provided</scope>-->
-    <!--</dependency>-->
-  <!--</dependencies>-->
+  <packaging>gwt-lib</packaging>
 
   <build>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <compilerArgument>-Xlint:all</compilerArgument>
+          <showWarnings>true</showWarnings>
+          <showDeprecation>true</showDeprecation>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>net.ltgt.gwt.maven</groupId>
+        <artifactId>gwt-maven-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <moduleName>com.github.nalukit.example.nalu.loginapplication.Shared</moduleName>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
       </plugin>
     </plugins>

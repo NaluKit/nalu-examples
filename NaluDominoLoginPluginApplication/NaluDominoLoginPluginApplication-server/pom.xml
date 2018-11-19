@@ -34,11 +34,11 @@
 
 
   <dependencies>
-    <dependency>
-      <groupId>com.github.nalukit.example.nalu</groupId>
-      <artifactId>NaluDominoLoginPluginApplication-shared</artifactId>
-      <version>${project.version}</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>com.github.nalukit.example.nalu</groupId>-->
+      <!--<artifactId>NaluDominoLoginPluginApplication-shared</artifactId>-->
+      <!--<version>${project.version}</version>-->
+    <!--</dependency>-->
     <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-servlet</artifactId>
@@ -58,9 +58,10 @@
           <artifactId>jetty-maven-plugin</artifactId>
           <configuration>
             <scanIntervalSeconds>1</scanIntervalSeconds>
-            <webApp>
-              <extraClasspath>${basedir}/../NaluDominoLoginPluginApplication-shared/target/classes/</extraClasspath>
-            </webApp>
+            <!--<webApp>-->
+              <!--<extraClasspath>${basedir}/../NaluDominoLoginPluginApplication-shared/target/classes/</extraClasspath>-->
+              <!--<extraClasspath>${basedir}/../NaluDominoLoginPluginApplication-core/target/classes/</extraClasspath>-->
+            <!--</webApp>-->
             <contextXml>${basedir}/src/main/jettyconf/context.xml</contextXml>
           </configuration>
         </plugin>

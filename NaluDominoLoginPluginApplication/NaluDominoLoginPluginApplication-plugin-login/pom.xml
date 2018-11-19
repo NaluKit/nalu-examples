@@ -57,6 +57,7 @@
       <groupId>com.github.nalukit.example.nalu</groupId>
       <artifactId>NaluDominoLoginPluginApplication-core</artifactId>
       <version>${project.version}</version>
+      <type>gwt-lib</type>
     </dependency>
     <dependency>
       <groupId>com.github.nalukit.example.nalu</groupId>
@@ -79,24 +80,6 @@
   </dependencies>
 
   <build>
-    <!--<resources>-->
-      <!--<resource>-->
-        <!--<directory>src/main/java</directory>-->
-        <!--<includes>-->
-          <!--<include>**/login/**</include>-->
-        <!--</includes>-->
-      <!--</resource>-->
-      <!--<resource>-->
-        <!--<directory>src/main/resources</directory>-->
-        <!--<includes>-->
-          <!--<include>**/login/**</include>-->
-          <!--<include>**/*.gwt.xml</include>-->
-          <!--<include>**/*.html</include>-->
-          <!--<include>**/public/**</include>-->
-        <!--</includes>-->
-      <!--</resource>-->
-    <!--</resources>-->
-
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -112,8 +95,7 @@
         <artifactId>gwt-maven-plugin</artifactId>
         <extensions>true</extensions>
         <configuration>
-          <moduleName>com.github.nalukit.example.naluplugin.login.LoginPlugin</moduleName>
-          <logLevel>TRACE</logLevel>
+          <moduleName>com.github.nalukit.example.nalu.loginapplication.plugin.login.LoginPlugin</moduleName>
         </configuration>
       </plugin>
       <plugin>
