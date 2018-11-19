@@ -80,6 +80,11 @@
   </dependencies>
 
   <build>
+    <resources>
+      <resource>
+        <directory>target/generated-sources/annotations</directory>
+      </resource>
+    </resources>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
