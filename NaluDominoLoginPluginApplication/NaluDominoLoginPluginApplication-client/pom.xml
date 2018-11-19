@@ -127,7 +127,7 @@
         <groupId>net.ltgt.gwt.maven</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
         <configuration>
-          <moduleName>com.github.nalukit.example.nalu.Application</moduleName>
+          <moduleName>com.github.nalukit.example.nalu.loginapplication.Application</moduleName>
           <moduleShortName>Application</moduleShortName>
           <logLevel>TRACE</logLevel>
         </configuration>

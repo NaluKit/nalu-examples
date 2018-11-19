@@ -20,7 +20,7 @@ import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApp
 import com.github.nalukit.nalu.client.plugin.IsPlugin;
 import com.github.nalukit.nalu.client.plugin.annotation.Plugin;
 
-@Plugin(requiredPlugin = Plugin.NaluPlugin.ELEMENTAL2)
+@Plugin(name = "loginPlugin")
 public interface LoginPlugin
     extends IsPlugin<NaluLoginApplicationContext> {
 }

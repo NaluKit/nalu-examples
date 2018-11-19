@@ -29,7 +29,7 @@
 
   <inherits name='com.github.nalukit.nalu.Nalu'/>
   <inherits name="org.dominokit.domino.ui.DominoUI"/>
-  <inherits name="com.github.nalukit.example.naluloginapplication.core.Core"/>
+  <inherits name="com.github.nalukit.example.nalu.loginapplication.core.Core"/>
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>
