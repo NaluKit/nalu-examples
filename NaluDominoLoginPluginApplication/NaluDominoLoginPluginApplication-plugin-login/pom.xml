@@ -57,7 +57,6 @@
       <groupId>com.github.nalukit.example.nalu</groupId>
       <artifactId>NaluDominoLoginPluginApplication-core</artifactId>
       <version>${project.version}</version>
-      <type>gwt-lib</type>
     </dependency>
     <dependency>
       <groupId>com.github.nalukit.example.nalu</groupId>
@@ -80,11 +79,6 @@
   </dependencies>
 
   <build>
-    <resources>
-      <resource>
-        <directory>target/generated-sources/annotations</directory>
-      </resource>
-    </resources>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
