@@ -17,8 +17,8 @@
 package com.github.nalukit.example.nalu.loginapplication.plugin.login.client.shell;
 
 import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
-import com.github.nalukit.nalu.client.application.annotation.Shell;
 import com.github.nalukit.nalu.client.component.AbstractShell;
+import com.github.nalukit.nalu.client.component.annotation.Shell;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
 import org.dominokit.domino.ui.layout.Layout;

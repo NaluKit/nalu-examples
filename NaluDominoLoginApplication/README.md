@@ -16,14 +16,14 @@ To run the examples:
 The examples implement different features or use different widget libs. All examples are using client side data services. Of course, you can replace them with your prefered way getting data from the server.
 
 ### NaluDominoLoginApplication
-Full featured example providing a shell with for areas:
+Full featured example providing a shellCreator with for areas:
 
 * a header area
 * a footer area
 * a navigation area
 * a content area
 
-a login shell to get user-id and password and a error shell.
+a login shellCreator to get user-id and password and a error shellCreator.
 
 The content area will be used to show the three different components:
 
@@ -33,7 +33,7 @@ The content area will be used to show the three different components:
 
 #### The Login example
 
-Starting the application, the login shell gets visible. The credentials will not get validate, so enter a string for user-id and password, and press 'Login'. The example will a login flag inside the context.
+Starting the application, the login shellCreator gets visible. The credentials will not get validate, so enter a string for user-id and password, and press 'Login'. The example will a login flag inside the context.
 
 In case the application gets reloaded, the flag is not and - instead showing the book marked page - the example routes to the login screen.
 

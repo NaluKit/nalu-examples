@@ -18,6 +18,7 @@ package com.github.nalukit.example.nalu.simpleapplication.client.ui.shell.error;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.nalu.client.component.AbstractShell;
+import com.github.nalukit.nalu.client.component.annotation.Shell;
 import elemental2.dom.DomGlobal;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
@@ -25,9 +26,10 @@ import org.dominokit.domino.ui.layout.Layout;
 import org.dominokit.domino.ui.style.ColorScheme;
 
 /**
- * this is the presenter of the shell. The shell divides the browser in
+ * this is the presenter of the shellCreator. The shellCreator divides the browser in
  * severeal areas.
  */
+@Shell("error")
 public class ErrorShell
     extends AbstractShell<NaluSimpleApplicationContext> {
 

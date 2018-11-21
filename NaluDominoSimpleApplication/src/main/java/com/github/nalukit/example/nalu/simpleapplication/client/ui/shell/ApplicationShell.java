@@ -26,7 +26,7 @@ import org.dominokit.domino.ui.mediaquery.MediaQuery;
 import org.dominokit.domino.ui.style.ColorScheme;
 
 /**
- * this is the presenter of the shell. The shell divides the browser in
+ * this is the presenter of the shellCreator. The shellCreator divides the browser in
  * severeal areas.
  */
 public class ApplicationShell
