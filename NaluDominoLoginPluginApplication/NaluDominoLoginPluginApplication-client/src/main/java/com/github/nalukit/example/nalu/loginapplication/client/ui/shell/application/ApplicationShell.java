@@ -17,8 +17,8 @@
 package com.github.nalukit.example.nalu.loginapplication.client.ui.shell.application;
 
 import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
-import com.github.nalukit.nalu.client.application.annotation.Shell;
 import com.github.nalukit.nalu.client.component.AbstractShell;
+import com.github.nalukit.nalu.client.component.annotation.Shell;
 import elemental2.dom.DomGlobal;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
@@ -34,48 +34,49 @@ import org.dominokit.domino.ui.style.ColorScheme;
 public class ApplicationShell
     extends AbstractShell<NaluLoginApplicationContext> {
 
-  private Layout layout;
+    private Layout layout;
 
-  public ApplicationShell() {
-  }
+    public ApplicationShell() {
+    }
 
-  /**
-   * The ShellPresenter has to implemented this method, because the framework
-   * can not do this. (It does not know, what to use).
-   * <p>
-   * We append the ShellView to the browser body.
-   */
-  @Override
-  public void attachShell() {
-    this.layout = Layout.create("Nalu - Simple Application using Domino-UI")
-                        .show(ColorScheme.INDIGO);
+    /**
+     * The ShellPresenter has to implemented this method, because the framework
+     * can not do this. (It does not know, what to use).
+     * <p>
+     * We append the ShellView to the browser body.
+     */
+    @Override
+    public void attachShell() {
+        this.layout =
+            Layout.create("Nalu - Simple Application using Domino-UI")
+                  .show(ColorScheme.INDIGO);
 
-    this.layout.showFooter()
-               .fixFooter()
-               .getFooter()
-               .setId("footer")
-               .style()
-               .setMinHeight("42px");
+        this.layout.showFooter()
+                   .fixFooter()
+                   .getFooter()
+                   .setId("footer")
+                   .style()
+                   .setMinHeight("42px");
 
-    this.layout.getLeftPanel()
-               .setId("navigation");
-    this.layout.getContentPanel()
-               .appendChild(Row.create()
-                               .appendChild(Column.span8()
-                                                  .offset2()
-                                                  .setId("content")));
+        this.layout.getLeftPanel()
+                   .setId("navigation");
+        this.layout.getContentPanel()
+                   .appendChild(Row.create()
+                                   .appendChild(Column.span8()
+                                                      .offset2()
+                                                      .setId("content")));
 
-    MediaQuery.addOnMediumAndDownListener(layout::unfixLeftPanelPosition);
-    MediaQuery.addOnLargeAndUpListener(layout::fixLeftPanelPosition);
-  }
+        MediaQuery.addOnMediumAndDownListener(layout::unfixLeftPanelPosition);
+        MediaQuery.addOnLargeAndUpListener(layout::fixLeftPanelPosition);
+    }
 
-  @Override
-  public void onAttachedComponent() {
-    DomGlobal.window.console.log("ApplicationShell: 'onAttachedComponent' called");
-  }
+    @Override
+    public void onAttachedComponent() {
+        DomGlobal.window.console.log("ApplicationShell: 'onAttachedComponent' called");
+    }
 
-  @Override
-  public void detachShell() {
-    this.layout.remove();
-  }
+    @Override
+    public void detachShell() {
+        this.layout.remove();
+    }
 }

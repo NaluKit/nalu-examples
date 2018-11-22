@@ -17,10 +17,12 @@
 package com.github.nalukit.example.nalu.loginapplication.plugin.login.client;
 
 import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
+import com.github.nalukit.nalu.client.application.annotation.Filters;
 import com.github.nalukit.nalu.client.plugin.IsPlugin;
 import com.github.nalukit.nalu.client.plugin.annotation.Plugin;
 
 @Plugin(name = "loginPlugin")
+@Filters(filterClasses = LoginFilter.class)
 public interface LoginPlugin
     extends IsPlugin<NaluLoginApplicationContext> {
 }
