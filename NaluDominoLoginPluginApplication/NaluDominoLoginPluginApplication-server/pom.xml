@@ -59,8 +59,8 @@
           <configuration>
             <scanIntervalSeconds>1</scanIntervalSeconds>
             <!--<webApp>-->
-              <!--<extraClasspath>${basedir}/../NaluDominoLoginPluginApplication-shared/target/classes/</extraClasspath>-->
-              <!--<extraClasspath>${basedir}/../NaluDominoLoginPluginApplication-core/target/classes/</extraClasspath>-->
+            <!--<extraClasspath>${basedir}/../NaluDominoLoginPluginApplication-shared/target/classes/</extraClasspath>-->
+            <!--<extraClasspath>${basedir}/../NaluDominoLoginPluginApplication-core/target/classes/</extraClasspath>-->
             <!--</webApp>-->
             <contextXml>${basedir}/src/main/jettyconf/context.xml</contextXml>
           </configuration>

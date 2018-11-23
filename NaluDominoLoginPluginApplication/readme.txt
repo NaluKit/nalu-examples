@@ -3,7 +3,7 @@ To run the project, use the following command:
 
 Change directory to your generated project and issue the following commands:
 
-* run mvn clean install in a termianl window
+* run mvn clean install in a terminal window
 
 * in one terminal window: mvn gwt:codeserver -pl *-client -am
 

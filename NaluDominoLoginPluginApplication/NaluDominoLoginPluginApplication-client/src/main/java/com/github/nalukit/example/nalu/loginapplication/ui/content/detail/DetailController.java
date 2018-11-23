@@ -16,15 +16,15 @@
 
 package com.github.nalukit.example.nalu.loginapplication.ui.content.detail;
 
-import com.github.nalukit.example.nalu.loginapplication.event.SelectEvent;
-import com.github.nalukit.example.nalu.loginapplication.ui.content.detail.composite.address.AddressComposite;
-import com.github.nalukit.example.nalu.loginapplication.ui.content.detail.composite.person.PersonComposite;
 import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
 import com.github.nalukit.example.nalu.loginapplication.core.client.event.StatusChangeEvent;
+import com.github.nalukit.example.nalu.loginapplication.event.SelectEvent;
 import com.github.nalukit.example.nalu.loginapplication.shared.data.model.dto.Person;
 import com.github.nalukit.example.nalu.loginapplication.shared.data.model.exception.PersonException;
 import com.github.nalukit.example.nalu.loginapplication.shared.data.model.exception.PersonNotFoundException;
 import com.github.nalukit.example.nalu.loginapplication.shared.data.service.PersonService;
+import com.github.nalukit.example.nalu.loginapplication.ui.content.detail.composite.address.AddressComposite;
+import com.github.nalukit.example.nalu.loginapplication.ui.content.detail.composite.person.PersonComposite;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.IsComponentCreator;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;

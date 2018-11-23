@@ -16,9 +16,9 @@
 
 package com.github.nalukit.example.nalu.loginapplication.ui.content.list;
 
-import com.github.nalukit.example.nalu.loginapplication.event.SelectEvent;
 import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
 import com.github.nalukit.example.nalu.loginapplication.core.client.event.StatusChangeEvent;
+import com.github.nalukit.example.nalu.loginapplication.event.SelectEvent;
 import com.github.nalukit.example.nalu.loginapplication.shared.data.model.dto.Person;
 import com.github.nalukit.example.nalu.loginapplication.shared.data.model.dto.PersonSearch;
 import com.github.nalukit.example.nalu.loginapplication.shared.data.service.PersonService;

@@ -31,13 +31,13 @@ public class TextField
                IsEditor<ValueBoxEditor<String>>,
                Focusable {
 
-  private TextFieldStyle    style;
+  private TextFieldStyle style;
 
-  private Label             label;
+  private Label label;
 
-  private TextBox           textBox;
+  private TextBox textBox;
 
-  private FlowPanel         panel;
+  private FlowPanel panel;
 
   private ResizeLayoutPanel widgetPanel;
 

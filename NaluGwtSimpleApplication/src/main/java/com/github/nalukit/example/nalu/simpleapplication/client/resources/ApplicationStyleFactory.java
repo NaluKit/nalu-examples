@@ -24,7 +24,7 @@ public class ApplicationStyleFactory {
 
   private static ApplicationStyleFactory factory;
 
-  private        ApplicationCss          style;
+  private ApplicationCss style;
 
   private ApplicationStyleFactory() {
     /* create Resources */

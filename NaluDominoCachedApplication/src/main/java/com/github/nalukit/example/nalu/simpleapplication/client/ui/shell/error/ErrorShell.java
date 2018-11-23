@@ -50,7 +50,8 @@ public class ErrorShell
                         .show(ColorScheme.INDIGO);
 
     this.layout.hideLeftPanel();
-    this.layout.getLeftPanel().remove();
+    this.layout.getLeftPanel()
+               .remove();
 
     this.layout.hideFooter();
 

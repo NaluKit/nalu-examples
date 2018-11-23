@@ -19,6 +19,7 @@ package com.github.nalukit.example.nalu.simpleapplication.client.ui.shell;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.nalu.client.component.AbstractShell;
+import com.github.nalukit.nalu.client.component.annotation.Shell;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
 import org.dominokit.domino.ui.layout.Layout;
@@ -29,6 +30,7 @@ import org.dominokit.domino.ui.style.ColorScheme;
  * this is the presenter of the shellCreator. The shellCreator divides the browser in
  * severeal areas.
  */
+@Shell("application")
 public class ApplicationShell
     extends AbstractShell<NaluSimpleApplicationContext> {
 

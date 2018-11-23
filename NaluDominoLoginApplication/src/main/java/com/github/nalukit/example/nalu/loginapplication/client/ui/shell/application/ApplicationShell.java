@@ -17,8 +17,8 @@
 package com.github.nalukit.example.nalu.loginapplication.client.ui.shell.application;
 
 import com.github.nalukit.example.nalu.loginapplication.client.NaluLoginApplicationContext;
-import com.github.nalukit.nalu.client.application.annotation.Shell;
 import com.github.nalukit.nalu.client.component.AbstractShell;
+import com.github.nalukit.nalu.client.component.annotation.Shell;
 import elemental2.dom.DomGlobal;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
@@ -48,22 +48,22 @@ public class ApplicationShell
   @Override
   public void attachShell() {
     this.layout = Layout.create("Nalu - Simple Application using Domino-UI")
-                          .show(ColorScheme.INDIGO);
+                        .show(ColorScheme.INDIGO);
 
     this.layout.showFooter()
-          .fixFooter()
-          .getFooter()
-          .setId("footer")
-          .style()
-          .setMinHeight("42px");
+               .fixFooter()
+               .getFooter()
+               .setId("footer")
+               .style()
+               .setMinHeight("42px");
 
     this.layout.getLeftPanel()
-          .setId("navigation");
+               .setId("navigation");
     this.layout.getContentPanel()
-          .appendChild(Row.create()
-                          .appendChild(Column.span8()
-                                             .offset2()
-                                             .setId("content")));
+               .appendChild(Row.create()
+                               .appendChild(Column.span8()
+                                                  .offset2()
+                                                  .setId("content")));
 
     MediaQuery.addOnMediumAndDownListener(layout::unfixLeftPanelPosition);
     MediaQuery.addOnLargeAndUpListener(layout::fixLeftPanelPosition);

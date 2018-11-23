@@ -21,6 +21,7 @@ import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplic
 import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationCss;
 import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationStyleFactory;
 import com.github.nalukit.nalu.client.component.AbstractShell;
+import com.github.nalukit.nalu.client.component.annotation.Shell;
 import com.github.nalukit.nalu.plugin.gwt.client.annotation.Selector;
 import com.github.nalukit.nalu.plugin.gwt.client.selector.IsSelectorProvider;
 import com.google.gwt.dom.client.Style;
@@ -30,6 +31,7 @@ import com.google.gwt.user.client.ui.*;
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
+@Shell("application")
 public class ApplicationShell
     extends AbstractShell<NaluSimpleApplicationContext> {
 
@@ -43,7 +45,7 @@ public class ApplicationShell
 
   private ResizeLayoutPanel shell;
 
-  private ApplicationCss    style;
+  private ApplicationCss style;
 
   public ApplicationShell() {
     super();
