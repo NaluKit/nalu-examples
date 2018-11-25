@@ -42,7 +42,7 @@ public class DetailComponent
   @Path("email")
   TextField emailSender;
 
-  private HTML   body;
+  private HTML body;
 
   private Driver driver;
 

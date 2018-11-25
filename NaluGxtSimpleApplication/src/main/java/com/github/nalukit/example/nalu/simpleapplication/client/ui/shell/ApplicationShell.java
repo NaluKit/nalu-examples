@@ -19,6 +19,7 @@ package com.github.nalukit.example.nalu.simpleapplication.client.ui.shell;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.nalu.client.component.AbstractShell;
+import com.github.nalukit.nalu.client.component.annotation.Shell;
 import com.github.nalukit.nalu.plugin.gwt.client.annotation.Selector;
 import com.github.nalukit.nalu.plugin.gwt.client.selector.IsSelectorProvider;
 import com.google.gwt.user.client.ui.IsWidget;
@@ -33,18 +34,19 @@ import com.sencha.gxt.widget.core.client.container.Viewport;
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
+@Shell("application")
 public class ApplicationShell
     extends AbstractShell<NaluSimpleApplicationContext> {
 
-  protected ContentPanel          northContainer;
+  protected ContentPanel northContainer;
 
-  protected ContentPanel          southContainer;
+  protected ContentPanel southContainer;
 
-  protected SimpleContainer       centerContainer;
+  protected SimpleContainer centerContainer;
 
-  private   Viewport              viewport;
+  private Viewport viewport;
 
-  private   BorderLayoutContainer shell;
+  private BorderLayoutContainer shell;
 
   public ApplicationShell() {
     super();

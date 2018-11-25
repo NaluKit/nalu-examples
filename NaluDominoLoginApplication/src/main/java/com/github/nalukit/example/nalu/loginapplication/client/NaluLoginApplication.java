@@ -19,12 +19,10 @@ package com.github.nalukit.example.nalu.loginapplication.client;
 
 import com.github.nalukit.example.nalu.loginapplication.client.filters.BartSimpsonFilter;
 import com.github.nalukit.example.nalu.loginapplication.client.filters.LoginFilter;
-import com.github.nalukit.example.nalu.loginapplication.client.ui.shell.application.ApplicationShell;
-import com.github.nalukit.example.nalu.loginapplication.client.ui.shell.error.ErrorShell;
-import com.github.nalukit.example.nalu.loginapplication.client.ui.shell.login.LoginShell;
 import com.github.nalukit.nalu.client.application.IsApplication;
 import com.github.nalukit.nalu.client.application.annotation.Application;
-import com.github.nalukit.nalu.client.application.annotation.*;
+import com.github.nalukit.nalu.client.application.annotation.Debug;
+import com.github.nalukit.nalu.client.application.annotation.Filters;
 import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
 
 /**
@@ -39,12 +37,6 @@ import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
              startRoute = "/loginShell/login",
              context = NaluLoginApplicationContext.class,
              routeError = "/errorShell/error")
-@Shells({ @Shell(name = "loginShell",
-                 shell = LoginShell.class),
-          @Shell(name = "applicationShell",
-                 shell = ApplicationShell.class),
-          @Shell(name = "errorShell",
-                 shell = ErrorShell.class) })
 @Filters(filterClasses = { LoginFilter.class,
                            BartSimpsonFilter.class })
 @Debug(logLevel = Debug.LogLevel.DETAILED,

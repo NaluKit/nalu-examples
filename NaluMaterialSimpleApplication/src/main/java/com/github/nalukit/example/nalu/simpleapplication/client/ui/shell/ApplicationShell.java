@@ -1,8 +1,9 @@
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.shell;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
+import com.github.nalukit.nalu.client.component.AbstractShell;
+import com.github.nalukit.nalu.client.component.annotation.Shell;
 import com.github.nalukit.nalu.plugin.gwt.client.annotation.Selector;
-import com.github.nalukit.nalu.plugin.gwt.client.component.AbstractCompositeShell;
 import com.github.nalukit.nalu.plugin.gwt.client.selector.IsSelectorProvider;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -16,8 +17,9 @@ import gwt.material.design.client.ui.MaterialLabel;
 import gwt.material.design.client.ui.MaterialSideNavDrawer;
 import gwt.material.design.client.ui.MaterialToast;
 
+@Shell("application")
 public class ApplicationShell
-    extends AbstractCompositeShell<NaluSimpleApplicationContext> {
+    extends AbstractShell<NaluSimpleApplicationContext> {
 
   private static ShellUiBinder uiBinder = GWT.create(ShellUiBinder.class);
 
@@ -31,6 +33,8 @@ public class ApplicationShell
   // Selector already available for that extraction.
   @UiField
   MaterialSideNavDrawer sideNav;
+
+  private Widget widget;
 
   public ApplicationShell() {
     super();
@@ -50,12 +54,12 @@ public class ApplicationShell
   @Override
   public void attachShell() {
 
-    initWidget(uiBinder.createAndBindUi(this));
+    widget = uiBinder.createAndBindUi(this);
 
     userName.setText("Nalu Simple Application");
 
     RootLayoutPanel.get()
-                   .add(this);
+                   .add(widget);
   }
 
   @Override

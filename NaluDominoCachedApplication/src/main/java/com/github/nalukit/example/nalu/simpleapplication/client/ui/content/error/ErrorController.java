@@ -23,7 +23,7 @@ import elemental2.dom.HTMLElement;
 
 import java.util.Objects;
 
-@Controller(route = "/errorShell/error",
+@Controller(route = "/error/show",
             selector = "content",
             component = ErrorComponent.class,
             componentInterface = IErrorComponent.class)

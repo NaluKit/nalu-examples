@@ -20,6 +20,7 @@ package com.github.nalukit.example.nalu.simpleapplication.client.ui.shell;
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.nalu.client.Nalu;
 import com.github.nalukit.nalu.client.component.AbstractShell;
+import com.github.nalukit.nalu.client.component.annotation.Shell;
 import elemental2.dom.CSSProperties;
 import elemental2.dom.Element;
 import elemental2.dom.HTMLElement;
@@ -31,6 +32,7 @@ import static org.jboss.gwt.elemento.core.Elements.*;
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
+@Shell("application")
 public class ApplicationShell
     extends AbstractShell<NaluSimpleApplicationContext> {
 

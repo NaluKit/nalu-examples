@@ -26,6 +26,6 @@ public class LoginFilter
 
   @Override
   public String[] parameters() {
-    return new String[]{};
+    return new String[] {};
   }
 }

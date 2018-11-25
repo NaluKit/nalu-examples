@@ -18,10 +18,10 @@
 package com.github.nalukit.example.nalu.simpleapplication.client;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.filters.BartSimpsonFilter;
-import com.github.nalukit.example.nalu.simpleapplication.client.ui.shell.ApplicationShell;
 import com.github.nalukit.nalu.client.application.IsApplication;
-import com.github.nalukit.nalu.client.application.annotation.*;
 import com.github.nalukit.nalu.client.application.annotation.Application;
+import com.github.nalukit.nalu.client.application.annotation.Debug;
+import com.github.nalukit.nalu.client.application.annotation.Filters;
 import com.github.nalukit.nalu.plugin.gwt.client.DefaultGWTLogger;
 
 /**
@@ -39,8 +39,6 @@ import com.github.nalukit.nalu.plugin.gwt.client.DefaultGWTLogger;
 @Filters(filterClasses = BartSimpsonFilter.class)
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = DefaultGWTLogger.class)
-@Shells(@Shell(name = "application",
-               shell = ApplicationShell.class))
 interface NaluSimpleApplication
     extends IsApplication {
 }

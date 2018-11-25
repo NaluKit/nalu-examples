@@ -18,7 +18,6 @@ package com.github.nalukit.example.nalu.loginapplication.client.ui.content.login
 
 import com.github.nalukit.example.nalu.loginapplication.client.NaluLoginApplicationContext;
 import com.github.nalukit.example.nalu.loginapplication.client.event.StatusChangeEvent;
-import com.github.nalukit.example.nalu.loginapplication.client.filters.LoginFilter;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import elemental2.dom.HTMLElement;

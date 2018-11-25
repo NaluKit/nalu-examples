@@ -18,6 +18,7 @@ package com.github.nalukit.example.nalu.loginapplication.client.ui.shell.applica
 
 import com.github.nalukit.example.nalu.loginapplication.client.NaluLoginApplicationContext;
 import com.github.nalukit.nalu.client.component.AbstractShell;
+import com.github.nalukit.nalu.client.component.annotation.Shell;
 import elemental2.dom.DomGlobal;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
@@ -26,9 +27,10 @@ import org.dominokit.domino.ui.mediaquery.MediaQuery;
 import org.dominokit.domino.ui.style.ColorScheme;
 
 /**
- * this is the presenter of the shell. The shell divides the browser in
+ * this is the presenter of the shellCreator. The shellCreator divides the browser in
  * severeal areas.
  */
+@Shell("applicationShell")
 public class ApplicationShell
     extends AbstractShell<NaluLoginApplicationContext> {
 
@@ -46,22 +48,22 @@ public class ApplicationShell
   @Override
   public void attachShell() {
     this.layout = Layout.create("Nalu - Simple Application using Domino-UI")
-                          .show(ColorScheme.INDIGO);
+                        .show(ColorScheme.INDIGO);
 
     this.layout.showFooter()
-          .fixFooter()
-          .getFooter()
-          .setId("footer")
-          .style()
-          .setMinHeight("42px");
+               .fixFooter()
+               .getFooter()
+               .setId("footer")
+               .style()
+               .setMinHeight("42px");
 
     this.layout.getLeftPanel()
-          .setId("navigation");
+               .setId("navigation");
     this.layout.getContentPanel()
-          .appendChild(Row.create()
-                          .appendChild(Column.span8()
-                                             .offset2()
-                                             .setId("content")));
+               .appendChild(Row.create()
+                               .appendChild(Column.span8()
+                                                  .offset2()
+                                                  .setId("content")));
 
     MediaQuery.addOnMediumAndDownListener(layout::unfixLeftPanelPosition);
     MediaQuery.addOnLargeAndUpListener(layout::fixLeftPanelPosition);

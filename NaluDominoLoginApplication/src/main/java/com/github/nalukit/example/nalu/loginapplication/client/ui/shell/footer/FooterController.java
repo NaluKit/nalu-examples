@@ -23,7 +23,7 @@ import com.github.nalukit.nalu.client.component.annotation.Controller;
 import elemental2.dom.HTMLElement;
 
 /**
- * this is the presenter of the shell. The shell divides the browser in
+ * this is the presenter of the shellCreator. The shellCreator divides the browser in
  * severeal areas.
  */
 @Controller(route = "/[loginShell|applicationShell]",

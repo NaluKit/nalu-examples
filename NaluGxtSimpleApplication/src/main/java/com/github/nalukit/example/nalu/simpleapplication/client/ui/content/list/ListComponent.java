@@ -40,7 +40,7 @@ public class ListComponent
 
   private MailProperties mailProperties;
 
-  private Grid<Mail>      grid;
+  private Grid<Mail> grid;
 
   private ListStore<Mail> store;
 
