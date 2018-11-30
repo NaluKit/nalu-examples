@@ -215,6 +215,7 @@
             <gwt.war.directory>${project.basedir}/${project.build.finalName}</gwt.war.directory>
           </systemProperties>
         </configuration>
+        <localWorkers>4</localWorkers>
       </plugin>
       <!-- only used to copy static resources -->
       <plugin>

@@ -149,6 +149,7 @@
         <configuration>
           <moduleName>com.github.nalukit.example.nalu.loginapplication.Application</moduleName>
           <moduleShortName>app</moduleShortName>
+          <localWorkers>4</localWorkers>
         </configuration>
       </plugin>
       <plugin>

@@ -257,6 +257,7 @@
             <gwt.persistentunitcachedir>${project.build.directory}/gwt/unitCache/</gwt.persistentunitcachedir>
             <gwt.war.directory>${project.basedir}/${project.build.finalName}</gwt.war.directory>
           </systemProperties>
+          <localWorkers>4</localWorkers>
         </configuration>
       </plugin>
       <!-- only used to copy static resources -->
