@@ -3,8 +3,6 @@ To help you to understand how the framework works, Nalu comes with some examples
 
 To run the examples:
 
-* install nalu: [https://github.com/nalukit/nalu] and follow the instructions
-
 * clone the repository
 
 * run ```mvn clean``` & ```mvn gwt:devmode```
