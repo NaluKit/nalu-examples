@@ -41,7 +41,7 @@ The native GWT example is similar to the Elemento example, except that is uses n
 The GXT example is a mail box simulation using GXT 4.0 widgets. This example uses the Nalu-Plugin-GWT. 
 
 ## NaluMaterialSimpleApplication
-This example uses the GWT MAterial widgets and uses the Nalu-Plugin-Elemental2. 
+This example uses the GWT Material widgets and uses the Nalu-Plugin-Elemental2. 
 
 ## Notes
 
