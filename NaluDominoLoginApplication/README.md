@@ -1,4 +1,4 @@
-# Nalu example demontrating the implementation of a login feature
+# Example demonstrating the implementation of a login feature
 This example demonstrates how to implement a lgoin feature into an application.
 
 ## Using
