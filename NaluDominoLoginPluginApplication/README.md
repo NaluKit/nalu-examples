@@ -1,5 +1,5 @@
-# Example demonstrating the login feature
-This example demonstrates how to implement a lgoin feature into an application.
+# Example demontrating the plugin feature
+This example demonstrates the use of plugins in Nalu. It is a multi module project.
 
 ## Using
 To run the examples:
@@ -13,7 +13,7 @@ To run the examples:
 ## Note
 This example does not have a server implementation. It uses a mock server on the client side.
 
-## NaluDominoLoginApplication
+## NaluDominoLoginPluginApplication
 Login example providing three shells:
 
 1. application shell:
@@ -28,12 +28,14 @@ Login example providing three shells:
 
 The detail screen uses the Nalu composite feature.
 
+The classes used to implement the error and login feature a seperated into own plugins.
+
 ## The Login example
 
 Starting the application, the login shell gets visible. The credentials will not get validate, so enter any string for user-id and password, and press 'Login'. The example will a login flag inside the context.
 
 In case the application gets reloaded, the flag is not set and - instead showing the book marked page - the example routes to the login screen.
 
-The login feature is implemented using a [Login Filter](https://github.com/NaluKit/nalu-examples/blob/master/NaluDominoLoginApplication/src/main/java/com/github/nalukit/example/nalu/loginapplication/client/filters/BartSimpsonFilter.java).
+The login feature is implemented using a [Login Filter](https://github.com/NaluKit/nalu-examples/blob/master/NaluDominoLoginPluginApplication/NaluDominoLoginPluginApplication-client/src/main/java/com/github/nalukit/example/nalu/loginapplication/filters/BartSimpsonFilter.java).
 
 
