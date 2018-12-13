@@ -23,7 +23,7 @@
 
   <groupId>com.github.nalukit.example.nalu</groupId>
   <artifactId>NaluDominoLoginApplication</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 
   <packaging>gwt-app</packaging>
 
@@ -32,10 +32,10 @@
     <gwtVersion>2.8.2</gwtVersion>
 
     <!-- nalu version -->
-    <nalu.version>1.0.0</nalu.version>
+    <nalu.version>1.0.1</nalu.version>
 
     <domino.version>1.0-SNAPSHOT</domino.version>
-    <elemento.version>0.8.0</elemento.version>
+    <elemento.version>0.9.0</elemento.version>
 
     <!-- GWT needs at least java 1.6 -->
     <maven.compiler.source>1.8</maven.compiler.source>

@@ -34,7 +34,7 @@
     <!-- DominoUI version -->
     <domino.version>1.0-SNAPSHOT</domino.version>
     <!-- nalu version -->
-    <nalu.version>1.0.0</nalu.version>
+    <nalu.version>1.0.1</nalu.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -65,6 +65,7 @@
         <inherited>false</inherited>
         <configuration>
           <launcherDir>${project.build.directory}/gwt/launcherDir</launcherDir>
+          <localWorkers>4</localWorkers>
         </configuration>
       </plugin>
       <plugin>

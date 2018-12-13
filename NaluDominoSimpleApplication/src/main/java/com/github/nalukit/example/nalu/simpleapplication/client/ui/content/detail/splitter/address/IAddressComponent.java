@@ -18,11 +18,11 @@
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.splitter.address;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
-import com.github.nalukit.nalu.client.component.IsComponent;
+import com.github.nalukit.nalu.client.component.IsCompositeComponent;
 import elemental2.dom.HTMLElement;
 
 public interface IAddressComponent
-    extends IsComponent<IAddressComponent.Controller, HTMLElement> {
+    extends IsCompositeComponent<IAddressComponent.Controller, HTMLElement> {
 
   void edit(Person result);
 
@@ -31,7 +31,7 @@ public interface IAddressComponent
   Person flush(Person person);
 
   interface Controller
-      extends IsComponent.Controller {
+      extends IsCompositeComponent.Controller {
 
   }
 }

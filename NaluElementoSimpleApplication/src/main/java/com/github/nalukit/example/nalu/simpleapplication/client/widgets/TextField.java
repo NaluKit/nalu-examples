@@ -95,7 +95,7 @@ public class TextField
   }
 
   @Override
-  public HTMLElement asElement() {
+  public HTMLElement element() {
     return this.container;
   }
 }

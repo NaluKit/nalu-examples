@@ -31,7 +31,7 @@ public class NaluSimpleApplicationContext
   private FakedMailServer fakedMailServer;
 
   public NaluSimpleApplicationContext() {
-    this.version = "1.0.0";
+    this.version = "1.0.1";
     this.fakedMailServer = new FakedMailServer();
   }
 

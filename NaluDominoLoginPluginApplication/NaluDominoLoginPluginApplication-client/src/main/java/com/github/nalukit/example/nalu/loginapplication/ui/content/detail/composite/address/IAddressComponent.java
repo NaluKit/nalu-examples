@@ -17,11 +17,13 @@
 package com.github.nalukit.example.nalu.loginapplication.ui.content.detail.composite.address;
 
 import com.github.nalukit.example.nalu.loginapplication.shared.data.model.dto.Person;
+import com.github.nalukit.example.nalu.loginapplication.ui.content.detail.composite.address.IAddressComponent.Controller;
 import com.github.nalukit.nalu.client.component.IsComponent;
+import com.github.nalukit.nalu.client.component.IsCompositeComponent;
 import elemental2.dom.HTMLElement;
 
 public interface IAddressComponent
-    extends IsComponent<IAddressComponent.Controller, HTMLElement> {
+    extends IsCompositeComponent<Controller, HTMLElement> {
 
   void edit(Person result);
 
@@ -30,7 +32,7 @@ public interface IAddressComponent
   Person flush(Person person);
 
   interface Controller
-      extends IsComponent.Controller {
+      extends IsCompositeComponent.Controller {
 
   }
 }

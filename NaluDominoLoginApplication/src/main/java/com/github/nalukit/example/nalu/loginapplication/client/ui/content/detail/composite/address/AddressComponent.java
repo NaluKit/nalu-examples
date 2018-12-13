@@ -17,7 +17,8 @@
 package com.github.nalukit.example.nalu.loginapplication.client.ui.content.detail.composite.address;
 
 import com.github.nalukit.example.nalu.loginapplication.client.data.model.dto.Person;
-import com.github.nalukit.nalu.client.component.AbstractComponent;
+import com.github.nalukit.example.nalu.loginapplication.client.ui.content.detail.composite.address.IAddressComponent.Controller;
+import com.github.nalukit.nalu.client.component.AbstractCompositeComponent;
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
 import org.dominokit.domino.ui.cards.Card;
@@ -27,7 +28,7 @@ import org.dominokit.domino.ui.grid.Row;
 import org.jboss.gwt.elemento.core.Elements;
 
 public class AddressComponent
-    extends AbstractComponent<IAddressComponent.Controller, HTMLElement>
+    extends AbstractCompositeComponent<Controller, HTMLElement>
     implements IAddressComponent {
 
   private TextBox detailStreet;

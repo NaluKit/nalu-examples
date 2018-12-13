@@ -30,6 +30,7 @@
   <inherits name='com.github.nalukit.nalu.Nalu'/>
   <inherits name='com.github.nalukit.nalu.plugin.elemental2.NaluPluginElemental2'/>
   <inherits name="org.dominokit.domino.ui.DominoUI"/>
+  <inherits name="org.jboss.gwt.elemento.Core"/>
 
   <!-- Specify the app entry point class.                         -->
   <entry-point class='com.github.nalukit.example.nalu.loginapplication.client.Application'/>
