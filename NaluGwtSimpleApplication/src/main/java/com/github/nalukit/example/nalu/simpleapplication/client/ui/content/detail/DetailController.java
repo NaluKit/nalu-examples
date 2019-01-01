@@ -118,8 +118,8 @@ public class DetailController
   @Override
   public String getHRef() {
     return "#" +
-           this.router.generateHash("/application/search",
-                                    this.context.getSearchName(),
-                                    this.context.getSearchCity());
+           this.router.generate("/application/search",
+                                this.context.getSearchName(),
+                                this.context.getSearchCity());
   }
 }

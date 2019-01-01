@@ -34,7 +34,7 @@ public class NaluSimpleApplicationContext
   private boolean cached;
 
   public NaluSimpleApplicationContext() {
-    this.version = "1.0.1";
+    this.version = "1.1.0-SNAPSHOT";
     this.setCached(false);
   }
 
