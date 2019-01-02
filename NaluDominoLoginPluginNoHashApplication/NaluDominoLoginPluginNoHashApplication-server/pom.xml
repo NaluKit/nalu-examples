@@ -109,6 +109,7 @@
               <artifactId>jetty-maven-plugin</artifactId>
               <configuration>
                 <webApp>
+                  <contextPath>/App</contextPath>
                   <resourceBases>
                     <resourceBase>${basedir}/src/main/webapp</resourceBase>
                     <resourceBase>${basedir}/../target/gwt/launcherDir/</resourceBase>

@@ -43,14 +43,22 @@ public class RedirectFilter
 
     String uri = request.getRequestURI();
     this.context.log("Requested Resource: " + uri);
+    this.context.log("context.getContextPath(): " + this.context.getContextPath());
+    this.context.log("context.getServletContextName(): " + this.context.getServletContextName());
 
     if (isInitialRequest(uri)) {
       if (uri.length() == 0) {
-        response.sendRedirect("/index.html");
+        String returnUri = this.context.getServletContextName() + "/index.html";
+        this.context.log(returnUri);
+        response.sendRedirect(returnUri);
       } else if (uri.length() == 1 && uri.equals("/")) {
-        response.sendRedirect("/index.html");
+        String returnUri = this.context.getServletContextName() + "/index.html";
+        this.context.log(returnUri);
+        response.sendRedirect(returnUri);
       } else {
-        response.sendRedirect("/index.html?uri=" + uri);
+        String returnUri = this.context.getServletContextName() + "/index.html?uri=" + uri;
+        this.context.log(returnUri);
+        response.sendRedirect(returnUri);
       }
     } else {
       filterChain.doFilter(request,
@@ -79,6 +87,9 @@ public class RedirectFilter
       return false;
     }
     if (uri.endsWith(".woff2")) {
+      return false;
+    }
+    if (uri.endsWith(".ico")) {
       return false;
     }
     return true;
