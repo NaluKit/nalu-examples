@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 - Frank Hossfeld
+ * Copyright (c) 2018 - 2019 - Frank Hossfeld
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not
  *  use this file except in compliance with the License. You may obtain a copy of
@@ -20,6 +20,7 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Objects;
 
 public class RedirectFilter
     implements Filter {
@@ -33,6 +34,7 @@ public class RedirectFilter
     this.context.log("RedirectFilter initialized");
   }
 
+  // localhost:8080/App/applicationShell/person/detail/1?key01=value01&key02=value02#myhash
   @Override
   public void doFilter(ServletRequest servletRequest,
                        ServletResponse servletResponse,
@@ -47,19 +49,19 @@ public class RedirectFilter
     this.context.log("context.getServletContextName(): " + this.context.getServletContextName());
 
     if (isInitialRequest(uri)) {
-      if (uri.length() == 0) {
-        String returnUri = this.context.getServletContextName() + "/index.html";
-        this.context.log(returnUri);
-        response.sendRedirect(returnUri);
-      } else if (uri.length() == 1 && uri.equals("/")) {
-        String returnUri = this.context.getServletContextName() + "/index.html";
-        this.context.log(returnUri);
-        response.sendRedirect(returnUri);
-      } else {
-        String returnUri = this.context.getServletContextName() + "/index.html?uri=" + uri;
-        this.context.log(returnUri);
-        response.sendRedirect(returnUri);
+      StringBuilder sbUrl = new StringBuilder();
+      sbUrl.append(request.getContextPath())
+           .append("/index.html");
+      sbUrl.append("?");
+      if (!Objects.isNull(request.getQueryString())) {
+        sbUrl.append(request.getQueryString())
+             .append("&");
       }
+      sbUrl.append("uri=")
+           .append(request.getRequestURI());
+      this.context.log(sbUrl.toString());
+      response.sendRedirect(sbUrl.toString());
+
     } else {
       filterChain.doFilter(request,
                            response);

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 - Frank Hossfeld
+ * Copyright (c) 2018 - 2019 - Frank Hossfeld
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not
  *  use this file except in compliance with the License. You may obtain a copy of
@@ -44,7 +44,7 @@ import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
        logger = DefaultElemental2Logger.class)
 @Plugins({ ErrorPlugin.class,
            LoginPlugin.class })
-@Filters(filterClasses = BartSimpsonFilter.class)
+//@Filters(filterClasses = BartSimpsonFilter.class)
 interface NaluLoginApplication
     extends IsApplication {
 
