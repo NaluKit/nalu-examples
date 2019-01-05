@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 - Frank Hossfeld
+ * Copyright (c) 2018 - 2019 - Frank Hossfeld
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not
  *  use this file except in compliance with the License. You may obtain a copy of
@@ -19,7 +19,6 @@ package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.deta
 
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
 import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.splitter.address.IAddressComponent.Controller;
-import com.github.nalukit.nalu.client.component.AbstractComponent;
 import com.github.nalukit.nalu.client.component.AbstractCompositeComponent;
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
@@ -104,4 +103,5 @@ public class AddressComponent
           .setCity(detailCity.getValue());
     return person;
   }
+
 }

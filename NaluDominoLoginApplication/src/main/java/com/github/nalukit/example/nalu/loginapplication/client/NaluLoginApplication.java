@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 - Frank Hossfeld
+ * Copyright (c) 2018 - 2019 - Frank Hossfeld
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not
  *  use this file except in compliance with the License. You may obtain a copy of
@@ -33,14 +33,22 @@ import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
  * <p>Please keep in mind, the services are simulated inside the client (because this is not part of the
  * framework). You can use any technique to call the server!</p>
  */
+// use this annotation definition, to run the example using a hash token
+//@Application(loader = NaluLoginApplicationLoader.class,
+//             startRoute = "/loginShell/login",
+//             context = NaluLoginApplicationContext.class,
+//             routeError = "/errorShell/error")
+// use this annotation definition, to run the example using a hashless url
 @Application(loader = NaluLoginApplicationLoader.class,
              startRoute = "/loginShell/login",
              context = NaluLoginApplicationContext.class,
-             routeError = "/errorShell/error")
+             routeError = "/errorShell/error",
+             useHash = false)
 @Filters(filterClasses = { LoginFilter.class,
                            BartSimpsonFilter.class })
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = DefaultElemental2Logger.class)
 interface NaluLoginApplication
     extends IsApplication {
+
 }

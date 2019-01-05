@@ -13,7 +13,9 @@ public interface IDashboardComponent
 
   interface Controller
       extends IsComponent.Controller {
+
     void doRefresh();
+
   }
 
 }

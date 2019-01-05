@@ -19,6 +19,7 @@ public class OnRouteMapComponent
 
   interface OnRouteMapComponentUiBinder
       extends UiBinder<Widget, OnRouteMapComponent> {
+
   }
 
 }

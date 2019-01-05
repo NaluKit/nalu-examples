@@ -21,4 +21,5 @@ public class SimpleApplicationHandler01
                                Window.alert("new Status:" + e.getStatus());
                              });
   }
+
 }

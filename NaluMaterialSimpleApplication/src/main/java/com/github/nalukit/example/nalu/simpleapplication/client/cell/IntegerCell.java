@@ -14,4 +14,5 @@ public class IntegerCell
       sb.appendEscaped(value.toString());
     }
   }
+
 }

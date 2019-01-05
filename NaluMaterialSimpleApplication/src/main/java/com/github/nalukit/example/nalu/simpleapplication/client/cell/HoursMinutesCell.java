@@ -33,4 +33,5 @@ public class HoursMinutesCell
       sb.appendEscaped(formatHoursMinutes(value));
     }
   }
+
 }

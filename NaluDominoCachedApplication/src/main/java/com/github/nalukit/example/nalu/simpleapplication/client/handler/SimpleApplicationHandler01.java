@@ -21,4 +21,5 @@ public class SimpleApplicationHandler01
                                DomGlobal.window.alert("new Status:" + e.getStatus());
                              });
   }
+
 }

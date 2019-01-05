@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 - Frank Hossfeld
+ * Copyright (c) 2018 - 2019 - Frank Hossfeld
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not
  *  use this file except in compliance with the License. You may obtain a copy of
@@ -30,11 +30,18 @@ import com.github.nalukit.nalu.plugin.gwt.client.DefaultGWTLogger;
  * <p>Please keep in mind, the services are simulated inside the client (because this is not part of the
  * framework). You can use any technique to call the server!</p>
  */
-@Application(startRoute = "/application/list",
+// use this annotation definition, to run the example using a hash token
+@Application(startRoute = "/application",
              context = NaluSimpleApplicationContext.class,
-             routeError = "/application/list")
+             routeError = "/application")
+// use this annotation definition, to run the example using a hashless url
+//@Application(startRoute = "/application",
+//             context = NaluSimpleApplicationContext.class,
+//             routeError = "/application",
+//             useHash = false)
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = DefaultGWTLogger.class)
 interface NaluSimpleApplication
     extends IsApplication {
+
 }

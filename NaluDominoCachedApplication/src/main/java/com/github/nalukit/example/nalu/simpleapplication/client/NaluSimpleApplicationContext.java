@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 - Frank Hossfeld
+ * Copyright (c) 2018 - 2019 - Frank Hossfeld
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not
  *  use this file except in compliance with the License. You may obtain a copy of
@@ -34,7 +34,7 @@ public class NaluSimpleApplicationContext
   private boolean cached;
 
   public NaluSimpleApplicationContext() {
-    this.version = "1.0.1";
+    this.version = "1.1.0-SNAPSHOT";
     this.setCached(false);
   }
 
@@ -65,4 +65,5 @@ public class NaluSimpleApplicationContext
   public void setCached(boolean cached) {
     this.cached = cached;
   }
+
 }

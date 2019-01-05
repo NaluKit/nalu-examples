@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 - Frank Hossfeld
+ * Copyright (c) 2018 - 2019 - Frank Hossfeld
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not
  *  use this file except in compliance with the License. You may obtain a copy of
@@ -58,12 +58,10 @@ public class ApplicationShell
                 .add(createSouth())
                 .add(div().css("shellNavigation")
                           .attr(Nalu.NALU_ID_ATTRIBUTE,
-                                "navigation")
-                          .asElement())
+                                "navigation"))
                 .add(div().css("shellContent")
                           .attr(Nalu.NALU_ID_ATTRIBUTE,
-                                "content")
-                          .asElement())
+                                "content"))
                 .asElement();
   }
 
@@ -71,13 +69,14 @@ public class ApplicationShell
     return header().css("shellHeader")
                    .attr(Nalu.NALU_ID_ATTRIBUTE,
                          "header")
-                   .asElement();
+                   .get();
   }
 
   private Element createSouth() {
     return footer().css("shellFooter")
                    .attr(Nalu.NALU_ID_ATTRIBUTE,
                          "footer")
-                   .asElement();
+                   .get();
   }
+
 }
