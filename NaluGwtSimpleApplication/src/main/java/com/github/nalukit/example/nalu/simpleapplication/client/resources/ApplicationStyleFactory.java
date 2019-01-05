@@ -51,4 +51,5 @@ public class ApplicationStyleFactory {
     ApplicationCss style();
 
   }
+
 }

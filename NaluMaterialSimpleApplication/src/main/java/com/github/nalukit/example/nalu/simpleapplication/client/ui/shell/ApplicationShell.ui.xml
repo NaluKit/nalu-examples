@@ -16,7 +16,8 @@
                         iconPosition="RIGHT" textColor="WHITE"/>
       </ma:sideprofile.MaterialSideProfile>
 
-      <m:MaterialLink text="Dashboard" textColor="BLUE" iconType="DASHBOARD" targetHistoryToken="application/dashboard"/>
+      <m:MaterialLink text="Dashboard" textColor="BLUE" iconType="DASHBOARD"
+                      targetHistoryToken="application/dashboard"/>
       <m:MaterialLink text="On Route" textColor="BLUE" iconType="MAP" targetHistoryToken="application/onroutemap"/>
       <m:MaterialLink ui:field="logout" text="Logout" textColor="BLUE" iconType="EXIT_TO_APP"/>
 

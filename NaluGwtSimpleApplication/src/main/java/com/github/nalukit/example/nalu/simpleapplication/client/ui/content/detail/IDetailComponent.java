@@ -42,4 +42,5 @@ public interface IDetailComponent
     String getHRef();
 
   }
+
 }

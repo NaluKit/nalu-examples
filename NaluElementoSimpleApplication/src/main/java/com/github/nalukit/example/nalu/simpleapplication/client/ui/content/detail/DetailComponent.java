@@ -71,7 +71,7 @@ public class DetailComponent
                                                           event -> {
                                                             getController().doRevert();
                                                           }))))
-                     .asElement());
+                     .get());
   }
 
   @Override
@@ -123,4 +123,5 @@ public class DetailComponent
           .setCity(detailCity.getText());
     return person;
   }
+
 }

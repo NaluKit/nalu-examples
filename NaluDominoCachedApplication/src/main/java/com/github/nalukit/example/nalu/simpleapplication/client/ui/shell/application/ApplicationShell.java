@@ -71,4 +71,5 @@ public class ApplicationShell
   public void onAttachedComponent() {
     DomGlobal.window.console.log("ApplicationShell: 'onAttachedComponent' called");
   }
+
 }

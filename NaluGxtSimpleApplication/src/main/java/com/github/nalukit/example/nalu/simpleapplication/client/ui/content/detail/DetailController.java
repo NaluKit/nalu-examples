@@ -41,4 +41,5 @@ public class DetailController
                                     .getMail(id));
     this.eventBus.fireEvent(new StatusChangeEvent("Display email with id: " + id));
   }
+
 }

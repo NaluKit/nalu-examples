@@ -164,4 +164,5 @@ public class ApplicationShell
     this.contentWidget.clear();
     this.contentWidget.add(widget);
   }
+
 }

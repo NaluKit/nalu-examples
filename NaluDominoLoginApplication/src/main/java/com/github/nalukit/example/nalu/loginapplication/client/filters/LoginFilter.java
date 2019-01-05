@@ -28,4 +28,5 @@ public class LoginFilter
   public String[] parameters() {
     return new String[] {};
   }
+
 }

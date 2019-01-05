@@ -120,4 +120,5 @@ public class ApplicationShell
   public void setContent(IsWidget widget) {
     this.centerContainer.add(widget);
   }
+
 }

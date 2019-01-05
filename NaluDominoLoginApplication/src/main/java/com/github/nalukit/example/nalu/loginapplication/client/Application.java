@@ -26,6 +26,7 @@ import com.google.gwt.core.client.GWT;
  */
 public class Application
     implements EntryPoint {
+
   /**
    * <p>This is the entry point method.</p>
    * <p></p>
@@ -39,4 +40,5 @@ public class Application
     // start the application by calling the run()-method.
     application.run(new NaluPluginElemental2());
   }
+
 }

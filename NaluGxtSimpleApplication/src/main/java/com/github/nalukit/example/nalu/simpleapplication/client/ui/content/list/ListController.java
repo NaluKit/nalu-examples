@@ -28,7 +28,7 @@ import com.google.gwt.user.client.ui.Widget;
 import java.util.List;
 import java.util.Objects;
 
-@Controller(route = "/application/list",
+@Controller(route = "/application",
             selector = "north",
             componentInterface = IListComponent.class,
             component = ListComponent.class)
@@ -57,4 +57,5 @@ public class ListController
     this.router.route("/application/mail",
                       id);
   }
+
 }

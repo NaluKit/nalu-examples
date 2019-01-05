@@ -71,4 +71,5 @@ public class LoginComponent
                                     .setTextAlign("right"))
                     .asElement());
   }
+
 }

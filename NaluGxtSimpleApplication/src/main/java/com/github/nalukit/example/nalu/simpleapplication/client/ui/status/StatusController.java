@@ -39,4 +39,5 @@ public class StatusController
     this.eventBus.addHandler(StatusChangeEvent.TYPE,
                              e -> this.component.setStatus(e.getStatus()));
   }
+
 }

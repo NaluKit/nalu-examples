@@ -83,4 +83,5 @@ public class PersonComponent
     person.setName(detailName.getValue());
     return person;
   }
+
 }

@@ -45,4 +45,5 @@ public class LoginController
     // we are always happy with the credential ....
     this.router.route("/applicationShell/person/search");
   }
+
 }

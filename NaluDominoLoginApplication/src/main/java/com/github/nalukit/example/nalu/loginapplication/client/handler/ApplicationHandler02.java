@@ -37,4 +37,5 @@ public class ApplicationHandler02
                                DomGlobal.window.alert("new Status:" + e.getStatus());
                              });
   }
+
 }

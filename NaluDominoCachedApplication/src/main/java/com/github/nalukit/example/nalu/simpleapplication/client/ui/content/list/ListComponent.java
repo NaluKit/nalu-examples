@@ -176,4 +176,5 @@ public class ListComponent
       this.infoText.textContent = ListComponent.NOT_CACHED_TEXT;
     }
   }
+
 }

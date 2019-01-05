@@ -21,7 +21,7 @@
   so that your app can take advantage of the latest GWT module capabilities.
 -->
 <!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.8.2//EN"
-  "http://gwtproject.org/doctype/2.8.2/gwt-module.dtd">
+        "http://gwtproject.org/doctype/2.8.2/gwt-module.dtd">
 <module rename-to='application'>
   <!-- Inherit the core Web Toolkit stuff.                        -->
   <inherits name='com.google.gwt.user.User'/>
@@ -30,9 +30,9 @@
   <!-- Other module inherits                                      -->
   <inherits name='com.github.nalukit.nalu.Nalu'/>
   <inherits name='com.github.nalukit.nalu.plugin.gwt.NaluPluginGWT'/>
-  
-  <inherits name="gwt.material.design.GwtMaterialWithJQuery" />
-  <inherits name="gwt.material.design.GwtMaterialTable" />
+
+  <inherits name="gwt.material.design.GwtMaterialWithJQuery"/>
+  <inherits name="gwt.material.design.GwtMaterialTable"/>
   <inherits name="gwt.material.design.addins.GwtMaterialAddins"/>
 
 

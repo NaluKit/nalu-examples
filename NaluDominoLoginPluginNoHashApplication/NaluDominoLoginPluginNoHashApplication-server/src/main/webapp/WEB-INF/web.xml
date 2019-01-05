@@ -39,12 +39,12 @@
   </filter-mapping>
 
   <!--<servlet>-->
-    <!--<servlet-name>page</servlet-name>-->
-    <!--<jsp-file>/index.html</jsp-file>-->
+  <!--<servlet-name>page</servlet-name>-->
+  <!--<jsp-file>/index.html</jsp-file>-->
   <!--</servlet>-->
   <!--<servlet-mapping>-->
-    <!--<servlet-name>page</servlet-name>-->
-    <!--<url-pattern>/*</url-pattern>-->
+  <!--<servlet-name>page</servlet-name>-->
+  <!--<url-pattern>/*</url-pattern>-->
   <!--</servlet-mapping>-->
   <!-- default error page -->
   <error-page>

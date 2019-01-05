@@ -27,4 +27,5 @@ public interface IHeaderComponent
       extends IsComponent.Controller {
 
   }
+
 }

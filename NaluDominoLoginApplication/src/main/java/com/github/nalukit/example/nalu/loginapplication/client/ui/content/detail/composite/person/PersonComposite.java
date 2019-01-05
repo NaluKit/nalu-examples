@@ -49,4 +49,5 @@ public class PersonComposite
   public IPersonComponent createComponent() {
     return new PersonComponent();
   }
+
 }

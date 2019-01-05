@@ -49,4 +49,5 @@ public class FooterController
     this.handlerRegistrations.add(this.eventBus.addHandler(StatusChangeEvent.TYPE,
                                                            e -> component.setStatus(e.getStatus())));
   }
+
 }

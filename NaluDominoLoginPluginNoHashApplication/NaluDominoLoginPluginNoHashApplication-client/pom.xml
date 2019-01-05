@@ -33,7 +33,6 @@
 
   <packaging>gwt-app</packaging>
 
-
   <dependencies>
     <dependency>
       <groupId>com.google.gwt</groupId>

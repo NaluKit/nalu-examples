@@ -88,5 +88,7 @@ public class ApplicationShell
 
   interface ShellUiBinder
       extends UiBinder<Widget, ApplicationShell> {
+
   }
+
 }

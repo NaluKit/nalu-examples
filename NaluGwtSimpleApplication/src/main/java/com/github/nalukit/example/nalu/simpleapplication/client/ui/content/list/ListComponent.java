@@ -144,6 +144,9 @@ public class ListComponent
    * @param <C> the cell generator
    */
   private interface GetValue<C> {
+
     C getValue(Person person);
+
   }
+
 }

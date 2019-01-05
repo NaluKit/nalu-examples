@@ -139,4 +139,5 @@ public class DetailController
   public IDetailComponent createComponent() {
     return new DetailComponent();
   }
+
 }

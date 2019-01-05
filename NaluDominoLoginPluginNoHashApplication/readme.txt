@@ -12,4 +12,4 @@ Change directory to your generated project and issue the following commands:
 
 To start the applicaiton, call:
 
--> http://localhost:8080/index.html
+-> http://localhost:8080/App/index.html

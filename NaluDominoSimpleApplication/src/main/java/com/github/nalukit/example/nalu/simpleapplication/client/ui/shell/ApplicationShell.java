@@ -66,4 +66,5 @@ public class ApplicationShell
     MediaQuery.addOnMediumAndDownListener(layout::unfixLeftPanelPosition);
     MediaQuery.addOnLargeAndUpListener(layout::fixLeftPanelPosition);
   }
+
 }

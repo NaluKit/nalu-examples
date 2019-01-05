@@ -159,4 +159,5 @@ public class DetailComponent
           .setCity(detailCity.getText());
     return person;
   }
+
 }

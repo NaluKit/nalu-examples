@@ -33,4 +33,5 @@ public interface FlightHoursSummary {
   Integer getNocturnalLandings();
 
   void setNocturnalLandings(int value);
+
 }

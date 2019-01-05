@@ -43,4 +43,5 @@ public class PersonSplitter
   public Person flush(Person person) {
     return this.component.flush(person);
   }
+
 }

@@ -51,4 +51,5 @@ public interface ApplicationCss
   String resultPanel();
 
   String detailPanel();
+
 }

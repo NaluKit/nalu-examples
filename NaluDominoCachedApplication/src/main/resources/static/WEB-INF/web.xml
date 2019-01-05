@@ -26,7 +26,17 @@
 
   <!-- Default page to serve -->
   <welcome-file-list>
-    <welcome-file>Module0810.html</welcome-file>
+    <welcome-file>index.html</welcome-file>
   </welcome-file-list>
+
+  <filter>
+    <filter-name>RedirectFilter</filter-name>
+    <filter-class>com.github.nalukit.example.nalu.simpleapplication.server.filter.RedirectFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>RedirectFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
 
 </web-app>

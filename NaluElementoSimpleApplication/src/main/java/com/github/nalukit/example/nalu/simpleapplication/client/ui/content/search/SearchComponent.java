@@ -55,9 +55,8 @@ public class SearchComponent
                                                           event -> {
                                                             searchName.setText("");
                                                             searchCity.setText("");
-                                                          }))
-                                         .asElement()))
-                     .asElement());
+                                                          }))))
+                     .get());
   }
 
   @Override
@@ -69,4 +68,5 @@ public class SearchComponent
   public void setSearchCity(String searchCity) {
     this.searchCity.setText(searchCity);
   }
+
 }

@@ -78,4 +78,5 @@ public class ApplicationShell
   public void detachShell() {
     this.layout.remove();
   }
+
 }

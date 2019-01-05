@@ -65,4 +65,5 @@ public class NaluSimpleApplicationContext
   public void setCached(boolean cached) {
     this.cached = cached;
   }
+
 }

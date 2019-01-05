@@ -72,4 +72,5 @@ public class ErrorShell
   public void detachShell() {
     this.layout.remove();
   }
+
 }

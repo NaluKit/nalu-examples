@@ -34,4 +34,5 @@ public interface IListComponent
     void doSelectRow(String id);
 
   }
+
 }

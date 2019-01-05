@@ -138,4 +138,5 @@ public final class Mail
   public void setBody(String body) {
     this.body = body;
   }
+
 }

@@ -122,4 +122,5 @@ public class DetailController
                                 this.context.getSearchName(),
                                 this.context.getSearchCity());
   }
+
 }

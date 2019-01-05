@@ -18,6 +18,7 @@
 package com.github.nalukit.example.nalu.simpleapplication.client.data.model;
 
 public class GUID {
+
   private static final char[] CHARS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".toCharArray();
 
   /**
@@ -78,4 +79,5 @@ public class GUID {
     }
     return new String(uuid);
   }
+
 }

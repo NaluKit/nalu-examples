@@ -33,7 +33,8 @@ public class HeaderComponent
   @Override
   public void render() {
     initElement(header().css("shellHeader")
-                        .add(img("media/images/Gwt-logo.png").css("shellHeaderImage"))
-                        .asElement());
+                        .add(img("/media/images/Gwt-logo.png").css("shellHeaderImage"))
+                        .get());
   }
+
 }

@@ -85,7 +85,7 @@ public class ListComponent
                                               .textContent("Zip"))
                                      .add(th().css("resultTableHeader")
                                               .textContent("City")))
-                         .asElement();
+                         .get();
 
     for (Person person : result) {
       resultTable.appendChild(this.createTableDataRow(person));
@@ -105,7 +105,7 @@ public class ListComponent
                                            .getZip()))
                .add(td().textContent(person.getAddress()
                                            .getCity()))
-               .asElement();
+               .get();
   }
 
   private void update(Person object) {

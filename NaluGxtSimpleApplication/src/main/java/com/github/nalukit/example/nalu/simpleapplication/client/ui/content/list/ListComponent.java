@@ -117,4 +117,5 @@ public class ListComponent
     this.store.clear();
     this.store.addAll(listOfEmails);
   }
+
 }

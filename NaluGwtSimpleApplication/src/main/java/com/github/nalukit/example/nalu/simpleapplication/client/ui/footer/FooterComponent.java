@@ -72,4 +72,5 @@ public class FooterComponent
   public void setStatus(String status) {
     this.status.setText(status);
   }
+
 }

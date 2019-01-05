@@ -36,14 +36,12 @@ public class NavigationComponent
     initElement(div().add(button().css("navigationButton")
                                   .textContent("Search")
                                   .on(click,
-                                      event -> showSearch())
-                                  .asElement())
+                                      event -> showSearch()))
                      .add(button().css("navigationButton")
                                   .textContent("List")
                                   .on(click,
-                                      event -> showList())
-                                  .asElement())
-                     .asElement());
+                                      event -> showList()))
+                     .get());
   }
 
   private void showSearch() {
@@ -53,4 +51,5 @@ public class NavigationComponent
   private void showList() {
     getController().doShowList();
   }
+
 }

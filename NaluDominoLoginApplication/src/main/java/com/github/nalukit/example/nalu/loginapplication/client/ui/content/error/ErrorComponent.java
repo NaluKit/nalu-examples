@@ -48,4 +48,5 @@ public class ErrorComponent
   public void setErrorText(String errorMessage) {
     this.errorText.textContent = errorMessage;
   }
+
 }

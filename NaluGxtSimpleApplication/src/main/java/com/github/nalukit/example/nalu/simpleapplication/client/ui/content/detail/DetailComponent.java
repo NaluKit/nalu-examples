@@ -108,5 +108,7 @@ public class DetailComponent
 
   interface Driver
       extends SimpleBeanEditorDriver<Mail, DetailComponent> {
+
   }
+
 }

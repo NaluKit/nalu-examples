@@ -34,4 +34,5 @@ public interface IPersonComponent
       extends IsCompositeComponent.Controller {
 
   }
+
 }

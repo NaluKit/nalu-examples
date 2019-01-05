@@ -19,7 +19,6 @@ package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.deta
 
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
 import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.splitter.address.IAddressComponent.Controller;
-import com.github.nalukit.nalu.client.component.AbstractComponent;
 import com.github.nalukit.nalu.client.component.AbstractCompositeComponent;
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
@@ -104,4 +103,5 @@ public class AddressComponent
           .setCity(detailCity.getValue());
     return person;
   }
+
 }

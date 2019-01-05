@@ -42,4 +42,5 @@ public class NaluSimpleApplicationContext
   public FakedMailServer getFakedMailServer() {
     return fakedMailServer;
   }
+
 }

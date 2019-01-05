@@ -50,4 +50,5 @@ public class PersonSplitter
   public IPersonComponent createComponent() {
     return new PersonComponent();
   }
+
 }

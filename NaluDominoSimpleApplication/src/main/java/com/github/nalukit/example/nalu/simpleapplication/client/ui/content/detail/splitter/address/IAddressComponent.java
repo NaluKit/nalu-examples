@@ -34,4 +34,5 @@ public interface IAddressComponent
       extends IsCompositeComponent.Controller {
 
   }
+
 }

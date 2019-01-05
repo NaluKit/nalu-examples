@@ -214,8 +214,6 @@
             <arg>9876</arg>
             <arg>-style</arg>
             <arg>PRETTY</arg>
-            <arg>-bindAddress</arg>
-            <arg>0.0.0.0</arg>
           </devmodeArgs>
           <startupUrls>
             <startupUrl>index.html</startupUrl>

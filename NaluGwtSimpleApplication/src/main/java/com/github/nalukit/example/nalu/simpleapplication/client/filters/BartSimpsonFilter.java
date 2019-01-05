@@ -29,4 +29,5 @@ public class BartSimpsonFilter
     return new String[] { this.context.getSearchName(),
                           this.context.getSearchCity() };
   }
+
 }

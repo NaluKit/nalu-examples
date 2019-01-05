@@ -32,4 +32,5 @@ public interface INavigationComponent
     void doShowList();
 
   }
+
 }

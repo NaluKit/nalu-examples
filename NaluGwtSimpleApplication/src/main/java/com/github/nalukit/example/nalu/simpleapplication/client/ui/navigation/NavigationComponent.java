@@ -58,4 +58,5 @@ public class NavigationComponent
     searchButton.addClickHandler(event -> getController().doShowSearch());
     listButton.addClickHandler(event -> getController().doShowList());
   }
+
 }

@@ -8,5 +8,7 @@ public interface IOnRouteMapComponent
 
   interface Controller
       extends IsComponent.Controller {
+
   }
+
 }

@@ -91,4 +91,5 @@ public class SearchComponent
   public void setSearchCity(String searchCity) {
     this.searchCity.setValue(searchCity);
   }
+
 }

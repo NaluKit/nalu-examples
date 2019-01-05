@@ -129,5 +129,7 @@ public class DashboardComponent
 
   interface DashboardComponentUiBinder
       extends UiBinder<Widget, DashboardComponent> {
+
   }
+
 }

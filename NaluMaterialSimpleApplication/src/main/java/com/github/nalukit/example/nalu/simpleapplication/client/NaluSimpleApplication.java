@@ -37,4 +37,5 @@ import com.github.nalukit.nalu.plugin.gwt.client.DefaultGWTLogger;
        logger = DefaultGWTLogger.class)
 interface NaluSimpleApplication
     extends IsApplication {
+
 }

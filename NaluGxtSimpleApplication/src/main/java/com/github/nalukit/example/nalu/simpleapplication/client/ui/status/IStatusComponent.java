@@ -27,5 +27,7 @@ public interface IStatusComponent
 
   interface Controller
       extends IsComponent.Controller {
+
   }
+
 }

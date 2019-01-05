@@ -28,5 +28,7 @@ public interface IDetailComponent
 
   interface Controller
       extends IsComponent.Controller {
+
   }
+
 }

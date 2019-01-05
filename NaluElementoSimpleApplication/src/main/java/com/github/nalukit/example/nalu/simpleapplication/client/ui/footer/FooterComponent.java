@@ -45,11 +45,12 @@ public class FooterComponent
                                                         .textContent("GWT Basic training")))
                                   .add(div().css("shellFooterRight")
                                             .add(status = label().css("shellFooterStatus"))))
-                        .asElement());
+                        .get());
   }
 
   @Override
   public void setStatus(String status) {
     this.status.textContent(status);
   }
+
 }

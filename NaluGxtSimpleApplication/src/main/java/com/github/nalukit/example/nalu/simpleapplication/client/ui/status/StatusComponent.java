@@ -71,4 +71,5 @@ public class StatusComponent
   public void setStatus(String status) {
     this.label.setText(status);
   }
+
 }

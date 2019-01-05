@@ -53,4 +53,5 @@ public class PersonSearch
   public void setCity(String city) {
     this.city = city;
   }
+
 }

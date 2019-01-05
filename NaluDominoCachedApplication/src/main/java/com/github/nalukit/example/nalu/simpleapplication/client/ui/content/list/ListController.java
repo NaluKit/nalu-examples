@@ -99,4 +99,5 @@ public class ListController
       this.eventBus.fireEvent(new StatusChangeEvent("Found " + Integer.toString(result.size()) + " persons"));
     }
   }
+
 }

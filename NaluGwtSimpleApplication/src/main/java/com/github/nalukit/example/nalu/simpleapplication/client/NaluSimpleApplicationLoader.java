@@ -39,4 +39,5 @@ public class NaluSimpleApplicationLoader
     Window.alert("Do Loading ... ");
     finishLoadCommand.finishLoading();
   }
+
 }

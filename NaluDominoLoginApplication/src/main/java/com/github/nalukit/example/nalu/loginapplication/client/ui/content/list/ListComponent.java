@@ -107,4 +107,5 @@ public class ListComponent
     this.store.setData(result);
     this.table.load();
   }
+
 }
