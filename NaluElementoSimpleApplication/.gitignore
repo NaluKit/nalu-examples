@@ -2,10 +2,6 @@
 ### GWT template
 *.class
 
-# Package Files #
-*.jar
-*.war
-
 # gwt caches and compiled units #
 war/gwt_bree/
 gwt-unitCache/
@@ -20,65 +16,49 @@ war/WEB-INF/classes/
 #compilation logs
 .gwt/
 
-#caching for already compiled files
-gwt-unitCache/
-
 #gwt junit compilation files
 www-test/
 
 #old GWT (1.5) created this dir
 .gwt-tmp/
-### Eclipse template
+### Java template
+# Compiled class file
 
-.metadata
-bin/
-tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.settings/
-.loadpath
-.recommenders
+# Log file
+*.log
 
-# External tool builders
-.externalToolBuilders/
+# BlueJ files
+*.ctxt
 
-# Locally outOfStore "Eclipse launch configurations"
-*.launch
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
 
-# PyDev specific (Python IDE for Eclipse)
-*.pydevproject
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
 
-# CDT-specific (C/C++ Development Tooling)
-.cproject
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+### Gradle template
+.gradle
+/build/
 
-# Java annotation processor (APT)
-.factorypath
+# Ignore Gradle GUI config
+gradle-app.setting
 
-# PDT-specific (PHP Development Tools)
-.buildpath
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
 
-# sbteclipse plugin
-.target
+# Cache of project
+.gradletasknamecache
 
-# Tern plugin
-.tern-project
-
-# TeXlipse plugin
-.texlipse
-
-# STS (Spring Tool Suite)
-.springBeans
-
-# Code Recommenders
-.recommenders/
-
-# Scala IDE specific (Scala & Java development for Eclipse)
-.cache-main
-.scala_dependencies
-.worksheet
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties
 ### macOS template
 # General
 .DS_Store
@@ -106,61 +86,120 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-### Java template
-# Compiled class file
-*.class
+### Example user template template
+### Example user template
 
-# Log file
-*.log
+# IntelliJ project files
+.idea
+out
+gen### Eclipse template
 
-# BlueJ files
-*.ctxt
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# External tool builders
+.externalToolBuilders/
 
-# Package Files #
-*.jar
-*.war
-*.ear
-*.zip
-*.tar.gz
-*.rar
+# Locally stored "Eclipse launch configurations"
+*.launch
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+# PyDev specific (Python IDE for Eclipse)
+*.pydevproject
+
+# CDT-specific (C/C++ Development Tooling)
+.cproject
+
+# CDT- autotools
+.autotools
+
+# Java annotation processor (APT)
+.factorypath
+
+# PDT-specific (PHP Development Tools)
+.buildpath
+
+# sbteclipse plugin
+.target
+
+# Tern plugin
+.tern-project
+
+# TeXlipse plugin
+.texlipse
+
+# STS (Spring Tool Suite)
+.springBeans
+
+# Code Recommenders
+.recommenders/
+
+# Scala IDE specific (Scala & Java development for Eclipse)
+.cache-main
+.scala_dependencies
+.worksheet
+### AppEngine template
+# Google App Engine generated folder
+appengine-generated/
+### Clojure template
+/lib/
+/classes/
+/target/
+/checkouts/
+.lein-deps-sum
+.lein-repl-history
+.lein-plugins/
+.lein-failures
+.nrepl-port
+.cpcache/
 ### JetBrains template
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
-# User-specific stuff:
-.idea/**/workspace.xml
+# User-specific stuff
 .idea/**/tasks.xml
-.idea/dictionaries
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
 
-# Sensitive or high-churn files:
+# Sensitive or high-churn files
 .idea/**/dataSources/
 .idea/**/dataSources.ids
-.idea/**/dataSources.xml
 .idea/**/dataSources.local.xml
 .idea/**/sqlDataSources.xml
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
 
-# Gradle:
+# Gradle
 .idea/**/gradle.xml
 .idea/**/libraries
 
-# CMake
-cmake-build-debug/
+# Gradle and Maven with auto-import
+# When using Gradle or Maven with auto-import, you should exclude module files,
+# since they will be recreated, and may cause churn.  Uncomment if using
+# auto-import.
+.idea/modules.xml
+.idea/*.iml
+.idea/modules
+*.iml
 
-# Mongo Explorer plugin:
+# CMake
+cmake-build-*/
+
+# Mongo Explorer plugin
 .idea/**/mongoSettings.xml
 
-## File-based project format:
+# File-based project format
 *.iws
-
-## Plugin-specific files:
 
 # IntelliJ
 out/
@@ -180,11 +219,7 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+# Editor-based Rest Client
+.idea/httpRequests
 target
-*.iml
-_DS_Store
-**/webapp/simpleApplication
-
-.classpath
-.project
-.settings
+*.info
