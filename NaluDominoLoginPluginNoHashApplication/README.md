@@ -1,19 +1,17 @@
-# Example demontrating the plugin feature
-This example demonstrates the use of plugins in Nalu. It is a multi module project.
+# Example demontrating the plugin feature and using a non hash url
+This example demonstrates the use of plugins in Nalu. It is a multi module project. Also, the url is condfigurated to not use a hash ionside the url.
 
 ## Using
 To run the examples:
 
 * clone the repository
 
-* run ```mvn clean``` & ```mvn gwt:devmode```
-
-* copy the link and paste the link into the browser url
+* open the `readme.txt`and follow the instructions 
 
 ## Note
-This example does not have a server implementation. It uses a mock server on the client side.
+This example does not have a server implementation. It uses a mock server on the client side. Only to support non hash urls thee is implemented a filter.
 
-## NaluDominoLoginPluginApplication
+## NaluDominoLoginPluginNoHashApplication
 Login example providing three shells:
 
 1. application shell:
