@@ -39,12 +39,13 @@ import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
              startRoute = "/loginShell/login",
              context = NaluLoginApplicationContext.class,
              routeError = "/errorShell/error",
-             useHash = false)
+             useHash = false,
+             useColonForParametersInUrl = true)
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = DefaultElemental2Logger.class)
 @Plugins({ ErrorPlugin.class,
            LoginPlugin.class })
-//@Filters(filterClasses = BartSimpsonFilter.class)
+@Filters(filterClasses = BartSimpsonFilter.class)
 interface NaluLoginApplication
     extends IsApplication {
 

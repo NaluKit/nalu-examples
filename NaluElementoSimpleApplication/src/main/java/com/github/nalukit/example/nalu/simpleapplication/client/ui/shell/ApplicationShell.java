@@ -57,24 +57,24 @@ public class ApplicationShell
                 .add(createNorth())
                 .add(createSouth())
                 .add(div().css("shellNavigation")
-                          .attr(Nalu.NALU_ID_ATTRIBUTE,
+                          .attr("id",
                                 "navigation"))
                 .add(div().css("shellContent")
-                          .attr(Nalu.NALU_ID_ATTRIBUTE,
+                          .attr("id",
                                 "content"))
                 .asElement();
   }
 
   private Element createNorth() {
     return header().css("shellHeader")
-                   .attr(Nalu.NALU_ID_ATTRIBUTE,
+                   .attr("id",
                          "header")
                    .get();
   }
 
   private Element createSouth() {
     return footer().css("shellFooter")
-                   .attr(Nalu.NALU_ID_ATTRIBUTE,
+                   .attr("id",
                          "footer")
                    .get();
   }

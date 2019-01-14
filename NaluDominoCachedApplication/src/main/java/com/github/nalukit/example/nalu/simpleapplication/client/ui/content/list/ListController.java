@@ -70,7 +70,7 @@ public class ListController
 
   @Override
   public void doUpdate(Person object) {
-    this.router.route("/application/person/detail",
+    this.router.route("/application/person/*/detail",
                       Long.toString(object.getId()));
   }
 

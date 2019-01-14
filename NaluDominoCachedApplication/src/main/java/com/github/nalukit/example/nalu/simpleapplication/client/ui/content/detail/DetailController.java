@@ -35,7 +35,7 @@ import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
 import elemental2.dom.DomGlobal;
 import elemental2.dom.HTMLElement;
 
-@Controller(route = "/application/person/detail/:id",
+@Controller(route = "/application/person/:id/detail",
             selector = "content",
             componentInterface = IDetailComponent.class,
             component = DetailComponent.class)

@@ -17,6 +17,7 @@
 package com.github.nalukit.example.nalu.loginapplication.filters;
 
 import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
+import com.github.nalukit.nalu.client.Nalu;
 import com.github.nalukit.nalu.client.filter.AbstractFilter;
 import elemental2.dom.DomGlobal;
 
@@ -26,7 +27,7 @@ public class BartSimpsonFilter
   @Override
   public boolean filter(String route,
                         String... parms) {
-    if ("/applicationShell/person/detail".equals(route)) {
+    if (Nalu.match(route, "/applicationShell/person/*/detail")) {
       if ("3".equals(parms[0])) {
         DomGlobal.window.alert("Bart Simpsons is not selecteable -> redirecting to search!");
 
@@ -38,7 +39,6 @@ public class BartSimpsonFilter
 
   @Override
   public String redirectTo() {
-    //    return "/applicationShell/person/detail";
     return "/applicationShell/person/search";
   }
 
