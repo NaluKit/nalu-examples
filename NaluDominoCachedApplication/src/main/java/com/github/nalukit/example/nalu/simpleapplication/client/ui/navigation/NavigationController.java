@@ -43,9 +43,7 @@ public class NavigationController
 
   @Override
   public void doShowSearch() {
-    this.router.route("/application/person/search",
-                      this.context.getSearchName(),
-                      this.context.getSearchCity());
+    this.router.route("/application/person/search");
   }
 
   @Override

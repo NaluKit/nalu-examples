@@ -15,33 +15,36 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.splitter.address;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.search.composite;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
-import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
 import com.github.nalukit.nalu.client.component.AbstractCompositeController;
 import com.github.nalukit.nalu.client.component.annotation.CompositeController;
 import elemental2.dom.HTMLElement;
 
-@CompositeController(componentInterface = IAddressComponent.class,
-                     component = AddressComponent.class)
-public class AddressSplitter
-    extends AbstractCompositeController<NaluSimpleApplicationContext, IAddressComponent, HTMLElement>
-    implements IAddressComponent.Controller {
+@CompositeController(componentInterface = ISearchFormComponent.class,
+                     component = SearchFormComponent.class)
+public class SearchFormComposite
+    extends AbstractCompositeController<NaluSimpleApplicationContext, ISearchFormComponent, HTMLElement>
+    implements ISearchFormComponent.Controller {
 
-  public AddressSplitter() {
+  public SearchFormComposite() {
   }
 
-  public boolean isDirty(Person person) {
-    return this.component.isDirty(person);
+  public String getSearchName() {
+    return this.component.getSearchName();
   }
 
-  public void edit(Person person) {
-    this.component.edit(person);
+  public void setSearchName(String searchName) {
+    this.component.setSearchName(searchName);
   }
 
-  public Person flush(Person person) {
-    return this.component.flush(person);
+  public String getSearchCity() {
+    return this.component.getSearchCity();
+  }
+
+  public void setSearchCity(String searchCity) {
+    this.component.setSearchCity(searchCity);
   }
 
 }

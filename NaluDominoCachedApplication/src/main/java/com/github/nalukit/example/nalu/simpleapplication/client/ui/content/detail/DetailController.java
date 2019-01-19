@@ -24,8 +24,8 @@ import com.github.nalukit.example.nalu.simpleapplication.client.data.model.excep
 import com.github.nalukit.example.nalu.simpleapplication.client.data.service.PersonService;
 import com.github.nalukit.example.nalu.simpleapplication.client.event.SelectEvent;
 import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
-import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.splitter.address.AddressSplitter;
-import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.splitter.person.PersonSplitter;
+import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.composite.address.AddressComposite;
+import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.composite.person.PersonComposite;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Composite;
@@ -39,12 +39,12 @@ import elemental2.dom.HTMLElement;
             selector = "content",
             componentInterface = IDetailComponent.class,
             component = DetailComponent.class)
-@Composites({ @Composite(name = "personSplitter",
-                         compositeController = PersonSplitter.class,
-                         selector = "splitterPerson"),
-              @Composite(name = "AddressSplitter",
-                         compositeController = AddressSplitter.class,
-                         selector = "splitterAddress") })
+@Composites({ @Composite(name = "personComposite",
+                         compositeController = PersonComposite.class,
+                         selector = "compositePerson"),
+              @Composite(name = "AddressComposite",
+                         compositeController = AddressComposite.class,
+                         selector = "compositeAddress") })
 public class DetailController
     extends AbstractComponentController<NaluSimpleApplicationContext, IDetailComponent, HTMLElement>
     implements IDetailComponent.Controller {
@@ -58,9 +58,9 @@ public class DetailController
 
   @Override
   public String mayStop() {
-    boolean isPersonSplitterDirty = super.<PersonSplitter>getComposite("personSplitter").isDirty(this.person);
-    boolean isAddressSplitterDirty = super.<AddressSplitter>getComposite("AddressSplitter").isDirty(this.person);
-    return isPersonSplitterDirty || isAddressSplitterDirty ? "Would you like to cancel your edits?" : null;
+    boolean isPersonCompositeDirty = super.<PersonComposite>getComposite("personComposite").isDirty(this.person);
+    boolean isAddressCompositeDirty = super.<AddressComposite>getComposite("AddressComposite").isDirty(this.person);
+    return isPersonCompositeDirty || isAddressCompositeDirty ? "Would you like to cancel your edits?" : null;
   }
 
   @Override
@@ -71,8 +71,8 @@ public class DetailController
     try {
       this.person = PersonService.get()
                                  .get(id);
-      super.<PersonSplitter>getComposite("personSplitter").edit(this.person);
-      super.<AddressSplitter>getComposite("AddressSplitter").edit(this.person);
+      super.<PersonComposite>getComposite("personComposite").edit(this.person);
+      super.<AddressComposite>getComposite("AddressComposite").edit(this.person);
       this.eventBus.fireEvent(new StatusChangeEvent("Edit person data with id: " + this.person.getId()));
 
       this.eventBus.fireEvent(new SelectEvent(SelectEvent.Select.DETAIL));
@@ -95,9 +95,7 @@ public class DetailController
       DomGlobal.window.alert("id is not valid ->  moving to search");
       throw new RoutingInterceptionException(this.getClass()
                                                  .getCanonicalName(),
-                                             "/application/person/search",
-                                             this.context.getSearchName(),
-                                             this.context.getSearchCity());
+                                             "/application/person/search");
     }
   }
 
@@ -108,15 +106,13 @@ public class DetailController
 
   @Override
   public void doRevert() {
-    this.router.route("/application/person/list",
-                      this.context.getSearchName(),
-                      this.context.getSearchCity());
+    this.router.route("/application/person/list");
   }
 
   @Override
   public void doUpdate() {
-    this.person = super.<PersonSplitter>getComposite("personSplitter").flush(this.person);
-    this.person = super.<AddressSplitter>getComposite("AddressSplitter").flush(this.person);
+    this.person = super.<PersonComposite>getComposite("personComposite").flush(this.person);
+    this.person = super.<AddressComposite>getComposite("AddressComposite").flush(this.person);
     try {
       PersonService.get()
                    .update(this.person);

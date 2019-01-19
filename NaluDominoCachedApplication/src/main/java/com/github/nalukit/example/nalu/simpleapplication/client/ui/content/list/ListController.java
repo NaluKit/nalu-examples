@@ -52,8 +52,8 @@ public class ListController
   @Override
   public void doRemoveControllerfromCache() {
     this.router.removeFromCache(this);
-    this.context.setCached(false);
-    this.component.handleToggleButton(this.context.isCached());
+    this.context.setCachedListScreen(false);
+    this.component.handleToggleButton(this.context.isCachedListScreen());
   }
 
   @Override
@@ -64,8 +64,8 @@ public class ListController
   @Override
   public void doStoreControllerInCache() {
     this.router.storeInCache(this);
-    this.context.setCached(true);
-    this.component.handleToggleButton(this.context.isCached());
+    this.context.setCachedListScreen(true);
+    this.component.handleToggleButton(this.context.isCachedListScreen());
   }
 
   @Override
@@ -77,11 +77,13 @@ public class ListController
   @AcceptParameter("name")
   public void setName(String name) {
     this.name = name;
+    this.context.setSearchName(name);
   }
 
   @AcceptParameter("city")
   public void setCity(String city) {
     this.city = city;
+    this.context.setSearchCity(city);
   }
 
   private void loadData() {
@@ -90,7 +92,7 @@ public class ListController
                                                              this.city));
     this.component.resetTable();
     this.component.setData(result);
-    this.component.handleToggleButton(this.context.isCached());
+    this.component.handleToggleButton(this.context.isCachedListScreen());
     if (result.size() == 0) {
       this.eventBus.fireEvent(new StatusChangeEvent("No person found"));
     } else if (result.size() == 1) {

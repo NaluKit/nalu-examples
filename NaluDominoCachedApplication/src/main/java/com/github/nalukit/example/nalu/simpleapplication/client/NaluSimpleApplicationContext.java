@@ -28,26 +28,18 @@ public class NaluSimpleApplicationContext
   private String version;
 
   private String searchName;
-
   private String searchCity;
 
-  private boolean cached;
+  private boolean cachedSearchScreen;
+  private boolean cachedListScreen;
 
   public NaluSimpleApplicationContext() {
     this.version = "1.1.0-SNAPSHOT";
-    this.setCached(false);
+    this.setCachedListScreen(false);
   }
 
   public String getVersion() {
     return version;
-  }
-
-  public String getSearchCity() {
-    return searchCity;
-  }
-
-  public void setSearchCity(String searchCity) {
-    this.searchCity = searchCity;
   }
 
   public String getSearchName() {
@@ -58,12 +50,28 @@ public class NaluSimpleApplicationContext
     this.searchName = searchName;
   }
 
-  public boolean isCached() {
-    return cached;
+  public String getSearchCity() {
+    return searchCity;
   }
 
-  public void setCached(boolean cached) {
-    this.cached = cached;
+  public void setSearchCity(String searchCity) {
+    this.searchCity = searchCity;
+  }
+
+  public boolean isCachedSearchScreen() {
+    return cachedSearchScreen;
+  }
+
+  public void setCachedSearchScreen(boolean cachedSearchScreen) {
+    this.cachedSearchScreen = cachedSearchScreen;
+  }
+
+  public boolean isCachedListScreen() {
+    return cachedListScreen;
+  }
+
+  public void setCachedListScreen(boolean cachedListScreen) {
+    this.cachedListScreen = cachedListScreen;
   }
 
 }

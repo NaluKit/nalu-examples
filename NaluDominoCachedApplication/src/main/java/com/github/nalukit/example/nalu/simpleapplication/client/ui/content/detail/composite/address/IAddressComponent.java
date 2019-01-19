@@ -15,14 +15,15 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.splitter.address;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.composite.address;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
+import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.composite.address.IAddressComponent.Controller;
 import com.github.nalukit.nalu.client.component.IsCompositeComponent;
 import elemental2.dom.HTMLElement;
 
 public interface IAddressComponent
-    extends IsCompositeComponent<IAddressComponent.Controller, HTMLElement> {
+    extends IsCompositeComponent<Controller, HTMLElement> {
 
   void edit(Person result);
 

@@ -24,8 +24,8 @@ import com.github.nalukit.example.nalu.simpleapplication.client.data.model.excep
 import com.github.nalukit.example.nalu.simpleapplication.client.data.service.PersonService;
 import com.github.nalukit.example.nalu.simpleapplication.client.event.SelectEvent;
 import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
-import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.splitter.address.AddressSplitter;
-import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.splitter.person.PersonSplitter;
+import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.composite.address.AddressSplitter;
+import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.composite.person.PersonSplitter;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.IsComponentCreator;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;

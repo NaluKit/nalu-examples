@@ -38,10 +38,10 @@ public class DetailComponent
     HTMLDivElement divElemet = Elements.div()
                                        .asElement();
     divElemet.appendChild(Elements.div()
-                                  .id("splitterPerson")
+                                  .id("compositePerson")
                                   .asElement());
     divElemet.appendChild(Elements.div()
-                                  .id("splitterAddress")
+                                  .id("compositeAddress")
                                   .asElement());
     divElemet.appendChild(Card.create()
                               .appendChild(Row.create()

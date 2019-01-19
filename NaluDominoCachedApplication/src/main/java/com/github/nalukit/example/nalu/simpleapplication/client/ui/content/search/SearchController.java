@@ -20,15 +20,20 @@ package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.sear
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.example.nalu.simpleapplication.client.event.SelectEvent;
 import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
+import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.search.composite.SearchFormComposite;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
-import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
+import com.github.nalukit.nalu.client.component.annotation.Composite;
+import com.github.nalukit.nalu.client.component.annotation.Composites;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import elemental2.dom.HTMLElement;
 
-@Controller(route = "/application/person/search/:searchName/:searchCity",
+@Controller(route = "/application/person/search",
             selector = "content",
             component = SearchComponent.class,
             componentInterface = ISearchComponent.class)
+@Composites({ @Composite(name = "searchFormComposite",
+                         compositeController = SearchFormComposite.class,
+                         selector = "compositeSearchForm") })
 public class SearchController
     extends AbstractComponentController<NaluSimpleApplicationContext, ISearchComponent, HTMLElement>
     implements ISearchComponent.Controller {
@@ -38,37 +43,41 @@ public class SearchController
 
   @Override
   public void start() {
-    this.eventBus.fireEvent(new StatusChangeEvent("Please enter data!"));
+    // a new screen has always empty search fields
+    super.<SearchFormComposite>getComposite("searchFormComposite").setSearchName("");
+    super.<SearchFormComposite>getComposite("searchFormComposite").setSearchCity("");
 
+    this.component.handleToggleButton(this.context.isCachedSearchScreen());
+
+    this.eventBus.fireEvent(new StatusChangeEvent("Please enter data!"));
     this.eventBus.fireEvent(new SelectEvent(SelectEvent.Select.SEARCH));
   }
 
   @Override
-  public void doClickSearchButton(String searchName,
-                                  String searchCity) {
-    this.context.setSearchCity(searchCity);
-    this.context.setSearchName(searchName);
+  public void doRemoveControllerfromCache() {
+    this.router.removeFromCache(this);
+    this.context.setCachedSearchScreen(false);
+    this.component.handleToggleButton(this.context.isCachedSearchScreen());
+  }
+
+  @Override
+  public void doStoreControllerInCache() {
+    this.router.storeInCache(this);
+    this.context.setCachedSearchScreen(true);
+    this.component.handleToggleButton(this.context.isCachedSearchScreen());
+  }
+
+  @Override
+  public void doClickSearchButton() {
     this.router.route("/application/person/list",
-                      searchName,
-                      searchCity);
+                      super.<SearchFormComposite>getComposite("searchFormComposite").getSearchName(),
+                      super.<SearchFormComposite>getComposite("searchFormComposite").getSearchCity());
   }
 
-  @AcceptParameter("searchName")
-  public void setSearchName(String searchName) {
-    if (!"undefined".equals(searchName) &&
-        searchName.trim()
-                  .length() > 0) {
-      this.component.setSearchName(searchName);
-    }
-  }
-
-  @AcceptParameter("searchCity")
-  public void setSearchCity(String searchCity) {
-    if (!"undefined".equals(searchCity) &&
-        searchCity.trim()
-                  .length() > 0) {
-      this.component.setSearchCity(searchCity);
-    }
+  @Override
+  public void doClear() {
+    super.<SearchFormComposite>getComposite("searchFormComposite").setSearchName("");
+    super.<SearchFormComposite>getComposite("searchFormComposite").setSearchCity("");
   }
 
 }

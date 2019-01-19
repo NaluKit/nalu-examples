@@ -59,8 +59,7 @@ public class ApplicationShell
           .setId("navigation");
     layout.getContentPanel()
           .appendChild(Row.create()
-                          .appendChild(Column.span8()
-                                             .offset2()
+                          .appendChild(Column.span12()
                                              .setId("content")));
 
     MediaQuery.addOnMediumAndDownListener(layout::unfixLeftPanelPosition);

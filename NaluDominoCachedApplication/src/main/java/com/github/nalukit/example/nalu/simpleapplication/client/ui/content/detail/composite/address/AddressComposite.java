@@ -15,7 +15,7 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.splitter.person;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.composite.address;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
@@ -23,13 +23,13 @@ import com.github.nalukit.nalu.client.component.AbstractCompositeController;
 import com.github.nalukit.nalu.client.component.annotation.CompositeController;
 import elemental2.dom.HTMLElement;
 
-@CompositeController(componentInterface = IPersonComponent.class,
-                     component = PersonComponent.class)
-public class PersonSplitter
-    extends AbstractCompositeController<NaluSimpleApplicationContext, IPersonComponent, HTMLElement>
-    implements IPersonComponent.Controller {
+@CompositeController(componentInterface = IAddressComponent.class,
+                     component = AddressComponent.class)
+public class AddressComposite
+    extends AbstractCompositeController<NaluSimpleApplicationContext, IAddressComponent, HTMLElement>
+    implements IAddressComponent.Controller {
 
-  public PersonSplitter() {
+  public AddressComposite() {
   }
 
   public boolean isDirty(Person person) {

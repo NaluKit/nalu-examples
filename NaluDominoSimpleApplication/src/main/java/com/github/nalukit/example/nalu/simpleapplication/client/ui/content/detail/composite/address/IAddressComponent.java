@@ -15,26 +15,23 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.search;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.composite.address;
 
-import com.github.nalukit.nalu.client.component.IsComponent;
+import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
+import com.github.nalukit.nalu.client.component.IsCompositeComponent;
 import elemental2.dom.HTMLElement;
 
-public interface ISearchComponent
-    extends IsComponent<ISearchComponent.Controller, HTMLElement> {
+public interface IAddressComponent
+    extends IsCompositeComponent<IAddressComponent.Controller, HTMLElement> {
 
-  void handleToggleButton(boolean cached);
+  void edit(Person result);
+
+  boolean isDirty(Person person);
+
+  Person flush(Person person);
 
   interface Controller
-      extends IsComponent.Controller {
-
-    void doClickSearchButton();
-
-    void doClear();
-
-    void doStoreControllerInCache();
-
-    void doRemoveControllerfromCache();
+      extends IsCompositeComponent.Controller {
 
   }
 

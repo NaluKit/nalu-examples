@@ -15,21 +15,22 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.splitter.address;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.search.composite;
 
-import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
-import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.splitter.address.IAddressComponent.Controller;
+import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.search.composite.ISearchFormComponent.Controller;
 import com.github.nalukit.nalu.client.component.IsCompositeComponent;
 import elemental2.dom.HTMLElement;
 
-public interface IAddressComponent
+public interface ISearchFormComponent
     extends IsCompositeComponent<Controller, HTMLElement> {
 
-  void edit(Person result);
+  String getSearchName();
 
-  boolean isDirty(Person person);
+  void setSearchName(String searchName);
 
-  Person flush(Person person);
+  String getSearchCity();
+
+  void setSearchCity(String searchCity);
 
   interface Controller
       extends IsCompositeComponent.Controller {

@@ -15,10 +15,10 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.splitter.person;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.composite.person;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
-import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.splitter.person.IPersonComponent.Controller;
+import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.composite.person.IPersonComponent.Controller;
 import com.github.nalukit.nalu.client.component.AbstractCompositeComponent;
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
