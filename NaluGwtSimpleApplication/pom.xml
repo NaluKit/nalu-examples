@@ -23,7 +23,7 @@
 
   <groupId>com.github.nalukit.example.nalu</groupId>
   <artifactId>NaluGwtSimpleApplication</artifactId>
-  <version>1.1.0</version>
+  <version>1.2.0-SNAPSHOT</version>
 
   <packaging>gwt-app</packaging>
 
@@ -32,7 +32,7 @@
     <gwtVersion>2.8.2</gwtVersion>
 
     <!-- nalu version -->
-    <nalu.version>1.1.0</nalu.version>
+    <nalu.version>1.2.0-SNAPSHOT</nalu.version>
 
     <gwt-events.version>HEAD-SNAPSHOT</gwt-events.version>
 
