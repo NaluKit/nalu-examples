@@ -17,6 +17,7 @@
 package com.github.nalukit.example.nalu.loginapplication.ui.shell.application.navigation;
 
 import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
+import com.github.nalukit.example.nalu.loginapplication.core.client.tracking.event.LinkSelectedEvent;
 import com.github.nalukit.example.nalu.loginapplication.event.SelectEvent;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
@@ -42,6 +43,8 @@ public class NavigationController
 
   @Override
   public void doShowSearch() {
+    this.eventBus.fireEvent(new LinkSelectedEvent("NavigationController: search link clicked"));
+
     this.router.route("/applicationShell/person/search",
                       this.context.getSearchName(),
                       this.context.getSearchCity());
@@ -49,6 +52,8 @@ public class NavigationController
 
   @Override
   public void doShowList() {
+    this.eventBus.fireEvent(new LinkSelectedEvent("NavigationController: list link clicked"));
+
     this.router.route("/applicationShell/person/list",
                       this.context.getSearchName(),
                       this.context.getSearchCity());

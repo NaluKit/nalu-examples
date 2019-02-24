@@ -68,6 +68,7 @@ public class SearchComponent
                                                                         .setMinWidth("120px")
                                                                         .get()
                                                                         .addClickListener(e -> {
+                                                                          getController().doResetForm();
                                                                           fieldsGrouping.clear();
                                                                         }))
                                                      .appendChild(Button.createPrimary("Search")

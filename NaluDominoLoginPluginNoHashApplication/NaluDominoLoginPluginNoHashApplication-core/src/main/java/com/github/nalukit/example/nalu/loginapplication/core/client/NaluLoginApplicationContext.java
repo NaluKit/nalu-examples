@@ -23,6 +23,8 @@ import com.github.nalukit.nalu.client.application.IsContext;
 public class NaluLoginApplicationContext
     implements IsContext {
 
+  private String userId;
+
   private String version;
 
   private String searchName;
@@ -34,6 +36,14 @@ public class NaluLoginApplicationContext
   public NaluLoginApplicationContext() {
     this.version = "1.2.0-SNAPSHOT";
     this.loggedIn = false;
+  }
+
+  public String getUserId() {
+    return userId;
+  }
+
+  public void setUserId(String userId) {
+    this.userId = userId;
   }
 
   public String getVersion() {

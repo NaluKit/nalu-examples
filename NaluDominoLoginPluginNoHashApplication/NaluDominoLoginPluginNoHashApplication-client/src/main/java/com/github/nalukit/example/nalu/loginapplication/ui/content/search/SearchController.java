@@ -18,6 +18,7 @@ package com.github.nalukit.example.nalu.loginapplication.ui.content.search;
 
 import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
 import com.github.nalukit.example.nalu.loginapplication.core.client.event.StatusChangeEvent;
+import com.github.nalukit.example.nalu.loginapplication.core.client.tracking.event.ButtonPressedEvent;
 import com.github.nalukit.example.nalu.loginapplication.event.SelectEvent;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
@@ -45,11 +46,20 @@ public class SearchController
   @Override
   public void doClickSearchButton(String searchName,
                                   String searchCity) {
+    // tracking button click
+    this.eventBus.fireEvent(new ButtonPressedEvent("SearchController: search button pressed with search data: >>" + searchName + "<< - >>" + searchCity + "<<"));
+    // search data
     this.context.setSearchCity(searchCity);
     this.context.setSearchName(searchName);
     this.router.route("/applicationShell/person/list",
                       searchName,
                       searchCity);
+  }
+
+  @Override
+  public void doResetForm() {
+    // tracking button click
+    this.eventBus.fireEvent(new ButtonPressedEvent("SearchController: reset button pressed"));
   }
 
   @AcceptParameter("searchName")

@@ -18,6 +18,8 @@ package com.github.nalukit.example.nalu.loginapplication.ui.content.list;
 
 import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
 import com.github.nalukit.example.nalu.loginapplication.core.client.event.StatusChangeEvent;
+import com.github.nalukit.example.nalu.loginapplication.core.client.tracking.event.ButtonPressedEvent;
+import com.github.nalukit.example.nalu.loginapplication.core.client.tracking.event.LinkSelectedEvent;
 import com.github.nalukit.example.nalu.loginapplication.event.SelectEvent;
 import com.github.nalukit.example.nalu.loginapplication.shared.data.model.dto.Person;
 import com.github.nalukit.example.nalu.loginapplication.shared.data.model.dto.PersonSearch;
@@ -69,6 +71,9 @@ public class ListController
 
   @Override
   public void doUpdate(Person object) {
+    // tracking button click
+    this.eventBus.fireEvent(new LinkSelectedEvent("ListController: user selected"));
+    // route to selected user!
     this.router.route("/applicationShell/person/*/detail",
                       Long.toString(object.getId()));
   }

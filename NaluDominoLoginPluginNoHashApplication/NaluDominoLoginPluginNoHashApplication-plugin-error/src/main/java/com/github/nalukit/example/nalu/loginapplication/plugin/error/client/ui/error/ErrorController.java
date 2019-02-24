@@ -17,6 +17,7 @@
 package com.github.nalukit.example.nalu.loginapplication.plugin.error.client.ui.error;
 
 import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
+import com.github.nalukit.example.nalu.loginapplication.core.client.tracking.event.ButtonPressedEvent;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import elemental2.dom.HTMLElement;
@@ -50,6 +51,8 @@ public class ErrorController
 
   @Override
   public void doRouteHome() {
+    // tracking button click
+    this.eventBus.fireEvent(new ButtonPressedEvent("ErrorController: route to home button pressd"));
     // clear the error message to avoid showing it again!
     this.router.clearNaluErrorMessage();
     // route to the search screen
