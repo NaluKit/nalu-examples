@@ -38,14 +38,15 @@
     <dispatcher>REQUEST</dispatcher>
   </filter-mapping>
 
-  <!--<servlet>-->
-  <!--<servlet-name>page</servlet-name>-->
-  <!--<jsp-file>/index.html</jsp-file>-->
-  <!--</servlet>-->
-  <!--<servlet-mapping>-->
-  <!--<servlet-name>page</servlet-name>-->
-  <!--<url-pattern>/*</url-pattern>-->
-  <!--</servlet-mapping>-->
+  <servlet>
+    <servlet-name>trackingServlet</servlet-name>
+    <servlet-class>com.github.nalukit.example.nalu.server.service.TreckingService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>trackingServlet</servlet-name>
+    <url-pattern>/app/tracking/*</url-pattern>
+  </servlet-mapping>
+
   <!-- default error page -->
   <error-page>
     <location>/index.html</location>

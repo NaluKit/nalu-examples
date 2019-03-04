@@ -44,24 +44,31 @@ public class RedirectFilter
     HttpServletResponse response = (HttpServletResponse) servletResponse;
 
     String uri = request.getRequestURI();
-    this.context.log("Requested Resource: " + uri);
-    this.context.log("context.getContextPath(): " + this.context.getContextPath());
-    this.context.log("context.getServletContextName(): " + this.context.getServletContextName());
+//    this.context.log("Requested Resource: " + uri);
+//    this.context.log("context.getContextPath(): " + this.context.getContextPath());
+//    this.context.log("context.getServletContextName(): " + this.context.getServletContextName());
+//
+//    System.out.println(request.getMethod());
+    if (!"post".equals(request.getMethod()
+                              .toLowerCase())) {
+      if (isInitialRequest(uri)) {
+        StringBuilder sbUrl = new StringBuilder();
+        sbUrl.append(request.getContextPath())
+             .append("/index.html");
+        sbUrl.append("?");
+        if (!Objects.isNull(request.getQueryString())) {
+          sbUrl.append(request.getQueryString())
+               .append("&");
+        }
+        sbUrl.append("uri=")
+             .append(request.getRequestURI());
+        this.context.log(sbUrl.toString());
+        response.sendRedirect(sbUrl.toString());
 
-    if (isInitialRequest(uri)) {
-      StringBuilder sbUrl = new StringBuilder();
-      sbUrl.append(request.getContextPath())
-           .append("/index.html");
-      sbUrl.append("?");
-      if (!Objects.isNull(request.getQueryString())) {
-        sbUrl.append(request.getQueryString())
-             .append("&");
+      } else {
+        filterChain.doFilter(request,
+                             response);
       }
-      sbUrl.append("uri=")
-           .append(request.getRequestURI());
-      this.context.log(sbUrl.toString());
-      response.sendRedirect(sbUrl.toString());
-
     } else {
       filterChain.doFilter(request,
                            response);

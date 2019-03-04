@@ -18,6 +18,7 @@ package com.github.nalukit.example.nalu.loginapplication.plugin.login.client.log
 
 import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
 import com.github.nalukit.example.nalu.loginapplication.core.client.event.StatusChangeEvent;
+import com.github.nalukit.example.nalu.loginapplication.core.client.tracking.event.ButtonPressedEvent;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import elemental2.dom.HTMLElement;
@@ -39,10 +40,15 @@ public class LoginController
   }
 
   @Override
-  public void doLogin(String UserId,
+  public void doLogin(String userId,
                       String password) {
+    // tracking button click
+    this.eventBus.fireEvent(new ButtonPressedEvent("LoginController: user logged in"));
+    // set user logged in
+    this.context.setUserId(userId);
     this.context.setLoggedIn(true);
     // we are always happy with the credential ....
     this.router.route("/applicationShell/person/search");
   }
+
 }

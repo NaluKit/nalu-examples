@@ -75,7 +75,7 @@ public class SearchComponent
     container.appendChild(Elements.div()
                                   .id("compositeSearchForm")
                                   .asElement());
-    container.appendChild(Card.create("tool Bar")
+    container.appendChild(Card.create("Tool Bar")
                               .appendChild(Row.create()
                                               .setGap("10px")
                                               .addColumn(columnLeft)

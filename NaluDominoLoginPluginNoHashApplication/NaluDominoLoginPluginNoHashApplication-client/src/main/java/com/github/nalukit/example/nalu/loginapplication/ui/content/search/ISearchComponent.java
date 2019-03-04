@@ -32,5 +32,8 @@ public interface ISearchComponent
 
     void doClickSearchButton(String searchName,
                              String searchCity);
+
+    void doResetForm();
+
   }
 }

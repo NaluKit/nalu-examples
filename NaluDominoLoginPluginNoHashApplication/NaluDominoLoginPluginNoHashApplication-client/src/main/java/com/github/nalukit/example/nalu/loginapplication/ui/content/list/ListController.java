@@ -18,6 +18,8 @@ package com.github.nalukit.example.nalu.loginapplication.ui.content.list;
 
 import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
 import com.github.nalukit.example.nalu.loginapplication.core.client.event.StatusChangeEvent;
+import com.github.nalukit.example.nalu.loginapplication.core.client.tracking.event.ButtonPressedEvent;
+import com.github.nalukit.example.nalu.loginapplication.core.client.tracking.event.LinkSelectedEvent;
 import com.github.nalukit.example.nalu.loginapplication.event.SelectEvent;
 import com.github.nalukit.example.nalu.loginapplication.shared.data.model.dto.Person;
 import com.github.nalukit.example.nalu.loginapplication.shared.data.model.dto.PersonSearch;
@@ -25,6 +27,8 @@ import com.github.nalukit.example.nalu.loginapplication.shared.data.service.Pers
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import elemental2.dom.HTMLElement;
 
 import java.util.List;
@@ -60,10 +64,16 @@ public class ListController
     }
 
     this.eventBus.fireEvent(new SelectEvent(SelectEvent.Select.LIST));
+    ClickHandler handler = clickEvent -> {
+      router.route(context.getSearchCity());
+    };
   }
 
   @Override
   public void doUpdate(Person object) {
+    // tracking button click
+    this.eventBus.fireEvent(new LinkSelectedEvent("ListController: user selected"));
+    // route to selected user!
     this.router.route("/applicationShell/person/*/detail",
                       Long.toString(object.getId()));
   }

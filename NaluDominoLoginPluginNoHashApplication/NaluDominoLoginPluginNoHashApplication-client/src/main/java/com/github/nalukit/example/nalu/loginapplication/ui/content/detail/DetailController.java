@@ -18,6 +18,7 @@ package com.github.nalukit.example.nalu.loginapplication.ui.content.detail;
 
 import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
 import com.github.nalukit.example.nalu.loginapplication.core.client.event.StatusChangeEvent;
+import com.github.nalukit.example.nalu.loginapplication.core.client.tracking.event.ButtonPressedEvent;
 import com.github.nalukit.example.nalu.loginapplication.event.SelectEvent;
 import com.github.nalukit.example.nalu.loginapplication.shared.data.model.dto.Person;
 import com.github.nalukit.example.nalu.loginapplication.shared.data.model.exception.PersonException;
@@ -109,6 +110,9 @@ public class DetailController
 
   @Override
   public void doRevert() {
+    // tracking button click
+    this.eventBus.fireEvent(new ButtonPressedEvent("DetailController: revert button pressed"));
+    // revert data
     this.router.route("/applicationShell/person/list",
                       this.context.getSearchName(),
                       this.context.getSearchCity());
@@ -116,6 +120,9 @@ public class DetailController
 
   @Override
   public void doUpdate() {
+    // tracking button click
+    this.eventBus.fireEvent(new ButtonPressedEvent("DetailController: update button pressed"));
+    // update data
     this.person = super.<PersonComposite>getComposite("personComposite").flush(this.person);
     this.person = super.<AddressComposite>getComposite("AddressComposite").flush(this.person);
     try {
