@@ -167,6 +167,11 @@ public class ListComponent
   }
 
   @Override
+  public List<Person> getPersonList() {
+    return this.store.getRecords();
+  }
+
+  @Override
   public void handleToggleButton(boolean cached) {
     this.buttonStoreInCache.setDisabled(cached);
     this.buttonRemvoeFromCache.setDisabled(!cached);

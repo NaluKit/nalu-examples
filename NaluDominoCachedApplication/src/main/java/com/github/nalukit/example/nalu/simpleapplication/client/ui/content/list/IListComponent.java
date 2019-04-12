@@ -26,11 +26,13 @@ import java.util.List;
 public interface IListComponent
     extends IsComponent<IListComponent.Controller, HTMLElement> {
 
+  List<Person> getPersonList();
+
+  void handleToggleButton(boolean cached);
+
   void resetTable();
 
   void setData(List<Person> result);
-
-  void handleToggleButton(boolean cached);
 
   interface Controller
       extends IsComponent.Controller {

@@ -74,6 +74,11 @@ public class ListController
                       Long.toString(object.getId()));
   }
 
+  @Override
+  public void activate() {
+    this.fireSatusEvent(this.component.getPersonList());
+  }
+
   @AcceptParameter("name")
   public void setName(String name) {
     this.name = name;
@@ -93,12 +98,16 @@ public class ListController
     this.component.resetTable();
     this.component.setData(result);
     this.component.handleToggleButton(this.context.isCachedListScreen());
+    fireSatusEvent(result);
+  }
+
+  private void fireSatusEvent(List<Person> result) {
     if (result.size() == 0) {
       this.eventBus.fireEvent(new StatusChangeEvent("No person found"));
     } else if (result.size() == 1) {
       this.eventBus.fireEvent(new StatusChangeEvent("Found one person"));
     } else {
-      this.eventBus.fireEvent(new StatusChangeEvent("Found " + Integer.toString(result.size()) + " persons"));
+      this.eventBus.fireEvent(new StatusChangeEvent("Found " + result.size() + " persons"));
     }
   }
 
