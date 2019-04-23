@@ -34,7 +34,7 @@ public class NaluSimpleApplicationContext
   private boolean cachedListScreen;
 
   public NaluSimpleApplicationContext() {
-    this.version = "1.2.1";
+    this.version = "1.2.2-SNAPSHOT";
     this.setCachedListScreen(false);
   }
 

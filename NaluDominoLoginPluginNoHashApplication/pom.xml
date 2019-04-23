@@ -25,7 +25,7 @@
 
   <groupId>com.github.nalukit.example.nalu</groupId>
   <artifactId>NaluDominoLoginPluginNoHashApplication</artifactId>
-  <version>1.2.1</version>
+  <version>1.2.2-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>NaluDominoLoginPluginNoHashApplication - Nalu Example Project</name>
@@ -34,7 +34,7 @@
     <!-- DominoUI version -->
     <domino.version>1.0-SNAPSHOT</domino.version>
     <!-- nalu version -->
-    <nalu.version>1.2.1</nalu.version>
+    <nalu.version>1.2.2-SNAPSHOT</nalu.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
