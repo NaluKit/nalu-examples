@@ -43,6 +43,9 @@ public class DetailComponent
     divElemet.appendChild(Elements.div()
                                   .id("splitterAddress")
                                   .asElement());
+    divElemet.appendChild(Elements.div()
+                                  .id("compositeConditional")
+                                  .asElement());
     divElemet.appendChild(Card.create()
                               .appendChild(Row.create()
                                               .addColumn(Column.span12()

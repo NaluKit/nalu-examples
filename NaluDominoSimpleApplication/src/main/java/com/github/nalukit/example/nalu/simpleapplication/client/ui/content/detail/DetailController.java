@@ -25,6 +25,7 @@ import com.github.nalukit.example.nalu.simpleapplication.client.data.service.Per
 import com.github.nalukit.example.nalu.simpleapplication.client.event.SelectEvent;
 import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.composite.address.AddressSplitter;
+import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.composite.conditional.ConditionController;
 import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail.composite.person.PersonSplitter;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.IsComponentCreator;
@@ -45,7 +46,11 @@ import elemental2.dom.HTMLElement;
                          selector = "splitterPerson"),
               @Composite(name = "AddressSplitter",
                          compositeController = AddressSplitter.class,
-                         selector = "splitterAddress") })
+                         selector = "splitterAddress"),
+              @Composite(name = "conditionalComposite",
+                         compositeController = ConditionController.class,
+                         selector = "compositeConditional",
+                         condition = DetailCompositeCondition.class) })
 public class DetailController
     extends AbstractComponentController<NaluSimpleApplicationContext, IDetailComponent, HTMLElement>
     implements IDetailComponent.Controller,
