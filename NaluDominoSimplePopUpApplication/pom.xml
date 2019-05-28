@@ -92,6 +92,7 @@
       <groupId>com.github.nalukit</groupId>
       <artifactId>nalu-processor</artifactId>
       <version>${nalu.version}</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.github.nalukit</groupId>

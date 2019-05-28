@@ -32,5 +32,9 @@ The content area will be used to show the three different components:
 * a detail comonent (a selected person from the list)
 
 **Attention:**
-This example has a filter implemented, that, in case 'Bart Simpsons' is selected from the list, the application will route to the search view. This is the desired behavior: see [```BartSimpsonFilter```](https://github.com/NaluKit/nalu-examples/blob/master/NaluDominoSimpleApplication/src/main/java/com/github/nalukit/example/nalu/simpleapplication/client/filters/BartSimpsonFilter.java)
 
+This example has a filter implemented, that, in case 'Bart Simpsons' is selected from the list, the application will route to the search view. This is the desired behavior: see [BartSimpsonFilter](https://github.com/NaluKit/nalu-examples/blob/master/NaluDominoSimpleApplication/src/main/java/com/github/nalukit/example/nalu/simpleapplication/client/filters/BartSimpsonFilter.java)
+
+This demonstrate how filters work.
+
+In case you select 'Homer Simpson' you will see a conditional composite in action: see [DetailCompositeCondition](https://github.com/NaluKit/nalu-examples/blob/master/NaluDominoSimpleApplication/src/main/java/com/github/nalukit/example/nalu/simpleapplication/client/ui/content/detail/DetailCompositeCondition.java)
