@@ -9,9 +9,9 @@ To run the examples:
 
 * copy the link and paste the link into the browser url
 
-Please, keep in mind, Nalu ist a client side framework, so all server calls are simulated on the client side and are mocked in these examples. Because of that, there is no need for a server side implementation. Also, Nalu does not force you to use a special widget lib. This is up to you. In this examples we use native Elemental 2, Elemento, [Domino-UI](https://github.com/DominoKit/domino-ui) and native GWT widgets.
+Please, keep in mind, Nalu is a client side framework, so all server calls are simulated on the client side and are mocked in these examples. Because of that, there is no need for a server side implementation. Also, Nalu does not force you to use a special widget lib. This is up to you. In this examples we use native Elemental 2, Elemento, [Domino-UI](https://github.com/DominoKit/domino-ui) and native GWT widgets.
 
-Most of the examples have three screens (seach screen, result list and a detail screen.
+Most of the examples have three screens (search screen, result list and a detail screen.
 
 ## NaluDominoCachedApplication
 This example demonstrates the chaching feature. To see how the caching feature works, search for names containing an 'S' or 'D'. On the list screen, turn on caching, select a person and edit the data. Press save to get the changes saved. Once back on the list, you'll see, that the data is not updated (Cause Nalu uses the chached screen). After pressing reload, you will see the updates.
@@ -27,15 +27,15 @@ This example uses three different shells and the composite feature. (detail scre
 This example works in the same way like the NaluDominoLoginApplication example, but uses a plugin for the login classes and error classes.
 
 ## NaluDominoSimpleApplication
-This example uses Domino-UI to implement the components You can navigatge between those screens, update data, etc. This example uses the Nalu-Plugin-Elemental2 and DominoUI as widget library. 
+This example uses Domino-UI to implement the components You can navigate between those screens, update data, etc. This example uses the Nalu-Plugin-Elemental2 and DominoUI as widget library. 
 
 The Domino example is deployed on the mvp4g server. The deployed version can be found [here](http://www.mvp4g.org/NaluDominoSimpleApplication-1.0.0/index.html).
 
 ## NaluElementoSimpleApplication
-The Elemento example is similar to the Domino example, except that is uses Elemento instead of Domino-UI as widget library. This example uses the Nalu-Plugin-Elemental2. 
+The Elemento example is similar to the Domino example, except that it uses Elemento instead of Domino-UI as widget library. This example uses the Nalu-Plugin-Elemental2. 
 
 ## NaluGwtSimpleApplication
-The native GWT example is similar to the Elemento example, except that is uses native GWT widgets. This example uses the Nalu-Plugin-GWT. 
+The native GWT example is similar to the Elemento example, except that it uses native GWT widgets. This example uses the Nalu-Plugin-GWT. 
 
 ## NaluGxtSimpleApplication
 The GXT example is a mail box simulation using GXT 4.0 widgets. This example uses the Nalu-Plugin-GWT. 
