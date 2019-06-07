@@ -106,8 +106,13 @@ public class ListComponent
 
   @Override
   public void bind() {
-    grid.addRowDoubleClickHandler(rowDoubleClickEvent -> {
-      getController().doSelectRow(store.get(rowDoubleClickEvent.getRowIndex())
+    grid.addRowDoubleClickHandler(e -> {
+      getController().doSelectRow(store.get(e.getRowIndex())
+                                       .getId());
+    });
+    grid.addRowClickHandler(e -> {
+      GWT.debugger();
+      getController().doSelectRow(store.get(e.getRowIndex())
                                        .getId());
     });
   }

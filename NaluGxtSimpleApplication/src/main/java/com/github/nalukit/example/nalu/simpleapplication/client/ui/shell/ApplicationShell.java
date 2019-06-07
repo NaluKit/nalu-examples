@@ -95,10 +95,11 @@ public class ApplicationShell
   }
 
   @Override
-  public void bind() {
-    // create the sleecgtor provider so set Nalu works!
+  public void bind(ShellLoader loader) {
+    // create the selector provider so set Nalu works!
     IsSelectorProvider<ApplicationShell> provider = new ApplicationShellSelectorProviderImpl();
     provider.initialize(this);
+    loader.continueLoading();
   }
 
   @Override
