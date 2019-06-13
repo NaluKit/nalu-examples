@@ -19,6 +19,7 @@ package com.github.nalukit.example.nalu.loginapplication.plugin.error.client.she
 import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
 import com.github.nalukit.nalu.client.component.AbstractShell;
 import com.github.nalukit.nalu.client.component.annotation.Shell;
+import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
 import elemental2.dom.DomGlobal;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
@@ -36,6 +37,13 @@ public class ErrorShell
   private Layout layout;
 
   public ErrorShell() {
+  }
+
+  @Override
+  public void bind(ShellLoader loader)
+      throws RoutingInterceptionException {
+    DomGlobal.window.alert("Stop inside bind-methode of Error-Shell");
+    loader.continueLoading();
   }
 
   /**

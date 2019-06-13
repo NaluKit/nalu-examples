@@ -32,7 +32,7 @@ public class NaluLoginApplicationContext
   private boolean loggedIn;
 
   public NaluLoginApplicationContext() {
-    this.version = "1.2.2-SNAPSHOT";
+    this.version = "1.3.0";
     this.loggedIn = false;
   }
 

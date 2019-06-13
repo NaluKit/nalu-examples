@@ -56,7 +56,7 @@ public class SearchFormComponent
     HTMLDivElement divElemet = Elements.div()
                                        .asElement();
 
-    divElemet.appendChild(Card.create("Details - Person")
+    divElemet.appendChild(Card.create("Search - Person")
                               .appendChild(Row.create()
                                               .addColumn(Column.span12()
                                                                .appendChild(this.searchName)))

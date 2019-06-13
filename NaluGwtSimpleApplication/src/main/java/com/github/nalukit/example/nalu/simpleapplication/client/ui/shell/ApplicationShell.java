@@ -136,9 +136,10 @@ public class ApplicationShell
   //    }
 
   @Override
-  public void bind() {
+  public void bind(ShellLoader loader) {
     IsSelectorProvider<ApplicationShell> provider = new ApplicationShellSelectorProviderImpl();
     provider.initialize(this);
+    loader.continueLoading();
   }
 
   @Selector("header")
