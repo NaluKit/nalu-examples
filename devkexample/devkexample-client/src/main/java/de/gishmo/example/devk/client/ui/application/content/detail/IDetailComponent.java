@@ -26,6 +26,8 @@ public interface IDetailComponent
   interface Controller
       extends IsComponent.Controller {
 
+    void doCallPerson1();
+
     Person getPerson();
 
     void doRevert();

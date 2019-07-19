@@ -80,9 +80,9 @@ public class SearchComponent
                                               .setGap("10px")
                                               .addColumn(columnLeft)
                                               .addColumn(columnRight)
-                              .style()
-                              .setProperty("word-wrap",
-                                           "nowrap"))
+                                              .style()
+                                              .setProperty("word-wrap",
+                                                           "nowrap"))
                               .asElement());
     initElement(container);
   }

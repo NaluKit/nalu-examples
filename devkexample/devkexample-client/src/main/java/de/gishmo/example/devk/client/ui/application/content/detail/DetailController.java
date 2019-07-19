@@ -56,6 +56,10 @@ public class DetailController
   public DetailController() {
   }
 
+  public DetailController(Person person) {
+    this.person = person;
+  }
+
   @Override
   public String mayStop() {
     boolean isPersonCompositeDirty = super.<PersonComposite>getComposite("personComposite").isDirty(this.person);
@@ -99,6 +103,12 @@ public class DetailController
                                              this.context.getSearchName(),
                                              this.context.getSearchCity());
     }
+  }
+
+  @Override
+  public void doCallPerson1() {
+    this.router.route(Routes.ROUTE_DETAIL,
+                      "1");
   }
 
   @Override

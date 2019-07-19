@@ -16,6 +16,7 @@
 
 package de.gishmo.example.devk.client.filter;
 
+import com.github.nalukit.nalu.client.Nalu;
 import com.github.nalukit.nalu.client.filter.AbstractFilter;
 import de.gishmo.example.devk.client.ApplicationContext;
 import de.gishmo.example.devk.client.Routes;
@@ -27,7 +28,8 @@ public class BartSimpsonFilter
   @Override
   public boolean filter(String route,
                         String... parms) {
-    if (route.startsWith("/applicationShell/person/detail")) {
+    if (Nalu.match(route,
+                   "/applicationShell/person/detail")) {
       if ("3".equals(parms[0])) {
         DomGlobal.window.alert("Bart Simpsons is not selecteable -> redirecting to search!");
         return false;

@@ -35,7 +35,7 @@ public class LoginFilter
 
   @Override
   public String redirectTo() {
-    return "/login/login";
+    return "/loginShell/login";
   }
 
   @Override

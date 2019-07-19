@@ -26,7 +26,7 @@ public class BartSimpsonFilter
   @Override
   public boolean filter(String route,
                         String... parms) {
-    if ("/applicationShell/person/detail".equals(route)) {
+    if (route.startsWith("/applicationShell/person/detail")) {
       if ("3".equals(parms[0])) {
         DomGlobal.window.alert("Bart Simpsons is not selecteable -> redirecting to search!");
 

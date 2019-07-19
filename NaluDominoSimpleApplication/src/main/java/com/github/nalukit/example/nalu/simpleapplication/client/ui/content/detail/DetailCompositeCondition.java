@@ -12,9 +12,6 @@ public class DetailCompositeCondition
   @Override
   public boolean loadComposite(String route,
                                String... parms) {
-
-    DomGlobal.window.alert(this.context.getVersion());
-
     if (Objects.isNull(parms)) {
       return false;
     }
