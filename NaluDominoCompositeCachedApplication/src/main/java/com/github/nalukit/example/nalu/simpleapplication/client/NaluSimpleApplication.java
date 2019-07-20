@@ -41,7 +41,8 @@ import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
 @Application(loader = NaluSimpleApplicationLoader.class,
              startRoute = "/application/person/search",
              context = NaluSimpleApplicationContext.class,
-             routeError = "/error/show")
+             routeError = "/error/show",
+             stayOnSite = true)
 @Filters(filterClasses = BartSimpsonFilter.class)
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = DefaultElemental2Logger.class)
