@@ -33,9 +33,9 @@ public class ToolbarComponent
     extends AbstractCompositeComponent<Controller, HTMLElement>
     implements IToolbarComponent {
 
-  private final static String CACHED_TEXT = "The controller and the component are cached. To see the caching, select a person by clicking it's name, change something and save the data. The component shows the old, not updated data. Pressing reload will update the list and now you can see the updated data.";
+  private final static String CACHED_TEXT = "The search data composite controller and component are cached. To see the caching, enter a search value in one or both text fields and press 'Search'. In case going back to the search screen, you will see your entered data.";
 
-  private final static String NOT_CACHED_TEXT = "The controller and the component are not cached. You will always see the updated data.";
+  private final static String NOT_CACHED_TEXT = "The search data composite controller and component are not cached. You will always see empty text fields when entering the screen.";
 
   private Button buttonStoreInCache;
 

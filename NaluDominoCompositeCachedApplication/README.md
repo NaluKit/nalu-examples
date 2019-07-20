@@ -1,6 +1,10 @@
 # Example demonstrating the cache feature
 This example demonstrates the Nalu cache feature.
 
+* on the search screen the serach data composite is cached
+
+* on the list screen the complete controller is cached.
+
 ## Using
 To run the examples:
 
