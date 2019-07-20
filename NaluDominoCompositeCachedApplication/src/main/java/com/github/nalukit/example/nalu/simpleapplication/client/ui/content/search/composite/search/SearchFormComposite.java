@@ -34,7 +34,7 @@ public class SearchFormComposite
   }
 
   @Override
-  public void activate() {
+  public void start() {
     super.handlerRegistrations.compose(this.eventBus.addHandler(StoreSearchCompositeEvent.TYPE,
                                                                 e -> {
                                                                   GWT.debugger();
