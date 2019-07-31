@@ -111,7 +111,6 @@ public class ListComponent
                                        .getId());
     });
     grid.addRowClickHandler(e -> {
-      GWT.debugger();
       getController().doSelectRow(store.get(e.getRowIndex())
                                        .getId());
     });

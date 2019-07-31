@@ -37,7 +37,6 @@ public class SearchFormComposite
   public void start() {
     super.handlerRegistrations.compose(this.eventBus.addHandler(StoreSearchCompositeEvent.TYPE,
                                                                 e -> {
-                                                                  GWT.debugger();
                                                                   if (e.isCached()) {
                                                                     this.router.storeInCache(this);
                                                                     this.context.setCachedSearchDataCompositeScreen(true);

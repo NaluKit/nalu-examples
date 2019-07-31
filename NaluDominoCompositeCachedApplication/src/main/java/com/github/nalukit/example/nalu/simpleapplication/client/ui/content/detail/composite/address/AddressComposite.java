@@ -40,7 +40,6 @@ public class AddressComposite
 
   @Override
   public void activate() {
-    GWT.debugger();
     DomGlobal.window.alert("address composite activate-method");
   }
 
