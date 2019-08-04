@@ -16,7 +16,6 @@
 
 package com.github.nalukit.example.nalu.loginapplication.filters;
 
-import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
 import com.github.nalukit.nalu.client.filter.AbstractFilter;
 import elemental2.dom.DomGlobal;
 

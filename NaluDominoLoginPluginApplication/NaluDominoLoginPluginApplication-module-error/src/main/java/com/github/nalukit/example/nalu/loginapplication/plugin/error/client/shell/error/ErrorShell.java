@@ -14,27 +14,36 @@
  *  the License.
  */
 
-package com.github.nalukit.example.nalu.loginapplication.plugin.login.client.shell;
+package com.github.nalukit.example.nalu.loginapplication.plugin.error.client.shell.error;
 
-import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContextLoginModule;
+import com.github.nalukit.example.nalu.loginapplication.plugin.error.client.NaluLoginApplicationContextErrorModule;
 import com.github.nalukit.nalu.client.component.AbstractShell;
 import com.github.nalukit.nalu.client.component.annotation.Shell;
+import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
+import elemental2.dom.DomGlobal;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
 import org.dominokit.domino.ui.layout.Layout;
 import org.dominokit.domino.ui.style.ColorScheme;
 
 /**
- * this is the presenter of the shell. The shell divides the browser in
+ * this is the presenter of the shellCreator. The shellCreator divides the browser in
  * severeal areas.
  */
-@Shell("loginShell")
-public class LoginShell
-    extends AbstractShell<NaluLoginApplicationContextLoginModule> {
+@Shell("errorShell")
+public class ErrorShell
+    extends AbstractShell<NaluLoginApplicationContextErrorModule> {
 
   private Layout layout;
 
-  public LoginShell() {
+  public ErrorShell() {
+  }
+
+  @Override
+  public void bind(ShellLoader loader)
+      throws RoutingInterceptionException {
+    DomGlobal.window.alert("Stop inside bind-methode of Error-Shell");
+    loader.continueLoading();
   }
 
   /**
@@ -50,12 +59,7 @@ public class LoginShell
 
     this.layout.disableLeftPanel();
 
-    this.layout.showFooter()
-               .fixFooter()
-               .getFooter()
-               .setId("footer")
-               .style()
-               .setMinHeight("42px");
+    this.layout.hideFooter();
 
     this.layout.getContentPanel()
                .appendChild(Row.create()
@@ -66,7 +70,13 @@ public class LoginShell
   }
 
   @Override
+  public void onAttachedComponent() {
+    DomGlobal.window.console.log("ErrorShell: 'onAttachedComponent' called");
+  }
+
+  @Override
   public void detachShell() {
     this.layout.remove();
   }
+
 }

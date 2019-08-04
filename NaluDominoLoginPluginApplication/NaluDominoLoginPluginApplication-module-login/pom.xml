@@ -29,8 +29,7 @@
     <version>2.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>NaluDominoLoginPluginApplication-core</artifactId>
-
+  <artifactId>NaluDominoLoginPluginApplication-module-login</artifactId>
   <packaging>gwt-lib</packaging>
 
   <dependencies>
@@ -47,6 +46,35 @@
       <groupId>com.github.nalukit</groupId>
       <artifactId>nalu</artifactId>
       <version>${nalu.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.nalukit</groupId>
+      <artifactId>nalu-processor</artifactId>
+      <version>${nalu.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.github.nalukit.example.nalu</groupId>
+      <artifactId>NaluDominoLoginPluginApplication-core</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.nalukit.example.nalu</groupId>
+      <artifactId>NaluDominoLoginPluginApplication-core</artifactId>
+      <version>${project.version}</version>
+      <classifier>sources</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>org.dominokit</groupId>
+      <artifactId>domino-ui</artifactId>
+      <version>${domino.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.dominokit</groupId>
+      <artifactId>domino-ui</artifactId>
+      <version>${domino.version}</version>
+      <classifier>sources</classifier>
     </dependency>
   </dependencies>
 
@@ -66,7 +94,7 @@
         <artifactId>gwt-maven-plugin</artifactId>
         <extensions>true</extensions>
         <configuration>
-          <moduleName>com.github.nalukit.example.nalu.loginapplication.core.Core</moduleName>
+          <moduleName>com.github.nalukit.example.nalu.loginapplication.plugin.login.LoginPlugin</moduleName>
         </configuration>
       </plugin>
       <plugin>

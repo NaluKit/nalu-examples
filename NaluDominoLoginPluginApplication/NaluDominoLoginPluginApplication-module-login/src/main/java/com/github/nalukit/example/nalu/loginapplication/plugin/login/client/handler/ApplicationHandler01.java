@@ -14,19 +14,20 @@
  *  the License.
  */
 
-package com.github.nalukit.example.nalu.loginapplication.handler;
+package com.github.nalukit.example.nalu.loginapplication.plugin.login.client.handler;
 
-import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContextLoginModule;
+import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
 import com.github.nalukit.example.nalu.loginapplication.core.client.event.StatusChangeEvent;
+import com.github.nalukit.example.nalu.loginapplication.plugin.login.client.NaluLoginApplicationContextLoginModule;
 import com.github.nalukit.nalu.client.handler.AbstractHandler;
 import com.github.nalukit.nalu.client.handler.annotation.Handler;
 import elemental2.dom.DomGlobal;
 
 @Handler
-public class ApplicationHandler02
-    extends AbstractHandler<NaluLoginApplicationContext> {
+public class ApplicationHandler01
+    extends AbstractHandler<NaluLoginApplicationContextLoginModule> {
 
-  public ApplicationHandler02() {
+  public ApplicationHandler01() {
   }
 
   @Override
