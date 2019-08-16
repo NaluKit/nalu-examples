@@ -21,6 +21,7 @@ import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplic
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
 import com.github.nalukit.nalu.client.component.AbstractCompositeController;
 import com.github.nalukit.nalu.client.component.annotation.CompositeController;
+import com.google.gwt.core.client.GWT;
 import elemental2.dom.HTMLElement;
 
 @CompositeController(componentInterface = IPersonComponent.class,
@@ -38,6 +39,7 @@ public class PersonComposite
 
   @Override
   public void start() {
+    GWT.debugger();
   }
 
   public boolean isDirty(Person person) {

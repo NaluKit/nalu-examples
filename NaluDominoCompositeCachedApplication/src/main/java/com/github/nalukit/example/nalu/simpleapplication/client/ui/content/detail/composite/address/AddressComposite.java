@@ -45,6 +45,7 @@ public class AddressComposite
 
   @Override
   public void start() {
+    GWT.debugger();
     DomGlobal.window.alert("address composite start-method");
   }
 

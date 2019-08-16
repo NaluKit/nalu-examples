@@ -33,8 +33,9 @@ import com.github.nalukit.nalu.client.component.annotation.Composite;
 import com.github.nalukit.nalu.client.component.annotation.Composites;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
-import elemental2.dom.DomGlobal;
-import elemental2.dom.HTMLElement;
+import com.google.gwt.core.client.GWT;
+import elemental2.dom.*;
+import org.jboss.gwt.elemento.core.Elements;
 
 @Controller(route = "/application/person/:id/detail",
             selector = "content",
@@ -43,7 +44,7 @@ import elemental2.dom.HTMLElement;
 @Composites({ @Composite(name = "personComposite",
                          compositeController = PersonComposite.class,
                          selector = "compositePerson"),
-              @Composite(name = "AddressComposite",
+              @Composite(name = "addressComposite",
                          compositeController = AddressComposite.class,
                          selector = "compositeAddress") })
 public class DetailController
@@ -60,12 +61,16 @@ public class DetailController
   @Override
   public String mayStop() {
     boolean isPersonCompositeDirty = super.<PersonComposite>getComposite("personComposite").isDirty(this.person);
-    boolean isAddressCompositeDirty = super.<AddressComposite>getComposite("AddressComposite").isDirty(this.person);
+    boolean isAddressCompositeDirty = super.<AddressComposite>getComposite("addressComposite").isDirty(this.person);
     return isPersonCompositeDirty || isAddressCompositeDirty ? "Would you like to cancel your edits?" : null;
   }
 
   @Override
   public void start() {
+    GWT.debugger();
+    Element divElement = DomGlobal.document.getElementById("TestDiv");
+    divElement.appendChild(Elements.div().textContent("added div").asElement());
+
     if (this.id == 0) {
       this.router.route("/person/search");
     }
@@ -80,6 +85,11 @@ public class DetailController
       DomGlobal.window.alert("Panic!");
     }
   }
+
+//  @Override
+//  public void onLoad() {
+//    GWT.debugger();
+//  }
 
   @Override
   public void stop() {
@@ -114,7 +124,7 @@ public class DetailController
   @Override
   public void doUpdate() {
     this.person = super.<PersonComposite>getComposite("personComposite").flush(this.person);
-    this.person = super.<AddressComposite>getComposite("AddressComposite").flush(this.person);
+    this.person = super.<AddressComposite>getComposite("addressComposite").flush(this.person);
     try {
       PersonService.get()
                    .update(this.person);

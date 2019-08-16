@@ -62,6 +62,8 @@ public class AddressComponent
                                                                .appendChild(this.detailCity)))
                               .asElement());
 
+    divElemet.appendChild(Elements.div().id("TestDiv").asElement());
+
     initElement(divElemet);
   }
 
