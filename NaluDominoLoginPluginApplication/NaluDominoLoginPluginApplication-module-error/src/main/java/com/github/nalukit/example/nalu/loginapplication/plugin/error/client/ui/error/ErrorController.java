@@ -19,6 +19,7 @@ package com.github.nalukit.example.nalu.loginapplication.plugin.error.client.ui.
 import com.github.nalukit.example.nalu.loginapplication.plugin.error.client.NaluLoginApplicationContextErrorModule;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
+import com.google.gwt.core.client.GWT;
 import elemental2.dom.HTMLElement;
 
 import java.util.Objects;
@@ -36,6 +37,7 @@ public class ErrorController
 
   @Override
   public void start() {
+    GWT.debugger();
     if (Objects.isNull(this.router.getNaluErrorMessage()) ||
         this.router.getNaluErrorMessage()
                    .getErrorMessage()

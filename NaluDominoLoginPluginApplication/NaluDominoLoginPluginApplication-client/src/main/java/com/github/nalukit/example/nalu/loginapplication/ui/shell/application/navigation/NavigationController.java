@@ -16,7 +16,7 @@
 
 package com.github.nalukit.example.nalu.loginapplication.ui.shell.application.navigation;
 
-import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
+import com.github.nalukit.example.nalu.loginapplication.NaluLoginApplicationContext;
 import com.github.nalukit.example.nalu.loginapplication.event.SelectEvent;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
@@ -53,4 +53,5 @@ public class NavigationController
                       this.context.getSearchName(),
                       this.context.getSearchCity());
   }
+
 }

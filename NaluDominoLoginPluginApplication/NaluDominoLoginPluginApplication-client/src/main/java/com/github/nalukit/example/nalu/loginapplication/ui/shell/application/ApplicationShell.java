@@ -16,7 +16,7 @@
 
 package com.github.nalukit.example.nalu.loginapplication.ui.shell.application;
 
-import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
+import com.github.nalukit.example.nalu.loginapplication.NaluLoginApplicationContext;
 import com.github.nalukit.nalu.client.component.AbstractShell;
 import com.github.nalukit.nalu.client.component.annotation.Shell;
 import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;

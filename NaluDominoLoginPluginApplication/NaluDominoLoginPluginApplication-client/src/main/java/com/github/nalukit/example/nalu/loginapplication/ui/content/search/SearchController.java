@@ -16,12 +16,12 @@
 
 package com.github.nalukit.example.nalu.loginapplication.ui.content.search;
 
-import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
-import com.github.nalukit.example.nalu.loginapplication.core.client.event.StatusChangeEvent;
+import com.github.nalukit.example.nalu.loginapplication.NaluLoginApplicationContext;
 import com.github.nalukit.example.nalu.loginapplication.event.SelectEvent;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
+import com.github.nalukit.nalu.client.event.NaluEvent;
 import elemental2.dom.HTMLElement;
 
 @Controller(route = "/applicationShell/person/search/:searchName/:searchCity",
@@ -37,7 +37,10 @@ public class SearchController
 
   @Override
   public void start() {
-    this.eventBus.fireEvent(new StatusChangeEvent("Please enter data!"));
+    this.eventBus.fireEvent(NaluEvent.create()
+                                     .event("StatusEvent")
+                                     .data("message",
+                                           "Please enter data"));
 
     this.eventBus.fireEvent(new SelectEvent(SelectEvent.Select.SEARCH));
   }
@@ -69,4 +72,5 @@ public class SearchController
       this.component.setSearchCity(searchCity);
     }
   }
+
 }

@@ -16,7 +16,7 @@
 
 package com.github.nalukit.example.nalu.loginapplication.ui.content.detail.composite.address;
 
-import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
+import com.github.nalukit.example.nalu.loginapplication.NaluLoginApplicationContext;
 import com.github.nalukit.example.nalu.loginapplication.shared.data.model.dto.Person;
 import com.github.nalukit.nalu.client.component.AbstractCompositeController;
 import com.github.nalukit.nalu.client.component.annotation.CompositeController;
@@ -42,4 +42,5 @@ public class AddressComposite
   public Person flush(Person person) {
     return this.component.flush(person);
   }
+
 }

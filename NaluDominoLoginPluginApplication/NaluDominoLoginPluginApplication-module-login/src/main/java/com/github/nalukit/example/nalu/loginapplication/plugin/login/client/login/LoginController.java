@@ -16,11 +16,11 @@
 
 package com.github.nalukit.example.nalu.loginapplication.plugin.login.client.login;
 
-import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
-import com.github.nalukit.example.nalu.loginapplication.core.client.event.StatusChangeEvent;
 import com.github.nalukit.example.nalu.loginapplication.plugin.login.client.NaluLoginApplicationContextLoginModule;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
+import com.github.nalukit.nalu.client.event.NaluEvent;
+import com.google.gwt.core.client.GWT;
 import elemental2.dom.HTMLElement;
 
 @Controller(route = "/loginShell/login",
@@ -36,14 +36,21 @@ public class LoginController
 
   @Override
   public void start() {
-    this.eventBus.fireEvent(new StatusChangeEvent("Please enter your credentials!"));
+    GWT.debugger();
+    this.eventBus.fireEvent(NaluEvent.create()
+                                     .event("StatusEvent")
+                                     .data("message",
+                                           "Please enter your credentials!"));
   }
 
   @Override
-  public void doLogin(String UserId,
+  public void doLogin(String userId,
                       String password) {
+    GWT.debugger();
     this.context.setLoggedIn(true);
+    this.context.setUser(userId);
     // we are always happy with the credential ....
     this.router.route("/applicationShell/person/search");
   }
+
 }

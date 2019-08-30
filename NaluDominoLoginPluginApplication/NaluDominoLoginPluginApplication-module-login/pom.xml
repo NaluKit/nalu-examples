@@ -54,18 +54,6 @@
     </dependency>
 
     <dependency>
-      <groupId>com.github.nalukit.example.nalu</groupId>
-      <artifactId>NaluDominoLoginPluginApplication-core</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.github.nalukit.example.nalu</groupId>
-      <artifactId>NaluDominoLoginPluginApplication-core</artifactId>
-      <version>${project.version}</version>
-      <classifier>sources</classifier>
-    </dependency>
-
-    <dependency>
       <groupId>org.dominokit</groupId>
       <artifactId>domino-ui</artifactId>
       <version>${domino.version}</version>

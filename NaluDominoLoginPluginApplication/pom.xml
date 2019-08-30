@@ -134,7 +134,6 @@
   </repositories>
 
   <modules>
-    <module>NaluDominoLoginPluginApplication-core</module>
     <module>NaluDominoLoginPluginApplication-shared</module>
     <module>NaluDominoLoginPluginApplication-module-error</module>
     <module>NaluDominoLoginPluginApplication-module-login</module>

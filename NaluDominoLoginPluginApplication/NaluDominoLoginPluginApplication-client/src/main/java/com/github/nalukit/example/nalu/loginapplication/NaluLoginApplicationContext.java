@@ -15,29 +15,41 @@
  */
 package com.github.nalukit.example.nalu.loginapplication;
 
-import com.github.nalukit.nalu.client.context.AbstractApplicationContext;
+import com.github.nalukit.nalu.client.context.AbstractMainContext;
 import com.github.nalukit.nalu.client.context.IsContext;
 
 /**
  * A application context of the NaluMailApplication
  */
 public class NaluLoginApplicationContext
-    extends AbstractApplicationContext
+    extends AbstractMainContext
     implements IsContext {
 
   private static final String LOGGED_IN   = "loggedIn";
   private static final String SEARCH_NAME = "searchName";
   private static final String SEARCH_CITY = "searchCity";
+  private static final String USER        = "user";
   private static final String VERSION     = "version";
 
   private boolean loggedIn;
 
   public NaluLoginApplicationContext() {
     super();
+    initialize();
+  }
+
+  private void initialize() {
+    super.getContext()
+         .put(NaluLoginApplicationContext.LOGGED_IN,
+              false);
     super.getContext()
          .put(NaluLoginApplicationContext.VERSION,
               "1.3.0");
-    this.loggedIn = false;
+  }
+
+  public String getVersion() {
+    return (String) super.getContext()
+                         .get(NaluLoginApplicationContext.VERSION);
   }
 
   public String getSearchCity() {
@@ -51,11 +63,6 @@ public class NaluLoginApplicationContext
               searchCity);
   }
 
-  public String getVersion() {
-    return (String) super.getContext()
-                         .get(NaluLoginApplicationContext.VERSION);
-  }
-
   public String getSearchName() {
     return (String) super.getContext()
                          .get(NaluLoginApplicationContext.SEARCH_NAME);
@@ -65,6 +72,17 @@ public class NaluLoginApplicationContext
     super.getContext()
          .put(NaluLoginApplicationContext.SEARCH_NAME,
               searchName);
+  }
+
+  public String getUser() {
+    return (String) super.getContext()
+                         .get(NaluLoginApplicationContext.USER);
+  }
+
+  public void setUser(String user) {
+    super.getContext()
+         .put(NaluLoginApplicationContext.USER,
+              user);
   }
 
   public boolean isLoggedIn() {

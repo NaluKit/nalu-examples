@@ -16,7 +16,7 @@
 package com.github.nalukit.example.nalu.loginapplication.plugin.error.client;
 
 import com.github.nalukit.nalu.client.context.AbstractModuleContext;
-import com.github.nalukit.nalu.client.context.IsModuleContext;
+import com.github.nalukit.nalu.client.context.module.IsModuleContext;
 
 /**
  * A application context of the NaluMailApplication
@@ -28,16 +28,18 @@ public class NaluLoginApplicationContextErrorModule
   private static final String LOGGED_IN   = "loggedIn";
   private static final String SEARCH_NAME = "searchName";
   private static final String SEARCH_CITY = "searchCity";
+  private static final String USER        = "user";
   private static final String VERSION     = "version";
 
   private boolean loggedIn;
 
   public NaluLoginApplicationContextErrorModule() {
     super();
-    super.getContext()
-         .put(NaluLoginApplicationContextErrorModule.VERSION,
-              "1.3.0");
-    this.loggedIn = false;
+  }
+
+  public String getVersion() {
+    return (String) super.getContext()
+                         .get(NaluLoginApplicationContextErrorModule.VERSION);
   }
 
   public String getSearchCity() {
@@ -51,11 +53,6 @@ public class NaluLoginApplicationContextErrorModule
               searchCity);
   }
 
-  public String getVersion() {
-    return (String) super.getContext()
-                         .get(NaluLoginApplicationContextErrorModule.VERSION);
-  }
-
   public String getSearchName() {
     return (String) super.getContext()
                          .get(NaluLoginApplicationContextErrorModule.SEARCH_NAME);
@@ -65,6 +62,17 @@ public class NaluLoginApplicationContextErrorModule
     super.getContext()
          .put(NaluLoginApplicationContextErrorModule.SEARCH_NAME,
               searchName);
+  }
+
+  public String getUser() {
+    return (String) super.getContext()
+                         .get(NaluLoginApplicationContextErrorModule.USER);
+  }
+
+  public void setUser(String user) {
+    super.getContext()
+         .put(NaluLoginApplicationContextErrorModule.USER,
+              user);
   }
 
   public boolean isLoggedIn() {

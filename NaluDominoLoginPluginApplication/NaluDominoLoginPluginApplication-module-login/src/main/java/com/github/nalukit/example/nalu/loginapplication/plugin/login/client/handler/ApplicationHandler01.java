@@ -16,9 +16,8 @@
 
 package com.github.nalukit.example.nalu.loginapplication.plugin.login.client.handler;
 
-import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
-import com.github.nalukit.example.nalu.loginapplication.core.client.event.StatusChangeEvent;
 import com.github.nalukit.example.nalu.loginapplication.plugin.login.client.NaluLoginApplicationContextLoginModule;
+import com.github.nalukit.nalu.client.event.NaluEvent;
 import com.github.nalukit.nalu.client.handler.AbstractHandler;
 import com.github.nalukit.nalu.client.handler.annotation.Handler;
 import elemental2.dom.DomGlobal;
@@ -32,10 +31,13 @@ public class ApplicationHandler01
 
   @Override
   public void bind() {
-    this.eventBus.addHandler(StatusChangeEvent.TYPE,
+    this.eventBus.addHandler(NaluEvent.TYPE,
                              e -> {
-                               // Stupid idea! It should only show, that the event was catched by the handler!
-                               DomGlobal.window.alert("new Status:" + e.getStatus());
+                               if ("StatusEvent".equals(e.getEvent())) {
+                                 // Stupid idea! It should only show, that the event was catched by the handler!
+                                 DomGlobal.window.alert("new Status:" + e.get("message"));
+                               }
                              });
   }
+
 }

@@ -16,11 +16,13 @@
 
 package com.github.nalukit.example.nalu.loginapplication.ui.shell.application.footer;
 
-import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
-import com.github.nalukit.example.nalu.loginapplication.core.client.event.StatusChangeEvent;
+import com.github.nalukit.example.nalu.loginapplication.NaluLoginApplicationContext;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
+import com.github.nalukit.nalu.client.event.NaluEvent;
 import elemental2.dom.HTMLElement;
+
+import java.util.Objects;
 
 /**
  * this is the presenter of the shellCreator. The shellCreator divides the browser in
@@ -42,7 +44,16 @@ public class FooterController
     // add the handler registration to the HandlerRegistrations class of this controller
     // Doing that will help that once the controller gets stops all handler registrations
     // will be removed!
-    this.handlerRegistrations.add(this.eventBus.addHandler(StatusChangeEvent.TYPE,
-                                                           e -> component.setStatus(e.getStatus())));
+    this.handlerRegistrations.add(this.eventBus.addHandler(NaluEvent.TYPE,
+                                                           e -> {
+                                                             if ("StatusEvent".equals(e.getEvent())) {
+                                                               if (Objects.isNull(this.context.getUser())) {
+                                                                 component.setStatus((String) e.get("message"));
+                                                               } else {
+                                                                 component.setStatus("User: " + this.context.getUser() + " -> " + e.get("message"));
+                                                               }
+                                                             }
+                                                           }));
   }
+
 }

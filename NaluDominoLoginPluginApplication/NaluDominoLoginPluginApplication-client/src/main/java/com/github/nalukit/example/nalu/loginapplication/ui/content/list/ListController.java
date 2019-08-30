@@ -16,8 +16,7 @@
 
 package com.github.nalukit.example.nalu.loginapplication.ui.content.list;
 
-import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
-import com.github.nalukit.example.nalu.loginapplication.core.client.event.StatusChangeEvent;
+import com.github.nalukit.example.nalu.loginapplication.NaluLoginApplicationContext;
 import com.github.nalukit.example.nalu.loginapplication.event.SelectEvent;
 import com.github.nalukit.example.nalu.loginapplication.shared.data.model.dto.Person;
 import com.github.nalukit.example.nalu.loginapplication.shared.data.model.dto.PersonSearch;
@@ -25,6 +24,7 @@ import com.github.nalukit.example.nalu.loginapplication.shared.data.service.Pers
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
+import com.github.nalukit.nalu.client.event.NaluEvent;
 import elemental2.dom.HTMLElement;
 
 import java.util.List;
@@ -52,11 +52,20 @@ public class ListController
     this.component.resetTable();
     this.component.setData(result);
     if (result.size() == 0) {
-      this.eventBus.fireEvent(new StatusChangeEvent("No person found"));
+      this.eventBus.fireEvent(NaluEvent.create()
+                                       .event("StatusEvent")
+                                       .data("message",
+                                             "No person found"));
     } else if (result.size() == 1) {
-      this.eventBus.fireEvent(new StatusChangeEvent("Found one person"));
+      this.eventBus.fireEvent(NaluEvent.create()
+                                       .event("StatusEvent")
+                                       .data("message",
+                                             "Found one person"));
     } else {
-      this.eventBus.fireEvent(new StatusChangeEvent("Found " + Integer.toString(result.size()) + " persons"));
+      this.eventBus.fireEvent(NaluEvent.create()
+                                       .event("StatusEvent")
+                                       .data("message",
+                                             "Found " + Integer.toString(result.size()) + " persons"));
     }
 
     this.eventBus.fireEvent(new SelectEvent(SelectEvent.Select.LIST));
@@ -77,4 +86,5 @@ public class ListController
   public void setCity(String city) {
     this.city = city;
   }
+
 }

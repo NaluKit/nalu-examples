@@ -60,4 +60,5 @@ public class DetailComponent
 
     initElement(divElemet);
   }
+
 }

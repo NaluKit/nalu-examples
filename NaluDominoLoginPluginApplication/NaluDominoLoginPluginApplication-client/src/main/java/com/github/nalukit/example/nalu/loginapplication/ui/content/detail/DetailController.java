@@ -16,8 +16,7 @@
 
 package com.github.nalukit.example.nalu.loginapplication.ui.content.detail;
 
-import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
-import com.github.nalukit.example.nalu.loginapplication.core.client.event.StatusChangeEvent;
+import com.github.nalukit.example.nalu.loginapplication.NaluLoginApplicationContext;
 import com.github.nalukit.example.nalu.loginapplication.event.SelectEvent;
 import com.github.nalukit.example.nalu.loginapplication.shared.data.model.dto.Person;
 import com.github.nalukit.example.nalu.loginapplication.shared.data.model.exception.PersonException;
@@ -31,6 +30,7 @@ import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Composite;
 import com.github.nalukit.nalu.client.component.annotation.Composites;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
+import com.github.nalukit.nalu.client.event.NaluEvent;
 import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
 import elemental2.dom.DomGlobal;
 import elemental2.dom.HTMLElement;
@@ -74,7 +74,10 @@ public class DetailController
                                  .get(id);
       super.<PersonComposite>getComposite("personComposite").edit(this.person);
       super.<AddressComposite>getComposite("AddressComposite").edit(this.person);
-      this.eventBus.fireEvent(new StatusChangeEvent("Edit person data with id: " + this.person.getId()));
+      this.eventBus.fireEvent(NaluEvent.create()
+                                       .event("StatusEvent")
+                                       .data("message",
+                                             "Edit person data with id: " + this.person.getId()));
 
       this.eventBus.fireEvent(new SelectEvent(SelectEvent.Select.DETAIL));
     } catch (PersonNotFoundException e) {
@@ -84,7 +87,10 @@ public class DetailController
 
   @Override
   public void stop() {
-    this.eventBus.fireEvent(new StatusChangeEvent(""));
+    this.eventBus.fireEvent(NaluEvent.create()
+                                     .event("StatusEvent")
+                                     .data("message",
+                                           ""));
   }
 
   @AcceptParameter("id")
@@ -138,4 +144,5 @@ public class DetailController
   public IDetailComponent createComponent() {
     return new DetailComponent();
   }
+
 }

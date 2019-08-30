@@ -38,4 +38,5 @@ public class NaluLoginApplicationLoader
     DomGlobal.window.alert("Do Loading ... ");
     finishLoadCommand.finishLoading();
   }
+
 }

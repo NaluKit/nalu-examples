@@ -22,5 +22,5 @@ import com.github.nalukit.nalu.client.module.annotation.Module;
 @Module(name = "errorModule",
         context = NaluLoginApplicationContextErrorModule.class)
 public interface ErrorModule
-    extends IsModule {
+    extends IsModule<NaluLoginApplicationContextErrorModule> {
 }

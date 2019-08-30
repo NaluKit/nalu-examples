@@ -18,7 +18,6 @@ package com.github.nalukit.example.nalu.loginapplication.ui.content.detail.compo
 
 import com.github.nalukit.example.nalu.loginapplication.shared.data.model.dto.Person;
 import com.github.nalukit.example.nalu.loginapplication.ui.content.detail.composite.person.IPersonComponent.Controller;
-import com.github.nalukit.nalu.client.component.AbstractComponent;
 import com.github.nalukit.nalu.client.component.AbstractCompositeComponent;
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
@@ -83,4 +82,5 @@ public class PersonComponent
     person.setName(detailName.getValue());
     return person;
   }
+
 }
