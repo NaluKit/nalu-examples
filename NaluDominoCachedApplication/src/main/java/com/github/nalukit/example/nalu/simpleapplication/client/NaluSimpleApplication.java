@@ -40,8 +40,7 @@ import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
 // use this annotation definition, to run the example using a hashless url
 @Application(loader = NaluSimpleApplicationLoader.class,
              startRoute = "/application/person/search",
-             context = NaluSimpleApplicationContext.class,
-             routeError = "/error/show")
+             context = NaluSimpleApplicationContext.class)
 @Filters(filterClasses = BartSimpsonFilter.class)
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = DefaultElemental2Logger.class)

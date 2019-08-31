@@ -17,7 +17,7 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client;
 
-import com.github.nalukit.nalu.client.application.IsContext;
+import com.github.nalukit.nalu.client.context.IsContext;
 
 /**
  * A application context of the NaluMailApplication
