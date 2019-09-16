@@ -38,8 +38,8 @@
     <elemento.version>0.8.0</elemento.version>
 
     <!-- GWT needs at least java 1.6 -->
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
 
     <junit.version>4.12</junit.version>
     <org.mockito.version>1.10.19</org.mockito.version>
@@ -127,8 +127,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.6.1</version>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
           <showWarnings>true</showWarnings>
           <showDeprecation>true</showDeprecation>
           <meminitial>128m</meminitial>
@@ -205,7 +205,7 @@
           <failOnError>true</failOnError>
           <!-- GWT 2.8 requires 1.8, hence define sourceLevel here if you use
            a different source language for java compilation -->
-          <sourceLevel>1.8</sourceLevel>
+          <sourceLevel>auto</sourceLevel>
           <!-- Compiler configuration -->
           <compilerArgs>
             <!--Ask GWT to create the Story of Your Compile (SOYC) (gwt:compile)-->

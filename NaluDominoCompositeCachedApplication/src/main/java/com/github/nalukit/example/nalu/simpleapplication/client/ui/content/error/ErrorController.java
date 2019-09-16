@@ -18,42 +18,43 @@ package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.erro
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
+import com.github.nalukit.nalu.client.component.AbstractErrorPopUpComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
+import com.github.nalukit.nalu.client.component.annotation.ErrorPopUpController;
 import elemental2.dom.HTMLElement;
 
 import java.util.Objects;
 
-@Controller(route = "/error/show",
-            selector = "content",
-            component = ErrorComponent.class,
-            componentInterface = IErrorComponent.class)
+@ErrorPopUpController(component = ErrorComponent.class,
+                      componentInterface = IErrorComponent.class)
 public class ErrorController
-    extends AbstractComponentController<NaluSimpleApplicationContext, IErrorComponent, HTMLElement>
+    extends AbstractErrorPopUpComponentController<NaluSimpleApplicationContext, IErrorComponent>
     implements IErrorComponent.Controller {
 
   public ErrorController() {
   }
 
   @Override
-  public void start() {
-    if (Objects.isNull(this.router.getNaluErrorMessage()) ||
-        this.router.getNaluErrorMessage()
-                   .getErrorMessage()
-                   .trim()
-                   .length() == 0) {
-      this.router.route("/application/person/search");
-    } else {
-      this.component.setErrorText(this.router.getNaluErrorMessage()
-                                             .getErrorMessage());
-    }
+  public void onBeforeShow() {
+    this.component.clear();
   }
 
   @Override
-  public void doRouteHome() {
-    // clear the error message to avoid showing it again!
-    this.router.clearNaluErrorMessage();
-    // route to the search screen
-    this.router.route("/application/person/search");
+  protected void show() {
+    // this only works, cause the get method is not asynchron!
+    this.component.edit(this.errorEventType,
+                        this.route,
+                        this.message,
+                        this.dataStore);
+    this.component.show();
   }
+
+//  @Override
+//  public void doRouteHome() {
+//    // clear the error message to avoid showing it again!
+//    this.router.clearNaluErrorMessage();
+//    // route to the search screen
+//    this.router.route("/application/person/search");
+//  }
 
 }

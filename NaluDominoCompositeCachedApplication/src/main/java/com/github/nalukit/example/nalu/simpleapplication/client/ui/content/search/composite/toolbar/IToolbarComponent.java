@@ -33,6 +33,8 @@ public interface IToolbarComponent
 
     void doStoreCompositeInCache();
 
+    void doFireErrorEvent();
+
   }
 
 }

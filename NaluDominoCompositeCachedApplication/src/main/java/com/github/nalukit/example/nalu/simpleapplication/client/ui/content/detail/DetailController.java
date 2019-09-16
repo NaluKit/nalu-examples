@@ -43,7 +43,7 @@ import elemental2.dom.HTMLElement;
 @Composites({ @Composite(name = "personComposite",
                          compositeController = PersonComposite.class,
                          selector = "compositePerson"),
-              @Composite(name = "AddressComposite",
+              @Composite(name = "addressComposite",
                          compositeController = AddressComposite.class,
                          selector = "compositeAddress") })
 public class DetailController
@@ -60,7 +60,7 @@ public class DetailController
   @Override
   public String mayStop() {
     boolean isPersonCompositeDirty = super.<PersonComposite>getComposite("personComposite").isDirty(this.person);
-    boolean isAddressCompositeDirty = super.<AddressComposite>getComposite("AddressComposite").isDirty(this.person);
+    boolean isAddressCompositeDirty = super.<AddressComposite>getComposite("addressComposite").isDirty(this.person);
     return isPersonCompositeDirty || isAddressCompositeDirty ? "Would you like to cancel your edits?" : null;
   }
 

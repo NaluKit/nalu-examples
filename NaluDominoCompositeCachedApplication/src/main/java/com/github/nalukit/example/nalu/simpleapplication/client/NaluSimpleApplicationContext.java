@@ -17,7 +17,7 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client;
 
-import com.github.nalukit.nalu.client.application.IsContext;
+import com.github.nalukit.nalu.client.context.IsContext;
 
 /**
  * A application context of the NaluMailApplication
@@ -34,7 +34,7 @@ public class NaluSimpleApplicationContext
   private boolean cachedListScreen;
 
   public NaluSimpleApplicationContext() {
-    this.version = "1.3.0";
+    this.version = "2.0.0-SNPSHOT";
     this.setCachedListScreen(false);
   }
 

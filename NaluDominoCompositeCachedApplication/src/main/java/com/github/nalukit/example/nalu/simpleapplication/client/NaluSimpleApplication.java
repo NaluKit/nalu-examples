@@ -32,16 +32,9 @@ import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
  * <p>Please keep in mind, the services are simulated inside the client (because this is not part of the
  * framework). You can use any technique to call the server!</p>
  */
-// use this annotation definition, to run the example using a hash token
-//@Application(loader = NaluSimpleApplicationLoader.class,
-//             startRoute = "/application/person/search",
-//             context = NaluSimpleApplicationContext.class,
-//             routeError = "/error/show")
-// use this annotation definition, to run the example using a hashless url
 @Application(loader = NaluSimpleApplicationLoader.class,
              startRoute = "/application/person/search",
              context = NaluSimpleApplicationContext.class,
-             routeError = "/error/show",
              stayOnSite = true)
 @Filters(filterClasses = BartSimpsonFilter.class)
 @Debug(logLevel = Debug.LogLevel.DETAILED,

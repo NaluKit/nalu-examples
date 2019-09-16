@@ -16,18 +16,26 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.error;
 
-import com.github.nalukit.nalu.client.component.IsComponent;
-import elemental2.dom.HTMLElement;
+import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.error.IErrorComponent.Controller;
+import com.github.nalukit.nalu.client.component.IsErrorPopUpComponent;
+import com.github.nalukit.nalu.client.event.NaluErrorEvent.ErrorType;
+
+import java.util.Map;
 
 public interface IErrorComponent
-    extends IsComponent<IErrorComponent.Controller, HTMLElement> {
+    extends IsErrorPopUpComponent<Controller> {
 
-  void setErrorText(String errorMessage);
+  void clear();
+
+  void edit(ErrorType errorEventType,
+            String route,
+            String message,
+            Map<String, String> dataStore);
 
   interface Controller
-      extends IsComponent.Controller {
+      extends IsErrorPopUpComponent.Controller {
 
-    void doRouteHome();
+    //    void doRouteHome();
 
   }
 

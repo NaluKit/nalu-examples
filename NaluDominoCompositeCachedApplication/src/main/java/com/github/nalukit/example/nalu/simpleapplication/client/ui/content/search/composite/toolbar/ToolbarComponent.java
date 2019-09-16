@@ -41,6 +41,8 @@ public class ToolbarComponent
 
   private Button buttonRemvoeFromCache;
 
+  private Button buttonFireErrorEvent;
+
   private Text infoText;
 
   public ToolbarComponent() {
@@ -65,6 +67,13 @@ public class ToolbarComponent
                                        .setMinWidth("120px")
                                        .get()
                                        .addClickListener(e -> getController().doRemoveCompositefromCache());
+   this.buttonFireErrorEvent = Button.create("Fire Error Event")
+                                     .setSize(ButtonSize.LARGE)
+                                     .style()
+                                     .setMarginRight("12px")
+                                     .setMinWidth("120px")
+                                     .get()
+                                     .addClickListener(e -> getController().doFireErrorEvent());
     this.buttonRemvoeFromCache.setDisabled(true);
 
     this.infoText = new Text();
@@ -81,6 +90,19 @@ public class ToolbarComponent
                                                .addColumn(Column.span12()
                                                                 .appendChild(this.buttonStoreInCache)
                                                                 .appendChild(this.buttonRemvoeFromCache))
+                                               .styler(style -> style.setTextAlign("center"))
+                                               .asElement())
+                               .appendChild(Row.create()
+                                               .setGap("10px")
+                                               .addColumn(Column.span12()
+                                                                .appendChild(new Text("See Nalu error Handling in action, using the error event and a PopUpErrorController!")))
+                                               .styler(style -> style.setTextAlign("center"))
+                                               .styler(style -> style.setMarginTop("64px"))
+                                               .asElement())
+                               .appendChild(Row.create()
+                                               .setGap("10px")
+                                               .addColumn(Column.span12()
+                                                                .appendChild(this.buttonFireErrorEvent))
                                                .styler(style -> style.setTextAlign("center"))
                                                .asElement())
                                .asElement());
