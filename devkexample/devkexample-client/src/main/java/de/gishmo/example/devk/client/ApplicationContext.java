@@ -15,7 +15,8 @@
  */
 package de.gishmo.example.devk.client;
 
-import com.github.nalukit.nalu.client.application.IsContext;
+import com.github.nalukit.nalu.client.context.IsContext;
+import com.github.nalukit.nalu.client.event.model.ErrorInfo;
 
 /**
  * A application context of the NaluMailApplication
@@ -30,6 +31,8 @@ public class ApplicationContext
   private String searchCity;
 
   private boolean loggedIn;
+
+  private ErrorInfo errorInfo;
 
   public ApplicationContext() {
     this.version = "1.3.0";
@@ -63,4 +66,13 @@ public class ApplicationContext
   public void setLoggedIn(boolean loggedIn) {
     this.loggedIn = loggedIn;
   }
+
+  public ErrorInfo getErrorInfo() {
+    return errorInfo;
+  }
+
+  public void setErrorInfo(ErrorInfo errorInfo) {
+    this.errorInfo = errorInfo;
+  }
+
 }

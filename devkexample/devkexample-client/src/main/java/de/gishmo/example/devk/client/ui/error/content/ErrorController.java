@@ -35,8 +35,8 @@ public class ErrorController
   @Override
   public void start() {
     // Get the error message from the router and set it.
-    this.component.setErrorMessage(this.router.getNaluErrorMessage()
-                                              .getErrorMessage());
+    this.component.setErrorMessage(this.context.getErrorInfo()
+                                               .getMessage());
   }
 
   @Override

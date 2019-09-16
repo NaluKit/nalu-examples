@@ -25,8 +25,7 @@ import de.gishmo.example.devk.client.filter.LoginFilter;
  */
 @Application(context = ApplicationContext.class,
              startRoute = Routes.ROUTE_LOGON,
-             loader = ApplicationLoader.class,
-             routeError = Routes.ROUTE_ERROR)
+             loader = ApplicationLoader.class)
 @Debug(logger = DefaultElemental2Logger.class,
        logLevel = Debug.LogLevel.DETAILED)
 @Filters(filterClasses = { LoginFilter.class,
