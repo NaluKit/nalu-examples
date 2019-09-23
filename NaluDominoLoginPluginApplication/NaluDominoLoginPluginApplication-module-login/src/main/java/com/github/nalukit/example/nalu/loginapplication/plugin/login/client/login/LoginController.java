@@ -19,7 +19,7 @@ package com.github.nalukit.example.nalu.loginapplication.plugin.login.client.log
 import com.github.nalukit.example.nalu.loginapplication.plugin.login.client.NaluLoginApplicationContextLoginModule;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
-import com.github.nalukit.nalu.client.event.NaluEvent;
+import com.github.nalukit.nalu.client.event.NaluApplicationEvent;
 import com.google.gwt.core.client.GWT;
 import elemental2.dom.HTMLElement;
 
@@ -37,9 +37,9 @@ public class LoginController
   @Override
   public void start() {
     GWT.debugger();
-    this.eventBus.fireEvent(NaluEvent.create()
-                                     .event("StatusEvent")
-                                     .data("message",
+    this.eventBus.fireEvent(NaluApplicationEvent.create()
+                                                .event("StatusEvent")
+                                                .data("message",
                                            "Please enter your credentials!"));
   }
 

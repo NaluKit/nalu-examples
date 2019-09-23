@@ -19,7 +19,7 @@ package com.github.nalukit.example.nalu.loginapplication.ui.shell.application.fo
 import com.github.nalukit.example.nalu.loginapplication.NaluLoginApplicationContext;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
-import com.github.nalukit.nalu.client.event.NaluEvent;
+import com.github.nalukit.nalu.client.event.NaluApplicationEvent;
 import elemental2.dom.HTMLElement;
 
 import java.util.Objects;
@@ -44,7 +44,7 @@ public class FooterController
     // add the handler registration to the HandlerRegistrations class of this controller
     // Doing that will help that once the controller gets stops all handler registrations
     // will be removed!
-    this.handlerRegistrations.add(this.eventBus.addHandler(NaluEvent.TYPE,
+    this.handlerRegistrations.add(this.eventBus.addHandler(NaluApplicationEvent.TYPE,
                                                            e -> {
                                                              if ("StatusEvent".equals(e.getEvent())) {
                                                                if (Objects.isNull(this.context.getUser())) {

@@ -35,7 +35,7 @@ public class ApplicationContext
   private ErrorInfo errorInfo;
 
   public ApplicationContext() {
-    this.version = "1.3.0";
+    this.version = "2.0.0";
     this.loggedIn = false;
   }
 

@@ -36,8 +36,7 @@ import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
  */
 @Application(loader = NaluLoginApplicationLoader.class,
              startRoute = "/loginShell/login",
-             context = NaluLoginApplicationContext.class,
-             routeError = "/errorShell/error")
+             context = NaluLoginApplicationContext.class)
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = DefaultElemental2Logger.class)
 @Modules({ ErrorModule.class,

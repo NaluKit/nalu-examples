@@ -22,7 +22,7 @@ import com.github.nalukit.example.nalu.simpleapplication.client.event.StoreSearc
 import com.github.nalukit.nalu.client.component.AbstractCompositeController;
 import com.github.nalukit.nalu.client.component.annotation.CompositeController;
 import com.github.nalukit.nalu.client.event.NaluErrorEvent;
-import com.github.nalukit.nalu.client.event.NaluErrorEvent.ErrorType;
+import com.github.nalukit.nalu.client.event.model.ErrorInfo.ErrorType;
 import elemental2.dom.HTMLElement;
 
 @CompositeController(componentInterface = IToolbarComponent.class,
@@ -53,7 +53,7 @@ public class ToolbarComposite
 
   @Override
   public void doFireErrorEvent() {
-    this.eventBus.fireEvent(NaluErrorEvent.create(ErrorType.APPLICAITON_ERROR)
+    this.eventBus.fireEvent(NaluErrorEvent.createApplicationError()
                                           .route("/application/person/search")
                                           .message("Oh, nothing wrong ... only wonna show a nice error dialog!")
                                           .data("key01",

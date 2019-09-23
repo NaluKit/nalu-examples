@@ -26,6 +26,7 @@ import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Composite;
 import com.github.nalukit.nalu.client.component.annotation.Composites;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
+import com.github.nalukit.nalu.client.seo.SeoFactory;
 import elemental2.dom.HTMLElement;
 
 @Controller(route = "/application/person/search",
@@ -43,6 +44,11 @@ public class SearchController
     implements ISearchComponent.Controller {
 
   public SearchController() {
+  }
+
+  @Override
+  public void activate() {
+    SeoFactory.get().updateTitle("Example - Search Persons ...");
   }
 
   @Override

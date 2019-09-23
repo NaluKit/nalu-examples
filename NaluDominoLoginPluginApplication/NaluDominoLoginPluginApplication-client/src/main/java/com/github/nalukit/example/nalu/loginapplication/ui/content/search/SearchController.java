@@ -21,7 +21,7 @@ import com.github.nalukit.example.nalu.loginapplication.event.SelectEvent;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
-import com.github.nalukit.nalu.client.event.NaluEvent;
+import com.github.nalukit.nalu.client.event.NaluApplicationEvent;
 import elemental2.dom.HTMLElement;
 
 @Controller(route = "/applicationShell/person/search/:searchName/:searchCity",
@@ -37,9 +37,9 @@ public class SearchController
 
   @Override
   public void start() {
-    this.eventBus.fireEvent(NaluEvent.create()
-                                     .event("StatusEvent")
-                                     .data("message",
+    this.eventBus.fireEvent(NaluApplicationEvent.create()
+                                                .event("StatusEvent")
+                                                .data("message",
                                            "Please enter data"));
 
     this.eventBus.fireEvent(new SelectEvent(SelectEvent.Select.SEARCH));

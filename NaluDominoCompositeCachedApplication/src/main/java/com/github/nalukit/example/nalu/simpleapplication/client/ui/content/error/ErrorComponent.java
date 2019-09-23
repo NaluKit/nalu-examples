@@ -18,7 +18,7 @@ package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.erro
 
 import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.error.IErrorComponent.Controller;
 import com.github.nalukit.nalu.client.component.AbstractErrorPopUpComponent;
-import com.github.nalukit.nalu.client.event.NaluErrorEvent.ErrorType;
+import com.github.nalukit.nalu.client.event.model.ErrorInfo.ErrorType;
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.Image;
 import org.dominokit.domino.ui.button.Button;

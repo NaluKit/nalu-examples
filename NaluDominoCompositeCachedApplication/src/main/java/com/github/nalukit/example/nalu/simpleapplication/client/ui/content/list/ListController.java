@@ -25,6 +25,7 @@ import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChan
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
+import com.github.nalukit.nalu.client.seo.SeoFactory;
 import elemental2.dom.HTMLElement;
 
 import java.util.List;
@@ -76,6 +77,7 @@ public class ListController
 
   @Override
   public void activate() {
+    SeoFactory.get().updateTitle("Example - List Persons for Name:: >>" + name + "<< and city: >>" + city + "<<");
     this.fireSatusEvent(this.component.getPersonList());
   }
 

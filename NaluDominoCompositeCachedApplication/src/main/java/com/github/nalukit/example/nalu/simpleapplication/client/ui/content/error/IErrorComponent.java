@@ -18,7 +18,7 @@ package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.erro
 
 import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.error.IErrorComponent.Controller;
 import com.github.nalukit.nalu.client.component.IsErrorPopUpComponent;
-import com.github.nalukit.nalu.client.event.NaluErrorEvent.ErrorType;
+import com.github.nalukit.nalu.client.event.model.ErrorInfo.ErrorType;
 
 import java.util.Map;
 

@@ -30,7 +30,7 @@ import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Composite;
 import com.github.nalukit.nalu.client.component.annotation.Composites;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
-import com.github.nalukit.nalu.client.event.NaluEvent;
+import com.github.nalukit.nalu.client.event.NaluApplicationEvent;
 import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
 import elemental2.dom.DomGlobal;
 import elemental2.dom.HTMLElement;
@@ -74,9 +74,9 @@ public class DetailController
                                  .get(id);
       super.<PersonComposite>getComposite("personComposite").edit(this.person);
       super.<AddressComposite>getComposite("AddressComposite").edit(this.person);
-      this.eventBus.fireEvent(NaluEvent.create()
-                                       .event("StatusEvent")
-                                       .data("message",
+      this.eventBus.fireEvent(NaluApplicationEvent.create()
+                                                  .event("StatusEvent")
+                                                  .data("message",
                                              "Edit person data with id: " + this.person.getId()));
 
       this.eventBus.fireEvent(new SelectEvent(SelectEvent.Select.DETAIL));
@@ -87,7 +87,7 @@ public class DetailController
 
   @Override
   public void stop() {
-    this.eventBus.fireEvent(NaluEvent.create()
+    this.eventBus.fireEvent(NaluApplicationEvent.create()
                                      .event("StatusEvent")
                                      .data("message",
                                            ""));

@@ -24,7 +24,7 @@ import com.github.nalukit.example.nalu.loginapplication.shared.data.service.Pers
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
-import com.github.nalukit.nalu.client.event.NaluEvent;
+import com.github.nalukit.nalu.client.event.NaluApplicationEvent;
 import elemental2.dom.HTMLElement;
 
 import java.util.List;
@@ -52,20 +52,20 @@ public class ListController
     this.component.resetTable();
     this.component.setData(result);
     if (result.size() == 0) {
-      this.eventBus.fireEvent(NaluEvent.create()
-                                       .event("StatusEvent")
-                                       .data("message",
-                                             "No person found"));
+      this.eventBus.fireEvent(NaluApplicationEvent.create()
+                                                  .event("StatusEvent")
+                                                  .data("message",
+                                                        "No person found"));
     } else if (result.size() == 1) {
-      this.eventBus.fireEvent(NaluEvent.create()
-                                       .event("StatusEvent")
-                                       .data("message",
-                                             "Found one person"));
+      this.eventBus.fireEvent(NaluApplicationEvent.create()
+                                                  .event("StatusEvent")
+                                                  .data("message",
+                                                        "Found one person"));
     } else {
-      this.eventBus.fireEvent(NaluEvent.create()
-                                       .event("StatusEvent")
-                                       .data("message",
-                                             "Found " + Integer.toString(result.size()) + " persons"));
+      this.eventBus.fireEvent(NaluApplicationEvent.create()
+                                                  .event("StatusEvent")
+                                                  .data("message",
+                                                        "Found " + Integer.toString(result.size()) + " persons"));
     }
 
     this.eventBus.fireEvent(new SelectEvent(SelectEvent.Select.LIST));
