@@ -32,7 +32,7 @@
     <gwtVersion>2.8.2</gwtVersion>
 
     <!-- nalu version -->
-    <nalu.version>1.3.1-SNAPSHOT</nalu.version>
+    <nalu.version>1.3.3-SNAPSHOT</nalu.version>
 
     <domino.version>1.0-SNAPSHOT</domino.version>
     <elemento.version>0.9.0</elemento.version>
@@ -204,6 +204,7 @@
             <arg>9876</arg>
             <arg>-bindAddress</arg>
             <arg>0.0.0.0</arg>
+            <arg>-strict</arg>
           </devmodeArgs>
           <startupUrls>
             <startupUrl>index.html</startupUrl>

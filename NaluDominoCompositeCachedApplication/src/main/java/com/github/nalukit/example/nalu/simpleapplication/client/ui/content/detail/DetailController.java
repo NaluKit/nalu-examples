@@ -42,10 +42,9 @@ import elemental2.dom.HTMLElement;
             component = DetailComponent.class)
 @Composites({ @Composite(name = "personComposite",
                          compositeController = PersonComposite.class,
-                         selector = "compositePerson"),
-              @Composite(name = "addressComposite",
-                         compositeController = AddressComposite.class,
-                         selector = "compositeAddress") })
+                         selector = "compositePerson"), @Composite(name = "addressComposite",
+                                                                   compositeController = AddressComposite.class,
+                                                                   selector = "compositeAddress") })
 public class DetailController
     extends AbstractComponentController<NaluSimpleApplicationContext, IDetailComponent, HTMLElement>
     implements IDetailComponent.Controller {
@@ -76,6 +75,37 @@ public class DetailController
       super.<AddressComposite>getComposite("addressComposite").edit(this.person);
       SeoFactory.get()
                 .updateTitle("Example - Edit Persons Name: >>" + this.person.getName() + ", " + this.person.getFirstName());
+
+      SeoFactory.get()
+                .updateDescription("Here you will edit the person selected from the result list");
+      SeoFactory.get()
+                .updateKeywords("Person, edit, cool");
+      SeoFactory.get()
+                .updateRobots("index,follow");
+      SeoFactory.get()
+                .updateOgDescription("I am OG description ...");
+      SeoFactory.get()
+                .updateOgImage("http://www.gwtproject.org");
+      SeoFactory.get()
+                .updateOgSiteName("Max Mustermann");
+      SeoFactory.get()
+                .updateOgTitle("Title: Max Mustermann");
+      SeoFactory.get()
+                .updateOgType("Type: Max Mustermann");
+      SeoFactory.get()
+                .updateOgUrl("http://www.gwtproject.org");
+      SeoFactory.get()
+                .updateTwitterCard("Twitter Card: Max Mustermann");
+      SeoFactory.get()
+                .updateTwitterCreator("Twitter Creator");
+      SeoFactory.get()
+                .updateTwitterDescription("Twitter DEscription");
+      SeoFactory.get()
+                .updateTwitterImage("http://www.gwtproject.org");
+      SeoFactory.get()
+                .updateTwitterSite("http://www.gwtproject.org");
+      SeoFactory.get()
+                .updateTwitterTitle("Twitter Tittle");
       this.eventBus.fireEvent(new StatusChangeEvent("Edit person data with id: " + this.person.getId()));
       this.eventBus.fireEvent(new SelectEvent(SelectEvent.Select.DETAIL));
     } catch (PersonNotFoundException e) {

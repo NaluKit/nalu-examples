@@ -221,6 +221,7 @@
             <arg>9876</arg>
             <arg>-bindAddress</arg>
             <arg>0.0.0.0</arg>
+            <arg>-strict</arg>
           </devmodeArgs>
           <startupUrls>
             <startupUrl>index.html</startupUrl>
