@@ -32,7 +32,7 @@ import com.github.nalukit.nalu.client.component.annotation.Composite;
 import com.github.nalukit.nalu.client.component.annotation.Composites;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
-import com.github.nalukit.nalu.client.seo.SeoFactory;
+import com.github.nalukit.nalu.client.seo.SeoDataProvider;
 import elemental2.dom.DomGlobal;
 import elemental2.dom.HTMLElement;
 
@@ -42,9 +42,10 @@ import elemental2.dom.HTMLElement;
             component = DetailComponent.class)
 @Composites({ @Composite(name = "personComposite",
                          compositeController = PersonComposite.class,
-                         selector = "compositePerson"), @Composite(name = "addressComposite",
-                                                                   compositeController = AddressComposite.class,
-                                                                   selector = "compositeAddress") })
+                         selector = "compositePerson"),
+              @Composite(name = "addressComposite",
+                         compositeController = AddressComposite.class,
+                         selector = "compositeAddress") })
 public class DetailController
     extends AbstractComponentController<NaluSimpleApplicationContext, IDetailComponent, HTMLElement>
     implements IDetailComponent.Controller {
@@ -73,39 +74,40 @@ public class DetailController
                                  .get(id);
       super.<PersonComposite>getComposite("personComposite").edit(this.person);
       super.<AddressComposite>getComposite("addressComposite").edit(this.person);
-      SeoFactory.get()
-                .updateTitle("Example - Edit Persons Name: >>" + this.person.getName() + ", " + this.person.getFirstName());
+      SeoDataProvider.get()
+                     .setTitle("Example - Edit Persons Name: >>" + this.person.getName() + ", " + this.person.getFirstName());
 
-      SeoFactory.get()
-                .updateDescription("Here you will edit the person selected from the result list");
-      SeoFactory.get()
-                .updateKeywords("Person, edit, cool");
-      SeoFactory.get()
-                .updateRobots("index,follow");
-      SeoFactory.get()
-                .updateOgDescription("I am OG description ...");
-      SeoFactory.get()
-                .updateOgImage("http://www.gwtproject.org");
-      SeoFactory.get()
-                .updateOgSiteName("Max Mustermann");
-      SeoFactory.get()
-                .updateOgTitle("Title: Max Mustermann");
-      SeoFactory.get()
-                .updateOgType("Type: Max Mustermann");
-      SeoFactory.get()
-                .updateOgUrl("http://www.gwtproject.org");
-      SeoFactory.get()
-                .updateTwitterCard("Twitter Card: Max Mustermann");
-      SeoFactory.get()
-                .updateTwitterCreator("Twitter Creator");
-      SeoFactory.get()
-                .updateTwitterDescription("Twitter DEscription");
-      SeoFactory.get()
-                .updateTwitterImage("http://www.gwtproject.org");
-      SeoFactory.get()
-                .updateTwitterSite("http://www.gwtproject.org");
-      SeoFactory.get()
-                .updateTwitterTitle("Twitter Tittle");
+      SeoDataProvider.get()
+                     .setDescription("Here you will edit the person selected from the result list");
+      SeoDataProvider.get()
+                     .setKeywords("Person, edit, cool");
+      SeoDataProvider.get()
+                     .setRobots("index,follow");
+      SeoDataProvider.get()
+                     .setOgDescription("I am OG description ...");
+      SeoDataProvider.get()
+                     .setOgImage("http://www.gwtproject.org");
+      SeoDataProvider.get()
+                     .setOgSiteName("Max Mustermann");
+      SeoDataProvider.get()
+                     .setOgTitle("Title: Max Mustermann");
+      SeoDataProvider.get()
+                     .setOgType("Type: Max Mustermann");
+      SeoDataProvider.get()
+                     .setOgUrl("http://www.gwtproject.org");
+      SeoDataProvider.get()
+                     .setTwitterCard("Twitter Card: Max Mustermann");
+      SeoDataProvider.get()
+                     .setTwitterCreator("Twitter Creator");
+      SeoDataProvider.get()
+                     .setTwitterDescription("Twitter DEscription");
+      SeoDataProvider.get()
+                     .setTwitterImage("http://www.gwtproject.org");
+      SeoDataProvider.get()
+                     .setTwitterSite("http://www.gwtproject.org");
+      SeoDataProvider.get()
+                     .setTwitterTitle("Twitter Tittle");
+
       this.eventBus.fireEvent(new StatusChangeEvent("Edit person data with id: " + this.person.getId()));
       this.eventBus.fireEvent(new SelectEvent(SelectEvent.Select.DETAIL));
     } catch (PersonNotFoundException e) {

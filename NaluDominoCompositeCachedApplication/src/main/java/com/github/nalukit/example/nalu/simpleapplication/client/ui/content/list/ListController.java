@@ -25,7 +25,7 @@ import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChan
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
-import com.github.nalukit.nalu.client.seo.SeoFactory;
+import com.github.nalukit.nalu.client.seo.SeoDataProvider;
 import elemental2.dom.HTMLElement;
 
 import java.util.List;
@@ -77,7 +77,37 @@ public class ListController
 
   @Override
   public void activate() {
-    SeoFactory.get().updateTitle("Example - List Persons for Name:: >>" + name + "<< and city: >>" + city + "<<");
+    SeoDataProvider.get()
+                   .setTitle("Example - List Persons for Name:: >>" + name + "<< and city: >>" + city + "<<");
+    SeoDataProvider.get()
+                   .setKeywords("Personen, list, cool");
+    SeoDataProvider.get()
+                   .setRobots("noindex,nofollow");
+    SeoDataProvider.get()
+                   .setOgDescription("I am OG description for the list...");
+    SeoDataProvider.get()
+                   .setOgImage("http://www.gwtproject.org");
+    SeoDataProvider.get()
+                   .setOgSiteName("Max Mustermann");
+    SeoDataProvider.get()
+                   .setOgTitle("Title: Max Mustermann");
+    SeoDataProvider.get()
+                   .setOgType("Type: Max Mustermann");
+    SeoDataProvider.get()
+                   .setOgUrl("http://www.gwtproject.org");
+    SeoDataProvider.get()
+                   .setTwitterCard("Twitter Card for list: Max Mustermann");
+    SeoDataProvider.get()
+                   .setTwitterCreator("Twitter Creator for list");
+    SeoDataProvider.get()
+                   .setTwitterDescription("Twitter DEscription for list");
+    SeoDataProvider.get()
+                   .setTwitterImage("http://www.gwtproject.org");
+    SeoDataProvider.get()
+                   .setTwitterSite("http://www.gwtproject.org");
+    SeoDataProvider.get()
+                   .setTwitterTitle("Twitter Tittle");
+
     this.fireSatusEvent(this.component.getPersonList());
   }
 
