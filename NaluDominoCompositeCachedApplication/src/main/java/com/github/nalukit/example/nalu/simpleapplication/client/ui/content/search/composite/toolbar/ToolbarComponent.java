@@ -53,14 +53,14 @@ public class ToolbarComponent
     HTMLDivElement divElement = Elements.div()
                                         .asElement();
 
-    this.buttonStoreInCache = Button.create("Store Composite Address in Chache")
+    this.buttonStoreInCache = Button.create("Store Composite Search in Chache")
                                     .setSize(ButtonSize.LARGE)
                                     .style()
                                     .setMinWidth("120px")
                                     .setMarginRight("12px")
                                     .get()
                                     .addClickListener(e -> getController().doStoreCompositeInCache());
-    this.buttonRemvoeFromCache = Button.create("Remove Composite Address from Cache")
+    this.buttonRemvoeFromCache = Button.create("Remove Composite Search from Cache")
                                        .setSize(ButtonSize.LARGE)
                                        .style()
                                        .setMarginRight("12px")

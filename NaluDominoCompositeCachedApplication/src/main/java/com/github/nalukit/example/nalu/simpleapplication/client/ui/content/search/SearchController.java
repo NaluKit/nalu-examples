@@ -26,7 +26,7 @@ import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Composite;
 import com.github.nalukit.nalu.client.component.annotation.Composites;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
-import com.github.nalukit.nalu.client.seo.SeaDataProvider;
+import com.github.nalukit.nalu.client.seo.SeoDataProvider;
 import elemental2.dom.HTMLElement;
 
 @Controller(route = "/application/person/search",
@@ -48,7 +48,7 @@ public class SearchController
 
   @Override
   public void activate() {
-    SeaDataProvider.get().updateTitle("Example - Search Persons ...");
+    SeoDataProvider.get().setTitle("Example - Search Persons ...");
   }
 
   @Override

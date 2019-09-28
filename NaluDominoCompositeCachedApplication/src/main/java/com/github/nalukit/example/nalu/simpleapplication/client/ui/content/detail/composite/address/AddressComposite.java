@@ -40,12 +40,10 @@ public class AddressComposite
 
   @Override
   public void activate() {
-    DomGlobal.window.alert("address composite activate-method");
   }
 
   @Override
   public void start() {
-    DomGlobal.window.alert("address composite start-method");
   }
 
   public boolean isDirty(Person person) {

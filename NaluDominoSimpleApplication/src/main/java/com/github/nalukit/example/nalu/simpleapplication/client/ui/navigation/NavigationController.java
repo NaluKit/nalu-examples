@@ -21,6 +21,7 @@ import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplic
 import com.github.nalukit.example.nalu.simpleapplication.client.event.SelectEvent;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
+import com.google.gwt.core.client.GWT;
 import elemental2.dom.HTMLElement;
 
 @Controller(route = "/application",
@@ -39,6 +40,8 @@ public class NavigationController
     this.eventBus.addHandler(SelectEvent.TYPE,
                              e -> component.select(e.getSelect()
                                                     .toString()));
+    String currentRoute = this.router.getCurrentRoute();
+    GWT.debugger();
   }
 
   @Override

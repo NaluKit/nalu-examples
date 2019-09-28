@@ -34,6 +34,7 @@ import com.github.nalukit.nalu.client.component.annotation.Composite;
 import com.github.nalukit.nalu.client.component.annotation.Composites;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
+import com.google.gwt.core.client.GWT;
 import elemental2.dom.DomGlobal;
 import elemental2.dom.HTMLElement;
 
@@ -86,6 +87,8 @@ public class DetailController
     } catch (PersonNotFoundException e) {
       DomGlobal.window.alert("Panic!");
     }
+    String currentRoute = this.router.getCurrentRoute();
+    GWT.debugger();
   }
 
   @Override

@@ -26,6 +26,7 @@ import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChan
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
+import com.google.gwt.core.client.GWT;
 import elemental2.dom.HTMLElement;
 
 import java.util.List;
@@ -61,6 +62,8 @@ public class ListController
     }
 
     this.eventBus.fireEvent(new SelectEvent(SelectEvent.Select.LIST));
+    String currentRoute = this.router.getCurrentRoute();
+    GWT.debugger();
   }
 
   @Override

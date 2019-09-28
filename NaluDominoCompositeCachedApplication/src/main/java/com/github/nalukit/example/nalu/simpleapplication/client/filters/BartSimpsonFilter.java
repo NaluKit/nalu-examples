@@ -12,7 +12,7 @@ public class BartSimpsonFilter
   public boolean filter(String route,
                         String... parms) {
     if (Nalu.match(route,
-                   "/application/person/detail")) {
+                   "/application/person/*/detail")) {
       if ("3".equals(parms[0])) {
         DomGlobal.window.alert("Bart Simpsons is not selecteable -> redirecting to search!");
 
@@ -29,8 +29,7 @@ public class BartSimpsonFilter
 
   @Override
   public String[] parameters() {
-    return new String[] { this.context.getSearchName(),
-                          this.context.getSearchCity() };
+    return new String[0];
   }
 
 }
