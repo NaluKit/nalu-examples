@@ -15,32 +15,17 @@
  *
  */
 
-@CHARSET "UTF-8";
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.intro;
 
-.widgetPanel {
-    margin: 6px;
-    height: 72px;
-}
+import com.github.nalukit.nalu.client.component.IsComponent;
+import com.google.gwt.user.client.ui.Widget;
 
-.panel {
-    border: 1px solid #4200fe;
-    border-radius: 6px;
-    background-color: #d3f4fa;
-}
+public interface IIntroComponent
+    extends IsComponent<IIntroComponent.Controller, Widget> {
 
-.label {
-    padding: 6px 4px 2px 12px;
-    font-family: arial, sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    color: #4200fe;
-}
+  interface Controller
+      extends IsComponent.Controller {
 
-.textBox {
-    margin: 6px 4px 2px 12px;
-    display: block;
-    font-family: arial, sans-serif;
-    font-size: 14px;
-    font-weight: normal;
-    color: #4200fe;
+  }
+
 }

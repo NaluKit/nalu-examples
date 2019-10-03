@@ -15,38 +15,23 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.intro;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
-import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import com.google.gwt.user.client.ui.Widget;
 
-@Controller(route = "/application/mail/:id",
+@Controller(route = "/application/intro",
             selector = "content",
-            componentInterface = IDetailComponent.class,
-            component = DetailComponent.class)
-public class DetailController
-    extends AbstractComponentController<NaluSimpleApplicationContext, IDetailComponent, Widget>
-    implements IDetailComponent.Controller {
+            componentInterface = IIntroComponent.class,
+            component = IntroComponent.class)
+public class IntrolController
+    extends AbstractComponentController<NaluSimpleApplicationContext, IIntroComponent, Widget>
+    implements IIntroComponent.Controller {
 
-  private String mailId;
-
-  public DetailController() {
-  }
-
-  @Override
-  public void start() {
-    this.component.edit(this.context.getFakedMailServer()
-                                    .getMail(this.mailId));
-    this.eventBus.fireEvent(new StatusChangeEvent("Display email with id: " + this.mailId));
-  }
-
-  @AcceptParameter("id")
-  public void setId(String id) {
-    this.mailId = id;
+  public IntrolController() {
   }
 
 }

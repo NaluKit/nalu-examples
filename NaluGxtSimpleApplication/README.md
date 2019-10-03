@@ -1,24 +1,17 @@
-# Nalu example using Elemento
-This is a simple example that has three screens using GXT widgets.
+# Nalu example using GXT widgets
+This example uses GXT GPL v4.0.0 as widget lib.
+
+It si a small mail application with a list of mails on the top. Select one mail and it gets display on the lower side.
+
+This example is implemented using a single maven module.
 
 ## Using
 To run the examples:
 
 * clone the repository
 
-* run `mvn clean install` & `mvn gwt:devmode`
+* run `mvn clean install`
 
-* copy the link and paste the link into the browser url
+* to start use: `mvn gwt:devmode`
 
-## Note
-This example does not have a server implementation. It uses a mock server on the client side.
-
-## Implementation
-This example has one shell, no plugins, etc. It uses GXT GPL as the widget library.
-
-## NaluDominoSimpleApplication
-Full featured example providing a shell with four areas:
-
-1. application shell:
-      * a master area (list odf falked e-mails)
-      * a slave area (show the current selected e-mail)
+* use  `http://127.0.0.1:8888/index.html` as URL

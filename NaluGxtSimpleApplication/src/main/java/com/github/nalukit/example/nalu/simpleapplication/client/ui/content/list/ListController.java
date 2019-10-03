@@ -41,11 +41,6 @@ public class ListController
 
   @Override
   public void start() {
-    if (!Objects.isNull(this.router.getNaluErrorMessage())) {
-      Window.alert(this.router.getNaluErrorMessage()
-                              .getErrorMessage());
-    }
-
     List<Mail> listOfEmails = this.context.getFakedMailServer()
                                           .getAllMails();
     this.component.edit(listOfEmails);

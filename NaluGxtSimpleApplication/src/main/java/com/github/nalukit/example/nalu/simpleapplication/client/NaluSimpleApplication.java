@@ -31,13 +31,11 @@ import com.github.nalukit.nalu.plugin.gwt.client.DefaultGWTLogger;
  * framework). You can use any technique to call the server!</p>
  */
 // use this annotation definition, to run the example using a hash token
-@Application(startRoute = "/application",
-             context = NaluSimpleApplicationContext.class,
-             routeError = "/application")
+@Application(startRoute = "/application/intro",
+             context = NaluSimpleApplicationContext.class)
 // use this annotation definition, to run the example using a hashless url
-//@Application(startRoute = "/application",
+//@Application(startRoute = "/application/intro",
 //             context = NaluSimpleApplicationContext.class,
-//             routeError = "/application",
 //             useHash = false)
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = DefaultGWTLogger.class)
