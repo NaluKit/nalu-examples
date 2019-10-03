@@ -40,6 +40,8 @@ public interface IErrorComponent
   interface Controller
       extends IsErrorPopUpComponent.Controller {
 
+    void doNavigateToIntro();
+
   }
 
 }

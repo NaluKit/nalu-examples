@@ -5,6 +5,8 @@ It si a small mail application with a list of mails on the top. Select one mail 
 
 This example is implemented using a single maven module.
 
+It uses an error popup to display error messages.
+
 ## Using
 To run the examples:
 
