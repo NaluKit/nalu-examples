@@ -1,4 +1,4 @@
-# Example demonstrating the cache feature
+# Nalu example demonstrating the cache feature
 This example demonstrates the Nalu cache feature.
 
 ## Using
@@ -33,8 +33,7 @@ The content are of the application shell will be used to show the three differen
 The detail screen uses the Nalu composite feature.
 
 
-**Attention:**
-This example has a filter implemented, that, in case 'Bart Simpsons' is selected from the list, the application will route to the search view. This is the desired behavior: see [```BartSimpsonFilter```](https://github.com/NaluKit/nalu-examples/blob/master/NaluDominoCachedApplication/src/main/java/com/github/nalukit/example/nalu/simpleapplication/client/filters/BartSimpsonFilter.java)
+**Attention:** This example has a filter implemented, that, in case 'Bart Simpsons' is selected from the list, the application will route to the search view. This is the desired behavior: see [```BartSimpsonFilter```](https://github.com/NaluKit/nalu-examples/blob/master/NaluDominoCachedApplication/src/main/java/com/github/nalukit/example/nalu/simpleapplication/client/filters/BartSimpsonFilter.java)
 
 ## The Cache Feature
 This example implements the cache feature.

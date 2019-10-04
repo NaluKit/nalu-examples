@@ -17,6 +17,8 @@ public class ErrorHandler
   public void bind() {
     this.eventBus.addHandler(NaluErrorEvent.TYPE,
                              e -> {
+                               // this also works to get the error information to the error handler.
+                               // This implementation has the advantage that no changes on the context are needed.
                                eventBus.fireEvent(ShowPopUpEvent.show("ErrorPresenter")
                                                                 .using("message",
                                                                        e.getMessage())
