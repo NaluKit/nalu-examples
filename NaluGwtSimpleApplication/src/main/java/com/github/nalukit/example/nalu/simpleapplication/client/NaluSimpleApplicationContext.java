@@ -17,42 +17,99 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client;
 
-import com.github.nalukit.nalu.client.application.IsContext;
+import com.github.nalukit.nalu.client.context.AbstractMainContext;
+import com.github.nalukit.nalu.client.event.model.ErrorInfo.ErrorType;
+
+import java.util.Objects;
 
 /**
  * A application context of the NaluMailApplication
  */
 public class NaluSimpleApplicationContext
-    implements IsContext {
+    extends AbstractMainContext {
 
-  private String version;
+  private static final String VERSION     = "version";
+  private static final String SEARCH_CITY = "searchCity";
+  private static final String SEARCH_NAME = "searchName";
 
-  private String searchName;
-
-  private String searchCity;
+  private static final String ERROR_TYPE    = "errorType";
+  private static final String ERROR_ROUTE   = "errorRoute";
+  private static final String ERROR_MESSAGE = "errorMessage";
 
   public NaluSimpleApplicationContext() {
-    this.version = "1.3.0";
+    super.getContext()
+         .put(NaluSimpleApplicationContext.VERSION,
+              "2.0.0");
   }
 
   public String getVersion() {
-    return version;
+    return (String) super.getContext()
+                         .get(NaluSimpleApplicationContext.VERSION);
   }
 
   public String getSearchCity() {
-    return searchCity;
+    return (String) super.getContext()
+                         .get(NaluSimpleApplicationContext.SEARCH_CITY);
   }
 
   public void setSearchCity(String searchCity) {
-    this.searchCity = searchCity;
+    super.getContext()
+         .put(NaluSimpleApplicationContext.SEARCH_CITY,
+              searchCity);
   }
 
   public String getSearchName() {
-    return searchName;
+    return (String) super.getContext()
+                         .get(NaluSimpleApplicationContext.SEARCH_NAME);
   }
 
   public void setSearchName(String searchName) {
-    this.searchName = searchName;
+    super.getContext()
+         .put(NaluSimpleApplicationContext.SEARCH_NAME,
+              searchName);
+  }
+
+  public ErrorType getErrorType() {
+    if (Objects.isNull(super.getContext()
+                            .get(NaluSimpleApplicationContext.ERROR_TYPE))) {
+      return null;
+    }
+    return ErrorType.valueOf((String) super.getContext()
+                                           .get(NaluSimpleApplicationContext.ERROR_TYPE));
+  }
+
+  public void setErrorType(ErrorType errorType) {
+    if (Objects.isNull(errorType)) {
+      super.getContext()
+           .put(NaluSimpleApplicationContext.ERROR_TYPE,
+                null);
+    } else {
+      super.getContext()
+           .put(NaluSimpleApplicationContext.ERROR_TYPE,
+                errorType.toString());
+    }
+  }
+
+  public String getErrorRoute() {
+    return (String) super.getContext()
+                         .get(NaluSimpleApplicationContext.ERROR_ROUTE);
+  }
+
+  public void setErrorRoute(String errorRoute) {
+    super.getContext()
+         .put(NaluSimpleApplicationContext.ERROR_ROUTE,
+              errorRoute);
+  }
+
+  public String getErrorMessage() {
+    return (String) super.getContext()
+                         .get(NaluSimpleApplicationContext.ERROR_MESSAGE);
+  }
+
+  public void setErrorMessage(String errorMessage) {
+    super.getContext()
+         .put(NaluSimpleApplicationContext.ERROR_MESSAGE,
+              errorMessage);
   }
 
 }

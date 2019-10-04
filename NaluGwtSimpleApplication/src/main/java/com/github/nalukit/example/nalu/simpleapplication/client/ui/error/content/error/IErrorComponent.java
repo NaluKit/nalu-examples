@@ -15,25 +15,23 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.list;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.error.content.error;
 
-import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
 import com.github.nalukit.nalu.client.component.IsComponent;
+import com.github.nalukit.nalu.client.event.model.ErrorInfo.ErrorType;
 import com.google.gwt.user.client.ui.Widget;
 
-import java.util.List;
+public interface IErrorComponent
+    extends IsComponent<IErrorComponent.Controller, Widget> {
 
-public interface IListComponent
-    extends IsComponent<IListComponent.Controller, Widget> {
-
-  void resetTable();
-
-  void setData(List<Person> result);
+  void edit(ErrorType errorType,
+            String errorRoute,
+            String errorMessage);
 
   interface Controller
       extends IsComponent.Controller {
 
-    void doUpdate(Person object);
+    void doClickOkButton();
 
   }
 

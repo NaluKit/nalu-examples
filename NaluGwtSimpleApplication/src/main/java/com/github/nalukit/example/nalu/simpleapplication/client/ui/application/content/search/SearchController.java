@@ -15,17 +15,14 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.search;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.application.content.search;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Widget;
-
-import java.util.Objects;
 
 @Controller(route = "/application/search/:searchName/:searchCity",
             selector = "content",
@@ -41,11 +38,6 @@ public class SearchController
   @Override
   public void start() {
     this.eventBus.fireEvent(new StatusChangeEvent("Please enter data!"));
-
-    if (!Objects.isNull(this.router.getNaluErrorMessage())) {
-      Window.alert(this.router.getNaluErrorMessage()
-                              .getErrorMessage());
-    }
   }
 
   @Override

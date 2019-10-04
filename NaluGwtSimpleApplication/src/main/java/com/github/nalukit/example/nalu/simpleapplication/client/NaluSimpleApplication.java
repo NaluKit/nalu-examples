@@ -36,13 +36,7 @@ import com.github.nalukit.nalu.plugin.gwt.client.DefaultGWTLogger;
 @Application(loader = NaluSimpleApplicationLoader.class,
              startRoute = "/application/search",
              context = NaluSimpleApplicationContext.class,
-             routeError = "/application/search")
-// use this annotation definition, to run the example using a hashless url
-//@Application(loader = NaluSimpleApplicationLoader.class,
-//             startRoute = "/application/search",
-//             context = NaluSimpleApplicationContext.class,
-//             routeError = "/application/search",
-//             useHash = false)
+             useHash = false)
 @Filters(filterClasses = BartSimpsonFilter.class)
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = DefaultGWTLogger.class)

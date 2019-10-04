@@ -44,6 +44,10 @@ public interface ApplicationCss
 
   String navigationPanel();
 
+  String errorPanel();
+
+  String errorPanelButtonBar();
+
   String searchPanel();
 
   String searchPanelButtonBar();
@@ -51,5 +55,9 @@ public interface ApplicationCss
   String resultPanel();
 
   String detailPanel();
+
+  String text();
+
+  String title();
 
 }

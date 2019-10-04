@@ -71,6 +71,16 @@
     width: 100%;
 }
 
+.errorPanel {
+    width: 100%;
+}
+
+.errorPanelButtonBar {
+    text-align: right;
+    width: 100%;
+    float: left;
+}
+
 .searchPanel {
     width: 100%;
 }
@@ -87,6 +97,22 @@
     font-weight: bold;
     color: #4200fe;
     margin: 6px;
+}
+
+.title {
+    font-family: arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    margin: 6px;
+}
+
+.text {
+    font-family: arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: black;
+    margin: 12px;
 }
 
 .button {

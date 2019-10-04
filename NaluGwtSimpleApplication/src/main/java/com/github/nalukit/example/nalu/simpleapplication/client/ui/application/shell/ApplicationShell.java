@@ -15,7 +15,7 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.shell;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.application.shell;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationCss;
@@ -124,16 +124,6 @@ public class ApplicationShell
          .setId("content");
     return panel;
   }
-
-  //    private void forceLayout() {
-  //      if (shell.isAttached()) {
-  //        Widget parent = shell.getParent();
-  //        if (parent != null) {
-  //          int parentWidth = parent.getOffsetWidth();
-  //          footerPanel.setWidth(Integer.toString(parentWidth) + "px");
-  //        }
-  //      }
-  //    }
 
   @Override
   public void bind(ShellLoader loader) {

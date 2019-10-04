@@ -15,20 +15,18 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.navigation;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.application.footer;
 
 import com.github.nalukit.nalu.client.component.IsComponent;
 import com.google.gwt.user.client.ui.Widget;
 
-public interface INavigationComponent
-    extends IsComponent<INavigationComponent.Controller, Widget> {
+public interface IFooterComponent
+    extends IsComponent<IFooterComponent.Controller, Widget> {
+
+  void setStatus(String status);
 
   interface Controller
       extends IsComponent.Controller {
-
-    void doShowSearch();
-
-    void doShowList();
 
   }
 

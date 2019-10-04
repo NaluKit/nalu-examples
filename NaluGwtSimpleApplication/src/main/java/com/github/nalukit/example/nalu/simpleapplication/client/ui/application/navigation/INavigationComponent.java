@@ -15,16 +15,20 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.header;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.application.navigation;
 
 import com.github.nalukit.nalu.client.component.IsComponent;
 import com.google.gwt.user.client.ui.Widget;
 
-public interface IHeaderComponent
-    extends IsComponent<IHeaderComponent.Controller, Widget> {
+public interface INavigationComponent
+    extends IsComponent<INavigationComponent.Controller, Widget> {
 
   interface Controller
       extends IsComponent.Controller {
+
+    void doShowSearch();
+
+    void doShowList();
 
   }
 

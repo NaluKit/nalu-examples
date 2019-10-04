@@ -15,7 +15,7 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.navigation;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.application.header;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
@@ -23,28 +23,14 @@ import com.github.nalukit.nalu.client.component.annotation.Controller;
 import com.google.gwt.user.client.ui.Widget;
 
 @Controller(route = "/application",
-            selector = "navigation",
-            componentInterface = INavigationComponent.class,
-            component = NavigationComponent.class)
-public class NavigationController
-    extends AbstractComponentController<NaluSimpleApplicationContext, INavigationComponent, Widget>
-    implements INavigationComponent.Controller {
+            selector = "header",
+            componentInterface = IHeaderComponent.class,
+            component = HeaderComponent.class)
+public class HeaderController
+    extends AbstractComponentController<NaluSimpleApplicationContext, IHeaderComponent, Widget>
+    implements IHeaderComponent.Controller {
 
-  public NavigationController() {
-  }
-
-  @Override
-  public void doShowSearch() {
-    this.router.route("/application/search",
-                      this.context.getSearchName(),
-                      this.context.getSearchCity());
-  }
-
-  @Override
-  public void doShowList() {
-    this.router.route("/application/list",
-                      this.context.getSearchName(),
-                      this.context.getSearchCity());
+  public HeaderController() {
   }
 
 }

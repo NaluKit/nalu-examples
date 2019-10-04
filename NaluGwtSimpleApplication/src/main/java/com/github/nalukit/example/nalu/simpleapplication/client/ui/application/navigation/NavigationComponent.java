@@ -15,36 +15,48 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.header;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.application.navigation;
 
+import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationConstants;
 import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationCss;
 import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationStyleFactory;
-import com.github.nalukit.example.nalu.simpleapplication.client.resources.ImageResources;
 import com.github.nalukit.nalu.client.component.AbstractComponent;
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlowPanel;
-import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Widget;
 
-public class HeaderComponent
-    extends AbstractComponent<IHeaderComponent.Controller, Widget>
-    implements IHeaderComponent {
+public class NavigationComponent
+    extends AbstractComponent<INavigationComponent.Controller, Widget>
+    implements INavigationComponent {
 
-  public HeaderComponent() {
+  private Button searchButton;
+
+  private Button listButton;
+
+  public NavigationComponent() {
   }
 
   @Override
   public void render() {
     ApplicationCss style = ApplicationStyleFactory.get()
                                                   .getStyle();
-
     FlowPanel panel = new FlowPanel();
-    panel.addStyleName(style.headerPanel());
 
-    Image image = new Image(ImageResources.INSTANCE.gwtLogo());
-    image.addStyleName(style.header());
-    panel.add(image);
+    searchButton = new Button(ApplicationConstants.CONSTANTS.searchFormButton());
+    searchButton.addStyleName(style.navigationButton());
+    panel.add(searchButton);
+
+    listButton = new Button(ApplicationConstants.CONSTANTS.listFormButton());
+    listButton.addStyleName(style.navigationButton());
+    panel.add(listButton);
 
     initElement(panel);
+  }
+
+  @Override
+  public void bind() {
+    searchButton.addClickHandler(event -> getController().doShowSearch());
+    listButton.addClickHandler(event -> getController().doShowList());
   }
 
 }

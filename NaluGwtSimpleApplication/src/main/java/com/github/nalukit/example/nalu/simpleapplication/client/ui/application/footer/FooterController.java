@@ -15,7 +15,7 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.footer;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.application.footer;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;

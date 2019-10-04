@@ -15,18 +15,25 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.footer;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.application.content.list;
 
+import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
 import com.github.nalukit.nalu.client.component.IsComponent;
 import com.google.gwt.user.client.ui.Widget;
 
-public interface IFooterComponent
-    extends IsComponent<IFooterComponent.Controller, Widget> {
+import java.util.List;
 
-  void setStatus(String status);
+public interface IListComponent
+    extends IsComponent<IListComponent.Controller, Widget> {
+
+  void resetTable();
+
+  void setData(List<Person> result);
 
   interface Controller
       extends IsComponent.Controller {
+
+    void doUpdate(Person object);
 
   }
 

@@ -15,7 +15,7 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.search;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.application.content.search;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationConstants;
 import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationCss;
@@ -83,12 +83,6 @@ public class SearchComponent
       searchName.setText("");
       searchCity.setText("");
     });
-  }
-
-  @Override
-  public void onAttach() {
-    searchName.forceLayout();
-    searchCity.forceLayout();
   }
 
   @Override

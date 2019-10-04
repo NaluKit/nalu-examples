@@ -79,4 +79,10 @@ public interface ApplicationConstants
 
   String detailMessage();
 
+  String titleRoute();
+
+  String titleMessage();
+
+  String okButton();
+
 }

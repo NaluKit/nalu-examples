@@ -15,7 +15,7 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.search;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.application.content.search;
 
 import com.github.nalukit.nalu.client.component.IsComponent;
 import com.google.gwt.user.client.ui.Widget;
