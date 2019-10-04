@@ -37,6 +37,8 @@ public class ErrorShell
 
   private SimpleLayoutPanel contentWidget;
 
+  private ResizeLayoutPanel shell;
+
   public ErrorShell() {
     super();
   }
@@ -53,21 +55,32 @@ public class ErrorShell
                    .add(this.render());
   }
 
+  /**
+   * The ShellPresenter has to implemented this method, because the framework
+   * can not do this. (It does not know, what to use).
+   * <p>
+   * We remove the shell from the browser body.
+   */
+  @Override
+  public void detachShell() {
+    this.shell.removeFromParent();
+  }
+
   private Widget render() {
-    ResizeLayoutPanel shell = new ResizeLayoutPanel();
-    shell.setSize("100%",
+    this.shell = new ResizeLayoutPanel();
+    this.shell.setSize("100%",
                   "100%");
     //shell.addResizeHandler(event -> forceLayout());
 
     DockLayoutPanel panel = new DockLayoutPanel(Style.Unit.PX);
     panel.setSize("100%",
                   "100%");
-    shell.add(panel);
+    this.shell.add(panel);
 
     this.contentWidget = createContent();
     panel.add(this.contentWidget);
 
-    return panel;
+    return this.shell;
   }
 
   private SimpleLayoutPanel createContent() {
