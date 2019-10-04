@@ -64,11 +64,22 @@ public class ApplicationShell
                    .add(this.render());
   }
 
+  /**
+   * The ShellPresenter has to implemented this method, because the framework
+   * can not do this. (It does not know, what to use).
+   * <p>
+   * We remove the ShellView from the browser body.
+   */
+  @Override
+  public void detachShell() {
+    this.viewport.removeFromParent();
+  }
+
   private Widget render() {
-    Viewport viewport = new Viewport();
+    this.viewport = new Viewport();
 
     this.shell = new BorderLayoutContainer();
-    viewport.add(this.shell);
+    this.viewport.add(this.shell);
 
     this.northContainer = createContentPanel();
     BorderLayoutContainer.BorderLayoutData bldNorth = new BorderLayoutContainer.BorderLayoutData(.4);
@@ -85,7 +96,7 @@ public class ApplicationShell
     this.centerContainer = new SimpleContainer();
     this.shell.setCenterWidget(this.centerContainer);
 
-    return viewport;
+    return this.viewport;
   }
 
   private ContentPanel createContentPanel() {
