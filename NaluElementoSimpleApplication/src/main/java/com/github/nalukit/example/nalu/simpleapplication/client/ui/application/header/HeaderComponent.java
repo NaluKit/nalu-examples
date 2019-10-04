@@ -15,30 +15,26 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.detail;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.application.header;
 
-import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
-import com.github.nalukit.nalu.client.component.IsComponent;
+import com.github.nalukit.nalu.client.component.AbstractComponent;
 import elemental2.dom.HTMLElement;
 
-public interface IDetailComponent
-    extends IsComponent<IDetailComponent.Controller, HTMLElement> {
+import static org.jboss.gwt.elemento.core.Elements.header;
+import static org.jboss.gwt.elemento.core.Elements.img;
 
-  void edit(Person result);
+public class HeaderComponent
+    extends AbstractComponent<IHeaderComponent.Controller, HTMLElement>
+    implements IHeaderComponent {
 
-  boolean isDirty();
+  public HeaderComponent() {
+  }
 
-  Person flush(Person person);
-
-  interface Controller
-      extends IsComponent.Controller {
-
-    Person getPerson();
-
-    void doRevert();
-
-    void doUpdate();
-
+  @Override
+  public void render() {
+    initElement(header().css("shellHeader")
+                        .add(img("/media/images/Gwt-logo.png").css("shellHeaderImage"))
+                        .get());
   }
 
 }

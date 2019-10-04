@@ -15,26 +15,21 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.header;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.application.navigation;
 
-import com.github.nalukit.nalu.client.component.AbstractComponent;
+import com.github.nalukit.nalu.client.component.IsComponent;
 import elemental2.dom.HTMLElement;
 
-import static org.jboss.gwt.elemento.core.Elements.header;
-import static org.jboss.gwt.elemento.core.Elements.img;
+public interface INavigationComponent
+    extends IsComponent<INavigationComponent.Controller, HTMLElement> {
 
-public class HeaderComponent
-    extends AbstractComponent<IHeaderComponent.Controller, HTMLElement>
-    implements IHeaderComponent {
+  interface Controller
+      extends IsComponent.Controller {
 
-  public HeaderComponent() {
-  }
+    void doShowSearch();
 
-  @Override
-  public void render() {
-    initElement(header().css("shellHeader")
-                        .add(img("/media/images/Gwt-logo.png").css("shellHeaderImage"))
-                        .get());
+    void doShowList();
+
   }
 
 }

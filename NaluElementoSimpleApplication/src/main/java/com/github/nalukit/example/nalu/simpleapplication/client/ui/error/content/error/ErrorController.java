@@ -15,22 +15,40 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.header;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.error.content.error;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
+import com.google.gwt.user.client.ui.Widget;
 import elemental2.dom.HTMLElement;
 
-@Controller(route = "/application",
-            selector = "header",
-            componentInterface = IHeaderComponent.class,
-            component = HeaderComponent.class)
-public class HeaderController
-    extends AbstractComponentController<NaluSimpleApplicationContext, IHeaderComponent, HTMLElement>
-    implements IHeaderComponent.Controller {
+import java.util.Objects;
 
-  public HeaderController() {
+@Controller(route = "/error/show",
+            selector = "content",
+            component = ErrorComponent.class,
+            componentInterface = IErrorComponent.class)
+public class ErrorController
+    extends AbstractComponentController<NaluSimpleApplicationContext, IErrorComponent, HTMLElement>
+    implements IErrorComponent.Controller {
+
+  public ErrorController() {
+  }
+
+  @Override
+  public void start() {
+    if (Objects.isNull(this.context.getErrorInfo())) {
+      this.router.route("application/search");
+      return;
+    }
+    this.component.edit(this.context.getErrorInfo());
+  }
+
+  @Override
+  public void doClickOkButton() {
+    this.context.setErrorInfo(null);
+    this.router.route("application/search");
   }
 
 }

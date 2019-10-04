@@ -55,15 +55,15 @@ public class TextField
                           "textFieldTwoRow")
                      .add(label = div().css("textFieldLabel",
                                             "visible")
-                                       .asElement())
+                                       .get())
                      .add(div().css("textFieldDivElement")
                                .add(textBox = input(InputType.text).css("textFieldTextBox")
                                                                    .on(focus,
                                                                        event -> textBox.classList.add("yellow"))
                                                                    .on(blur,
                                                                        event -> textBox.classList.remove("yellow"))
-                                                                   .asElement()))
-                     .asElement();
+                                                                   .get()))
+                     .get();
   }
 
   public String getLabel() {

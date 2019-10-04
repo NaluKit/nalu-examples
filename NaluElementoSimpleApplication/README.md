@@ -1,5 +1,9 @@
 # Nalu example using Elemento
-This is a simple example that has three screens using [Elemento](https://github.com/hal/elemento)
+This example is using [Elemento](https://github.com/hal/elemento) widgets.
+
+It is a small applilcation with three screens. One screen to accept search parameters, one to show the search result and a detail screen.
+
+This example is implemented using a single maven module.
 
 ## Using
 To run the examples:
@@ -30,3 +34,6 @@ The content area will be used to show the three different components:
 * a search componnt
 * a list component (the result from the search)
 * a detail comonent (a selected person from the list)
+
+**Attention:**
+This example has a filter implemented, that, in case 'Bart Simpsons' is selected from the list, the application will route to the search view. This is the desired behavior: see [```BartSimpsonFilter```](https://github.com/NaluKit/nalu-examples/blob/master/NaluGwtSimpleApplication/src/main/java/com/github/nalukit/example/nalu/simpleapplication/client/filters/BartSimpsonFilter.java)

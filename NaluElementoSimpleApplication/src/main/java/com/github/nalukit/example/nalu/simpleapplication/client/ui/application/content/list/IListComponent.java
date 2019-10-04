@@ -15,7 +15,7 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.list;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.application.content.list;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
 import com.github.nalukit.nalu.client.component.IsComponent;

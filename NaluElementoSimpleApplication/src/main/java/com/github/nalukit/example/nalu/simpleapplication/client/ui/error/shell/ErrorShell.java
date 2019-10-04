@@ -15,28 +15,28 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.shell;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.error.shell;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
-import com.github.nalukit.nalu.client.Nalu;
 import com.github.nalukit.nalu.client.component.AbstractShell;
 import com.github.nalukit.nalu.client.component.annotation.Shell;
 import elemental2.dom.CSSProperties;
-import elemental2.dom.Element;
-import elemental2.dom.HTMLElement;
+import elemental2.dom.HTMLDivElement;
 
 import static elemental2.dom.DomGlobal.document;
-import static org.jboss.gwt.elemento.core.Elements.*;
+import static org.jboss.gwt.elemento.core.Elements.div;
 
 /**
  * this is the presenter of the shell. The shell divides the browser in
  * severeal areas.
  */
-@Shell("application")
-public class ApplicationShell
+@Shell("error")
+public class ErrorShell
     extends AbstractShell<NaluSimpleApplicationContext> {
 
-  public ApplicationShell() {
+  private HTMLDivElement shell;
+
+  public ErrorShell() {
   }
 
   /**
@@ -47,36 +47,25 @@ public class ApplicationShell
    */
   @Override
   public void attachShell() {
-    document.body.appendChild(this.render());
-  }
-
-  private HTMLElement render() {
     document.body.style.margin = CSSProperties.MarginUnionType.of(0);
 
-    return div().css("shell")
-                .add(createNorth())
-                .add(createSouth())
-                .add(div().css("shellNavigation")
-                          .attr("id",
-                                "navigation"))
-                .add(div().css("shellContent")
-                          .attr("id",
-                                "content"))
-                .asElement();
+    this.shell = div().css("shell")
+                      .add(div().attr("id",
+                                      "content"))
+                      .get();
+
+    document.body.appendChild(this.shell);
   }
 
-  private Element createNorth() {
-    return header().css("shellHeader")
-                   .attr("id",
-                         "header")
-                   .get();
-  }
-
-  private Element createSouth() {
-    return footer().css("shellFooter")
-                   .attr("id",
-                         "footer")
-                   .get();
+  /**
+   * The ShellPresenter has to implemented this method, because the framework
+   * can not do this. (It does not know, what to use).
+   * <p>
+   * We remmove the ShellView from the browser body.
+   */
+  @Override
+  public void detachShell() {
+    document.body.removeChild(this.shell);
   }
 
 }

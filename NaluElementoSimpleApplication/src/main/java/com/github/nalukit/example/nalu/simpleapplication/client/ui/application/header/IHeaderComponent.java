@@ -15,23 +15,16 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.search;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.application.header;
 
 import com.github.nalukit.nalu.client.component.IsComponent;
 import elemental2.dom.HTMLElement;
 
-public interface ISearchComponent
-    extends IsComponent<ISearchComponent.Controller, HTMLElement> {
-
-  void setSearchName(String searchName);
-
-  void setSearchCity(String searchCity);
+public interface IHeaderComponent
+    extends IsComponent<IHeaderComponent.Controller, HTMLElement> {
 
   interface Controller
       extends IsComponent.Controller {
-
-    void doClickSearchButton(String searchName,
-                             String searchCity);
 
   }
 

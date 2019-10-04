@@ -15,16 +15,29 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.header;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.application.content.detail;
 
+import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
 import com.github.nalukit.nalu.client.component.IsComponent;
 import elemental2.dom.HTMLElement;
 
-public interface IHeaderComponent
-    extends IsComponent<IHeaderComponent.Controller, HTMLElement> {
+public interface IDetailComponent
+    extends IsComponent<IDetailComponent.Controller, HTMLElement> {
+
+  void edit(Person result);
+
+  boolean isDirty();
+
+  Person flush(Person person);
 
   interface Controller
       extends IsComponent.Controller {
+
+    Person getPerson();
+
+    void doRevert();
+
+    void doUpdate();
 
   }
 

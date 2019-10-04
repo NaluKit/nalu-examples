@@ -15,18 +15,22 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.footer;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.error.content.error;
 
 import com.github.nalukit.nalu.client.component.IsComponent;
+import com.github.nalukit.nalu.client.event.model.ErrorInfo;
+import com.google.gwt.user.client.ui.Widget;
 import elemental2.dom.HTMLElement;
 
-public interface IFooterComponent
-    extends IsComponent<IFooterComponent.Controller, HTMLElement> {
+public interface IErrorComponent
+    extends IsComponent<IErrorComponent.Controller, HTMLElement> {
 
-  void setStatus(String status);
+  void edit(ErrorInfo errorInfo);
 
   interface Controller
       extends IsComponent.Controller {
+
+    void doClickOkButton();
 
   }
 
