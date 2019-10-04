@@ -41,7 +41,7 @@ public class ErrorController
 
   @Override
   public void doRouteHome() {
-    this.router.route("/application/screen01");
+    this.router.route(Routes.ROUTE_SEARCH);
   }
 
 }

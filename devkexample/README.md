@@ -1,5 +1,7 @@
-# Example created for the DevK-Meeting
-This example demonstrates the use of plugins in Nalu, domino-rest and domino-ui. It is a multi module project.
+# Example created for the DEVK-Meeting
+This example was use at the DEVK-Meetup 'GWT vs. vue.js - a show down' on 07/03/2019 to demonstrates the use of Nalu, domino-rest and domino-ui.
+
+It is a multi module project.
 
 ## Using
 To run the examples:
