@@ -37,20 +37,16 @@ public class ErrorController
 
   @Override
   public void start() {
-    if (Objects.isNull(this.context.getErrorType())) {
+    if (Objects.isNull(this.context.getErrorInfo())) {
       this.router.route("application/search");
       return;
     }
-    this.component.edit(this.context.getErrorType(),
-                        this.context.getErrorRoute(),
-                        this.context.getErrorMessage());
+    this.component.edit(this.context.getErrorInfo());
   }
 
   @Override
   public void doClickOkButton() {
-    this.context.setErrorType(null);
-    this.context.setErrorMessage(null);
-    this.context.setErrorRoute(null);
+    this.context.setErrorInfo(null);
     this.router.route("application/search");
   }
 

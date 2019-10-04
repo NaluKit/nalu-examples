@@ -18,15 +18,14 @@
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.error.content.error;
 
 import com.github.nalukit.nalu.client.component.IsComponent;
+import com.github.nalukit.nalu.client.event.model.ErrorInfo;
 import com.github.nalukit.nalu.client.event.model.ErrorInfo.ErrorType;
 import com.google.gwt.user.client.ui.Widget;
 
 public interface IErrorComponent
     extends IsComponent<IErrorComponent.Controller, Widget> {
 
-  void edit(ErrorType errorType,
-            String errorRoute,
-            String errorMessage);
+  void edit(ErrorInfo errorInfo);
 
   interface Controller
       extends IsComponent.Controller {

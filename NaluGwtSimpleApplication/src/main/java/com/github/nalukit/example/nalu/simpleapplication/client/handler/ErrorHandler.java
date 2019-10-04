@@ -17,9 +17,7 @@ public class ErrorHandler
   public void bind() {
     this.eventBus.addHandler(NaluErrorEvent.TYPE,
                              e -> {
-                               this.context.setErrorType(e.getErrorEventType());
-                               this.context.setErrorMessage(e.getMessage());
-                               this.context.setErrorRoute(e.getRoute());
+                               this.context.setErrorInfo(e.getErrorInfo());
                                this.router.route("/error/show");
                              });
   }

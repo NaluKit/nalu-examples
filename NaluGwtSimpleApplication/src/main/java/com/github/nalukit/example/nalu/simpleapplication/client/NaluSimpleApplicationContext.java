@@ -18,7 +18,7 @@
 package com.github.nalukit.example.nalu.simpleapplication.client;
 
 import com.github.nalukit.nalu.client.context.AbstractMainContext;
-import com.github.nalukit.nalu.client.event.model.ErrorInfo.ErrorType;
+import com.github.nalukit.nalu.client.event.model.ErrorInfo;
 
 import java.util.Objects;
 
@@ -32,9 +32,7 @@ public class NaluSimpleApplicationContext
   private static final String SEARCH_CITY = "searchCity";
   private static final String SEARCH_NAME = "searchName";
 
-  private static final String ERROR_TYPE    = "errorType";
-  private static final String ERROR_ROUTE   = "errorRoute";
-  private static final String ERROR_MESSAGE = "errorMessage";
+  private static final String ERROR_INFO = "errorInfo";
 
   public NaluSimpleApplicationContext() {
     super.getContext()
@@ -69,47 +67,25 @@ public class NaluSimpleApplicationContext
               searchName);
   }
 
-  public ErrorType getErrorType() {
+  public ErrorInfo getErrorInfo() {
     if (Objects.isNull(super.getContext()
-                            .get(NaluSimpleApplicationContext.ERROR_TYPE))) {
+                            .get(NaluSimpleApplicationContext.ERROR_INFO))) {
       return null;
     }
-    return ErrorType.valueOf((String) super.getContext()
-                                           .get(NaluSimpleApplicationContext.ERROR_TYPE));
+    return (ErrorInfo) super.getContext()
+                            .get(NaluSimpleApplicationContext.ERROR_INFO);
   }
 
-  public void setErrorType(ErrorType errorType) {
-    if (Objects.isNull(errorType)) {
+  public void setErrorInfo(ErrorInfo errorInfo) {
+    if (Objects.isNull(errorInfo)) {
       super.getContext()
-           .put(NaluSimpleApplicationContext.ERROR_TYPE,
+           .put(NaluSimpleApplicationContext.ERROR_INFO,
                 null);
     } else {
       super.getContext()
-           .put(NaluSimpleApplicationContext.ERROR_TYPE,
-                errorType.toString());
+           .put(NaluSimpleApplicationContext.ERROR_INFO,
+                errorInfo);
     }
-  }
-
-  public String getErrorRoute() {
-    return (String) super.getContext()
-                         .get(NaluSimpleApplicationContext.ERROR_ROUTE);
-  }
-
-  public void setErrorRoute(String errorRoute) {
-    super.getContext()
-         .put(NaluSimpleApplicationContext.ERROR_ROUTE,
-              errorRoute);
-  }
-
-  public String getErrorMessage() {
-    return (String) super.getContext()
-                         .get(NaluSimpleApplicationContext.ERROR_MESSAGE);
-  }
-
-  public void setErrorMessage(String errorMessage) {
-    super.getContext()
-         .put(NaluSimpleApplicationContext.ERROR_MESSAGE,
-              errorMessage);
   }
 
 }

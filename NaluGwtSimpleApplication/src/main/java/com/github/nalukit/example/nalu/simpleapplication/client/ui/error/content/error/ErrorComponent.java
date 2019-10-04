@@ -21,6 +21,7 @@ import com.github.nalukit.example.nalu.simpleapplication.client.resources.Applic
 import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationCss;
 import com.github.nalukit.example.nalu.simpleapplication.client.resources.ApplicationStyleFactory;
 import com.github.nalukit.nalu.client.component.AbstractComponent;
+import com.github.nalukit.nalu.client.event.model.ErrorInfo;
 import com.github.nalukit.nalu.client.event.model.ErrorInfo.ErrorType;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.user.client.ui.*;
@@ -82,16 +83,14 @@ public class ErrorComponent
   }
 
   @Override
-  public void edit(ErrorType errorType,
-                   String errorRoute,
-                   String errorMessage) {
-    if (ErrorType.APPLICAITON_ERROR == errorType) {
+  public void edit(ErrorInfo errorInfo) {
+    if (ErrorType.APPLICAITON_ERROR == errorInfo.getErrorEventType()) {
       this.errorType.setText("An Application Error occured!");
     } else {
       this.errorType.setText("A Nalu Error occured!");
     }
-    this.errorRoute.setText(errorRoute);
-    this.errorMessage.setText(errorMessage);
+    this.errorRoute.setText(errorInfo.getRoute());
+    this.errorMessage.setText(errorInfo.getMessage());
   }
 
   @Override
