@@ -14,7 +14,7 @@ public class LoggingResponseFilter
       throws IOException {
     String method = requestContext.getMethod();
     System.out.println("=====================================================================================================================");
-    System.out.println("Kulani Application: Requesting " +
+    System.out.println("devkexample Application: Requesting " +
                        method +
                        " for path " +
                        requestContext.getUriInfo()
