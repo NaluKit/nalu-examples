@@ -1,9 +1,13 @@
-# Example demonstrating the cache feature
+# Nalu example demonstrating the cache feature
 This example demonstrates the Nalu cache feature.
 
 * on the search screen the serach data composite is cached
 
 * on the list screen the complete controller is cached.
+
+It also implements the 'stayOnSite'-feature to avoid leaving the application. You will not be able to leave the application using the back button.
+
+This example also uses the 'Block-Feature'. Take a look at 'Fork me at Github' and the card on the bottom right side. The card is a **conditional** Block, which is shown, depending on the route!
 
 ## Using
 To run the examples:

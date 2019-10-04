@@ -35,7 +35,7 @@ public interface IErrorComponent
   interface Controller
       extends IsErrorPopUpComponent.Controller {
 
-    //    void doRouteHome();
+    void doRouteHome();
 
   }
 

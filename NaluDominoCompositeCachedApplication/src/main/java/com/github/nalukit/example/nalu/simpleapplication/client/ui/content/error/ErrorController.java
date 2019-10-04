@@ -41,7 +41,6 @@ public class ErrorController
 
   @Override
   protected void show() {
-    // this only works, cause the get method is not asynchron!
     this.component.edit(this.errorEventType,
                         this.route,
                         this.message,
@@ -49,12 +48,10 @@ public class ErrorController
     this.component.show();
   }
 
-//  @Override
-//  public void doRouteHome() {
-//    // clear the error message to avoid showing it again!
-//    this.router.clearNaluErrorMessage();
-//    // route to the search screen
-//    this.router.route("/application/person/search");
-//  }
+  @Override
+  public void doRouteHome() {
+    // route to the search screen
+    this.router.route("/application/person/search");
+  }
 
 }

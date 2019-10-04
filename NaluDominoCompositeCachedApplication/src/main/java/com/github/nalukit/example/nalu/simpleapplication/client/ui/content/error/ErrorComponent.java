@@ -22,6 +22,10 @@ import com.github.nalukit.nalu.client.event.model.ErrorInfo.ErrorType;
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.Image;
 import org.dominokit.domino.ui.button.Button;
+import org.dominokit.domino.ui.grid.flex.FlexAlign;
+import org.dominokit.domino.ui.grid.flex.FlexDirection;
+import org.dominokit.domino.ui.grid.flex.FlexItem;
+import org.dominokit.domino.ui.grid.flex.FlexLayout;
 import org.dominokit.domino.ui.modals.ModalDialog;
 import org.dominokit.domino.ui.utils.DominoElement;
 
@@ -48,11 +52,10 @@ public class ErrorComponent
                              .large()
                              .setAutoClose(false);
 
-    this.errorIcon = new Image(128,
-                               128);
+    this.errorIcon = new Image(64,
+                               64);
     this.errorIcon.setAttribute("src",
                                 "media/images/bug-128.png");
-
     this.route = DominoElement.div()
                               .asElement();
     this.message = DominoElement.div()
@@ -60,46 +63,70 @@ public class ErrorComponent
                                   style.setMarginBottom("12px");
                                 })
                                 .asElement();
-    this.data = DominoElement.div()
-                             .asElement();
+    DominoElement messageElement = DominoElement.div()
+                                                .styler(style -> {
+                                                  style.setWidth("100%");
+                                                })
+                                                .appendChild(DominoElement.div()
+                                                                          //                                                                   .styler(style -> style.setWidth("100%"))
+                                                                          .styler(style -> style.setFloat("left"))
+                                                                          .appendChild(DominoElement.div()
+                                                                                                    .setTextContent("Route:")
+                                                                                                    .styler(style -> {
+                                                                                                      style.setMarginBottom("6px");
+                                                                                                      style.setProperty("font-weight",
+                                                                                                                        "bold");
+                                                                                                    }))
+                                                                          .appendChild(DominoElement.div()
+                                                                                                    .appendChild(this.route)
+                                                                                                    .styler(style -> {
+                                                                                                      style.setMarginBottom("24px");
+                                                                                                      style.setProperty("font-weight",
+                                                                                                                        "bold");
+                                                                                                    }))
+                                                                          .appendChild(DominoElement.div()
+                                                                                                    .setTextContent("Message:")
+                                                                                                    .styler(style -> {
+                                                                                                      style.setMarginBottom("6px");
+                                                                                                      style.setProperty("font-weight",
+                                                                                                                        "bold");
+                                                                                                    }))
+                                                                          .appendChild(DominoElement.div()
+                                                                                                    .appendChild(this.message)
+                                                                                                    .styler(style -> {
+                                                                                                      style.setMarginBottom("24px");
+                                                                                                      style.setProperty("font-weight",
+                                                                                                                        "bold");
+                                                                                                    }))
+                                                );
 
-    // TODO ...
+    FlexLayout flexLayout = FlexLayout.create()
+                                      .style()
+                                      .add("fill-height")
+                                      .get()
+                                      .setDirection(FlexDirection.LEFT_TO_RIGHT);
 
-    this.dialog.appendChild(DominoElement.div()
-                                         .styler(style -> {
-                                           style.setWidth("100%");
-                                         })
-                                         .appendChild(DominoElement.div()
-                                                                   .setWidth("152px")
-                                                                   .appendChild(this.errorIcon)
-                                                                   .styler(style -> {
-                                                                     style.setMargin("12px");
-                                                                     style.setFloat("left");
-                                                                     style.setAlignItems("top");
-                                                                   }))
-                                         .appendChild(DominoElement.div()
-                                                                   //                                                                   .styler(style -> style.setWidth("100%"))
-                                                                   .styler(style -> {
-                                                                     style.setMargin("12px");
-                                                                     style.setFloat("left");
-                                                                   })
-                                                                   .appendChild(DominoElement.div()
-                                                                                             .setTextContent("Message:")
-                                                                                             .styler(style -> {
-                                                                                               style.setMarginBottom("12px");
-                                                                                               style.setProperty("font-weight",
-                                                                                                                 "bold");
-                                                                                             }))
-                                                                   .appendChild(DominoElement.div()
-                                                                                             .appendChild(this.message)
-                                                                                             .styler(style -> {
-                                                                                               style.setMarginBottom("12px");
-                                                                                               style.setProperty("font-weight",
-                                                                                                                 "bold");
-                                                                                             }))));
+    FlexItem flexItemLeft = FlexItem.create()
+                                    .setAlignSelf(FlexAlign.START)
+                                    .setOrder(1)
+                                    .setFlexGrow(1)
+                                    .appendChild(this.errorIcon);
+    flexLayout.appendChild(flexItemLeft);
+
+    FlexItem flexItemRight = FlexItem.create()
+                                     .styler(style -> style.setMarginLeft("24px"))
+                                     .setAlignSelf(FlexAlign.START)
+                                     .setOrder(2)
+                                     .appendChild(messageElement);
+    flexLayout.appendChild(flexItemRight);
+
+    this.dialog.appendChild(flexLayout);
 
     this.dialog.appendFooterChild(Button.create("OK")
-                                        .addClickListener(e -> this.hide()));
+                                        .addClickListener(e -> {
+                                          this.getController().doRouteHome();
+                                          this.hide();
+                                        }));
   }
 
   @Override
@@ -119,6 +146,7 @@ public class ErrorComponent
       this.dialog.getHeaderElement()
                  .setTextContent("Application Error");
     }
+    this.route.textContent = route;
     this.message.textContent = message;
   }
 
