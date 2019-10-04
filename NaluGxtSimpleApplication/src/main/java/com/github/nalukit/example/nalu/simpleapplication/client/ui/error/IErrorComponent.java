@@ -29,8 +29,8 @@ public interface IErrorComponent
   void clear();
 
   void edit(ErrorType errorEventType,
-            String message,
             String route,
+            String message,
             Map<String, String> dataStore);
 
   void hide();

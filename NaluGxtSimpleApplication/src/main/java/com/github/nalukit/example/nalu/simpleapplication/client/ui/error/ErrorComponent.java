@@ -125,8 +125,8 @@ public class ErrorComponent
 
   @Override
   public void edit(ErrorType errorEventType,
-                   String message,
                    String route,
+                   String message,
                    Map<String, String> dataStore) {
     Label errorType = new Label();
     errorType.getElement()
@@ -148,13 +148,13 @@ public class ErrorComponent
                                                        12,
                                                        0)));
 
-    printMessage("Error:",
-                 message);
-
     if (!Objects.isNull(route)) {
       printMessage("Route:",
                    route);
     }
+
+    printMessage("Error:",
+                 message);
     this.blc.forceLayout();
   }
 

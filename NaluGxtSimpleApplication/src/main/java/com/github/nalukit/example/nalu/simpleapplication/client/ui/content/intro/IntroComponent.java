@@ -33,7 +33,6 @@ public class IntroComponent
 
   @Override
   public void render() {
-    GWT.debugger();
     CenterLayoutContainer clc = new CenterLayoutContainer();
     clc.getElement()
        .getStyle()
