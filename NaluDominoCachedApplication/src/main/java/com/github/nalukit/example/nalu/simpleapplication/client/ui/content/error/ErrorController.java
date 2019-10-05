@@ -36,22 +36,17 @@ public class ErrorController
 
   @Override
   public void start() {
-    if (Objects.isNull(this.router.getNaluErrorMessage()) ||
-        this.router.getNaluErrorMessage()
-                   .getErrorMessage()
-                   .trim()
-                   .length() == 0) {
+    if (Objects.isNull(this.context.getErrorInfo())) {
       this.router.route("/application/person/search");
     } else {
-      this.component.setErrorText(this.router.getNaluErrorMessage()
-                                             .getErrorMessage());
+      this.component.setErrorInfo(this.context.getErrorInfo());
     }
   }
 
   @Override
   public void doRouteHome() {
     // clear the error message to avoid showing it again!
-    this.router.clearNaluErrorMessage();
+    this.context.setErrorInfo(null);
     // route to the search screen
     this.router.route("/application/person/search");
   }

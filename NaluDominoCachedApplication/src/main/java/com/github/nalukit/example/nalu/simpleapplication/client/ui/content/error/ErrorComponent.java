@@ -17,6 +17,7 @@
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.error;
 
 import com.github.nalukit.nalu.client.component.AbstractComponent;
+import com.github.nalukit.nalu.client.event.model.ErrorInfo;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.Text;
 import org.dominokit.domino.ui.cards.Card;
@@ -48,8 +49,8 @@ public class ErrorComponent
   }
 
   @Override
-  public void setErrorText(String errorMessage) {
-    this.errorText.textContent = errorMessage;
+  public void setErrorInfo(ErrorInfo errorInfo) {
+    this.errorText.textContent = errorInfo.getMessage();
   }
 
 }

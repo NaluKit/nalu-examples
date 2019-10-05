@@ -44,7 +44,7 @@ public class NaluLoginApplicationContext
               false);
     super.getContext()
          .put(NaluLoginApplicationContext.VERSION,
-              "1.3.0");
+              "2.0.0");
   }
 
   public String getVersion() {

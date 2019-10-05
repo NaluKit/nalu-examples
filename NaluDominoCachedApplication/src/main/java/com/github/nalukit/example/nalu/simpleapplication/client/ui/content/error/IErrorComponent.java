@@ -17,12 +17,13 @@
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.error;
 
 import com.github.nalukit.nalu.client.component.IsComponent;
+import com.github.nalukit.nalu.client.event.model.ErrorInfo;
 import elemental2.dom.HTMLElement;
 
 public interface IErrorComponent
     extends IsComponent<IErrorComponent.Controller, HTMLElement> {
 
-  void setErrorText(String errorMessage);
+  void setErrorInfo(ErrorInfo errorInfo);
 
   interface Controller
       extends IsComponent.Controller {

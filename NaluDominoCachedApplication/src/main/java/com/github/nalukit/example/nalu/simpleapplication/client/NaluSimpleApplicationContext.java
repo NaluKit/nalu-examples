@@ -18,6 +18,7 @@
 package com.github.nalukit.example.nalu.simpleapplication.client;
 
 import com.github.nalukit.nalu.client.context.IsContext;
+import com.github.nalukit.nalu.client.event.model.ErrorInfo;
 
 /**
  * A application context of the NaluMailApplication
@@ -33,8 +34,10 @@ public class NaluSimpleApplicationContext
   private boolean cachedSearchScreen;
   private boolean cachedListScreen;
 
+  private ErrorInfo errorInfo;
+
   public NaluSimpleApplicationContext() {
-    this.version = "1.3.0";
+    this.version = "2.0.0";
     this.setCachedListScreen(false);
   }
 
@@ -72,6 +75,14 @@ public class NaluSimpleApplicationContext
 
   public void setCachedListScreen(boolean cachedListScreen) {
     this.cachedListScreen = cachedListScreen;
+  }
+
+  public ErrorInfo getErrorInfo() {
+    return errorInfo;
+  }
+
+  public void setErrorInfo(ErrorInfo errorInfo) {
+    this.errorInfo = errorInfo;
   }
 
 }

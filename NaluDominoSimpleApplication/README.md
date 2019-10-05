@@ -37,4 +37,4 @@ This example has a filter implemented, that, in case 'Bart Simpsons' is selected
 
 This demonstrate how filters work.
 
-In case you select 'Homer Simpson' you will see a conditional composite in action: see [DetailCompositeCondition](https://github.com/NaluKit/nalu-examples/blob/master/NaluDominoSimpleApplication/src/main/java/com/github/nalukit/example/nalu/simpleapplication/client/ui/content/detail/DetailCompositeCondition.java)
+In case you select 'Homer Simpson' you will see a conditional composite in action: see [DetailCompositeCondition](https://github.com/NaluKit/nalu-examples/blob/master/NaluDominoSimpleApplication/src/main/java/com/github/nalukit/example/nalu/simpleapplication/client/ui/application/content/detail/DetailCompositeCondition.java)
