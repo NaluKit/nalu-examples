@@ -34,7 +34,7 @@ public class ApplicationHandler02
     this.eventBus.addHandler(StatusChangeEvent.TYPE,
                              e -> {
                                // Stupid idea! It should only show, that the event was catched by the handler!
-                               DomGlobal.window.alert("new Status:" + e.getStatus());
+                               DomGlobal.window.console.log("ApplicationHandler02: ==> new Status:" + e.getStatus());
                              });
   }
 

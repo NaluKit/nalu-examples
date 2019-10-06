@@ -18,7 +18,7 @@
 package com.github.nalukit.example.nalu.simpleapplication.client;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.data.service.FakedService;
-import com.github.nalukit.nalu.client.application.IsContext;
+import com.github.nalukit.nalu.client.context.IsContext;
 
 /**
  * A application context of the NaluMailApplication
@@ -28,11 +28,11 @@ public class NaluSimpleApplicationContext
 
   private String version;
 
-  private FakedService fakedMailServer;
+  private FakedService fakedService;
 
   public NaluSimpleApplicationContext() {
-    this.version = "1.3.0";
-    this.fakedMailServer = new FakedService();
+    this.version = "2.0.0";
+    this.fakedService = new FakedService();
   }
 
   public String getVersion() {
@@ -40,7 +40,7 @@ public class NaluSimpleApplicationContext
   }
 
   public FakedService getFakedService() {
-    return fakedMailServer;
+    return fakedService;
   }
 
 }

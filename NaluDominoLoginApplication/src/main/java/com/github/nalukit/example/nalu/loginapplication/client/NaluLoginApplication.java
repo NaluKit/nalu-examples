@@ -37,13 +37,11 @@ import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
 //@Application(loader = NaluLoginApplicationLoader.class,
 //             startRoute = "/loginShell/login",
 //             context = NaluLoginApplicationContext.class,
-//             routeError = "/errorShell/error")
+//             useHash = false)
 // use this annotation definition, to run the example using a hashless url
 @Application(loader = NaluLoginApplicationLoader.class,
              startRoute = "/loginShell/login",
-             context = NaluLoginApplicationContext.class,
-             routeError = "/errorShell/error",
-             useHash = false)
+             context = NaluLoginApplicationContext.class)
 @Filters(filterClasses = { LoginFilter.class,
                            BartSimpsonFilter.class })
 @Debug(logLevel = Debug.LogLevel.DETAILED,

@@ -14,9 +14,9 @@
  *  the License.
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.error;
+package com.github.nalukit.example.nalu.loginapplication.client.ui.error;
 
-import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.error.IErrorComponent.Controller;
+import com.github.nalukit.example.nalu.loginapplication.client.ui.error.IErrorComponent.Controller;
 import com.github.nalukit.nalu.client.component.AbstractErrorPopUpComponent;
 import com.github.nalukit.nalu.client.event.model.ErrorInfo.ErrorType;
 import elemental2.dom.HTMLDivElement;
@@ -97,8 +97,7 @@ public class ErrorComponent
                                                                                                       style.setMarginBottom("24px");
                                                                                                       style.setProperty("font-weight",
                                                                                                                         "bold");
-                                                                                                    }))
-                                                );
+                                                                                                    })));
 
     FlexLayout flexLayout = FlexLayout.create()
                                       .style()
@@ -125,7 +124,8 @@ public class ErrorComponent
     this.dialog.appendFooterChild(Button.create("OK")
                                         .addClickListener(e -> {
                                           this.hide();
-                                          this.getController().doRouteHome();
+                                          this.getController()
+                                              .doRouteHome();
                                         }));
   }
 

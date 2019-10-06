@@ -31,8 +31,7 @@ import com.github.nalukit.nalu.plugin.gwt.client.DefaultGWTLogger;
  * framework). You can use any technique to call the server!</p>
  */
 @Application(startRoute = "/application/dashboard",
-             context = NaluSimpleApplicationContext.class,
-             routeError = "/application/dashboard")
+             context = NaluSimpleApplicationContext.class)
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = DefaultGWTLogger.class)
 interface NaluSimpleApplication
