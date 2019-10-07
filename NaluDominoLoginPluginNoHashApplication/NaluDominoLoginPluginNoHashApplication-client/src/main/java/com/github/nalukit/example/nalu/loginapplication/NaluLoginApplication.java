@@ -19,7 +19,7 @@ package com.github.nalukit.example.nalu.loginapplication;
 import com.github.nalukit.example.nalu.loginapplication.core.client.NaluLoginApplicationContext;
 import com.github.nalukit.example.nalu.loginapplication.filters.BartSimpsonFilter;
 import com.github.nalukit.example.nalu.loginapplication.plugin.error.client.ErrorPlugin;
-import com.github.nalukit.example.nalu.loginapplication.plugin.login.client.LoginPlugin;
+import com.github.nalukit.example.nalu.loginapplication.module.login.client.LoginPlugin;
 import com.github.nalukit.example.nalu.loginapplication.tracking.ApplicationTracker;
 import com.github.nalukit.nalu.client.application.IsApplication;
 import com.github.nalukit.nalu.client.application.annotation.Application;

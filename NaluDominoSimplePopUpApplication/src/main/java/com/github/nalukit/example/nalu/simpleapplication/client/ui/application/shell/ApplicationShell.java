@@ -34,7 +34,14 @@ import org.dominokit.domino.ui.style.ColorScheme;
 public class ApplicationShell
     extends AbstractShell<NaluSimpleApplicationContext> {
 
+  private Layout layout;
+
   public ApplicationShell() {
+  }
+
+  @Override
+  public void detachShell() {
+    this.layout.remove();
   }
 
   /**
@@ -45,26 +52,26 @@ public class ApplicationShell
    */
   @Override
   public void attachShell() {
-    Layout layout = Layout.create("Nalu - Simple Application using Domino-UI")
-                          .show(ColorScheme.INDIGO);
+    this.layout = Layout.create("Nalu - Simple Application using Domino-UI")
+                        .show(ColorScheme.INDIGO);
 
-    layout.showFooter()
-          .fixFooter()
-          .getFooter()
-          .setId("footer")
-          .style()
-          .setMinHeight("42px");
+    this.layout.showFooter()
+               .fixFooter()
+               .getFooter()
+               .setId("footer")
+               .style()
+               .setMinHeight("42px");
 
-    layout.getLeftPanel()
-          .setId("navigation");
-    layout.getContentPanel()
-          .appendChild(Row.create()
-                          .appendChild(Column.span8()
-                                             .offset2()
-                                             .setId("content")));
+    this.layout.getLeftPanel()
+               .setId("navigation");
+    this.layout.getContentPanel()
+               .appendChild(Row.create()
+                               .appendChild(Column.span8()
+                                                  .offset2()
+                                                  .setId("content")));
 
-    MediaQuery.addOnMediumAndDownListener(layout::unfixLeftPanelPosition);
-    MediaQuery.addOnLargeAndUpListener(layout::fixLeftPanelPosition);
+    MediaQuery.addOnMediumAndDownListener(this.layout::unfixLeftPanelPosition);
+    MediaQuery.addOnLargeAndUpListener(this.layout::fixLeftPanelPosition);
   }
 
 }

@@ -42,13 +42,7 @@ public class SearchController
   @Override
   public void start() {
     this.eventBus.fireEvent(new StatusChangeEvent("Please enter data!"));
-
     this.eventBus.fireEvent(new SelectEvent(SelectEvent.Select.SEARCH));
-
-    if (!Objects.isNull(this.router.getNaluErrorMessage())) {
-      Window.alert(this.router.getNaluErrorMessage()
-                              .getErrorMessage());
-    }
   }
 
   @Override

@@ -97,8 +97,7 @@ public class ErrorComponent
                                                                                                       style.setMarginBottom("24px");
                                                                                                       style.setProperty("font-weight",
                                                                                                                         "bold");
-                                                                                                    }))
-                                                );
+                                                                                                    })));
 
     FlexLayout flexLayout = FlexLayout.create()
                                       .style()
@@ -109,13 +108,13 @@ public class ErrorComponent
     FlexItem flexItemLeft = FlexItem.create()
                                     .setAlignSelf(FlexAlign.START)
                                     .setOrder(1)
-                                    .setFlexGrow(1)
                                     .appendChild(this.errorIcon);
     flexLayout.appendChild(flexItemLeft);
 
     FlexItem flexItemRight = FlexItem.create()
                                      .styler(style -> style.setMarginLeft("24px"))
                                      .setAlignSelf(FlexAlign.START)
+                                     .setFlexGrow(1)
                                      .setOrder(2)
                                      .appendChild(messageElement);
     flexLayout.appendChild(flexItemRight);
@@ -125,7 +124,8 @@ public class ErrorComponent
     this.dialog.appendFooterChild(Button.create("OK")
                                         .addClickListener(e -> {
                                           this.hide();
-                                          this.getController().doRouteHome();
+                                          this.getController()
+                                              .doRouteHome();
                                         }));
   }
 
