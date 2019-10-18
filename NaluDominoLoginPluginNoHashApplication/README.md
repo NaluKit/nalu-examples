@@ -1,3 +1,6 @@
+To Be Done
+
+
 # Example demontrating the plugin feature and using a non hash url
 This example demonstrates the use of plugins in Nalu. It is a multi module project. Also, the url is condfigurated to not use a hash ionside the url.
 

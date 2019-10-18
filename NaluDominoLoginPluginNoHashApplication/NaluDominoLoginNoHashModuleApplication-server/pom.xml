@@ -25,18 +25,18 @@
 
   <parent>
     <groupId>com.github.nalukit.example.nalu</groupId>
-    <artifactId>NaluDominoLoginPluginNoHashApplication</artifactId>
+    <artifactId>NaluDominoLoginNoHashModuleApplication</artifactId>
     <version>1.0.0</version>
   </parent>
 
-  <artifactId>NaluDominoLoginPluginNoHashApplication-server</artifactId>
+  <artifactId>NaluDominoLoginNoHashModuleApplication-server</artifactId>
   <packaging>war</packaging>
 
 
   <dependencies>
     <dependency>
       <groupId>com.github.nalukit.example.nalu</groupId>
-      <artifactId>NaluDominoLoginPluginNoHashApplication-shared</artifactId>
+      <artifactId>NaluDominoLoginNoHashModuleApplication-shared</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
@@ -86,7 +86,7 @@
       <dependencies>
         <dependency>
           <groupId>com.github.nalukit.example.nalu</groupId>
-          <artifactId>NaluDominoLoginPluginNoHashApplication-client</artifactId>
+          <artifactId>NaluDominoLoginNoHashModuleApplication-client</artifactId>
           <version>${project.version}</version>
           <type>war</type>
           <scope>runtime</scope>

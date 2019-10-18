@@ -24,17 +24,17 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.nalukit.example.nalu</groupId>
-  <artifactId>NaluDominoLoginPluginNoHashApplication</artifactId>
+  <artifactId>NaluDominoLoginNoHashModuleApplication</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
 
-  <name>NaluDominoLoginPluginNoHashApplication - Nalu Example Project</name>
+  <name>NaluDominoLoginNoHashModuleApplication</name>
 
   <properties>
     <!-- DominoUI version -->
     <domino.version>1.0-SNAPSHOT</domino.version>
     <!-- nalu version -->
-    <nalu.version>1.3.1-SNAPSHOT</nalu.version>
+    <nalu.version>2.0.0-rc-3</nalu.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -134,11 +134,11 @@
   </repositories>
 
   <modules>
-    <module>NaluDominoLoginPluginNoHashApplication-core</module>
-    <module>NaluDominoLoginPluginNoHashApplication-shared</module>
-    <module>NaluDominoLoginPluginNoHashApplication-plugin-error</module>
-    <module>NaluDominoLoginPluginNoHashApplication-plugin-login</module>
-    <module>NaluDominoLoginPluginNoHashApplication-client</module>
-    <module>NaluDominoLoginPluginNoHashApplication-server</module>
+    <module>NaluDominoLoginPluginNoHashModuleApplication-core</module>
+    <module>NaluDominoLoginNoHashModuleApplication-shared</module>
+    <module>NaluDominoLoginPluginNoHashModuleApplication-plugin-error</module>
+    <module>NaluDominoLoginPluginNoHashModuleApplication-plugin-login</module>
+    <module>NaluDominoLoginPluginNoHashModuleApplication-client</module>
+    <module>NaluDominoLoginNoHashModuleApplication-server</module>
   </modules>
 </project>
