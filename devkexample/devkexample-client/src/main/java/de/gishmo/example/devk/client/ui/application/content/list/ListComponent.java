@@ -28,6 +28,7 @@ import org.dominokit.domino.ui.datatable.store.LocalListDataStore;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
 import org.jboss.gwt.elemento.core.EventType;
+import org.jboss.gwt.elemento.core.IsElement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +36,7 @@ import java.util.List;
 import static org.jboss.gwt.elemento.core.Elements.a;
 
 public class ListComponent
-    extends AbstractComponent<IListComponent.Controller, HTMLElement>
+    extends AbstractComponent<IListComponent.Controller, IsElement>
     implements IListComponent {
 
   private DataTable<Person> table;
@@ -90,8 +91,7 @@ public class ListComponent
     initElement(Card.create("SEARCH RESULTS")
                     .appendChild(Row.create()
                                     .appendChild(Column.span12()
-                                                       .appendChild(this.table)))
-                    .asElement());
+                                                       .appendChild(this.table))));
 
   }
 

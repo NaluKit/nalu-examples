@@ -72,7 +72,7 @@
     </dependency>
     <dependency>
       <groupId>com.github.nalukit</groupId>
-      <artifactId>nalu-plugin-elemental2</artifactId>
+      <artifactId>nalu-plugin-elemento</artifactId>
       <version>${nalu.version}</version>
     </dependency>
     <dependency>

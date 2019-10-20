@@ -27,14 +27,14 @@ import de.gishmo.example.devk.client.service.PersonServiceFactory;
 import de.gishmo.example.devk.shared.model.dto.Person;
 import de.gishmo.example.devk.shared.model.dto.PersonSearch;
 import elemental2.dom.DomGlobal;
-import elemental2.dom.HTMLElement;
+import org.jboss.gwt.elemento.core.IsElement;
 
 @Controller(route = Routes.ROUTE_LIST,
             selector = "content",
             componentInterface = IListComponent.class,
             component = ListComponent.class)
 public class ListController
-    extends AbstractComponentController<ApplicationContext, IListComponent, HTMLElement>
+    extends AbstractComponentController<ApplicationContext, IListComponent, IsElement>
     implements IListComponent.Controller {
 
   private String name;

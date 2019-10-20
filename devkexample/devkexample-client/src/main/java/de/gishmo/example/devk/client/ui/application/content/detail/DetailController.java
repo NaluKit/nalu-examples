@@ -32,7 +32,7 @@ import de.gishmo.example.devk.client.ui.application.content.detail.composite.add
 import de.gishmo.example.devk.client.ui.application.content.detail.composite.person.PersonComposite;
 import de.gishmo.example.devk.shared.model.dto.Person;
 import elemental2.dom.DomGlobal;
-import elemental2.dom.HTMLElement;
+import org.jboss.gwt.elemento.core.IsElement;
 
 @Controller(route = Routes.ROUTE_DETAIL,
             selector = "content",
@@ -45,7 +45,7 @@ import elemental2.dom.HTMLElement;
                          compositeController = AddressComposite.class,
                          selector = "splitterAddress") })
 public class DetailController
-    extends AbstractComponentController<ApplicationContext, IDetailComponent, HTMLElement>
+    extends AbstractComponentController<ApplicationContext, IDetailComponent, IsElement>
     implements IDetailComponent.Controller,
                IsComponentCreator<IDetailComponent> {
 

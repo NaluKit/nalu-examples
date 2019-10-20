@@ -21,12 +21,12 @@ import com.github.nalukit.nalu.client.component.IsComponentCreator;
 import com.github.nalukit.nalu.client.component.annotation.CompositeController;
 import de.gishmo.example.devk.client.ApplicationContext;
 import de.gishmo.example.devk.shared.model.dto.Person;
-import elemental2.dom.HTMLElement;
+import org.jboss.gwt.elemento.core.IsElement;
 
 @CompositeController(componentInterface = IPersonComponent.class,
                      component = PersonComponent.class)
 public class PersonComposite
-    extends AbstractCompositeController<ApplicationContext, IPersonComponent, HTMLElement>
+    extends AbstractCompositeController<ApplicationContext, IPersonComponent, IsElement>
     implements IPersonComponent.Controller,
                IsComponentCreator<IPersonComponent> {
 

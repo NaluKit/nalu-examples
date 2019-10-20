@@ -20,15 +20,16 @@ import com.github.nalukit.nalu.client.component.AbstractCompositeComponent;
 import de.gishmo.example.devk.client.ui.application.content.detail.composite.address.IAddressComponent.Controller;
 import de.gishmo.example.devk.shared.model.dto.Person;
 import elemental2.dom.HTMLDivElement;
-import elemental2.dom.HTMLElement;
 import org.dominokit.domino.ui.cards.Card;
 import org.dominokit.domino.ui.forms.TextBox;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
 import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;
 
 public class AddressComponent
-    extends AbstractCompositeComponent<Controller, HTMLElement>
+    extends AbstractCompositeComponent<Controller, IsElement>
     implements IAddressComponent {
 
   private TextBox detailStreet;
@@ -46,20 +47,18 @@ public class AddressComponent
     this.detailZip = TextBox.create("ZIP");
     this.detailCity = TextBox.create("City");
 
-    HTMLDivElement divElemet = Elements.div()
-                                       .asElement();
+    HtmlContentBuilder<HTMLDivElement> divElemet = Elements.div();
 
-    divElemet.appendChild(Card.create("Details - Address")
-                              .appendChild(Row.create()
-                                              .addColumn(Column.span12()
-                                                               .appendChild(this.detailStreet)))
-                              .appendChild(Row.create()
-                                              .addColumn(Column.span12()
-                                                               .appendChild(this.detailZip)))
-                              .appendChild(Row.create()
-                                              .addColumn(Column.span12()
-                                                               .appendChild(this.detailCity)))
-                              .asElement());
+    divElemet.add(Card.create("Details - Address")
+                      .appendChild(Row.create()
+                                      .addColumn(Column.span12()
+                                                       .appendChild(this.detailStreet)))
+                      .appendChild(Row.create()
+                                      .addColumn(Column.span12()
+                                                       .appendChild(this.detailZip)))
+                      .appendChild(Row.create()
+                                      .addColumn(Column.span12()
+                                                       .appendChild(this.detailCity))));
 
     initElement(divElemet);
   }

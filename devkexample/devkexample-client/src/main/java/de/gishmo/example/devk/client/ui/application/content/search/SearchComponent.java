@@ -18,7 +18,6 @@
 package de.gishmo.example.devk.client.ui.application.content.search;
 
 import com.github.nalukit.nalu.client.component.AbstractComponent;
-import elemental2.dom.HTMLElement;
 import org.dominokit.domino.ui.button.Button;
 import org.dominokit.domino.ui.button.ButtonSize;
 import org.dominokit.domino.ui.cards.Card;
@@ -27,9 +26,10 @@ import org.dominokit.domino.ui.forms.TextBox;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
 import org.dominokit.domino.ui.icons.Icons;
+import org.jboss.gwt.elemento.core.IsElement;
 
 public class SearchComponent
-    extends AbstractComponent<ISearchComponent.Controller, HTMLElement>
+    extends AbstractComponent<ISearchComponent.Controller, IsElement>
     implements ISearchComponent {
 
   private TextBox searchName;
@@ -79,8 +79,7 @@ public class SearchComponent
                                                                         .addClickListener(e -> getController().doClickSearchButton(this.searchName.getValue(),
                                                                                                                                    this.searchCity.getValue()))))
                                     .style()
-                                    .setTextAlign("right"))
-                    .asElement());
+                                    .setTextAlign("right")));
   }
 
   @Override
@@ -92,4 +91,5 @@ public class SearchComponent
   public void setSearchCity(String searchCity) {
     this.searchCity.setValue(searchCity);
   }
+
 }

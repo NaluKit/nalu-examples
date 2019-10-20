@@ -11,6 +11,7 @@ import org.dominokit.domino.ui.forms.TextBox;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
 import org.dominokit.domino.ui.icons.Icons;
+import org.jboss.gwt.elemento.core.IsElement;
 
 /**
  * Copyright (C) 2018 - 2019 Frank Hossfeld <frank.hossfeld@googlemail.com>
@@ -27,7 +28,7 @@ import org.dominokit.domino.ui.icons.Icons;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class LoginComponent extends AbstractComponent<ILoginComponent.Controller, HTMLElement> implements ILoginComponent {
+public class LoginComponent extends AbstractComponent<ILoginComponent.Controller, IsElement> implements ILoginComponent {
   private TextBox userId;
 
   private TextBox password;
@@ -65,7 +66,6 @@ public class LoginComponent extends AbstractComponent<ILoginComponent.Controller
                                                                                 .addClickListener(e -> getController().doLogin(this.userId.getValue(),
                                                                                                                                this.password.getValue()))))
                                             .style()
-                                            .setTextAlign("right"))
-                            .asElement());
+                                            .setTextAlign("right")));
   }
 }

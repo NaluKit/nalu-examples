@@ -18,10 +18,10 @@
 package de.gishmo.example.devk.client.ui.application.content.search;
 
 import com.github.nalukit.nalu.client.component.IsComponent;
-import elemental2.dom.HTMLElement;
+import org.jboss.gwt.elemento.core.IsElement;
 
 public interface ISearchComponent
-    extends IsComponent<ISearchComponent.Controller, HTMLElement> {
+    extends IsComponent<ISearchComponent.Controller, IsElement> {
 
   void setSearchName(String searchName);
 
@@ -32,5 +32,7 @@ public interface ISearchComponent
 
     void doClickSearchButton(String searchName,
                              String searchCity);
+
   }
+
 }

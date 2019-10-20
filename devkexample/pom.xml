@@ -61,6 +61,7 @@
             <plugin>
                 <groupId>net.ltgt.gwt.maven</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
+                <version>1.0.0</version>
                 <inherited>false</inherited>
                 <configuration>
                     <launcherDir>${project.build.directory}/gwt/launcherDir</launcherDir>

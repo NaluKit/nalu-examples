@@ -20,12 +20,12 @@ import com.github.nalukit.nalu.client.component.AbstractCompositeController;
 import com.github.nalukit.nalu.client.component.annotation.CompositeController;
 import de.gishmo.example.devk.client.ApplicationContext;
 import de.gishmo.example.devk.shared.model.dto.Person;
-import elemental2.dom.HTMLElement;
+import org.jboss.gwt.elemento.core.IsElement;
 
 @CompositeController(componentInterface = IAddressComponent.class,
                      component = AddressComponent.class)
 public class AddressComposite
-    extends AbstractCompositeController<ApplicationContext, IAddressComponent, HTMLElement>
+    extends AbstractCompositeController<ApplicationContext, IAddressComponent, IsElement>
     implements IAddressComponent.Controller {
 
   public AddressComposite() {
@@ -42,4 +42,5 @@ public class AddressComposite
   public Person flush(Person person) {
     return this.component.flush(person);
   }
+
 }

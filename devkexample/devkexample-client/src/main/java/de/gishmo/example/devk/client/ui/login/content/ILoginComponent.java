@@ -3,6 +3,7 @@ package de.gishmo.example.devk.client.ui.login.content;
 import com.github.nalukit.nalu.client.component.IsComponent;
 import elemental2.dom.HTMLElement;
 import java.lang.String;
+import org.jboss.gwt.elemento.core.IsElement;
 
 /**
  * Copyright (C) 2018 - 2019 Frank Hossfeld <frank.hossfeld@googlemail.com>
@@ -19,7 +20,7 @@ import java.lang.String;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public interface ILoginComponent extends IsComponent<ILoginComponent.Controller, HTMLElement> {
+public interface ILoginComponent extends IsComponent<ILoginComponent.Controller, IsElement> {
   interface Controller extends IsComponent.Controller {
     void doLogin(String userId, String password);
   }

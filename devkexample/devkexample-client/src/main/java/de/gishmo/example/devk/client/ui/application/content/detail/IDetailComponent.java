@@ -18,10 +18,10 @@ package de.gishmo.example.devk.client.ui.application.content.detail;
 
 import com.github.nalukit.nalu.client.component.IsComponent;
 import de.gishmo.example.devk.shared.model.dto.Person;
-import elemental2.dom.HTMLElement;
+import org.jboss.gwt.elemento.core.IsElement;
 
 public interface IDetailComponent
-    extends IsComponent<IDetailComponent.Controller, HTMLElement> {
+    extends IsComponent<IDetailComponent.Controller, IsElement> {
 
   interface Controller
       extends IsComponent.Controller {

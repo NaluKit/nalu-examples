@@ -23,14 +23,14 @@ import de.gishmo.example.devk.client.ApplicationContext;
 import de.gishmo.example.devk.client.Routes;
 import de.gishmo.example.devk.client.event.SelectEvent;
 import de.gishmo.example.devk.client.event.StatusChangeEvent;
-import elemental2.dom.HTMLElement;
+import org.jboss.gwt.elemento.core.IsElement;
 
 @Controller(route = Routes.ROUTE_SEARCH,
             selector = "content",
             component = SearchComponent.class,
             componentInterface = ISearchComponent.class)
 public class SearchController
-    extends AbstractComponentController<ApplicationContext, ISearchComponent, HTMLElement>
+    extends AbstractComponentController<ApplicationContext, ISearchComponent, IsElement>
     implements ISearchComponent.Controller {
 
   public SearchController() {

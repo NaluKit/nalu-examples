@@ -19,15 +19,16 @@ package de.gishmo.example.devk.client.ui.application.content.detail;
 
 import com.github.nalukit.nalu.client.component.AbstractComponent;
 import elemental2.dom.HTMLDivElement;
-import elemental2.dom.HTMLElement;
 import org.dominokit.domino.ui.button.Button;
 import org.dominokit.domino.ui.cards.Card;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
 import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;
 
 public class DetailComponent
-    extends AbstractComponent<IDetailComponent.Controller, HTMLElement>
+    extends AbstractComponent<IDetailComponent.Controller, IsElement>
     implements IDetailComponent {
 
   public DetailComponent() {
@@ -35,35 +36,32 @@ public class DetailComponent
 
   @Override
   public void render() {
-    HTMLDivElement divElemet = Elements.div()
-                                       .asElement();
-    divElemet.appendChild(Elements.div()
-                                  .id("splitterPerson")
-                                  .asElement());
-    divElemet.appendChild(Elements.div()
-                                  .id("splitterAddress")
-                                  .asElement());
-    divElemet.appendChild(Card.create()
-                              .appendChild(Row.create()
-                                              .addColumn(Column.span1()
-                                                               .appendChild(Button.createPrimary("Person: 1")
-                                                                                  .style()
-                                                                                  .setMarginRight("20px")
-                                                                                  .get()
-                                                                                  .addClickListener(e -> getController().doCallPerson1())))
-                                              .addColumn(Column.span11()
-                                                               .appendChild(Button.createPrimary("Save")
-                                                                                  .style()
-                                                                                  .setMarginRight("20px")
-                                                                                  .get()
-                                                                                  .addClickListener(e -> getController().doUpdate()))
-                                                               .appendChild(Button.create("Reset")
-                                                                                  .addClickListener(e -> getController().doRevert())))
-                                              .style()
-                                              .setTextAlign("right")
-                                              .setMarginTop("20px"))
-                              .asElement());
+    HtmlContentBuilder<HTMLDivElement> divElemet = Elements.div();
+    divElemet.add(Elements.div()
+                          .id("splitterPerson"));
+    divElemet.add(Elements.div()
+                          .id("splitterAddress"));
+    divElemet.add(Card.create()
+                      .appendChild(Row.create()
+                                      .addColumn(Column.span1()
+                                                       .appendChild(Button.createPrimary("Person: 1")
+                                                                          .style()
+                                                                          .setMarginRight("20px")
+                                                                          .get()
+                                                                          .addClickListener(e -> getController().doCallPerson1())))
+                                      .addColumn(Column.span11()
+                                                       .appendChild(Button.createPrimary("Save")
+                                                                          .style()
+                                                                          .setMarginRight("20px")
+                                                                          .get()
+                                                                          .addClickListener(e -> getController().doUpdate()))
+                                                       .appendChild(Button.create("Reset")
+                                                                          .addClickListener(e -> getController().doRevert())))
+                                      .style()
+                                      .setTextAlign("right")
+                                      .setMarginTop("20px")));
 
     initElement(divElemet);
   }
+
 }
