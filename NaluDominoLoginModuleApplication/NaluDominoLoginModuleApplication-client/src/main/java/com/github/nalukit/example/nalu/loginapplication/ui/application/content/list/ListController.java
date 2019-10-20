@@ -53,17 +53,17 @@ public class ListController
     this.component.setData(result);
     if (result.size() == 0) {
       this.eventBus.fireEvent(NaluApplicationEvent.create()
-                                                  .event("StatusEvent")
+                                                  .event("StatusChangeEvent")
                                                   .data("message",
                                                         "No person found"));
     } else if (result.size() == 1) {
       this.eventBus.fireEvent(NaluApplicationEvent.create()
-                                                  .event("StatusEvent")
+                                                  .event("StatusChangeEvent")
                                                   .data("message",
                                                         "Found one person"));
     } else {
       this.eventBus.fireEvent(NaluApplicationEvent.create()
-                                                  .event("StatusEvent")
+                                                  .event("StatusChangeEvent")
                                                   .data("message",
                                                         "Found " + Integer.toString(result.size()) + " persons"));
     }

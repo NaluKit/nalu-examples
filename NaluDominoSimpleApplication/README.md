@@ -1,5 +1,7 @@
 # Nalu example using Domino-UI
-this is a simple example that has three screens using [Domino-UI](https://github.com/DominoKit/domino-ui)
+This is a simple example that has three screens using [Domino-UI](https://github.com/DominoKit/domino-ui).
+
+This example demonstrate a conditional composite. In case you select 'Homer Simpsons', you will see an additional composite.
 
 ## Using
 To run the examples:
@@ -9,7 +11,7 @@ To run the examples:
 * run `mvn clean install` & `mvn gwt:devmode`
 
 * copy the link and paste the link into the browser url
-* 
+
 ## Note
 This example does not have a server implementation. It uses a mock server on the client side.
 

@@ -38,7 +38,7 @@ public class LoginController
   public void start() {
     GWT.debugger();
     this.eventBus.fireEvent(NaluApplicationEvent.create()
-                                                .event("StatusEvent")
+                                                .event("StatusChangeEvent")
                                                 .data("message",
                                            "Please enter your credentials!"));
   }

@@ -33,7 +33,7 @@ public class ApplicationHandler02
   public void bind() {
     this.eventBus.addHandler(NaluApplicationEvent.TYPE,
                              e -> {
-                               if ("StatusEvent".equals(e.getEvent())) {
+                               if ("StatusChangeEvent".equals(e.getEvent())) {
                                  // Stupid idea! It should only show, that the event was catched by the handler!
                                  DomGlobal.window.console.log("new Status:" + e.get("message"));
                                }

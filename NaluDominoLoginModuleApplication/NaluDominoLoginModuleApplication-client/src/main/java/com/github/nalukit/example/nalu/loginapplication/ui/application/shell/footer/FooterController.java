@@ -46,7 +46,7 @@ public class FooterController
     // will be removed!
     this.handlerRegistrations.add(this.eventBus.addHandler(NaluApplicationEvent.TYPE,
                                                            e -> {
-                                                             if ("StatusEvent".equals(e.getEvent())) {
+                                                             if ("StatusChangeEvent".equals(e.getEvent())) {
                                                                if (Objects.isNull(this.context.getUser())) {
                                                                  component.setStatus((String) e.get("message"));
                                                                } else {

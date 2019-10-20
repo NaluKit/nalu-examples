@@ -75,7 +75,7 @@ public class DetailController
       super.<PersonComposite>getComposite("personComposite").edit(this.person);
       super.<AddressComposite>getComposite("AddressComposite").edit(this.person);
       this.eventBus.fireEvent(NaluApplicationEvent.create()
-                                                  .event("StatusEvent")
+                                                  .event("StatusChangeEvent")
                                                   .data("message",
                                              "Edit person data with id: " + this.person.getId()));
 
@@ -88,7 +88,7 @@ public class DetailController
   @Override
   public void stop() {
     this.eventBus.fireEvent(NaluApplicationEvent.create()
-                                     .event("StatusEvent")
+                                     .event("StatusChangeEvent")
                                      .data("message",
                                            ""));
   }

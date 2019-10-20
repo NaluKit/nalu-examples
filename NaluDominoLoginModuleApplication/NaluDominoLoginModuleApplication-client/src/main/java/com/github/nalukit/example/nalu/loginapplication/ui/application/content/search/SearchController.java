@@ -38,7 +38,7 @@ public class SearchController
   @Override
   public void start() {
     this.eventBus.fireEvent(NaluApplicationEvent.create()
-                                                .event("StatusEvent")
+                                                .event("StatusChangeEvent")
                                                 .data("message",
                                            "Please enter data"));
 

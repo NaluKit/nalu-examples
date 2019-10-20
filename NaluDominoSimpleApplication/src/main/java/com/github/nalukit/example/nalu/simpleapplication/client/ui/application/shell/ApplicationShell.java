@@ -34,7 +34,14 @@ import org.dominokit.domino.ui.style.ColorScheme;
 public class ApplicationShell
     extends AbstractShell<NaluSimpleApplicationContext> {
 
+  private Layout layout;
+
   public ApplicationShell() {
+  }
+
+  @Override
+  public void detachShell() {
+    layout.remove();
   }
 
   /**
@@ -45,7 +52,7 @@ public class ApplicationShell
    */
   @Override
   public void attachShell() {
-    Layout layout = Layout.create("Nalu - Simple Application using Domino-UI")
+    layout = Layout.create("Nalu - Simple Application using Domino-UI")
                           .show(ColorScheme.INDIGO);
 
     layout.showFooter()

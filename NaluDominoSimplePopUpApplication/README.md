@@ -1,5 +1,7 @@
 # Nalu PopUpController example using Domino-UI
-this is a simple example that has three screens using [Domino-UI](https://github.com/DominoKit/domino-ui)
+this is a simple example that has three screens using [Domino-UI](https://github.com/DominoKit/domino-ui).
+
+The detail screen is displayed using a popup.
 
 ## Using
 To run the examples:

@@ -35,13 +35,11 @@ import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
 // use this annotation definition, to run the example using a hash token
 //@Application(loader = NaluSimpleApplicationLoader.class,
 //             startRoute = "/application/person/search",
-//             context = NaluSimpleApplicationContext.class,
-//             routeError = "/application/person/search")
+//             context = NaluSimpleApplicationContext.class)
 // use this annotation definition, to run the example using a hashless url
 @Application(loader = NaluSimpleApplicationLoader.class,
              startRoute = "/application/person/search",
              context = NaluSimpleApplicationContext.class,
-             routeError = "/application/person/search",
              useHash = false,
              useColonForParametersInUrl = true)
 @Filters(filterClasses = BartSimpsonFilter.class)
