@@ -69,6 +69,11 @@ public class ApplicationShell
     loader.continueLoading();
   }
 
+  @Override
+  public void detachShell() {
+    widget.removeFromParent();
+  }
+
   @Selector("content")
   public void setContent(Widget widget) {
     if (this.content.getWidgetCount() > 0) {

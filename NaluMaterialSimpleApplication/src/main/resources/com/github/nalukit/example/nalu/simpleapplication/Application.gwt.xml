@@ -30,6 +30,8 @@
   <inherits name='com.github.nalukit.nalu.Nalu'/>
   <inherits name='com.github.nalukit.nalu.plugin.gwt.NaluPluginGWT'/>
 
+  <inherits name='com.google.web.bindery.autobean.AutoBean' />
+
   <inherits name="gwt.material.design.GwtMaterialWithJQuery"/>
   <inherits name="gwt.material.design.GwtMaterialTable"/>
   <inherits name="gwt.material.design.addins.GwtMaterialAddins"/>
