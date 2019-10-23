@@ -17,6 +17,7 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.navigation;
 
+import com.github.nalukit.example.nalu.simpleapplication.client.event.SelectEvent.Select;
 import com.github.nalukit.nalu.client.component.AbstractComponent;
 import elemental2.dom.HTMLElement;
 import org.dominokit.domino.ui.icons.Icons;
@@ -31,6 +32,10 @@ public class NavigationComponent
 
   private TreeItem listItem;
 
+  private TreeItem composite01Item;
+
+  private TreeItem composite02Item;
+
   public NavigationComponent() {
   }
 
@@ -44,26 +49,54 @@ public class NavigationComponent
                                     Icons.ALL.list())
                             .addClickListener(e -> getController().doShowList());
 
+    this.composite01Item = TreeItem.create("Composite Conditional Test 01",
+                                           Icons.ALL.view_agenda())
+                                   .addClickListener(e -> getController().doShowComposites01Test());
+
+    this.composite02Item = TreeItem.create("Composite Conditional Test 02",
+                                           Icons.ALL.view_list())
+                                   .addClickListener(e -> getController().doShowComposites02Test());
+
     initElement(Tree.create("Navigation")
                     .appendChild(this.searchItem)
                     .appendChild(this.listItem)
+                    .appendChild(this.composite01Item)
+                    .appendChild(this.composite02Item)
                     .asElement());
   }
 
   @Override
-  public void select(String toString) {
-    switch (toString) {
-      case "SEARCH":
+  public void select(Select selected) {
+    switch (selected) {
+      case SEARCH:
         this.searchItem.activate();
         this.listItem.deactivate();
+        this.composite01Item.deactivate();
+        this.composite02Item.deactivate();
         break;
-      case "LIST":
+      case LIST:
         this.listItem.activate();
         this.searchItem.deactivate();
+        this.composite01Item.deactivate();
+        this.composite02Item.deactivate();
+        break;
+      case COMPOSITE01:
+        this.listItem.deactivate();
+        this.searchItem.deactivate();
+        this.composite01Item.activate();
+        this.composite02Item.deactivate();
+        break;
+      case COMPOSITE02:
+        this.listItem.deactivate();
+        this.searchItem.deactivate();
+        this.composite01Item.deactivate();
+        this.composite02Item.activate();
         break;
       default:
         this.listItem.deactivate();
         this.searchItem.deactivate();
+        this.composite01Item.deactivate();
+        this.composite02Item.deactivate();
         break;
     }
   }

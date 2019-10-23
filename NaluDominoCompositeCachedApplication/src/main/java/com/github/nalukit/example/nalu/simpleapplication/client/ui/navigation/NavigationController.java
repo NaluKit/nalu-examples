@@ -37,8 +37,7 @@ public class NavigationController
   @Override
   public void start() {
     this.eventBus.addHandler(SelectEvent.TYPE,
-                             e -> component.select(e.getSelect()
-                                                    .toString()));
+                             e -> component.select(e.getSelect()));
   }
 
   @Override
@@ -51,6 +50,18 @@ public class NavigationController
     this.router.route("/application/person/list",
                       this.context.getSearchName(),
                       this.context.getSearchCity());
+  }
+
+  @Override
+  public void doShowComposites01Test() {
+    this.router.route("/application/test/composite01/conditional",
+                      String.valueOf(System.currentTimeMillis()));
+  }
+
+  @Override
+  public void doShowComposites02Test() {
+    this.router.route("/application/test/composite02/conditional",
+                      String.valueOf(System.currentTimeMillis()));
   }
 
 }

@@ -15,27 +15,17 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.navigation;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.compositetest.composite.composite02;
 
-import com.github.nalukit.example.nalu.simpleapplication.client.event.SelectEvent.Select;
-import com.github.nalukit.nalu.client.component.IsComponent;
+import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.compositetest.composite.composite02.IComposite02Component.Controller;
+import com.github.nalukit.nalu.client.component.IsCompositeComponent;
 import elemental2.dom.HTMLElement;
 
-public interface INavigationComponent
-    extends IsComponent<INavigationComponent.Controller, HTMLElement> {
-
-  void select(Select selected);
+public interface IComposite02Component
+    extends IsCompositeComponent<Controller, HTMLElement> {
 
   interface Controller
-      extends IsComponent.Controller {
-
-    void doShowSearch();
-
-    void doShowList();
-
-    void doShowComposites01Test();
-
-    void doShowComposites02Test();
+      extends IsCompositeComponent.Controller {
 
   }
 

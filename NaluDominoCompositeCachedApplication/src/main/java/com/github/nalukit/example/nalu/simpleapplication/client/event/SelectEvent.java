@@ -32,7 +32,9 @@ public class SelectEvent
   public enum Select {
     SEARCH,
     LIST,
-    DETAIL
+    DETAIL,
+    COMPOSITE01,
+    COMPOSITE02;
   }
 
 
