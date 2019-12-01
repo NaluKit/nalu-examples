@@ -32,9 +32,9 @@
     <gwtVersion>2.8.2</gwtVersion>
 
     <!-- nalu version -->
-    <nalu.version>2.0.0-rc-4</nalu.version>
+    <nalu.version>2.0.0</nalu.version>
 
-    <elemento.version>0.9.0</elemento.version>
+    <elemento.version>0.9.6</elemento.version>
 
     <!-- GWT needs at least java 1.6 -->
     <maven.compiler.source>1.8</maven.compiler.source>

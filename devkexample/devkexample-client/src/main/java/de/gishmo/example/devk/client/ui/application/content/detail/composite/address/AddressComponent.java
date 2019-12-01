@@ -20,6 +20,7 @@ import com.github.nalukit.nalu.client.component.AbstractCompositeComponent;
 import de.gishmo.example.devk.client.ui.application.content.detail.composite.address.IAddressComponent.Controller;
 import de.gishmo.example.devk.shared.model.dto.Person;
 import elemental2.dom.HTMLDivElement;
+import elemental2.dom.HTMLElement;
 import org.dominokit.domino.ui.cards.Card;
 import org.dominokit.domino.ui.forms.TextBox;
 import org.dominokit.domino.ui.grid.Column;
@@ -29,7 +30,7 @@ import org.jboss.gwt.elemento.core.IsElement;
 import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;
 
 public class AddressComponent
-    extends AbstractCompositeComponent<Controller, IsElement>
+    extends AbstractCompositeComponent<Controller, HTMLElement>
     implements IAddressComponent {
 
   private TextBox detailStreet;
@@ -60,7 +61,7 @@ public class AddressComponent
                                       .addColumn(Column.span12()
                                                        .appendChild(this.detailCity))));
 
-    initElement(divElemet);
+    initElement(divElemet.asElement());
   }
 
   @Override

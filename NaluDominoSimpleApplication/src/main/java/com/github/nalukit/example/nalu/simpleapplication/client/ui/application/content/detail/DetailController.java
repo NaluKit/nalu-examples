@@ -88,7 +88,6 @@ public class DetailController
       DomGlobal.window.alert("Panic!");
     }
     String currentRoute = this.router.getCurrentRoute();
-    GWT.debugger();
   }
 
   @Override

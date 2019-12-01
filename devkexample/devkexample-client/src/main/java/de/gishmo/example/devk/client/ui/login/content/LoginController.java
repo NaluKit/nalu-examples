@@ -4,7 +4,7 @@ import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import de.gishmo.example.devk.client.ApplicationContext;
 import de.gishmo.example.devk.client.Routes;
-import org.jboss.gwt.elemento.core.IsElement;
+import elemental2.dom.HTMLElement;
 
 /**
  * Copyright (C) 2018 - 2019 Frank Hossfeld <frank.hossfeld@googlemail.com>
@@ -26,7 +26,7 @@ import org.jboss.gwt.elemento.core.IsElement;
             componentInterface = ILoginComponent.class,
             component = LoginComponent.class)
 public class LoginController
-    extends AbstractComponentController<ApplicationContext, ILoginComponent, IsElement>
+    extends AbstractComponentController<ApplicationContext, ILoginComponent, HTMLElement>
     implements ILoginComponent.Controller {
 
   public LoginController() {

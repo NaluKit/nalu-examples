@@ -17,10 +17,11 @@
 package de.gishmo.example.devk.client.ui.application.shell.footer;
 
 import com.github.nalukit.nalu.client.component.IsComponent;
+import elemental2.dom.HTMLElement;
 import org.jboss.gwt.elemento.core.IsElement;
 
 public interface IFooterComponent
-    extends IsComponent<IFooterComponent.Controller, IsElement> {
+    extends IsComponent<IFooterComponent.Controller, HTMLElement> {
 
   void setStatus(String status);
 

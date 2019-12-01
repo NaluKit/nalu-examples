@@ -19,12 +19,11 @@ package de.gishmo.example.devk.client.ui.application.content.list;
 import com.github.nalukit.nalu.client.component.IsComponent;
 import de.gishmo.example.devk.shared.model.dto.Person;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.IsElement;
 
 import java.util.List;
 
 public interface IListComponent
-    extends IsComponent<IListComponent.Controller, IsElement> {
+    extends IsComponent<IListComponent.Controller, HTMLElement> {
 
   void resetTable();
 

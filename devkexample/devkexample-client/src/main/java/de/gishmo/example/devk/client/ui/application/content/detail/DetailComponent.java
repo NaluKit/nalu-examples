@@ -19,16 +19,16 @@ package de.gishmo.example.devk.client.ui.application.content.detail;
 
 import com.github.nalukit.nalu.client.component.AbstractComponent;
 import elemental2.dom.HTMLDivElement;
+import elemental2.dom.HTMLElement;
 import org.dominokit.domino.ui.button.Button;
 import org.dominokit.domino.ui.cards.Card;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
 import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.IsElement;
 import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;
 
 public class DetailComponent
-    extends AbstractComponent<IDetailComponent.Controller, IsElement>
+    extends AbstractComponent<IDetailComponent.Controller, HTMLElement>
     implements IDetailComponent {
 
   public DetailComponent() {
@@ -61,7 +61,7 @@ public class DetailComponent
                                       .setTextAlign("right")
                                       .setMarginTop("20px")));
 
-    initElement(divElemet);
+    initElement(divElemet.asElement());
   }
 
 }

@@ -17,13 +17,13 @@
 package de.gishmo.example.devk.client.ui.application.shell.navigation;
 
 import com.github.nalukit.nalu.client.component.AbstractComponent;
+import elemental2.dom.HTMLElement;
 import org.dominokit.domino.ui.icons.Icons;
 import org.dominokit.domino.ui.tree.Tree;
 import org.dominokit.domino.ui.tree.TreeItem;
-import org.jboss.gwt.elemento.core.IsElement;
 
 public class NavigationComponent
-    extends AbstractComponent<INavigationComponent.Controller, IsElement>
+    extends AbstractComponent<INavigationComponent.Controller, HTMLElement>
     implements INavigationComponent {
 
   private TreeItem searchItem;
@@ -45,7 +45,8 @@ public class NavigationComponent
 
     initElement(Tree.create("Navigation")
                     .appendChild(this.searchItem)
-                    .appendChild(this.listItem));
+                    .appendChild(this.listItem)
+                    .asElement());
   }
 
   @Override

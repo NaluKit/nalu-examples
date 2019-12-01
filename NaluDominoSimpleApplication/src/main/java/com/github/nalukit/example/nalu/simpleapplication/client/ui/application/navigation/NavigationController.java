@@ -41,7 +41,6 @@ public class NavigationController
                              e -> component.select(e.getSelect()
                                                     .toString()));
     String currentRoute = this.router.getCurrentRoute();
-    GWT.debugger();
   }
 
   @Override

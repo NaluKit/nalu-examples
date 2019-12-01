@@ -20,6 +20,7 @@ import com.github.nalukit.nalu.client.component.AbstractCompositeComponent;
 import de.gishmo.example.devk.client.ui.application.content.detail.composite.person.IPersonComponent.Controller;
 import de.gishmo.example.devk.shared.model.dto.Person;
 import elemental2.dom.HTMLDivElement;
+import elemental2.dom.HTMLElement;
 import org.dominokit.domino.ui.cards.Card;
 import org.dominokit.domino.ui.forms.TextBox;
 import org.dominokit.domino.ui.grid.Column;
@@ -29,7 +30,7 @@ import org.jboss.gwt.elemento.core.IsElement;
 import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;
 
 public class PersonComponent
-    extends AbstractCompositeComponent<Controller, IsElement>
+    extends AbstractCompositeComponent<Controller, HTMLElement>
     implements IPersonComponent {
 
   private TextBox detailFirstName;
@@ -47,14 +48,14 @@ public class PersonComponent
     HtmlContentBuilder<HTMLDivElement> divElemet = Elements.div();
 
     divElemet.add(Card.create("Details - Person")
-                              .appendChild(Row.create()
-                                              .addColumn(Column.span12()
-                                                               .appendChild(this.detailFirstName)))
-                              .appendChild(Row.create()
-                                              .addColumn(Column.span12()
-                                                               .appendChild(this.detailName))));
+                      .appendChild(Row.create()
+                                      .addColumn(Column.span12()
+                                                       .appendChild(this.detailFirstName)))
+                      .appendChild(Row.create()
+                                      .addColumn(Column.span12()
+                                                       .appendChild(this.detailName))));
 
-    initElement(divElemet);
+    initElement(divElemet.asElement());
   }
 
   @Override

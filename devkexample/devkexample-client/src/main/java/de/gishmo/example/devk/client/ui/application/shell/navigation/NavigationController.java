@@ -21,6 +21,7 @@ import com.github.nalukit.nalu.client.component.annotation.Controller;
 import de.gishmo.example.devk.client.ApplicationContext;
 import de.gishmo.example.devk.client.Routes;
 import de.gishmo.example.devk.client.event.SelectEvent;
+import elemental2.dom.HTMLElement;
 import org.jboss.gwt.elemento.core.IsElement;
 
 @Controller(route = "/applicationShell",
@@ -28,7 +29,7 @@ import org.jboss.gwt.elemento.core.IsElement;
             componentInterface = INavigationComponent.class,
             component = NavigationComponent.class)
 public class NavigationController
-    extends AbstractComponentController<ApplicationContext, INavigationComponent, IsElement>
+    extends AbstractComponentController<ApplicationContext, INavigationComponent, HTMLElement>
     implements INavigationComponent.Controller {
 
   public NavigationController() {

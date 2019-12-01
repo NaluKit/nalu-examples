@@ -36,7 +36,6 @@ public class LoginController
 
   @Override
   public void start() {
-    GWT.debugger();
     this.eventBus.fireEvent(NaluApplicationEvent.create()
                                                 .event("StatusChangeEvent")
                                                 .data("message",
@@ -46,7 +45,6 @@ public class LoginController
   @Override
   public void doLogin(String userId,
                       String password) {
-    GWT.debugger();
     this.context.setLoggedIn(true);
     this.context.setUser(userId);
     // we are always happy with the credential ....

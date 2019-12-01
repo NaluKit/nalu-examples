@@ -20,7 +20,8 @@ import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import de.gishmo.example.devk.client.ApplicationContext;
 import de.gishmo.example.devk.client.event.StatusChangeEvent;
-import elemental2.dom.IsElement;
+import elemental2.dom.HTMLElement;
+import org.jboss.gwt.elemento.core.IsElement;
 
 /**
  * this is the presenter of the shellCreator. The shellCreator divides the browser in
@@ -31,7 +32,7 @@ import elemental2.dom.IsElement;
             componentInterface = IFooterComponent.class,
             component = FooterComponent.class)
 public class FooterController
-    extends AbstractComponentController<ApplicationContext, IFooterComponent, IsElement>
+    extends AbstractComponentController<ApplicationContext, IFooterComponent, HTMLElement>
     implements IFooterComponent.Controller {
 
   public FooterController() {

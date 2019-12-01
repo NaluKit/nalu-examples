@@ -21,8 +21,6 @@ import com.github.nalukit.nalu.client.handler.AbstractHandler;
 import com.github.nalukit.nalu.client.handler.annotation.Handler;
 import de.gishmo.example.devk.client.ApplicationContext;
 import de.gishmo.example.devk.client.Routes;
-import de.gishmo.example.devk.client.event.StatusChangeEvent;
-import elemental2.dom.DomGlobal;
 
 @Handler
 public class ErrorHandler

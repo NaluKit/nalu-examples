@@ -1,4 +1,4 @@
-package de.gishmo.example.devk.client.service;
+package de.gishmo.example.devk.shared.model.service;
 
 import de.gishmo.example.devk.shared.model.dto.Person;
 import de.gishmo.example.devk.shared.model.dto.PersonSearch;

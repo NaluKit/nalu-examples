@@ -62,8 +62,6 @@ public class ListController
     }
 
     this.eventBus.fireEvent(new SelectEvent(SelectEvent.Select.LIST));
-    String currentRoute = this.router.getCurrentRoute();
-    GWT.debugger();
   }
 
   @Override

@@ -1,7 +1,7 @@
 package de.gishmo.example.devk.client.ui.error.content;
 
 import com.github.nalukit.nalu.client.component.IsComponent;
-import org.jboss.gwt.elemento.core.IsElement;
+import elemental2.dom.HTMLElement;
 
 /**
  * Copyright (C) 2018 - 2019 Frank Hossfeld <frank.hossfeld@googlemail.com>
@@ -19,7 +19,7 @@ import org.jboss.gwt.elemento.core.IsElement;
  * limitations under the License.
  */
 public interface IErrorComponent
-    extends IsComponent<IErrorComponent.Controller, IsElement> {
+    extends IsComponent<IErrorComponent.Controller, HTMLElement> {
 
   void setErrorMessage(String errorMessage);
 

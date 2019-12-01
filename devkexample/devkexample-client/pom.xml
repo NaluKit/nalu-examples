@@ -35,7 +35,7 @@
 
   <properties>
     <!-- nalu version -->
-    <nalu.version>2.0.0-rc-4</nalu.version>
+    <nalu.version>2.0.0</nalu.version>
     <!-- DominoUI version -->
     <domino.version>1.0-SNAPSHOT</domino.version>
   </properties>
@@ -72,7 +72,7 @@
     </dependency>
     <dependency>
       <groupId>com.github.nalukit</groupId>
-      <artifactId>nalu-plugin-elemento</artifactId>
+      <artifactId>nalu-plugin-elemental2</artifactId>
       <version>${nalu.version}</version>
     </dependency>
     <dependency>

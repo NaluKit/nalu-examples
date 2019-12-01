@@ -23,7 +23,6 @@ import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
 import org.dominokit.domino.ui.style.Styles;
 import org.dominokit.domino.ui.utils.DominoElement;
-import org.jboss.gwt.elemento.core.IsElement;
 
 import static org.jboss.gwt.elemento.core.Elements.h;
 
@@ -32,7 +31,7 @@ import static org.jboss.gwt.elemento.core.Elements.h;
  * severeal areas.
  */
 public class FooterComponent
-    extends AbstractComponent<IFooterComponent.Controller, IsElement>
+    extends AbstractComponent<IFooterComponent.Controller, HTMLElement>
     implements IFooterComponent {
 
   private DominoElement<HTMLHeadingElement> messageInfo;
@@ -59,11 +58,13 @@ public class FooterComponent
                                                           Styles.align_center)
                                                      .textContent("Nalu example application using Domnio-UI")))
                    .addColumn(Column.span5()
-                                    .appendChild(this.messageInfo)));
+                                    .appendChild(this.messageInfo))
+                   .asElement());
   }
 
   @Override
   public void setStatus(String status) {
     this.messageInfo.setTextContent(status);
   }
+
 }

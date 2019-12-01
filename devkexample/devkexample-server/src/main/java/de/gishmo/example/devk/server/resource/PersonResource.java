@@ -10,7 +10,11 @@ import de.gishmo.example.devk.shared.model.transport.response.PersonGetResponse;
 import de.gishmo.example.devk.shared.model.transport.response.PersonSearchResponse;
 import de.gishmo.example.devk.shared.model.transport.response.Status;
 
-import javax.ws.rs.*;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 
 @Path("/person")
 public class PersonResource {

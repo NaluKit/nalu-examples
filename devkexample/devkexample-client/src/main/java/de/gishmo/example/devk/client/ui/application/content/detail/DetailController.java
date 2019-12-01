@@ -27,12 +27,12 @@ import de.gishmo.example.devk.client.ApplicationContext;
 import de.gishmo.example.devk.client.Routes;
 import de.gishmo.example.devk.client.event.SelectEvent;
 import de.gishmo.example.devk.client.event.StatusChangeEvent;
-import de.gishmo.example.devk.client.service.PersonServiceFactory;
 import de.gishmo.example.devk.client.ui.application.content.detail.composite.address.AddressComposite;
 import de.gishmo.example.devk.client.ui.application.content.detail.composite.person.PersonComposite;
 import de.gishmo.example.devk.shared.model.dto.Person;
+import de.gishmo.example.devk.shared.model.service.PersonServiceFactory;
 import elemental2.dom.DomGlobal;
-import org.jboss.gwt.elemento.core.IsElement;
+import elemental2.dom.HTMLElement;
 
 @Controller(route = Routes.ROUTE_DETAIL,
             selector = "content",
@@ -45,7 +45,7 @@ import org.jboss.gwt.elemento.core.IsElement;
                          compositeController = AddressComposite.class,
                          selector = "splitterAddress") })
 public class DetailController
-    extends AbstractComponentController<ApplicationContext, IDetailComponent, IsElement>
+    extends AbstractComponentController<ApplicationContext, IDetailComponent, HTMLElement>
     implements IDetailComponent.Controller,
                IsComponentCreator<IDetailComponent> {
 

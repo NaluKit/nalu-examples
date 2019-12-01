@@ -23,18 +23,18 @@ import de.gishmo.example.devk.client.ApplicationContext;
 import de.gishmo.example.devk.client.Routes;
 import de.gishmo.example.devk.client.event.SelectEvent;
 import de.gishmo.example.devk.client.event.StatusChangeEvent;
-import de.gishmo.example.devk.client.service.PersonServiceFactory;
 import de.gishmo.example.devk.shared.model.dto.Person;
 import de.gishmo.example.devk.shared.model.dto.PersonSearch;
+import de.gishmo.example.devk.shared.model.service.PersonServiceFactory;
 import elemental2.dom.DomGlobal;
-import org.jboss.gwt.elemento.core.IsElement;
+import elemental2.dom.HTMLElement;
 
 @Controller(route = Routes.ROUTE_LIST,
             selector = "content",
             componentInterface = IListComponent.class,
             component = ListComponent.class)
 public class ListController
-    extends AbstractComponentController<ApplicationContext, IListComponent, IsElement>
+    extends AbstractComponentController<ApplicationContext, IListComponent, HTMLElement>
     implements IListComponent.Controller {
 
   private String name;

@@ -1,11 +1,11 @@
 package de.gishmo.example.devk.client.ui.error.content;
 
 import com.github.nalukit.nalu.client.component.AbstractComponent;
+import elemental2.dom.HTMLElement;
 import elemental2.dom.Text;
 import org.dominokit.domino.ui.cards.Card;
 import org.dominokit.domino.ui.icons.Icons;
 import org.dominokit.domino.ui.style.Color;
-import org.jboss.gwt.elemento.core.IsElement;
 
 /**
  * Copyright (C) 2018 - 2019 Frank Hossfeld <frank.hossfeld@googlemail.com>
@@ -23,7 +23,7 @@ import org.jboss.gwt.elemento.core.IsElement;
  * limitations under the License.
  */
 public class ErrorComponent
-    extends AbstractComponent<IErrorComponent.Controller, IsElement>
+    extends AbstractComponent<IErrorComponent.Controller, HTMLElement>
     implements IErrorComponent {
 
   private Text errorText;
@@ -39,7 +39,8 @@ public class ErrorComponent
                     .setHeaderBackground(Color.RED_DARKEN_2)
                     .addHeaderAction(Icons.ALL.home(),
                                      e -> getController().doRouteHome())
-                    .appendChild(this.errorText));
+                    .appendChild(this.errorText)
+                    .asElement());
   }
 
   @Override

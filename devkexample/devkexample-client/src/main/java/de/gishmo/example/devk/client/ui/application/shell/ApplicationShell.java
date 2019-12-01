@@ -2,7 +2,6 @@ package de.gishmo.example.devk.client.ui.application.shell;
 
 import com.github.nalukit.nalu.client.component.AbstractShell;
 import com.github.nalukit.nalu.client.component.annotation.Shell;
-import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
 import de.gishmo.example.devk.client.ApplicationContext;
 import elemental2.dom.DomGlobal;
 import org.dominokit.domino.ui.grid.Column;
