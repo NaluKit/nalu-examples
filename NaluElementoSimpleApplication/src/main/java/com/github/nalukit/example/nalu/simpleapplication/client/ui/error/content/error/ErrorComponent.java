@@ -47,19 +47,19 @@ public class ErrorComponent
   public void render() {
     this.errorType = Elements.div()
                              .css("headline")
-                             .get();
+                             .element();
     this.errorRoute = Elements.div()
                               .css("text")
-                              .get();
+                              .element();
     this.errorMessage = Elements.div()
                                 .css("text")
-                                .get();
+                                .element();
 
     this.okButton = Elements.button()
                             .add("OK")
                             .css("button")
                             .on(click, e -> getController().doClickOkButton())
-                            .get();
+                            .element();
 
     initElement(div().add(div().style("width: 100%; text-align: center; padding: 24px;")
                                .add(div().add(this.errorType))
@@ -74,7 +74,7 @@ public class ErrorComponent
                                .add(Elements.div()
                                             .add(this.errorRoute))
                                .add(Elements.div()
-                                            .add(this.okButton))).get());
+                                            .add(this.okButton))).element());
   }
 
   @Override

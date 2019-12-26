@@ -52,7 +52,7 @@ public class ErrorShell
     this.shell = div().css("shell")
                       .add(div().attr("id",
                                       "content"))
-                      .get();
+                      .element();
 
     document.body.appendChild(this.shell);
   }

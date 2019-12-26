@@ -42,7 +42,7 @@ public class PersonService {
 
   private PersonService() {
     if (persons == null) {
-      persons = new HashMap<Long, Person>();
+      persons = new HashMap<>();
       initList();
     }
   }
@@ -59,27 +59,27 @@ public class PersonService {
                                     "Evergreen Terrace",
                                     "7 42",
                                     "Springfield");
-    persons.put(new Long(1),
+    persons.put(1L,
                 new Person(1,
                            "Simpsons",
                            "Homer",
                            address01));
-    persons.put(new Long(2),
+    persons.put(2L,
                 new Person(2,
                            "Simpsons",
                            "Marge",
                            address01));
-    persons.put(new Long(3),
+    persons.put(3L,
                 new Person(3,
                            "Simpsons",
                            "Bart",
                            address01));
-    persons.put(new Long(4),
+    persons.put(4L,
                 new Person(4,
                            "Simpsons",
                            "Maggie",
                            address01));
-    persons.put(new Long(5),
+    persons.put(5L,
                 new Person(5,
                            "Simpsons",
                            "Lisa",
@@ -88,22 +88,22 @@ public class PersonService {
                                     "Blumenweg Nr. 13",
                                     "",
                                     "Entenhausen");
-    persons.put(new Long(6),
+    persons.put(6L,
                 new Person(6,
                            "Duck",
                            "Donald",
                            address02));
-    persons.put(new Long(7),
+    persons.put(7L,
                 new Person(7,
                            "Duck",
                            "Trick",
                            address02));
-    persons.put(new Long(8),
+    persons.put(8L,
                 new Person(8,
                            "Duck",
                            "Tick",
                            address02));
-    persons.put(new Long(9),
+    persons.put(9L,
                 new Person(9,
                            "Duck",
                            "Tack",
@@ -112,7 +112,7 @@ public class PersonService {
                                     "Am Goldberg Nr. 1",
                                     "",
                                     "Entenhausen");
-    persons.put(new Long(10),
+    persons.put(10L,
                 new Person(10,
                            "Duck",
                            "Dagobert",
@@ -121,15 +121,15 @@ public class PersonService {
 
   public Person get(long id)
       throws PersonNotFoundException {
-    if (persons.containsKey(new Long(id))) {
+    if (persons.containsKey(id)) {
       return persons.get(id);
     } else {
-      throw new PersonNotFoundException("no data found for ID >>" + Long.toString(id) + "<<");
+      throw new PersonNotFoundException("no data found for ID >>" + id + "<<");
     }
   }
 
   public List<Person> getAll() {
-    List<Person> list = new ArrayList<Person>();
+    List<Person> list = new ArrayList<>();
     Iterator<Long> iterator = persons.keySet()
                                      .iterator();
     while (iterator.hasNext()) {
@@ -139,7 +139,7 @@ public class PersonService {
   }
 
   public List<Person> get(PersonSearch search) {
-    List<Person> list = new ArrayList<Person>();
+    List<Person> list = new ArrayList<>();
     if ((search.getName() != null &&
          search.getName()
                .length() != 0) ||
@@ -205,16 +205,16 @@ public class PersonService {
     }
     maxKey++;
     person.setId(maxKey);
-    persons.put(new Long(maxKey),
+    persons.put(maxKey,
                 person);
   }
 
   public void update(Person person)
       throws PersonException {
-    Person value = persons.get(new Long(person.getId()));
+    Person value = persons.get(person.getId());
     if (value != null) {
-      persons.remove(new Long(person.getId()));
-      persons.put(new Long(person.getId()),
+      persons.remove(person.getId());
+      persons.put(person.getId(),
                   person);
     }
   }

@@ -41,7 +41,7 @@ public class NavigationComponent
                                   .textContent("List")
                                   .on(click,
                                       event -> showList()))
-                     .get());
+                     .element());
   }
 
   private void showSearch() {
