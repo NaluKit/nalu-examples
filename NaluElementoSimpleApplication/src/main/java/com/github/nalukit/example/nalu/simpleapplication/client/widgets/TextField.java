@@ -55,19 +55,19 @@ public class TextField
                           "textFieldTwoRow")
                      .add(label = div().css("textFieldLabel",
                                             "visible")
-                                       .get())
+                                       .element())
                      .add(div().css("textFieldDivElement")
                                .add(textBox = input(InputType.text).css("textFieldTextBox")
                                                                    .on(focus,
                                                                        event -> textBox.classList.add("yellow"))
                                                                    .on(blur,
                                                                        event -> textBox.classList.remove("yellow"))
-                                                                   .get()))
-                     .get();
+                                                                   .element()))
+                     .element();
   }
 
   public String getLabel() {
-    return label.innerHTML.toString();
+    return label.innerHTML;
   }
 
   public void setLabel(String label) {

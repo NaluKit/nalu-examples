@@ -46,7 +46,7 @@ public class ListComponent
     initElement(this.container = div().add(div().style("width: 100%"))
                                       .add(div().css("headline")
                                                 .textContent("Search Results"))
-                                      .asElement());
+                                      .element());
   }
 
   public void setName(String name) {
@@ -85,7 +85,7 @@ public class ListComponent
                                               .textContent("Zip"))
                                      .add(th().css("resultTableHeader")
                                               .textContent("City")))
-                         .get();
+                         .element();
 
     for (Person person : result) {
       resultTable.appendChild(this.createTableDataRow(person));
@@ -105,7 +105,7 @@ public class ListComponent
                                            .getZip()))
                .add(td().textContent(person.getAddress()
                                            .getCity()))
-               .get();
+               .element();
   }
 
   private void update(Person object) {

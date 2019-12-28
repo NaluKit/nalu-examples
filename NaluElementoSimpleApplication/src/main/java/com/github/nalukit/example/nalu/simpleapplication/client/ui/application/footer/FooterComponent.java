@@ -45,7 +45,7 @@ public class FooterComponent
                                                         .textContent("GWT Basic training")))
                                   .add(div().css("shellFooterRight")
                                             .add(status = label().css("shellFooterStatus"))))
-                        .get());
+                        .element());
   }
 
   @Override

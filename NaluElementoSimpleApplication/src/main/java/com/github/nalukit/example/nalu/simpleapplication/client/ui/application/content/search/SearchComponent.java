@@ -56,7 +56,7 @@ public class SearchComponent
                                                             searchName.setText("");
                                                             searchCity.setText("");
                                                           }))))
-                     .get());
+                     .element());
   }
 
   @Override

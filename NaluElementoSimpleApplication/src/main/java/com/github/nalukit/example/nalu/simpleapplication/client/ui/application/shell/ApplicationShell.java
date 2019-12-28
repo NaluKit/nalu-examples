@@ -18,7 +18,6 @@
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.application.shell;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
-import com.github.nalukit.nalu.client.Nalu;
 import com.github.nalukit.nalu.client.component.AbstractShell;
 import com.github.nalukit.nalu.client.component.annotation.Shell;
 import elemental2.dom.CSSProperties;
@@ -76,7 +75,7 @@ public class ApplicationShell
                       .add(div().css("shellContent")
                                 .attr("id",
                                       "content"))
-                      .get();
+                      .element();
 
     return this.shell;
   }
@@ -85,14 +84,14 @@ public class ApplicationShell
     return header().css("shellHeader")
                    .attr("id",
                          "header")
-                   .get();
+                   .element();
   }
 
   private Element createSouth() {
     return footer().css("shellFooter")
                    .attr("id",
                          "footer")
-                   .get();
+                   .element();
   }
 
 }

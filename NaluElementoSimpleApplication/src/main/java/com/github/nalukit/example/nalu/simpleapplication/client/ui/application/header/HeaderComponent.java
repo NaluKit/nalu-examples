@@ -34,7 +34,7 @@ public class HeaderComponent
   public void render() {
     initElement(header().css("shellHeader")
                         .add(img("/media/images/Gwt-logo.png").css("shellHeaderImage"))
-                        .get());
+                        .element());
   }
 
 }

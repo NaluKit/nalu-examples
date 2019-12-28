@@ -19,7 +19,6 @@ package com.github.nalukit.example.nalu.simpleapplication.client.ui.error.conten
 
 import com.github.nalukit.nalu.client.component.IsComponent;
 import com.github.nalukit.nalu.client.event.model.ErrorInfo;
-import com.google.gwt.user.client.ui.Widget;
 import elemental2.dom.HTMLElement;
 
 public interface IErrorComponent

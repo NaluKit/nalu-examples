@@ -56,7 +56,7 @@ public class ListController
     } else if (result.size() == 1) {
       this.eventBus.fireEvent(new StatusChangeEvent("Found one person"));
     } else {
-      this.eventBus.fireEvent(new StatusChangeEvent("Found " + Integer.toString(result.size()) + " persons"));
+      this.eventBus.fireEvent(new StatusChangeEvent("Found " + result.size() + " persons"));
     }
   }
 

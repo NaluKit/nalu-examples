@@ -62,16 +62,12 @@ public class DetailComponent
                                          .add(button().css("button")
                                                       .textContent("Save")
                                                       .on(click,
-                                                          event -> {
-                                                            getController().doUpdate();
-                                                          }))
+                                                          event -> getController().doUpdate()))
                                          .add(button().css("button")
                                                       .textContent("Revert")
                                                       .on(click,
-                                                          event -> {
-                                                            getController().doRevert();
-                                                          }))))
-                     .get());
+                                                          event -> getController().doRevert()))))
+                     .element());
   }
 
   @Override
