@@ -35,7 +35,7 @@ public class Composites02Component
   @Override
   public void render() {
     HTMLDivElement divElement = Elements.div()
-                                       .asElement();
+                                       .element();
     divElement.appendChild(Card.create("Composites 02")
                                .appendChild(Row.create()
                                                .setGap("10px")
@@ -43,17 +43,17 @@ public class Composites02Component
                                                                 .appendChild(Elements.div()
                                                                                      .textContent("This is composites Component 02")))
                                                .styler(style -> style.setTextAlign("center"))
-                                               .asElement())
-                               .asElement());
+                                               .element())
+                               .element());
     divElement.appendChild(Elements.div()
                                   .id("composite01")
-                                  .asElement());
+                                  .element());
     divElement.appendChild(Elements.div()
                                   .id("composite02")
-                                  .asElement());
+                                  .element());
     divElement.appendChild(Elements.div()
                                   .id("composite03")
-                                  .asElement());
+                                  .element());
 
     initElement(divElement);
   }

@@ -45,7 +45,7 @@ public class ErrorComponent
                     .addHeaderAction(Icons.ALL.home(),
                                      e -> getController().doRouteHome())
                     .appendChild(this.errorText)
-                    .asElement());
+                    .element());
   }
 
   @Override

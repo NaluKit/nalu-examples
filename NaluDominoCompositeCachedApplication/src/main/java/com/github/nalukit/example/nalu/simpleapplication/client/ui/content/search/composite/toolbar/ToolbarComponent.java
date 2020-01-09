@@ -51,7 +51,7 @@ public class ToolbarComponent
   @Override
   public void render() {
     HTMLDivElement divElement = Elements.div()
-                                        .asElement();
+                                        .element();
 
     this.buttonStoreInCache = Button.create("Store Composite Search in Chache")
                                     .setSize(ButtonSize.LARGE)
@@ -84,28 +84,28 @@ public class ToolbarComponent
                                                .addColumn(Column.span12()
                                                                 .appendChild(this.infoText))
                                                .styler(style -> style.setTextAlign("center"))
-                                               .asElement())
+                                               .element())
                                .appendChild(Row.create()
                                                .setGap("10px")
                                                .addColumn(Column.span12()
                                                                 .appendChild(this.buttonStoreInCache)
                                                                 .appendChild(this.buttonRemvoeFromCache))
                                                .styler(style -> style.setTextAlign("center"))
-                                               .asElement())
+                                               .element())
                                .appendChild(Row.create()
                                                .setGap("10px")
                                                .addColumn(Column.span12()
                                                                 .appendChild(new Text("See Nalu error Handling in action, using the error event and a PopUpErrorController!")))
                                                .styler(style -> style.setTextAlign("center"))
                                                .styler(style -> style.setMarginTop("64px"))
-                                               .asElement())
+                                               .element())
                                .appendChild(Row.create()
                                                .setGap("10px")
                                                .addColumn(Column.span12()
                                                                 .appendChild(this.buttonFireErrorEvent))
                                                .styler(style -> style.setTextAlign("center"))
-                                               .asElement())
-                               .asElement());
+                                               .element())
+                               .element());
 
     initElement(divElement);
   }

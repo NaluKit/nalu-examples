@@ -79,7 +79,7 @@ public class SearchComponent
                                                                                                                                    this.searchCity.getValue()))))
                                     .style()
                                     .setTextAlign("right"))
-                    .asElement());
+                    .element());
   }
 
   @Override

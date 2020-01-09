@@ -54,7 +54,7 @@ public class SearchFormComponent
                              .setLeftAddon(Icons.ALL.location_on());
 
     HTMLDivElement divElemet = Elements.div()
-                                       .asElement();
+                                       .element();
 
     divElemet.appendChild(Card.create("Search - Person")
                               .appendChild(Row.create()
@@ -63,7 +63,7 @@ public class SearchFormComponent
                               .appendChild(Row.create()
                                               .addColumn(Column.span12()
                                                                .appendChild(this.searchCity)))
-                              .asElement());
+                              .element());
 
     initElement(divElemet);
   }

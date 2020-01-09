@@ -36,12 +36,12 @@ public class ConditionComponent
   @Override
   public void render() {
     HTMLDivElement divElemet = Elements.div()
-                                       .asElement();
+                                       .element();
 
     divElemet.appendChild(Card.create()
                               .setBackground(Color.AMBER)
                               .appendChild(new Text("This composite is conditional. In case you see this composite, you have selected 'Homer Simpson'!"))
-                              .asElement());
+                              .element());
 
     initElement(divElemet);
   }

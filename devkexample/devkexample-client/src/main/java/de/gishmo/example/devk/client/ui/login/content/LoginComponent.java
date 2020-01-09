@@ -68,7 +68,7 @@ public class LoginComponent
                                                                                                                        this.password.getValue()))))
                                     .style()
                                     .setTextAlign("right"))
-                    .asElement());
+                    .element());
   }
 
 }

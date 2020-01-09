@@ -44,7 +44,7 @@ public class PersonComponent
     this.detailName = TextBox.create("Name");
 
     HTMLDivElement divElemet = Elements.div()
-                                       .asElement();
+                                       .element();
 
     divElemet.appendChild(Card.create("Details - Person")
                               .appendChild(Row.create()
@@ -53,7 +53,7 @@ public class PersonComponent
                               .appendChild(Row.create()
                                               .addColumn(Column.span12()
                                                                .appendChild(this.detailName)))
-                              .asElement());
+                              .element());
 
     initElement(divElemet);
   }

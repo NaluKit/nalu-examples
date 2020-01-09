@@ -38,7 +38,7 @@ public class Composite01Component
   @Override
   public void render() {
     HTMLDivElement divElement = Elements.div()
-                                        .asElement();
+                                        .element();
 
     divElement.appendChild(Card.create("Description")
                                .appendChild(Row.create()
@@ -47,8 +47,8 @@ public class Composite01Component
                                                                 .appendChild(Elements.div()
                                                                                      .textContent(TEXT)))
                                                .styler(style -> style.setTextAlign("center"))
-                                               .asElement())
-                               .asElement());
+                                               .element())
+                               .element());
 
     initElement(divElement);
   }

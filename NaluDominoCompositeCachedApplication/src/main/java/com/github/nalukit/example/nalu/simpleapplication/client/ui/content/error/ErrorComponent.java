@@ -57,12 +57,12 @@ public class ErrorComponent
     this.errorIcon.setAttribute("src",
                                 "media/images/bug-128.png");
     this.route = DominoElement.div()
-                              .asElement();
+                              .element();
     this.message = DominoElement.div()
                                 .styler(style -> {
                                   style.setMarginBottom("12px");
                                 })
-                                .asElement();
+                                .element();
     DominoElement messageElement = DominoElement.div()
                                                 .styler(style -> {
                                                   style.setWidth("100%");

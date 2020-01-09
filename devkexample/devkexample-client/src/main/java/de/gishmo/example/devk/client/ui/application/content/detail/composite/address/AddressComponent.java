@@ -61,7 +61,7 @@ public class AddressComponent
                                       .addColumn(Column.span12()
                                                        .appendChild(this.detailCity))));
 
-    initElement(divElemet.asElement());
+    initElement(divElemet.element());
   }
 
   @Override

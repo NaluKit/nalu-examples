@@ -55,7 +55,7 @@ public class PersonComponent
                                       .addColumn(Column.span12()
                                                        .appendChild(this.detailName))));
 
-    initElement(divElemet.asElement());
+    initElement(divElemet.element());
   }
 
   @Override

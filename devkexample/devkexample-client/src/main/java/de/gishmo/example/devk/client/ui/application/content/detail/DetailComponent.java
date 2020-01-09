@@ -61,7 +61,7 @@ public class DetailComponent
                                       .setTextAlign("right")
                                       .setMarginTop("20px")));
 
-    initElement(divElemet.asElement());
+    initElement(divElemet.element());
   }
 
 }

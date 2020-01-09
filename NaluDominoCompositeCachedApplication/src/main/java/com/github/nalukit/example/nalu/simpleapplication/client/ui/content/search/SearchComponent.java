@@ -38,10 +38,10 @@ public class SearchComponent
   @Override
   public void render() {
     HTMLDivElement container = Elements.div()
-                                       .asElement();
+                                       .element();
     container.appendChild(Elements.div()
                                   .id("compositeSearchForm")
-                                  .asElement());
+                                  .element());
     container.appendChild(Card.create("Action Bar")
                               .appendChild(Row.create()
                                               .setGap("10px")
@@ -63,10 +63,10 @@ public class SearchComponent
                                               .style()
                                               .setProperty("word-wrap",
                                                            "nowrap"))
-                              .asElement());
+                              .element());
     container.appendChild(Elements.div()
                                   .id("compositeToolbar")
-                                  .asElement());
+                                  .element());
     initElement(container);
   }
 

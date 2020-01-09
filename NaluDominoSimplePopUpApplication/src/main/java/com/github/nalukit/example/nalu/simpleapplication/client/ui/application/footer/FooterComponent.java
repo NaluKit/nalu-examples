@@ -60,7 +60,7 @@ public class FooterComponent
                                                      .textContent("Nalu example application using Domnio-UI")))
                    .addColumn(Column.span5()
                                     .appendChild(this.messageInfo))
-                   .asElement());
+                   .element());
   }
 
   @Override

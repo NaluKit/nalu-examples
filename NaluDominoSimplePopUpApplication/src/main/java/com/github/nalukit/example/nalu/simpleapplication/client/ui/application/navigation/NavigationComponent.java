@@ -47,7 +47,7 @@ public class NavigationComponent
     initElement(Tree.create("Navigation")
                     .appendChild(this.searchItem)
                     .appendChild(this.listItem)
-                    .asElement());
+                    .element());
   }
 
   @Override

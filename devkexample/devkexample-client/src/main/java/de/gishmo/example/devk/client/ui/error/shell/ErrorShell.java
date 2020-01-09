@@ -39,7 +39,7 @@ public class ErrorShell
     layout.showFooter()
           .fixFooter()
           .getFooter()
-          .asElement().style.minHeight = CSSProperties.MinHeightUnionType.of("42px");
+          .element().style.minHeight = CSSProperties.MinHeightUnionType.of("42px");
     layout.getFooter()
           .setId("footer");
     layout.disableLeftPanel();

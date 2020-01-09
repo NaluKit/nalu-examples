@@ -48,7 +48,7 @@ public class AddressComponent
     this.detailCity = TextBox.create("City");
 
     HTMLDivElement divElemet = Elements.div()
-                                       .asElement();
+                                       .element();
 
     divElemet.appendChild(Card.create("Details - Address")
                               .appendChild(Row.create()
@@ -60,7 +60,7 @@ public class AddressComponent
                               .appendChild(Row.create()
                                               .addColumn(Column.span12()
                                                                .appendChild(this.detailCity)))
-                              .asElement());
+                              .element());
 
     initElement(divElemet);
   }

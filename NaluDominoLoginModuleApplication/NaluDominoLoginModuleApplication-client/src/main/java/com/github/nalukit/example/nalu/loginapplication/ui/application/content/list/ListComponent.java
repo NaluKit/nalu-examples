@@ -59,7 +59,7 @@ public class ListComponent
                                                                                          .on(EventType.click,
                                                                                              e -> getController().doUpdate(cell.getTableRow()
                                                                                                                                .getRecord()))
-                                                                                         .asElement()))
+                                                                                         .element()))
                .addColumn(ColumnConfig.<Person>create("street",
                                                       "Street").setCellRenderer(cell -> new Text(cell.getTableRow()
                                                                                                      .getRecord()
@@ -91,7 +91,7 @@ public class ListComponent
                     .appendChild(Row.create()
                                     .appendChild(Column.span12()
                                                        .appendChild(this.table)))
-                    .asElement());
+                    .element());
 
   }
 

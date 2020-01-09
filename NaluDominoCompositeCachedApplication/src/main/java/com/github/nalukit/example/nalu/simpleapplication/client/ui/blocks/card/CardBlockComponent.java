@@ -61,7 +61,7 @@ public class CardBlockComponent
                       style.setPosition("absolute");
                       style.setProperty("tab-index", "1000");
                     });
-    this.element = card.asElement();
+    this.element = card.element();
   }
 
   @Override

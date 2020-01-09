@@ -62,7 +62,7 @@ public class NavigationComponent
                     .appendChild(this.listItem)
                     .appendChild(this.composite01Item)
                     .appendChild(this.composite02Item)
-                    .asElement());
+                    .element());
   }
 
   @Override

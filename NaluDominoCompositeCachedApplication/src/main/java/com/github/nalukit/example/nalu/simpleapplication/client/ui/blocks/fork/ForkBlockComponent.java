@@ -38,7 +38,7 @@ public class ForkBlockComponent
 
   @Override
   public void append() {
-    DomGlobal.document.body.appendChild(this.element.asElement());
+    DomGlobal.document.body.appendChild(this.element.element());
   }
 
   @Override

@@ -71,10 +71,10 @@ public class SearchComponent
     columnRight.style()
                .setTextAlign("right");
     HTMLDivElement container = Elements.div()
-                                       .asElement();
+                                       .element();
     container.appendChild(Elements.div()
                                   .id("compositeSearchForm")
-                                  .asElement());
+                                  .element());
     container.appendChild(Card.create("Tool Bar")
                               .appendChild(Row.create()
                                               .setGap("10px")
@@ -83,7 +83,7 @@ public class SearchComponent
                                               .style()
                                               .setProperty("word-wrap",
                                                            "nowrap"))
-                              .asElement());
+                              .element());
     initElement(container);
   }
 

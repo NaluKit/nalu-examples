@@ -36,16 +36,16 @@ public class DetailComponent
   @Override
   public void render() {
     HTMLDivElement divElemet = Elements.div()
-                                       .asElement();
+                                       .element();
     divElemet.appendChild(Elements.div()
                                   .id("splitterPerson")
-                                  .asElement());
+                                  .element());
     divElemet.appendChild(Elements.div()
                                   .id("splitterAddress")
-                                  .asElement());
+                                  .element());
     divElemet.appendChild(Elements.div()
                                   .id("compositeConditional")
-                                  .asElement());
+                                  .element());
     divElemet.appendChild(Card.create()
                               .appendChild(Row.create()
                                               .addColumn(Column.span12()
@@ -59,7 +59,7 @@ public class DetailComponent
                                               .style()
                                               .setTextAlign("right")
                                               .setMarginTop("20px"))
-                              .asElement());
+                              .element());
 
     initElement(divElemet);
   }
