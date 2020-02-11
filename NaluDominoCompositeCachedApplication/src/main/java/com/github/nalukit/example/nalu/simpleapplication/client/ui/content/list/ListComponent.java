@@ -31,13 +31,13 @@ import org.dominokit.domino.ui.datatable.TableConfig;
 import org.dominokit.domino.ui.datatable.store.LocalListDataStore;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.EventType;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.EventType;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.jboss.gwt.elemento.core.Elements.a;
+import static org.jboss.elemento.Elements.a;
 
 public class ListComponent
     extends AbstractComponent<IListComponent.Controller, HTMLElement>

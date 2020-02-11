@@ -24,7 +24,7 @@ import org.dominokit.domino.ui.grid.Row;
 import org.dominokit.domino.ui.style.Styles;
 import org.dominokit.domino.ui.utils.DominoElement;
 
-import static org.jboss.gwt.elemento.core.Elements.h;
+import static org.jboss.elemento.Elements.h;
 
 /**
  * this is the presenter of the shell. The shell divides the browser in

@@ -24,8 +24,8 @@ import elemental2.dom.HTMLAnchorElement;
 import org.dominokit.domino.ui.utils.DominoElement;
 import org.dominokit.domino.ui.utils.ScreenMedia;
 
-import static org.jboss.gwt.elemento.core.Elements.a;
-import static org.jboss.gwt.elemento.core.Elements.img;
+import static org.jboss.elemento.Elements.a;
+import static org.jboss.elemento.Elements.img;
 
 public class ForkBlockComponent
     extends AbstractBlockComponent<Controller>

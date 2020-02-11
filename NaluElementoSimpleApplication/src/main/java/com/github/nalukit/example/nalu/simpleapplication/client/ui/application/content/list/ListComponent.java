@@ -23,7 +23,7 @@ import elemental2.dom.HTMLElement;
 
 import java.util.List;
 
-import static org.jboss.gwt.elemento.core.Elements.*;
+import static import org.jboss.elemento.Elements;.*;
 import static org.jboss.gwt.elemento.core.EventType.click;
 
 public class ListComponent

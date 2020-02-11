@@ -26,7 +26,7 @@ import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
 
 import static elemental2.dom.DomGlobal.document;
-import static org.jboss.gwt.elemento.core.Elements.*;
+import static import org.jboss.elemento.Elements;.*;
 
 /**
  * this is the presenter of the shell. The shell divides the browser in

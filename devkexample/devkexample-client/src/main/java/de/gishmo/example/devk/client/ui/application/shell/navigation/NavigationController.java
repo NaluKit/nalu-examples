@@ -22,7 +22,6 @@ import de.gishmo.example.devk.client.ApplicationContext;
 import de.gishmo.example.devk.client.Routes;
 import de.gishmo.example.devk.client.event.SelectEvent;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.IsElement;
 
 @Controller(route = "/applicationShell",
             selector = "navigation",

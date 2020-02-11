@@ -84,7 +84,7 @@ public class ErrorComponent
 
   @Override
   public void edit(ErrorInfo errorInfo) {
-    if (ErrorType.APPLICAITON_ERROR == errorInfo.getErrorEventType()) {
+    if (ErrorType.APPLICATION_ERROR == errorInfo.getErrorEventType()) {
       this.errorType.setText("An Application Error occured!");
     } else {
       this.errorType.setText("A Nalu Error occured!");

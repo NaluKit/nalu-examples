@@ -24,7 +24,7 @@ import elemental2.dom.CSSProperties;
 import elemental2.dom.HTMLDivElement;
 
 import static elemental2.dom.DomGlobal.document;
-import static org.jboss.gwt.elemento.core.Elements.div;
+import static import org.jboss.elemento.Elements;.div;
 
 /**
  * this is the presenter of the shell. The shell divides the browser in

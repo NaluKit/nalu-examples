@@ -20,8 +20,8 @@ package com.github.nalukit.example.nalu.simpleapplication.client.ui.application.
 import com.github.nalukit.nalu.client.component.AbstractComponent;
 import elemental2.dom.HTMLElement;
 
-import static org.jboss.gwt.elemento.core.Elements.button;
-import static org.jboss.gwt.elemento.core.Elements.div;
+import static import org.jboss.elemento.Elements;.button;
+import static import org.jboss.elemento.Elements;.div;
 import static org.jboss.gwt.elemento.core.EventType.click;
 
 public class NavigationComponent

@@ -20,11 +20,11 @@ package com.github.nalukit.example.nalu.simpleapplication.client.widgets;
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLInputElement;
-import org.jboss.gwt.elemento.core.InputType;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.InputType;
+import org.jboss.elemento.IsElement;
 
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.input;
+import static import org.jboss.elemento.Elements;.div;
+import static import org.jboss.elemento.Elements;.input;
 import static org.jboss.gwt.elemento.core.EventType.blur;
 import static org.jboss.gwt.elemento.core.EventType.focus;
 

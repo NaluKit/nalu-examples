@@ -18,7 +18,6 @@ package de.gishmo.example.devk.client.ui.application.shell.navigation;
 
 import com.github.nalukit.nalu.client.component.IsComponent;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.IsElement;
 
 public interface INavigationComponent
     extends IsComponent<INavigationComponent.Controller, HTMLElement> {

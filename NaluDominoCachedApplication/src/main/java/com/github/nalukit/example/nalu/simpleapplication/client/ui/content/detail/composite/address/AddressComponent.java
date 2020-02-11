@@ -26,7 +26,7 @@ import org.dominokit.domino.ui.cards.Card;
 import org.dominokit.domino.ui.forms.TextBox;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 
 public class AddressComponent
     extends AbstractCompositeComponent<Controller, HTMLElement>

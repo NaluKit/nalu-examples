@@ -20,9 +20,9 @@ package com.github.nalukit.example.nalu.simpleapplication.client.ui.application.
 import com.github.nalukit.nalu.client.component.AbstractComponent;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLLabelElement;
-import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;
+import org.jboss.elemento.HtmlContentBuilder;
 
-import static org.jboss.gwt.elemento.core.Elements.*;
+import static import org.jboss.elemento.Elements;.*;
 
 /**
  * this is the presenter of the shell. The shell divides the browser in

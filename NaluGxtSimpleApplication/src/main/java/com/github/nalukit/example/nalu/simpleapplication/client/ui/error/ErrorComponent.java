@@ -135,7 +135,7 @@ public class ErrorComponent
                           "18px");
     this.setUpElementWithTextThemeDetails(errorType.getElement(),
                                           true);
-    if (ErrorType.APPLICAITON_ERROR == errorEventType) {
+    if (ErrorType.APPLICATION_ERROR == errorEventType) {
       errorType.setText("An Application Error occured!");
     } else {
       errorType.setText("A Nalu Error occured!");

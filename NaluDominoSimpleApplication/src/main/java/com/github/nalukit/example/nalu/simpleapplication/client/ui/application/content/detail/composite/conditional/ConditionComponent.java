@@ -24,7 +24,7 @@ import elemental2.dom.HTMLElement;
 import elemental2.dom.Text;
 import org.dominokit.domino.ui.cards.Card;
 import org.dominokit.domino.ui.style.Color;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 
 public class ConditionComponent
     extends AbstractCompositeComponent<Controller, HTMLElement>

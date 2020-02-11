@@ -20,8 +20,8 @@ package com.github.nalukit.example.nalu.simpleapplication.client.ui.application.
 import com.github.nalukit.nalu.client.component.AbstractComponent;
 import elemental2.dom.HTMLElement;
 
-import static org.jboss.gwt.elemento.core.Elements.header;
-import static org.jboss.gwt.elemento.core.Elements.img;
+import static org.jboss.elemento.Elements.header;
+import static org.jboss.elemento.Elements.img;
 
 public class HeaderComponent
     extends AbstractComponent<IHeaderComponent.Controller, HTMLElement>

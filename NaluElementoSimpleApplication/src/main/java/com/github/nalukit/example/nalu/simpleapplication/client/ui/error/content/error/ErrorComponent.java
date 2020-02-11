@@ -23,9 +23,9 @@ import com.github.nalukit.nalu.client.event.model.ErrorInfo.ErrorType;
 import elemental2.dom.HTMLButtonElement;
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 
-import static org.jboss.gwt.elemento.core.Elements.div;
+import static import org.jboss.elemento.Elements;.div;
 import static org.jboss.gwt.elemento.core.EventType.click;
 
 public class ErrorComponent
