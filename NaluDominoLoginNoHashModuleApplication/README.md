@@ -10,6 +10,20 @@ To run the examples:
 
 * open the `readme.txt`and follow the instructions 
 
+**or**
+
+To run the examples:
+
+clone the repository
+
+run mvn gwt:codeserver -pl *-client -am in one terminal window
+
+run mvn jetty:run -pl *-server -am -Denv=dev in another terminal window
+
+To start the application, call:
+
+http://127.0.0.1:8080/index.html
+
 ## Note
 This example does not have a server implementation. It uses a mock server on the client side. Only to support non hash urls thee is implemented a filter.
 
