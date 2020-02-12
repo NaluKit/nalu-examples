@@ -1,3 +1,6 @@
+**Example is outdated!**
+
+
 # Example demontrating the plugin feature
 This example demonstrates the use of plugins in Nalu. It is a multi module project.
 
