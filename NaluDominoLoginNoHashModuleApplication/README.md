@@ -12,9 +12,9 @@ To run the examples:
 
 **or**
 
-* run mvn gwt:codeserver -pl *-client -am in one terminal window
+* run `mvn gwt:codeserver -pl *-client -am` in one terminal window
 
-* run mvn jetty:run -pl *-server -am -Denv=dev in another terminal window
+* run `mvn jetty:run -pl *-server -am -Denv=dev` in another terminal window
 
 To start the application, call:
 
