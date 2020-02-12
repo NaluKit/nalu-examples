@@ -6,9 +6,14 @@ To run the examples:
 
 * clone the repository
 
-* run ```mvn clean``` & ```mvn gwt:devmode```
+* run ```mvn gwt:codeserver -pl *-client -am``` in one terminal window
 
-* copy the link and paste the link into the browser url
+* run ```mvn jetty:run -pl *-server -am -Denv=dev``` in another terminal window
+
+To start the application, call:
+
+http://127.0.0.1:8080/index.html
+
 
 ## Note
 This example does not have a server implementation. It uses a mock server on the client side.
