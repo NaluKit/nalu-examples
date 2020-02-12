@@ -11,7 +11,7 @@ To run the examples:
 * run `mvn clean install` & `mvn gwt:devmode`
 
 * copy the link and paste the link into the browser url
-* 
+
 ## Note
 This example does not have a server implementation. It uses a mock service on the client side.
 
