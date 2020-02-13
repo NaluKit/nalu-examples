@@ -26,7 +26,7 @@ import com.github.nalukit.nalu.client.application.annotation.Filters;
 import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
 
 /**
- * Implemantation of the NaluLoginApplication class.
+ * Implementation of the NaluLoginApplication class.
  * <p>
  * <p>Use the @Application annotation to perform configuration informations.</p>
  * <p>In this case we use 'NaluLoginApplicationLoader' as loader!</p>
