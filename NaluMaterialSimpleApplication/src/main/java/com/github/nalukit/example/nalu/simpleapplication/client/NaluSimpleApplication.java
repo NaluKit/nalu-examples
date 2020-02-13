@@ -23,7 +23,7 @@ import com.github.nalukit.nalu.client.application.annotation.Debug;
 import com.github.nalukit.nalu.plugin.gwt.client.DefaultGWTLogger;
 
 /**
- * Implemantation of the NaluSimpleApplication class.
+ * Implementation of the NaluSimpleApplication class.
  * <p>
  * <p>Use the @Application annotation to perform configuration informations.</p>
  * <p>In this case we use 'NaluSimpleApplicationLoader' as loader!</p>
