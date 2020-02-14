@@ -18,6 +18,8 @@ package com.github.nalukit.example.nalu.loginapplication.module.login.client;
 import com.github.nalukit.nalu.client.context.AbstractModuleContext;
 import com.github.nalukit.nalu.client.context.module.IsModuleContext;
 
+import elemental2.dom.DomGlobal;
+
 /**
  * A application context of the NaluMailApplication
  */
@@ -25,27 +27,35 @@ public class NaluLoginApplicationContextLoginModule
     extends AbstractModuleContext
     implements IsModuleContext {
 
-  private static final String LOGGED_IN   = "loggedIn";
-  private static final String USER        = "user";
-
+  public static interface Keys {
+    public static final String LOGGED_IN   = "loggedIn";
+    public static final String USER        = "user";
+  }
+  
   public NaluLoginApplicationContextLoginModule() {
     super();
   }
 
   public void setUser(String user) {
+      DomGlobal.window.console.log("setUser " + user);
+
     super.getContext()
-         .put(NaluLoginApplicationContextLoginModule.USER,
+         .put(Keys.USER,
               user);
   }
 
   public boolean isLoggedIn() {
+    DomGlobal.window.console.log("isLoggedIn");
+
     return (boolean) super.getContext()
-                          .get(NaluLoginApplicationContextLoginModule.LOGGED_IN);
+                          .get(Keys.LOGGED_IN);
   }
 
   public void setLoggedIn(boolean loggedIn) {
+    DomGlobal.window.console.log("setLoggedIn " + loggedIn);
+
     super.getContext()
-         .put(NaluLoginApplicationContextLoginModule.LOGGED_IN,
+         .put(Keys.LOGGED_IN,
               loggedIn);
   }
 
