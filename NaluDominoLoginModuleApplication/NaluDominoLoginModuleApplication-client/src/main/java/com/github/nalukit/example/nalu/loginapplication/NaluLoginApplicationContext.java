@@ -31,8 +31,6 @@ public class NaluLoginApplicationContext
   private static final String USER        = "user";
   private static final String VERSION     = "version";
 
-  private boolean loggedIn;
-
   public NaluLoginApplicationContext() {
     super();
     initialize();
