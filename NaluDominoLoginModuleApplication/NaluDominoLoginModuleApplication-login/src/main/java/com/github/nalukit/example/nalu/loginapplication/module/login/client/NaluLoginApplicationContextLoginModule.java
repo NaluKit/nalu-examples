@@ -26,45 +26,10 @@ public class NaluLoginApplicationContextLoginModule
     implements IsModuleContext {
 
   private static final String LOGGED_IN   = "loggedIn";
-  private static final String SEARCH_NAME = "searchName";
-  private static final String SEARCH_CITY = "searchCity";
   private static final String USER        = "user";
-  private static final String VERSION     = "version";
 
   public NaluLoginApplicationContextLoginModule() {
     super();
-  }
-
-  public String getVersion() {
-    return (String) super.getContext()
-                         .get(NaluLoginApplicationContextLoginModule.VERSION);
-  }
-
-  public String getSearchCity() {
-    return (String) super.getContext()
-                         .get(NaluLoginApplicationContextLoginModule.SEARCH_CITY);
-  }
-
-  public void setSearchCity(String searchCity) {
-    super.getContext()
-         .put(NaluLoginApplicationContextLoginModule.SEARCH_CITY,
-              searchCity);
-  }
-
-  public String getSearchName() {
-    return (String) super.getContext()
-                         .get(NaluLoginApplicationContextLoginModule.SEARCH_NAME);
-  }
-
-  public void setSearchName(String searchName) {
-    super.getContext()
-         .put(NaluLoginApplicationContextLoginModule.SEARCH_NAME,
-              searchName);
-  }
-
-  public String getUser() {
-    return (String) super.getContext()
-                         .get(NaluLoginApplicationContextLoginModule.USER);
   }
 
   public void setUser(String user) {
