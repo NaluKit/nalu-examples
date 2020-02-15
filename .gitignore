@@ -2,6 +2,10 @@
 ### GWT template
 *.class
 
+# eclipse project files
+.classpath
+.project
+
 # gwt caches and compiled units #
 war/gwt_bree/
 gwt-unitCache/

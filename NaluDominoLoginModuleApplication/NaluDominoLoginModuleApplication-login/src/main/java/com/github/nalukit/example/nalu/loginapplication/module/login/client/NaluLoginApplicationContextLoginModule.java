@@ -18,6 +18,8 @@ package com.github.nalukit.example.nalu.loginapplication.module.login.client;
 import com.github.nalukit.nalu.client.context.AbstractModuleContext;
 import com.github.nalukit.nalu.client.context.module.IsModuleContext;
 
+import elemental2.dom.DomGlobal;
+
 /**
  * A application context of the NaluMailApplication
  */
@@ -25,64 +27,35 @@ public class NaluLoginApplicationContextLoginModule
     extends AbstractModuleContext
     implements IsModuleContext {
 
-  private static final String LOGGED_IN   = "loggedIn";
-  private static final String SEARCH_NAME = "searchName";
-  private static final String SEARCH_CITY = "searchCity";
-  private static final String USER        = "user";
-  private static final String VERSION     = "version";
-
-  private boolean loggedIn;
-
+  public static interface Keys {
+    public static final String LOGGED_IN   = "loggedIn";
+    public static final String USER        = "user";
+  }
+  
   public NaluLoginApplicationContextLoginModule() {
     super();
   }
 
-  public String getVersion() {
-    return (String) super.getContext()
-                         .get(NaluLoginApplicationContextLoginModule.VERSION);
-  }
-
-  public String getSearchCity() {
-    return (String) super.getContext()
-                         .get(NaluLoginApplicationContextLoginModule.SEARCH_CITY);
-  }
-
-  public void setSearchCity(String searchCity) {
-    super.getContext()
-         .put(NaluLoginApplicationContextLoginModule.SEARCH_CITY,
-              searchCity);
-  }
-
-  public String getSearchName() {
-    return (String) super.getContext()
-                         .get(NaluLoginApplicationContextLoginModule.SEARCH_NAME);
-  }
-
-  public void setSearchName(String searchName) {
-    super.getContext()
-         .put(NaluLoginApplicationContextLoginModule.SEARCH_NAME,
-              searchName);
-  }
-
-  public String getUser() {
-    return (String) super.getContext()
-                         .get(NaluLoginApplicationContextLoginModule.USER);
-  }
-
   public void setUser(String user) {
+      DomGlobal.window.console.log("setUser " + user);
+
     super.getContext()
-         .put(NaluLoginApplicationContextLoginModule.USER,
+         .put(Keys.USER,
               user);
   }
 
   public boolean isLoggedIn() {
+    DomGlobal.window.console.log("isLoggedIn");
+
     return (boolean) super.getContext()
-                          .get(NaluLoginApplicationContextLoginModule.LOGGED_IN);
+                          .get(Keys.LOGGED_IN);
   }
 
   public void setLoggedIn(boolean loggedIn) {
+    DomGlobal.window.console.log("setLoggedIn " + loggedIn);
+
     super.getContext()
-         .put(NaluLoginApplicationContextLoginModule.LOGGED_IN,
+         .put(Keys.LOGGED_IN,
               loggedIn);
   }
 

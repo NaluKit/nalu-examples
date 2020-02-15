@@ -15,8 +15,11 @@
  */
 package com.github.nalukit.example.nalu.loginapplication;
 
+import com.github.nalukit.example.nalu.loginapplication.module.login.client.NaluLoginApplicationContextLoginModule;
 import com.github.nalukit.nalu.client.context.AbstractMainContext;
 import com.github.nalukit.nalu.client.context.IsContext;
+
+import elemental2.dom.DomGlobal;
 
 /**
  * A application context of the NaluMailApplication
@@ -25,14 +28,12 @@ public class NaluLoginApplicationContext
     extends AbstractMainContext
     implements IsContext {
 
-  private static final String LOGGED_IN   = "loggedIn";
-  private static final String SEARCH_NAME = "searchName";
-  private static final String SEARCH_CITY = "searchCity";
-  private static final String USER        = "user";
-  private static final String VERSION     = "version";
-
-  private boolean loggedIn;
-
+  public static interface Keys {
+    public static final String SEARCH_NAME = "searchName";
+    public static final String SEARCH_CITY = "searchCity";
+    public static final String VERSION     = "version";
+  }
+  
   public NaluLoginApplicationContext() {
     super();
     initialize();
@@ -40,60 +41,45 @@ public class NaluLoginApplicationContext
 
   private void initialize() {
     super.getContext()
-         .put(NaluLoginApplicationContext.LOGGED_IN,
+         .put(NaluLoginApplicationContextLoginModule.Keys.LOGGED_IN,
               false);
     super.getContext()
-         .put(NaluLoginApplicationContext.VERSION,
+         .put(Keys.VERSION,
               "2.0.0");
   }
 
   public String getVersion() {
     return (String) super.getContext()
-                         .get(NaluLoginApplicationContext.VERSION);
+                         .get(Keys.VERSION);
   }
 
   public String getSearchCity() {
     return (String) super.getContext()
-                         .get(NaluLoginApplicationContext.SEARCH_CITY);
+                         .get(Keys.SEARCH_CITY);
   }
 
   public void setSearchCity(String searchCity) {
     super.getContext()
-         .put(NaluLoginApplicationContext.SEARCH_CITY,
+         .put(Keys.SEARCH_CITY,
               searchCity);
   }
 
   public String getSearchName() {
     return (String) super.getContext()
-                         .get(NaluLoginApplicationContext.SEARCH_NAME);
+                         .get(Keys.SEARCH_NAME);
   }
 
   public void setSearchName(String searchName) {
     super.getContext()
-         .put(NaluLoginApplicationContext.SEARCH_NAME,
+         .put(Keys.SEARCH_NAME,
               searchName);
   }
 
   public String getUser() {
+      DomGlobal.window.console.log("getUser");
+
     return (String) super.getContext()
-                         .get(NaluLoginApplicationContext.USER);
-  }
-
-  public void setUser(String user) {
-    super.getContext()
-         .put(NaluLoginApplicationContext.USER,
-              user);
-  }
-
-  public boolean isLoggedIn() {
-    return (boolean) super.getContext()
-                          .get(NaluLoginApplicationContext.LOGGED_IN);
-  }
-
-  public void setLoggedIn(boolean loggedIn) {
-    super.getContext()
-         .put(NaluLoginApplicationContext.LOGGED_IN,
-              loggedIn);
+                         .get(NaluLoginApplicationContextLoginModule.Keys.USER);
   }
 
 }
