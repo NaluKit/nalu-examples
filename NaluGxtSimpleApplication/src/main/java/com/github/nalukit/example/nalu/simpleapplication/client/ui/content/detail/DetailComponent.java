@@ -25,10 +25,14 @@ import com.google.gwt.editor.client.SimpleBeanEditorDriver;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Widget;
 import com.sencha.gxt.core.client.dom.ScrollSupport;
+import com.sencha.gxt.core.client.util.ToggleGroup;
 import com.sencha.gxt.widget.core.client.ContentPanel;
 import com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer;
 import com.sencha.gxt.widget.core.client.form.FieldLabel;
 import com.sencha.gxt.widget.core.client.form.TextField;
+import com.sencha.gxt.widget.core.client.form.validator.EmptyValidator;
+
+import java.util.Date;
 
 public class DetailComponent
     extends AbstractComponent<IDetailComponent.Controller, Widget>
@@ -51,6 +55,7 @@ public class DetailComponent
 
   @Override
   public void render() {
+    ToggleGroup tg;
     ContentPanel container = new ContentPanel();
     container.setHeaderVisible(false);
     container.setBodyStyle("padding: 12px;");

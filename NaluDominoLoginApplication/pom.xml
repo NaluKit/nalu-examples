@@ -32,7 +32,7 @@
     <gwtVersion>2.8.2</gwtVersion>
 
     <!-- nalu version -->
-    <nalu.version>2.0.1</nalu.version>
+    <nalu.version>2.1.0-SNAPSHOT</nalu.version>
 
     <domino.version>1.0-SNAPSHOT</domino.version>
 
@@ -215,7 +215,7 @@
             <gwt.persistentunitcachedir>${project.build.directory}/gwt/unitCache/</gwt.persistentunitcachedir>
             <gwt.war.directory>${project.basedir}/${project.build.finalName}</gwt.war.directory>
           </systemProperties>
-          <localWorkers>4</localWorkers>
+          <localWorkers>6</localWorkers>
         </configuration>
       </plugin>
       <!-- only used to copy static resources -->

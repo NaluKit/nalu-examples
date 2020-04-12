@@ -35,7 +35,7 @@
     <gwt-material.version>2.1.1</gwt-material.version>
 
     <!-- nalu version -->
-    <nalu.version>2.0.1</nalu.version>
+    <nalu.version>2.1.0-SNAPSHOT</nalu.version>
 
     <gwt-events.version>HEAD-SNAPSHOT</gwt-events.version>
 
@@ -263,7 +263,7 @@
             <gwt.persistentunitcachedir>${project.build.directory}/gwt/unitCache/</gwt.persistentunitcachedir>
             <gwt.war.directory>${project.basedir}/${project.build.finalName}</gwt.war.directory>
           </systemProperties>
-          <localWorkers>4</localWorkers>
+          <localWorkers>6</localWorkers>
         </configuration>
       </plugin>
       <!-- only used to copy static resources -->

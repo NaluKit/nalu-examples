@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>de.gishmo.example</groupId>
+    <artifactId>example-parent</artifactId>
+
+    <version>2.1.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <name>Nalu Example parent</name>
+    <description>Parent POM containing all Nalu examples</description>
+    <url>https://github.com/nalukit/nalu-examples</url>
+
+    <inceptionYear>2018</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Frank Hossfeld</name>
+            <id>frankhossfeld</id>
+            <email>hossfeld@hossfeld-solutions.de</email>
+            <organization>Hossfeld Solutions GmbH</organization>
+            <roles>
+                <role>Java Developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git@github.com:nalukit/nalu-examples.git</connection>
+        <developerConnection>scm:git:git@github.com:nalukit/nalu-examples.git</developerConnection>
+        <url>scm:git:https://github.com/nalukit/nalu-examples</url>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/nalukit/nalu-examples/issues</url>
+    </issueManagement>
+
+    <modules>
+        <module>devkexample</module>
+        <module>NaluControllerMultipleRoute</module>
+        <module>NaluDominoCachedApplication</module>
+        <module>NaluDominoCompositeCachedApplication</module>
+        <module>NaluDominoLoginApplication</module>
+        <module>NaluDominoLoginModuleApplication</module>
+        <module>NaluDominoLoginNoHashModuleApplication</module>
+        <module>NaluDominoSimpleApplication</module>
+        <module>NaluDominoSimplePopUpApplication</module>
+<!--        <module>NaluElementoSimpleApplication</module>-->
+        <module>NaluGwtSimpleApplication</module>
+        <module>NaluGxtSimpleApplication</module>
+        <module>NaluMaterialSimpleApplication</module>
+    </modules>
+</project>
