@@ -32,52 +32,66 @@ import org.jboss.elemento.Elements;
 public class ToolbarComponent
     extends AbstractCompositeComponent<Controller, HTMLElement>
     implements IToolbarComponent {
-
+  
   private final static String CACHED_TEXT = "The search data composite controller and component are cached. To see the caching, enter a search value in one or both text fields and press 'Search'. In case going back to the search screen, you will see your entered data.";
-
+  
   private final static String NOT_CACHED_TEXT = "The search data composite controller and component are not cached. You will always see empty text fields when entering the screen.";
-
+  
   private Button buttonStoreInCache;
-
   private Button buttonRemvoeFromCache;
-
   private Button buttonFireErrorEvent;
-
+  private Button buttonHideControlledCardEvent;
+  private Button buttonShowControlledCardEvent;
+  
   private Text infoText;
-
+  
   public ToolbarComponent() {
   }
-
+  
   @Override
   public void render() {
     HTMLDivElement divElement = Elements.div()
                                         .element();
-
-    this.buttonStoreInCache = Button.create("Store Composite Search in Chache")
-                                    .setSize(ButtonSize.LARGE)
-                                    .style()
-                                    .setMinWidth("120px")
-                                    .setMarginRight("12px")
-                                    .get()
-                                    .addClickListener(e -> getController().doStoreCompositeInCache());
-    this.buttonRemvoeFromCache = Button.create("Remove Composite Search from Cache")
-                                       .setSize(ButtonSize.LARGE)
-                                       .style()
-                                       .setMarginRight("12px")
-                                       .setMinWidth("120px")
-                                       .get()
-                                       .addClickListener(e -> getController().doRemoveCompositefromCache());
-   this.buttonFireErrorEvent = Button.create("Fire Error Event")
-                                     .setSize(ButtonSize.LARGE)
-                                     .style()
-                                     .setMarginRight("12px")
-                                     .setMinWidth("120px")
-                                     .get()
-                                     .addClickListener(e -> getController().doFireErrorEvent());
+    
+    this.buttonStoreInCache            = Button.create("Store Composite Search in Chache")
+                                               .setSize(ButtonSize.LARGE)
+                                               .style()
+                                               .setMinWidth("120px")
+                                               .setMarginRight("12px")
+                                               .get()
+                                               .addClickListener(e -> getController().doStoreCompositeInCache());
+    this.buttonRemvoeFromCache         = Button.create("Remove Composite Search from Cache")
+                                               .setSize(ButtonSize.LARGE)
+                                               .style()
+                                               .setMarginRight("12px")
+                                               .setMinWidth("120px")
+                                               .get()
+                                               .addClickListener(e -> getController().doRemoveCompositefromCache());
+    this.buttonFireErrorEvent          = Button.create("Fire Error Event")
+                                               .setSize(ButtonSize.LARGE)
+                                               .style()
+                                               .setMarginRight("12px")
+                                               .setMinWidth("120px")
+                                               .get()
+                                               .addClickListener(e -> getController().doFireErrorEvent());
+    this.buttonHideControlledCardEvent = Button.create("Hide Controlled Card")
+                                               .setSize(ButtonSize.LARGE)
+                                               .style()
+                                               .setMarginRight("12px")
+                                               .setMinWidth("120px")
+                                               .get()
+                                               .addClickListener(e -> getController().doFireHideControlledCardEvent());
+    this.buttonShowControlledCardEvent = Button.create("Show Controlled Card")
+                                               .setSize(ButtonSize.LARGE)
+                                               .style()
+                                               .setMarginRight("12px")
+                                               .setMinWidth("120px")
+                                               .get()
+                                               .addClickListener(e -> getController().doFireShowControlledCardEvent());
     this.buttonRemvoeFromCache.setDisabled(true);
-
+    
     this.infoText = new Text();
-
+    
     divElement.appendChild(Card.create("Tool Bar")
                                .appendChild(Row.create()
                                                .setGap("10px")
@@ -105,11 +119,25 @@ public class ToolbarComponent
                                                                 .appendChild(this.buttonFireErrorEvent))
                                                .styler(style -> style.setTextAlign("center"))
                                                .element())
+                               .appendChild(Row.create()
+                                               .setGap("10px")
+                                               .addColumn(Column.span12()
+                                                                .appendChild(new Text("Control the 'Controled Card' using the buttons below:")))
+                                               .styler(style -> style.setTextAlign("center"))
+                                               .styler(style -> style.setMarginTop("64px"))
+                                               .element())
+                               .appendChild(Row.create()
+                                               .setGap("10px")
+                                               .addColumn(Column.span12()
+                                                                .appendChild(this.buttonHideControlledCardEvent)
+                                                                .appendChild(this.buttonShowControlledCardEvent))
+                                               .styler(style -> style.setTextAlign("center"))
+                                               .element())
                                .element());
-
+    
     initElement(divElement);
   }
-
+  
   @Override
   public void handleToggleButton(boolean cached) {
     this.buttonStoreInCache.setDisabled(cached);
@@ -120,5 +148,5 @@ public class ToolbarComponent
       this.infoText.textContent = ToolbarComponent.NOT_CACHED_TEXT;
     }
   }
-
+  
 }

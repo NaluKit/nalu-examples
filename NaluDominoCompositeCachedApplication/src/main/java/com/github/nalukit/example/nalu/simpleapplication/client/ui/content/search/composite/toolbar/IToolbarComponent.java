@@ -34,7 +34,11 @@ public interface IToolbarComponent
     void doStoreCompositeInCache();
 
     void doFireErrorEvent();
-
+  
+    void doFireHideControlledCardEvent();
+  
+    void doFireShowControlledCardEvent();
+  
   }
 
 }

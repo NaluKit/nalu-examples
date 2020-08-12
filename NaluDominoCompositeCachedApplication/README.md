@@ -14,7 +14,7 @@ To run the examples:
 
 * clone the repository
 
-* run `mvn clean install` & `mvn gwt:devmode`
+* run `mvn clean verify` & `mvn gwt:devmode`
 
 * copy the link and paste the link into the browser url
 
@@ -41,7 +41,7 @@ The content are of the application shell will be used to show the three differen
 The detail screen uses the Nalu composite feature.
 
 
-**Attention:**
+**Note:**
 This example has a filter implemented, that, in case 'Bart Simpsons' is selected from the list, the application will route to the search view. This is the desired behavior: see [```BartSimpsonFilter```](https://github.com/NaluKit/nalu-examples/blob/master/NaluDominoCachedApplication/src/main/java/com/github/nalukit/example/nalu/simpleapplication/client/filters/BartSimpsonFilter.java)
 
 ## The Cache Feature
@@ -56,3 +56,6 @@ To see the cache working,
 * press 'Save'
 
 This example will route back to the list. In case 'Store in Cache' is active, the change is not visible, because Nalu uses the saved component instead of creating a new one. After pressing 'Reload', the updates gets visible.
+
+## Show & Hide Block Feature
+On the search screen you'll find tow buttons to show and hide a block.

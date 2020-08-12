@@ -21,6 +21,8 @@ import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplic
 import com.github.nalukit.example.nalu.simpleapplication.client.event.StoreSearchCompositeEvent;
 import com.github.nalukit.nalu.client.component.AbstractCompositeController;
 import com.github.nalukit.nalu.client.component.annotation.CompositeController;
+import com.github.nalukit.nalu.client.component.event.HideBlockComponentEvent;
+import com.github.nalukit.nalu.client.component.event.ShowBlockComponentEvent;
 import com.github.nalukit.nalu.client.event.NaluErrorEvent;
 import com.github.nalukit.nalu.client.event.model.ErrorInfo.ErrorType;
 import elemental2.dom.HTMLElement;
@@ -61,5 +63,15 @@ public class ToolbarComposite
                                           .data("key02",
                                                 "second parameter"));
   }
-
+  
+  @Override
+  public void doFireHideControlledCardEvent() {
+    this.eventBus.fireEvent(HideBlockComponentEvent.hide("controlledBlock"));
+  }
+  
+  @Override
+  public void doFireShowControlledCardEvent() {
+    this.eventBus.fireEvent(ShowBlockComponentEvent.show("controlledBlock"));
+  }
+  
 }

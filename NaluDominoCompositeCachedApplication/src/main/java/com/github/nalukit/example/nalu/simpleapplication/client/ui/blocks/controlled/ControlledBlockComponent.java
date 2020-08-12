@@ -15,9 +15,8 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.blocks.card;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.blocks.controlled;
 
-import com.github.nalukit.example.nalu.simpleapplication.client.ui.blocks.card.ICardBlockComponent.Controller;
 import com.github.nalukit.nalu.client.component.AbstractBlockComponent;
 import elemental2.dom.DomGlobal;
 import elemental2.dom.HTMLDivElement;
@@ -25,18 +24,17 @@ import org.dominokit.domino.ui.cards.Card;
 import org.dominokit.domino.ui.icons.Icons;
 import org.dominokit.domino.ui.utils.TextNode;
 
-public class CardBlockComponent
-    extends AbstractBlockComponent<Controller>
-    implements ICardBlockComponent {
+public class ControlledBlockComponent
+    extends AbstractBlockComponent<IControlledBlockComponent.Controller>
+    implements IControlledBlockComponent {
 
-  private static final String text = "When shall we three meet again? In thunder, " +
-                                     "lightning, or in rain? When the hurly-burly’s done." +
-                                     "When the battle’s lost and won. That will be ere the" +
-                                     " set of sun. Where the place? Upon the heath.";
+  private static final String text = "This block controller is managed by " +
+                                     "events. The controls to managed the " +
+                                     "block can be found on the search page.";
 
   private HTMLDivElement element;
 
-  public CardBlockComponent() {
+  public ControlledBlockComponent() {
   }
 
   @Override
@@ -46,7 +44,7 @@ public class CardBlockComponent
 
   @Override
   public void render() {
-    Card card = Card.create("Card Title",
+    Card card = Card.create("Controlled Card",
                             "Description text here...")
                     .appendChild(TextNode.of(text))
                     .addHeaderAction(Icons.ALL.more_vert(),
@@ -55,11 +53,12 @@ public class CardBlockComponent
                                      })
                     .styler(style -> {
                       style.setBottom("0px");
-                      style.setRight("0px");
+                      style.setLeft("0px");
                       style.setWidth("256px");
-                      style.setHeight("256px");
+                      style.setHeight("192px");
                       style.setPosition("absolute");
                       style.setProperty("tab-index", "1000");
+                      style.setZIndex(1000);
                     });
     this.element = card.element();
   }
