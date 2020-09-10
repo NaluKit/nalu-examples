@@ -39,7 +39,12 @@ public class NavigationController
     this.eventBus.addHandler(SelectEvent.TYPE,
                              e -> component.select(e.getSelect()));
   }
-
+  
+  @Override
+  public void doLogoff() {
+    this.router.route("/loginShell/login");
+  }
+  
   @Override
   public void doShowSearch() {
     this.router.route("/application/person/search");

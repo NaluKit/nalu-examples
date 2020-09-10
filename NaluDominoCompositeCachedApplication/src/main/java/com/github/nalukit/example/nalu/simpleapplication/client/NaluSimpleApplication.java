@@ -20,9 +20,7 @@ package com.github.nalukit.example.nalu.simpleapplication.client;
 import com.github.nalukit.example.nalu.simpleapplication.client.filters.BartSimpsonFilter;
 import com.github.nalukit.nalu.client.application.IsApplication;
 import com.github.nalukit.nalu.client.application.annotation.Application;
-import com.github.nalukit.nalu.client.application.annotation.Debug;
 import com.github.nalukit.nalu.client.application.annotation.Filters;
-import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
 
 /**
  * Implementation of the NaluSimpleApplication class.
@@ -33,12 +31,10 @@ import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
  * framework). You can use any technique to call the server!</p>
  */
 @Application(loader = NaluSimpleApplicationLoader.class,
-             startRoute = "/application/person/search",
+             startRoute = "/loginShell/login",
              context = NaluSimpleApplicationContext.class,
              stayOnSite = true)
 @Filters(filterClasses = BartSimpsonFilter.class)
-@Debug(logLevel = Debug.LogLevel.DETAILED,
-       logger = DefaultElemental2Logger.class)
 interface NaluSimpleApplication
     extends IsApplication {
 

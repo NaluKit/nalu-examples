@@ -27,6 +27,7 @@ import com.github.nalukit.nalu.client.component.annotation.Composite;
 import com.github.nalukit.nalu.client.component.annotation.Composites;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import com.github.nalukit.nalu.client.seo.SeoDataProvider;
+import com.google.gwt.core.client.GWT;
 import elemental2.dom.HTMLElement;
 
 @Controller(route = "/application/person/search",
@@ -45,10 +46,26 @@ public class SearchController
 
   public SearchController() {
   }
-
+  
+  @Override
+  public void start() {
+    GWT.log("SearchController - start");
+  }
+  
   @Override
   public void activate() {
     SeoDataProvider.get().setTitle("Example - Search Persons ...");
+    GWT.log("SearchController - activate");
+  }
+  
+  @Override
+  public void deactivate() {
+    GWT.log("SearchController - deactivate");
+  }
+  
+  @Override
+  public void stop() {
+    GWT.log("SearchController - stop");
   }
 
   @Override

@@ -45,6 +45,22 @@ public class SearchFormComposite
                                                                     this.context.setCachedSearchDataCompositeScreen(false);
                                                                   }
                                                                 }));
+    GWT.log("SeqrchComposite - start");
+  }
+  
+  @Override
+  public void activate() {
+    GWT.log("SeqrchComposite - activate");
+  }
+  
+  @Override
+  public void deactivate() {
+    GWT.log("SeqrchComposite - deactivate");
+  }
+  
+  @Override
+  public void stop() {
+    GWT.log("SeqrchComposite - stop");
   }
 
   public String getSearchName() {

@@ -24,54 +24,65 @@ import com.github.nalukit.nalu.client.context.IsContext;
  */
 public class NaluSimpleApplicationContext
     implements IsContext {
-
+  
   private String version;
-
+  
   private String searchName;
   private String searchCity;
-
+  
   private boolean cachedSearchDataCompositeScreen;
   private boolean cachedListScreen;
-
+  
+  private boolean loggedIn;
+  
   public NaluSimpleApplicationContext() {
-    this.version = "2.0.0-SNPSHOT";
+    this.version  = "2.0.0-SNPSHOT";
+    this.loggedIn = false;
     this.setCachedListScreen(false);
   }
-
+  
+  public boolean isLoggedIn() {
+    return loggedIn;
+  }
+  
+  public void setLoggedIn(boolean loggedIn) {
+    this.loggedIn = loggedIn;
+  }
+  
   public String getVersion() {
     return version;
   }
-
+  
   public String getSearchName() {
     return searchName;
   }
-
+  
   public void setSearchName(String searchName) {
     this.searchName = searchName;
   }
-
+  
   public String getSearchCity() {
     return searchCity;
   }
-
+  
   public void setSearchCity(String searchCity) {
     this.searchCity = searchCity;
   }
-
+  
   public boolean isCachedSearchDataCompositeScreen() {
     return cachedSearchDataCompositeScreen;
   }
-
+  
   public void setCachedSearchDataCompositeScreen(boolean cachedSearchDataCompositeScreen) {
     this.cachedSearchDataCompositeScreen = cachedSearchDataCompositeScreen;
   }
-
+  
   public boolean isCachedListScreen() {
     return cachedListScreen;
   }
-
+  
   public void setCachedListScreen(boolean cachedListScreen) {
     this.cachedListScreen = cachedListScreen;
   }
-
+  
 }

@@ -25,6 +25,7 @@ import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.Composite;
 import com.github.nalukit.nalu.client.component.annotation.Composites;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
+import com.google.gwt.core.client.GWT;
 import elemental2.dom.HTMLElement;
 
 @Controller(route = "/application/person/search",
@@ -51,8 +52,24 @@ public class SearchController
 
     this.eventBus.fireEvent(new StatusChangeEvent("Please enter data!"));
     this.eventBus.fireEvent(new SelectEvent(SelectEvent.Select.SEARCH));
+    GWT.log("SearchController - start");
   }
 
+  @Override
+  public void activate() {
+    GWT.log("SearchController - activate");
+  }
+
+  @Override
+  public void deactivate() {
+    GWT.log("SearchController - deactivate");
+  }
+
+  @Override
+  public void stop() {
+    GWT.log("SearchController - stop");
+  }
+  
   @Override
   public void doRemoveControllerfromCache() {
     this.router.removeFromCache(this);

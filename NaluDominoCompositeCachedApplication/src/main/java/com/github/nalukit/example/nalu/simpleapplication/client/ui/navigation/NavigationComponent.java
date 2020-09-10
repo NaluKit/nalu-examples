@@ -28,13 +28,15 @@ public class NavigationComponent
     extends AbstractComponent<INavigationComponent.Controller, HTMLElement>
     implements INavigationComponent {
 
-  private TreeItem searchItem;
+  private TreeItem<String> searchItem;
 
-  private TreeItem listItem;
+  private TreeItem<String> listItem;
 
-  private TreeItem composite01Item;
+  private TreeItem<String> composite01Item;
 
-  private TreeItem composite02Item;
+  private TreeItem<String> composite02Item;
+
+  private TreeItem<String> logoffItem;
 
   public NavigationComponent() {
   }
@@ -56,12 +58,16 @@ public class NavigationComponent
     this.composite02Item = TreeItem.create("Composite Conditional Test 02",
                                            Icons.ALL.view_list())
                                    .addClickListener(e -> getController().doShowComposites02Test());
+    this.logoffItem = TreeItem.create("Logoff",
+                                      Icons.ALL.view_list())
+                                   .addClickListener(e -> getController().doLogoff());
 
     initElement(Tree.create("Navigation")
                     .appendChild(this.searchItem)
                     .appendChild(this.listItem)
                     .appendChild(this.composite01Item)
                     .appendChild(this.composite02Item)
+                    .appendChild(this.logoffItem)
                     .element());
   }
 
