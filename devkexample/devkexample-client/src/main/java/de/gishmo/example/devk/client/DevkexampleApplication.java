@@ -2,9 +2,7 @@ package de.gishmo.example.devk.client;
 
 import com.github.nalukit.nalu.client.application.IsApplication;
 import com.github.nalukit.nalu.client.application.annotation.Application;
-import com.github.nalukit.nalu.client.application.annotation.Debug;
 import com.github.nalukit.nalu.client.application.annotation.Filters;
-import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
 import de.gishmo.example.devk.client.filter.BartSimpsonFilter;
 import de.gishmo.example.devk.client.filter.LoginFilter;
 
@@ -26,8 +24,6 @@ import de.gishmo.example.devk.client.filter.LoginFilter;
 @Application(context = ApplicationContext.class,
              startRoute = Routes.ROUTE_LOGON,
              loader = ApplicationLoader.class)
-@Debug(logger = DefaultElemental2Logger.class,
-       logLevel = Debug.LogLevel.DETAILED)
 @Filters(filterClasses = { LoginFilter.class,
                            BartSimpsonFilter.class })
 public interface DevkexampleApplication

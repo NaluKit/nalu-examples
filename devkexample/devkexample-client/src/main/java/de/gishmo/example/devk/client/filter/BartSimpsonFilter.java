@@ -29,7 +29,7 @@ public class BartSimpsonFilter
   public boolean filter(String route,
                         String... parms) {
     if (Nalu.match(route,
-                   "/applicationShell/person/detail")) {
+                   "/applicationShell/person/detail/*")) {
       if ("3".equals(parms[0])) {
         DomGlobal.window.alert("Bart Simpsons is not selecteable -> redirecting to search!");
         return false;

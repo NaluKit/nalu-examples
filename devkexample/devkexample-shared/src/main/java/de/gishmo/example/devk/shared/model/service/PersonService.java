@@ -11,13 +11,14 @@ import org.dominokit.domino.rest.shared.request.service.annotations.RequestFacto
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 
 @RequestFactory
 public interface PersonService {
 
   @GET
-  @Path("/person/get/:id")
-  PersonGetResponse get(String id);
+  @Path("/person/get/{id}")
+  PersonGetResponse get(@PathParam("id")String id);
 
   @POST
   @Path("/person/getAll")

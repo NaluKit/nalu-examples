@@ -23,6 +23,7 @@ import com.github.nalukit.nalu.client.component.annotation.Composite;
 import com.github.nalukit.nalu.client.component.annotation.Composites;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
+import com.google.gwt.core.client.GWT;
 import de.gishmo.example.devk.client.ApplicationContext;
 import de.gishmo.example.devk.client.Routes;
 import de.gishmo.example.devk.client.event.SelectEvent;
@@ -69,6 +70,7 @@ public class DetailController
 
   @Override
   public void start() {
+    GWT.debugger();
     if (this.id == 0) {
       this.router.route(Routes.ROUTE_SEARCH);
     }

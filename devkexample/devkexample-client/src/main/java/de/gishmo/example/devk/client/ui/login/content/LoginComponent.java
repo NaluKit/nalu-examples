@@ -45,10 +45,10 @@ public class LoginComponent
     fieldsGrouping = FieldsGrouping.create();
     this.userId = TextBox.create("User ID")
                          .groupBy(fieldsGrouping)
-                         .setLeftAddon(Icons.ALL.label());
+                         .addLeftAddOn(Icons.ALL.label());
     this.password = TextBox.create("Password")
                            .groupBy(fieldsGrouping)
-                           .setLeftAddon(Icons.ALL.location_on());
+                           .addLeftAddOn(Icons.ALL.location_on());
     initElement(Card.create("Login Parameter")
                     .appendChild(Row.create()
                                     .addColumn(Column.span12()
