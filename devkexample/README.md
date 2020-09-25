@@ -10,7 +10,7 @@ To run the examples:
 
 * run in one terminal window:
 
-    - mvn clean install
+    - mvn clean verify
 
     - mvn gwt:codeserver -pl *-client -am
 
