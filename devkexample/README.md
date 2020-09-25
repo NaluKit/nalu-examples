@@ -23,7 +23,7 @@ To start the application, call:
 
 http://localhost:8080/devkexample.html
 
-To log in, you can enter any string your like ... no validation!
+**To login, you can enter any string your like ... no validation!**
 
 ## Note
 This example has a server implementation. It uses domino-rest for the server communication.
