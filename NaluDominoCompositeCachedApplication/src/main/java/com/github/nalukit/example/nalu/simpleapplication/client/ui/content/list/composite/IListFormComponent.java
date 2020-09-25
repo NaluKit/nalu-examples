@@ -15,28 +15,30 @@
  *
  */
 
-package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.list;
+package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.list.composite;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
-import com.github.nalukit.nalu.client.component.IsComponent;
+import com.github.nalukit.nalu.client.component.IsCompositeComponent;
 import elemental2.dom.HTMLElement;
 
 import java.util.List;
 
-public interface IListComponent
-    extends IsComponent<IListComponent.Controller, HTMLElement> {
-
-  void handleToggleButton(boolean cached);
+public interface IListFormComponent
+    extends IsCompositeComponent<IListFormComponent.Controller, HTMLElement> {
+  
+  List<Person> getPersonList();
+  
+  void resetTable();
+  
+  void setData(List<Person> result);
 
   interface Controller
-      extends IsComponent.Controller {
+      extends IsCompositeComponent.Controller {
   
     void doReload();
-
-    void doRemoveControllerfromCache();
-
-    void doStoreControllerInCache();
   
+    void doUpdate(Person object);
+
   }
 
 }

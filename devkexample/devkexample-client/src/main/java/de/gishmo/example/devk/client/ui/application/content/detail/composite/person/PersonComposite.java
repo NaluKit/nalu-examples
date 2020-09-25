@@ -34,7 +34,7 @@ public class PersonComposite
   }
 
   public boolean isDirty(Person person) {
-    return this.component.isDirty(person);
+    return this.component.isDirty();
   }
 
   public void edit(Person person) {
@@ -42,7 +42,7 @@ public class PersonComposite
   }
 
   public Person flush(Person person) {
-    return this.component.flush(person);
+    return this.component.flush();
   }
 
   @Override

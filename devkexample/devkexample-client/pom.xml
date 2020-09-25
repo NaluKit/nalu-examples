@@ -38,6 +38,7 @@
     <nalu.version>HEAD-SNAPSHOT</nalu.version>
     <!-- DominoUI version -->
     <domino.version>1.0-SNAPSHOT</domino.version>
+    <gwt.editor.version>HEAD-SNAPSHOT</gwt.editor.version>
   </properties>
 
   <dependencies>
@@ -52,6 +53,7 @@
       <version>${project.version}</version>
       <classifier>sources</classifier>
     </dependency>
+
     <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-user</artifactId>
@@ -60,6 +62,18 @@
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-dev</artifactId>
     </dependency>
+
+    <dependency>
+      <groupId>org.gwtproject.editor</groupId>
+      <artifactId>gwt-editor</artifactId>
+      <version>${gwt.editor.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.gwtproject.editor</groupId>
+      <artifactId>gwt-editor-processor</artifactId>
+      <version>${gwt.editor.version}</version>
+    </dependency>
+
     <dependency>
       <groupId>com.github.nalukit</groupId>
       <artifactId>nalu</artifactId>

@@ -44,11 +44,11 @@ public class LoginComponent
   public void render() {
     this.userId = TextBox.create("User ID")
                          .groupBy(fieldsGrouping)
-                         .setLeftAddon(Icons.ALL.label());
+                         .addLeftAddOn(Icons.ALL.label());
 
     this.password = TextBox.password("Password")
                            .groupBy(fieldsGrouping)
-                           .setLeftAddon(Icons.ALL.location_on());
+                           .addLeftAddOn(Icons.ALL.location_on());
 
     initElement(Card.create("Login Parameter")
                     .appendChild(Row.create()

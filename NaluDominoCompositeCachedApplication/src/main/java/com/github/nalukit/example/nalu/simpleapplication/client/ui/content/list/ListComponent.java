@@ -17,7 +17,6 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.list;
 
-import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
 import com.github.nalukit.nalu.client.component.AbstractComponent;
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
@@ -25,59 +24,43 @@ import elemental2.dom.Text;
 import org.dominokit.domino.ui.button.Button;
 import org.dominokit.domino.ui.button.ButtonSize;
 import org.dominokit.domino.ui.cards.Card;
-import org.dominokit.domino.ui.datatable.ColumnConfig;
-import org.dominokit.domino.ui.datatable.DataTable;
-import org.dominokit.domino.ui.datatable.TableConfig;
-import org.dominokit.domino.ui.datatable.store.LocalListDataStore;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
 import org.jboss.elemento.Elements;
-import org.jboss.elemento.EventType;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.jboss.elemento.Elements.a;
 
 public class ListComponent
     extends AbstractComponent<IListComponent.Controller, HTMLElement>
     implements IListComponent {
-
+  
   private final static String CACHED_TEXT = "The controller and the component are cached. To see the caching, select a person by clicking it's name, change something and save the data. The component shows the old, not updated data. Pressing reload will update the list and now you can see the updated data.";
-
+  
   private final static String NOT_CACHED_TEXT = "The controller and the component are not cached. You will always see the updated data.";
-
-  private DataTable<Person> table;
-
-  private LocalListDataStore<Person> store;
-
+  
   private Button buttonStoreInCache;
-
+  
   private Button buttonRemvoeFromCache;
-
-  private Button buttonReload;
-
+  
   private Text infoText;
-
+  
   public ListComponent() {
   }
-
+  
   @Override
   public void render() {
-    this.buttonReload = Button.createPrimary("Reload")
-                              .linkify()
-                              .setSize(ButtonSize.LARGE)
-                              .style()
-                              .setMinWidth("120px")
-                              .get()
-                              .addClickListener(e -> getController().doReload());
-    this.buttonStoreInCache = Button.create("Store in Chache")
-                                    .setSize(ButtonSize.LARGE)
-                                    .style()
-                                    .setMinWidth("120px")
-                                    .setMarginRight("12px")
-                                    .get()
-                                    .addClickListener(e -> getController().doStoreControllerInCache());
+    Button buttonReload = Button.createPrimary("Reload")
+                                .linkify()
+                                .setSize(ButtonSize.LARGE)
+                                .style()
+                                .setMinWidth("120px")
+                                .get()
+                                .addClickListener(e -> getController().doReload());
+    this.buttonStoreInCache    = Button.create("Store in Chache")
+                                       .setSize(ButtonSize.LARGE)
+                                       .style()
+                                       .setMinWidth("120px")
+                                       .setMarginRight("12px")
+                                       .get()
+                                       .addClickListener(e -> getController().doStoreControllerInCache());
     this.buttonRemvoeFromCache = Button.create("Remove from Cache")
                                        .setSize(ButtonSize.LARGE)
                                        .style()
@@ -86,58 +69,18 @@ public class ListComponent
                                        .get()
                                        .addClickListener(e -> getController().doRemoveControllerfromCache());
     this.buttonRemvoeFromCache.setDisabled(true);
-
+    
     HTMLDivElement divElement = Elements.div()
                                         .element();
-
-    TableConfig<Person> tableConfig = new TableConfig<>();
-    tableConfig.addColumn(ColumnConfig.<Person>create("name",
-                                                      "Name").setCellRenderer(cell -> a().textContent(cell.getTableRow()
-                                                                                                          .getRecord()
-                                                                                                          .getName() +
-                                                                                                      ", " +
-                                                                                                      cell.getTableRow()
-                                                                                                          .getRecord()
-                                                                                                          .getFirstName())
-                                                                                         .on(EventType.click,
-                                                                                             e -> getController().doUpdate(cell.getTableRow()
-                                                                                                                               .getRecord()))
-                                                                                         .element()))
-               .addColumn(ColumnConfig.<Person>create("street",
-                                                      "Street").setCellRenderer(cell -> new Text(cell.getTableRow()
-                                                                                                     .getRecord()
-                                                                                                     .getAddress()
-                                                                                                     .getStreet())))
-               .addColumn(ColumnConfig.<Person>create("zip",
-                                                      "ZIP").textAlign("right")
-                                                            .setCellRenderer(cell -> new Text(cell.getTableRow()
-                                                                                                  .getRecord()
-                                                                                                  .getAddress()
-                                                                                                  .getZip())))
-               .addColumn(ColumnConfig.<Person>create("street",
-                                                      "Street").setCellRenderer(cell -> new Text(cell.getTableRow()
-                                                                                                     .getRecord()
-                                                                                                     .getAddress()
-                                                                                                     .getStreet())))
-               .addColumn(ColumnConfig.<Person>create("city",
-                                                      "City").setCellRenderer(cell -> new Text(cell.getTableRow()
-                                                                                                   .getRecord()
-                                                                                                   .getAddress()
-                                                                                                   .getCity())));
-
-    this.store = new LocalListDataStore<>();
-
-    this.table = new DataTable<>(tableConfig,
-                                 store);
-
+    
     divElement.appendChild(Card.create("SEARCH RESULTS")
                                .appendChild(Row.create()
                                                .appendChild(Column.span12()
-                                                                  .appendChild(this.table)))
+                                                                  .setId("compositeListForm")))
                                .element());
-
+    
     this.infoText = new Text();
-
+    
     divElement.appendChild(Card.create("Tool Bar")
                                .appendChild(Row.create()
                                                .setGap("10px")
@@ -146,31 +89,14 @@ public class ListComponent
                                                .addColumn(Column.span12()
                                                                 .appendChild(this.buttonStoreInCache)
                                                                 .appendChild(this.buttonRemvoeFromCache)
-                                                                .appendChild(this.buttonReload))
+                                                                .appendChild(buttonReload))
                                                .style()
                                                .setTextAlign("center"))
                                .element());
-
+    
     initElement(divElement);
   }
-
-  @Override
-  public void resetTable() {
-    this.store.setData(new ArrayList<>());
-  }
-
-  @Override
-  public void setData(List<Person> result) {
-    resetTable();
-    this.store.setData(result);
-    this.table.load();
-  }
-
-  @Override
-  public List<Person> getPersonList() {
-    return this.store.getRecords();
-  }
-
+  
   @Override
   public void handleToggleButton(boolean cached) {
     this.buttonStoreInCache.setDisabled(cached);
@@ -181,5 +107,5 @@ public class ListComponent
       this.infoText.textContent = ListComponent.NOT_CACHED_TEXT;
     }
   }
-
+  
 }

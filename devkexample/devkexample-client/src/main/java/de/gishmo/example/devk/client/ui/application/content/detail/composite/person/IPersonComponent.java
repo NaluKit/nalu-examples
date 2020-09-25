@@ -25,9 +25,9 @@ public interface IPersonComponent
 
   void edit(Person result);
 
-  boolean isDirty(Person person);
+  boolean isDirty();
 
-  Person flush(Person person);
+  Person flush();
 
   interface Controller
       extends IsCompositeComponent.Controller {

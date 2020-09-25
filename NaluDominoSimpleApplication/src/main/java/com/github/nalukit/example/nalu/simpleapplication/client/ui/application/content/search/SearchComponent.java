@@ -46,11 +46,11 @@ public class SearchComponent
     this.searchName = TextBox.create("Name")
                              .groupBy(fieldsGrouping)
                              .setHelperText("search for: 'S' or 'D'")
-                             .setLeftAddon(Icons.ALL.label());
+                             .addLeftAddOn(Icons.ALL.label());
 
     this.searchCity = TextBox.create("City")
                              .groupBy(fieldsGrouping)
-                             .setLeftAddon(Icons.ALL.location_on());
+                             .addLeftAddOn(Icons.ALL.location_on());
 
     initElement(Card.create("Search Parameter")
                     .appendChild(Row.create()

@@ -17,7 +17,9 @@
 package de.gishmo.example.devk.client.ui.application.content.detail.composite.address;
 
 import com.github.nalukit.nalu.client.component.AbstractCompositeComponent;
+import com.sun.tools.internal.xjc.reader.dtd.bindinfo.BIAttribute;
 import de.gishmo.example.devk.client.ui.application.content.detail.composite.address.IAddressComponent.Controller;
+import de.gishmo.example.devk.shared.model.dto.Address;
 import de.gishmo.example.devk.shared.model.dto.Person;
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
@@ -25,22 +27,36 @@ import org.dominokit.domino.ui.cards.Card;
 import org.dominokit.domino.ui.forms.TextBox;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
+import org.gwtproject.editor.client.Editor;
+import org.gwtproject.editor.client.IsEditor;
+import org.gwtproject.editor.client.SimpleBeanEditorDriver;
+import org.gwtproject.editor.client.annotation.IsDriver;
 import org.jboss.elemento.Elements;
 import org.jboss.elemento.HtmlContentBuilder;
 
 public class AddressComponent
     extends AbstractCompositeComponent<Controller, HTMLElement>
-    implements IAddressComponent {
+    implements IAddressComponent,
+               Editor<Person> {
 
-  private TextBox detailStreet;
-
-  private TextBox detailZip;
-
-  private TextBox detailCity;
+  @Path("address.street")
+  TextBox detailStreet;
+  @Path("address.zip")
+  TextBox detailZip;
+  @Path("address.city")
+  TextBox detailCity;
+  
+  private Driver driver;
 
   public AddressComponent() {
   }
 
+  @Override
+  public void bind() {
+    this.driver = new AddressComponent_Driver_Impl();
+    this.driver.initialize(this);
+  }
+  
   @Override
   public void render() {
     this.detailStreet = TextBox.create("Street");
@@ -65,41 +81,22 @@ public class AddressComponent
 
   @Override
   public void edit(Person result) {
-    if (result != null) {
-      detailStreet.setValue(result.getAddress()
-                                  .getStreet());
-      detailZip.setValue(result.getAddress()
-                               .getZip());
-      detailCity.setValue(result.getAddress()
-                                .getCity());
-    }
+    driver.edit(result);
   }
 
   @Override
-  public boolean isDirty(Person person) {
-    boolean notDirty = ((person.getAddress()
-                               .getStreet()
-                               .equals(detailStreet.getValue())) &&
-
-                        (person.getAddress()
-                               .getZip()
-                               .equals(detailZip.getValue())) &&
-
-                        (person.getAddress()
-                               .getCity()
-                               .equals(detailCity.getValue())));
-    return !notDirty;
+  public boolean isDirty() {
+    return driver.isDirty();
   }
 
   @Override
-  public Person flush(Person person) {
-    person.getAddress()
-          .setStreet(detailStreet.getValue());
-    person.getAddress()
-          .setZip(detailZip.getValue());
-    person.getAddress()
-          .setCity(detailCity.getValue());
-    return person;
+  public Person flush() {
+    return driver.flush();
+  }
+  
+  @IsDriver
+  interface Driver
+      extends SimpleBeanEditorDriver<Person, AddressComponent> {
   }
 
 }

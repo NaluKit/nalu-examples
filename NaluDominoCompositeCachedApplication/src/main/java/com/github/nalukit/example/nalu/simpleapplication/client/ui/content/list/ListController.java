@@ -18,63 +18,53 @@
 package com.github.nalukit.example.nalu.simpleapplication.client.ui.content.list;
 
 import com.github.nalukit.example.nalu.simpleapplication.client.NaluSimpleApplicationContext;
-import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.Person;
-import com.github.nalukit.example.nalu.simpleapplication.client.data.model.dto.PersonSearch;
-import com.github.nalukit.example.nalu.simpleapplication.client.data.service.PersonService;
-import com.github.nalukit.example.nalu.simpleapplication.client.event.StatusChangeEvent;
+import com.github.nalukit.example.nalu.simpleapplication.client.ui.content.list.composite.ListFormComposite;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
+import com.github.nalukit.nalu.client.component.annotation.Composite;
+import com.github.nalukit.nalu.client.component.annotation.Composites;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import com.github.nalukit.nalu.client.seo.SeoDataProvider;
+import com.google.gwt.core.client.GWT;
 import elemental2.dom.HTMLElement;
-
-import java.util.List;
 
 @Controller(route = "/application/person/list/:name/:city",
             selector = "content",
             componentInterface = IListComponent.class,
             component = ListComponent.class)
+@Composites({ @Composite(name = "listFormComposite",
+                         compositeController = ListFormComposite.class,
+                         selector = "compositeListForm") })
 public class ListController
     extends AbstractComponentController<NaluSimpleApplicationContext, IListComponent, HTMLElement>
     implements IListComponent.Controller {
-
+  
   private String name;
-
+  
   private String city;
-
+  
   public ListController() {
   }
-
+  
   @Override
-  public void start() {
-    this.loadData();
+  public void doReload() {
+    super.<ListFormComposite>getComposite("listFormComposite").doReload();
   }
-
+  
   @Override
   public void doRemoveControllerfromCache() {
     this.router.removeFromCache(this);
     this.context.setCachedListScreen(false);
     this.component.handleToggleButton(this.context.isCachedListScreen());
   }
-
-  @Override
-  public void doReload() {
-    this.loadData();
-  }
-
+  
   @Override
   public void doStoreControllerInCache() {
     this.router.storeInCache(this);
     this.context.setCachedListScreen(true);
     this.component.handleToggleButton(this.context.isCachedListScreen());
   }
-
-  @Override
-  public void doUpdate(Person object) {
-    this.router.route("/application/person/*/detail",
-                      Long.toString(object.getId()));
-  }
-
+  
   @Override
   public void activate() {
     SeoDataProvider.get()
@@ -107,40 +97,37 @@ public class ListController
                    .setTwitterSite("http://www.gwtproject.org");
     SeoDataProvider.get()
                    .setTwitterTitle("Twitter Tittle");
-
-    this.fireSatusEvent(this.component.getPersonList());
+     
+    GWT.log("ListController - activate");
   }
-
+  
+  @Override
+  public void deactivate() {
+    GWT.log("ListController - deactivate");
+  }
+  
+  @Override
+  public void start() {
+    super.<ListFormComposite>getComposite("listFormComposite").loadData(this.name,
+                                                                        this.city);
+    GWT.log("ListController - start");
+  }
+  
+  @Override
+  public void stop() {
+    GWT.log("ListController - stop");
+  }
+  
   @AcceptParameter("name")
   public void setName(String name) {
     this.name = name;
     this.context.setSearchName(name);
   }
-
+  
   @AcceptParameter("city")
   public void setCity(String city) {
     this.city = city;
     this.context.setSearchCity(city);
   }
-
-  private void loadData() {
-    List<Person> result = PersonService.get()
-                                       .get(new PersonSearch(this.name,
-                                                             this.city));
-    this.component.resetTable();
-    this.component.setData(result);
-    this.component.handleToggleButton(this.context.isCachedListScreen());
-    fireSatusEvent(result);
-  }
-
-  private void fireSatusEvent(List<Person> result) {
-    if (result.size() == 0) {
-      this.eventBus.fireEvent(new StatusChangeEvent("No person found"));
-    } else if (result.size() == 1) {
-      this.eventBus.fireEvent(new StatusChangeEvent("Found one person"));
-    } else {
-      this.eventBus.fireEvent(new StatusChangeEvent("Found " + result.size() + " persons"));
-    }
-  }
-
+  
 }

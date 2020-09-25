@@ -17,6 +17,8 @@
 package de.gishmo.example.devk.client.ui.application.content.detail.composite.person;
 
 import com.github.nalukit.nalu.client.component.AbstractCompositeComponent;
+import de.gishmo.example.devk.client.ui.application.content.detail.composite.address.AddressComponent;
+import de.gishmo.example.devk.client.ui.application.content.detail.composite.address.AddressComponent_Driver_Impl;
 import de.gishmo.example.devk.client.ui.application.content.detail.composite.person.IPersonComponent.Controller;
 import de.gishmo.example.devk.shared.model.dto.Person;
 import elemental2.dom.HTMLDivElement;
@@ -25,18 +27,30 @@ import org.dominokit.domino.ui.cards.Card;
 import org.dominokit.domino.ui.forms.TextBox;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
+import org.gwtproject.editor.client.Editor;
+import org.gwtproject.editor.client.SimpleBeanEditorDriver;
+import org.gwtproject.editor.client.annotation.IsDriver;
 import org.jboss.elemento.Elements;
 import org.jboss.elemento.HtmlContentBuilder;
 
 public class PersonComponent
     extends AbstractCompositeComponent<Controller, HTMLElement>
-    implements IPersonComponent {
-
-  private TextBox detailFirstName;
-
-  private TextBox detailName;
+    implements IPersonComponent,
+               Editor<Person> {
+  
+  @Path("firstName")
+  TextBox detailFirstName;
+  @Path("name")
+  TextBox detailName;
+  
+  private Driver driver;
 
   public PersonComponent() {
+  }
+  @Override
+  public void bind() {
+    this.driver = new PersonComponent_Driver_Impl();
+    this.driver.initialize(this);
   }
 
   @Override
@@ -59,27 +73,22 @@ public class PersonComponent
 
   @Override
   public void edit(Person result) {
-    if (result != null) {
-      detailFirstName.setValue(result.getFirstName());
-      detailName.setValue(result.getName());
-    }
+    driver.edit(result);
   }
 
   @Override
-  public boolean isDirty(Person person) {
-    boolean notDirty = (person.getFirstName()
-                              .equals(detailFirstName.getValue())) &&
-
-                       (person.getName()
-                              .equals(detailName.getValue()));
-    return !notDirty;
+  public boolean isDirty() {
+    return driver.isDirty();
   }
 
   @Override
-  public Person flush(Person person) {
-    person.setFirstName(detailFirstName.getValue());
-    person.setName(detailName.getValue());
-    return person;
+  public Person flush() {
+    return driver.flush();
+  }
+  
+  @IsDriver
+  interface Driver
+      extends SimpleBeanEditorDriver<Person, PersonComponent> {
   }
 
 }

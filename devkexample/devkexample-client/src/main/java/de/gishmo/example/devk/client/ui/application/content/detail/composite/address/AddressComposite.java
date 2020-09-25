@@ -32,7 +32,7 @@ public class AddressComposite
   }
 
   public boolean isDirty(Person person) {
-    return this.component.isDirty(person);
+    return this.component.isDirty();
   }
 
   public void edit(Person person) {
@@ -40,7 +40,7 @@ public class AddressComposite
   }
 
   public Person flush(Person person) {
-    return this.component.flush(person);
+    return this.component.flush();
   }
 
 }

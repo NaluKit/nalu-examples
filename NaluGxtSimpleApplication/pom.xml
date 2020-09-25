@@ -34,7 +34,7 @@
     <gxt.version>4.0.0</gxt.version>
 
     <!-- nalu version -->
-    <nalu.version>2.1.0-SNAPSHOT</nalu.version>
+    <nalu.version>HEAD-SNAPSHOT</nalu.version>
 
     <gwt-events.version>HEAD-SNAPSHOT</gwt-events.version>
 

@@ -35,7 +35,7 @@
 
   <properties>
     <!-- nalu version -->
-    <nalu.version>2.1.0-SNAPSHOT</nalu.version>
+    <nalu.version>HEAD-SNAPSHOT</nalu.version>
     <!-- DominoUI version -->
     <domino.version>1.0-SNAPSHOT</domino.version>
   </properties>
