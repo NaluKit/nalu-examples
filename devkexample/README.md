@@ -24,6 +24,7 @@ To start the application, call:
 http://localhost:8080/devkexample.html
 
 **To login, you can enter any string your like ... no validation!**
+Enter for 'S' or 'D' in the name search field to get a list of person.
 
 ## Note
 This example has a server implementation. It uses domino-rest for the server communication.
