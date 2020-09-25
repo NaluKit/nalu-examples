@@ -38,9 +38,7 @@ Login example providing three shells:
       * a navigation area
       * a content area
 
-2. error shell
-
-3. login shell for accepting a user id and a password (is not checked, enter what ever you want ...)
+2. login shell for accepting a user id and a password (is not checked, enter what ever you want ...)
 
 The detail screen uses the Nalu composite feature.
 
