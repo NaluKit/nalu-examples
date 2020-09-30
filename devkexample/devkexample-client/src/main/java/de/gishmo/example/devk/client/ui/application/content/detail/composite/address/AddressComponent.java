@@ -17,9 +17,7 @@
 package de.gishmo.example.devk.client.ui.application.content.detail.composite.address;
 
 import com.github.nalukit.nalu.client.component.AbstractCompositeComponent;
-import com.sun.tools.internal.xjc.reader.dtd.bindinfo.BIAttribute;
 import de.gishmo.example.devk.client.ui.application.content.detail.composite.address.IAddressComponent.Controller;
-import de.gishmo.example.devk.shared.model.dto.Address;
 import de.gishmo.example.devk.shared.model.dto.Person;
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
@@ -28,7 +26,6 @@ import org.dominokit.domino.ui.forms.TextBox;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
 import org.gwtproject.editor.client.Editor;
-import org.gwtproject.editor.client.IsEditor;
 import org.gwtproject.editor.client.SimpleBeanEditorDriver;
 import org.gwtproject.editor.client.annotation.IsDriver;
 import org.jboss.elemento.Elements;
@@ -45,7 +42,7 @@ public class AddressComponent
   TextBox detailZip;
   @Path("address.city")
   TextBox detailCity;
-  
+
   private Driver driver;
 
   public AddressComponent() {
@@ -56,7 +53,7 @@ public class AddressComponent
     this.driver = new AddressComponent_Driver_Impl();
     this.driver.initialize(this);
   }
-  
+
   @Override
   public void render() {
     this.detailStreet = TextBox.create("Street");
@@ -93,7 +90,7 @@ public class AddressComponent
   public Person flush() {
     return driver.flush();
   }
-  
+
   @IsDriver
   interface Driver
       extends SimpleBeanEditorDriver<Person, AddressComponent> {
