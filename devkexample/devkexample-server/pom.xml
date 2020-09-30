@@ -33,7 +33,6 @@
   <packaging>war</packaging>
 
   <properties>
-    <eis2.version>1.0-SNAPSHOT</eis2.version>
     <javax.ws.rs-api.version>2.1.5</javax.ws.rs-api.version>
     <javax.activation.version>1.1</javax.activation.version>
     <jackson.mapper.asl.version>1.9.13</jackson.mapper.asl.version>
