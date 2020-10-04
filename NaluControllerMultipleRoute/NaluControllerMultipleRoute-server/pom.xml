@@ -26,7 +26,7 @@
   <parent>
     <groupId>com.gihub.nalukit.example</groupId>
     <artifactId>NaluControllerMultipleRoute</artifactId>
-    <version>1.0.0</version>
+    <version>HEAD-SNAPSHOT</version>
   </parent>
 
   <artifactId>NaluControllerMultipleRoute-server</artifactId>

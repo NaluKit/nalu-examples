@@ -25,7 +25,7 @@
 
   <groupId>de.gishmo.example</groupId>
   <artifactId>devkexample</artifactId>
-  <version>2.0.0</version>
+  <version>HEAD-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>devkexample - Nalu Boot Starter Project</name>
@@ -76,6 +76,9 @@
           <configuration>
             <source>1.8</source>
             <target>1.8</target>
+            <compilerArgs>
+              <arg>-Xlint:unchecked</arg>
+            </compilerArgs>
           </configuration>
         </plugin>
         <plugin>

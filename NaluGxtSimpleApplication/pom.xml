@@ -23,13 +23,13 @@
 
   <groupId>com.github.nalukit.example.nalu</groupId>
   <artifactId>NaluGxtSimpleApplication</artifactId>
-  <version>2.0.0</version>
+  <version>HEAD-SNAPSHOT</version>
 
   <packaging>gwt-app</packaging>
 
   <properties>
     <!-- Convenience property to set the GWT version -->
-    <gwtVersion>2.8.2</gwtVersion>
+    <gwtVersion>2.9.0</gwtVersion>
     <!-- GXT GPL version without support -->
     <gxt.version>4.0.0</gxt.version>
 
