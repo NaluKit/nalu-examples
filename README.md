@@ -1,15 +1,9 @@
 # Nalu examples
 To help you to understand how the framework works, Nalu comes with some examples.
 
-To run the examples:
+To run the examples fowllo tge instructions.
 
-* clone the repository
-
-* run ```mvn clean``` & ```mvn gwt:devmode```
-
-* copy the link and paste the link into the browser url
-
-Please, keep in mind, Nalu is a client side framework, so all server calls are simulated on the client side and are mocked in these examples. Because of that, there is no need for a server side implementation. Also, Nalu does not force you to use a special widget lib. This is up to you. In this examples we use native Elemental 2, Elemento, [Domino-UI](https://github.com/DominoKit/domino-ui) and native GWT widgets.
+Please, keep in mind, Nalu is a client side framework, so most of the server calls are simulated on the client side and are mocked in these examples. Because of that, there is no need for a server side implementation. Also, Nalu does not force you to use a special widget lib. This is up to you. In this examples we use native Elemental 2, Elemento, [Domino-UI](https://github.com/DominoKit/domino-ui) and native GWT widgets.
 
 Most of the examples have three screens (search screen, result list and a detail screen).
 
