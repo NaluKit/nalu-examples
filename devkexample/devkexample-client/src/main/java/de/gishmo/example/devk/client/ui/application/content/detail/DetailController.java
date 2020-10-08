@@ -70,7 +70,6 @@ public class DetailController
 
   @Override
   public void start() {
-    GWT.debugger();
     if (this.id == 0) {
       this.router.route(Routes.ROUTE_SEARCH);
     }
