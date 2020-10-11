@@ -29,9 +29,9 @@ Full featured example providing a shell with four areas:
 
 The content area will be used to show the three different components:
 
-* a search componnt
+* a search component
 * a list component (the result from the search)
-* a detail comonent (a selected person from the list)
+* a detail component (a selected person from the list)
 
 **Attention:**
 

@@ -1,5 +1,5 @@
-# Example demontrating the plugin feature and using a non hash url
-This example demonstrates the use of modules in Nalu. It is a multi module project. Also, the url is condfigurated to not use a hash.
+# Example demonstrating the plugin feature and using a non hash url
+This example demonstrates the use of modules in Nalu. It is a multi module project. Also, the url is configured to not use a hash.
 
 This example uses the Tracking feature.
 
@@ -38,7 +38,7 @@ Login example providing three shells:
 
 The detail screen uses the Nalu composite feature.
 
-The classes used to implement the error and login feature a seperated into own plugins.
+The classes used to implement the error and login feature a separated into own plugins.
 
 ## The Login example
 

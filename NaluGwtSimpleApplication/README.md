@@ -1,7 +1,7 @@
 # Nalu example using GWT widgets
 This example is using GWT widgets.
 
-It is a small applilcation with three screens. One screen to accept search parameters, one to show the search result and a detail screen.
+It is a small application with three screens. One screen to accept search parameters, one to show the search result and a detail screen.
 
 This example is implemented using a single maven module.
 

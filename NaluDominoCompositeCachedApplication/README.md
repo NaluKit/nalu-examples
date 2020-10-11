@@ -1,7 +1,7 @@
 # Nalu example demonstrating the cache feature
 This example demonstrates the Nalu cache feature.
 
-* on the search screen the serach data composite is cached
+* on the search screen the search data composite is cached
 
 * on the list screen the complete controller is cached.
 
@@ -34,9 +34,9 @@ Example providing two shells:
 
 The content are of the application shell will be used to show the three different components:
 
-* a search componnt
+* a search component
 * a list component (the result from the search)
-* a detail comonent (a selected person from the list)
+* a detail component (a selected person from the list)
 
 The detail screen uses the Nalu composite feature.
 

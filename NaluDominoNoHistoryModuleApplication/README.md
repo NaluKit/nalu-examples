@@ -1,7 +1,7 @@
 **Example is outdated!**
 
 
-# Example demontrating the plugin feature
+# Example demonstrating the plugin feature
 This example demonstrates the use of plugins in Nalu. It is a multi module project.
 
 ## Using
@@ -31,7 +31,7 @@ Login example providing three shells:
 
 The detail screen uses the Nalu composite feature.
 
-The classes used to implement the error and login feature a seperated into own plugins.
+The classes used to implement the error and login feature a separated into own plugins.
 
 ## The Login example
 

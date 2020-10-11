@@ -33,7 +33,7 @@ Login example providing three shells:
 
 The detail screen uses the Nalu composite feature.
 
-The classes used to implement the login feature a seperated module. The error handling is done using an ErrorPopUpController inside the main module.
+The classes used to implement the login feature a separated module. The error handling is done using an ErrorPopUpController inside the main module.
 
 ## The Login example
 
