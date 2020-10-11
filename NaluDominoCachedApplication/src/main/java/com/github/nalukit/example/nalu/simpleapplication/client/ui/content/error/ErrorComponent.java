@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 - 2019 - Frank Hossfeld
+ * Copyright (c) 2018 - 2020 - Frank Hossfeld
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not
  *  use this file except in compliance with the License. You may obtain a copy of
@@ -21,7 +21,6 @@ import com.github.nalukit.nalu.client.event.model.ErrorInfo;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.Text;
 import org.dominokit.domino.ui.cards.Card;
-import org.dominokit.domino.ui.forms.FieldsGrouping;
 import org.dominokit.domino.ui.icons.Icons;
 import org.dominokit.domino.ui.style.Color;
 
@@ -30,8 +29,6 @@ public class ErrorComponent
     implements IErrorComponent {
 
   private Text errorText;
-
-  private FieldsGrouping fieldsGrouping = FieldsGrouping.create();
 
   public ErrorComponent() {
   }
