@@ -1,5 +1,5 @@
 # Nalu examples
-To help you to understand how the framework works, Nalu comes with some examples.
+To help you to understand how the framework works, [Nalu](https://github.com/NaluKit/nalu) comes with some examples.
 
 To run the examples follow the instructions.
 
