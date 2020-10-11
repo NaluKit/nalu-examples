@@ -21,11 +21,9 @@ import com.github.nalukit.example.nalu.loginapplication.module.login.client.Logi
 import com.github.nalukit.example.nalu.loginapplication.tracking.ApplicationTracker;
 import com.github.nalukit.nalu.client.application.IsApplication;
 import com.github.nalukit.nalu.client.application.annotation.Application;
-import com.github.nalukit.nalu.client.application.annotation.Debug;
 import com.github.nalukit.nalu.client.application.annotation.Filters;
 import com.github.nalukit.nalu.client.module.annotation.Modules;
 import com.github.nalukit.nalu.client.tracker.annotation.Tracker;
-import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
 
 /**
  * Implementation of the NaluLoginApplication class.
@@ -40,8 +38,6 @@ import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
              context = NaluLoginApplicationContext.class,
              useHash = false,
              useColonForParametersInUrl = true)
-@Debug(logLevel = Debug.LogLevel.DETAILED,
-       logger = DefaultElemental2Logger.class)
 @Modules({ LoginPlugin.class })
 @Filters(filterClasses = BartSimpsonFilter.class)
 @Tracker(ApplicationTracker.class)

@@ -16,7 +16,7 @@
 package com.github.nalukit.example.nalu.loginapplication.module.login.client;
 
 import com.github.nalukit.nalu.client.context.AbstractModuleContext;
-import com.github.nalukit.nalu.client.context.module.IsModuleContext;
+import com.github.nalukit.nalu.client.context.IsModuleContext;
 
 import elemental2.dom.DomGlobal;
 
@@ -31,7 +31,7 @@ public class NaluLoginApplicationContextLoginModule
     public static final String LOGGED_IN   = "loggedIn";
     public static final String USER        = "user";
   }
-  
+
   public NaluLoginApplicationContextLoginModule() {
     super();
   }

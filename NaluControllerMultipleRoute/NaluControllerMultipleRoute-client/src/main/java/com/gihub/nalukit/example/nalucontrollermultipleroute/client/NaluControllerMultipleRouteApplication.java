@@ -2,8 +2,6 @@ package com.gihub.nalukit.example.nalucontrollermultipleroute.client;
 
 import com.github.nalukit.nalu.client.application.IsApplication;
 import com.github.nalukit.nalu.client.application.annotation.Application;
-import com.github.nalukit.nalu.client.application.annotation.Debug;
-import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
 
 /**
  * Copyright (C) 2018 - 2019 Frank Hossfeld <frank.hossfeld@googlemail.com>
@@ -24,11 +22,7 @@ import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
     context = NaluControllerMultipleRouteContext.class,
     startRoute = "/application/screen01"
 )
-@Debug(
-    logger = DefaultElemental2Logger.class,
-    logLevel = Debug.LogLevel.DETAILED
-)
 public interface NaluControllerMultipleRouteApplication
     extends IsApplication {
-  
+
 }

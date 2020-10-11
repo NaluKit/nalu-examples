@@ -19,9 +19,7 @@ package com.github.nalukit.example.nalu.simpleapplication.client;
 
 import com.github.nalukit.nalu.client.application.IsApplication;
 import com.github.nalukit.nalu.client.application.annotation.Application;
-import com.github.nalukit.nalu.client.application.annotation.Debug;
 import com.github.nalukit.nalu.client.application.annotation.Filters;
-import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
 
 /**
  * Implementation of the NaluSimpleApplication class.
@@ -36,8 +34,6 @@ import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
              context = NaluSimpleApplicationContext.class,
 //             useHash = false,
              useColonForParametersInUrl = true)
-@Debug(logLevel = Debug.LogLevel.DETAILED,
-       logger = DefaultElemental2Logger.class)
 interface NaluSimpleApplication
     extends IsApplication {
 
