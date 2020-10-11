@@ -17,7 +17,7 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client;
 
-import com.github.nalukit.nalu.client.context.AbstractMainContext;
+import com.github.nalukit.nalu.client.context.AbstractModuleContext;
 import com.github.nalukit.nalu.client.event.model.ErrorInfo;
 
 import java.util.Objects;
@@ -26,7 +26,7 @@ import java.util.Objects;
  * A application context of the NaluMailApplication
  */
 public class NaluSimpleApplicationContext
-    extends AbstractMainContext {
+    extends AbstractModuleContext {
 
   private static final String VERSION     = "version";
   private static final String SEARCH_CITY = "searchCity";

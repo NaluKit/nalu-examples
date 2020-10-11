@@ -21,9 +21,7 @@ import com.github.nalukit.example.nalu.loginapplication.client.filters.BartSimps
 import com.github.nalukit.example.nalu.loginapplication.client.filters.LoginFilter;
 import com.github.nalukit.nalu.client.application.IsApplication;
 import com.github.nalukit.nalu.client.application.annotation.Application;
-import com.github.nalukit.nalu.client.application.annotation.Debug;
 import com.github.nalukit.nalu.client.application.annotation.Filters;
-import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
 
 /**
  * Implementation of the NaluLoginApplication class.
@@ -44,8 +42,6 @@ import com.github.nalukit.nalu.plugin.elemental2.client.DefaultElemental2Logger;
              context = NaluLoginApplicationContext.class)
 @Filters(filterClasses = { LoginFilter.class,
                            BartSimpsonFilter.class })
-@Debug(logLevel = Debug.LogLevel.DETAILED,
-       logger = DefaultElemental2Logger.class)
 interface NaluLoginApplication
     extends IsApplication {
 

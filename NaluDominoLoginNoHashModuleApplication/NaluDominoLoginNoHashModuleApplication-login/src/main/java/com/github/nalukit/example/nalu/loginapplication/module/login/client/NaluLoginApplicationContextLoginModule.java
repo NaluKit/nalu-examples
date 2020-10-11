@@ -16,7 +16,7 @@
 package com.github.nalukit.example.nalu.loginapplication.module.login.client;
 
 import com.github.nalukit.nalu.client.context.AbstractModuleContext;
-import com.github.nalukit.nalu.client.context.module.IsModuleContext;
+import com.github.nalukit.nalu.client.context.IsModuleContext;
 
 /**
  * A application context of the NaluMailApplication

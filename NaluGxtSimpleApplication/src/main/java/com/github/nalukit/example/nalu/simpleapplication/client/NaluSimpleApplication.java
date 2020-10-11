@@ -19,8 +19,6 @@ package com.github.nalukit.example.nalu.simpleapplication.client;
 
 import com.github.nalukit.nalu.client.application.IsApplication;
 import com.github.nalukit.nalu.client.application.annotation.Application;
-import com.github.nalukit.nalu.client.application.annotation.Debug;
-import com.github.nalukit.nalu.plugin.gwt.client.DefaultGWTLogger;
 
 /**
  * Implementation of the NaluSimpleApplication class.
@@ -37,8 +35,6 @@ import com.github.nalukit.nalu.plugin.gwt.client.DefaultGWTLogger;
 //@Application(startRoute = "/application/intro",
 //             context = NaluSimpleApplicationContext.class,
 //             useHash = false)
-@Debug(logLevel = Debug.LogLevel.DETAILED,
-       logger = DefaultGWTLogger.class)
 interface NaluSimpleApplication
     extends IsApplication {
 

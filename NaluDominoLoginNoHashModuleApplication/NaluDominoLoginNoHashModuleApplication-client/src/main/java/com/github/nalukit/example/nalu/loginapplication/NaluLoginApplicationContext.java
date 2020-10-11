@@ -15,14 +15,14 @@
  */
 package com.github.nalukit.example.nalu.loginapplication;
 
-import com.github.nalukit.nalu.client.context.AbstractMainContext;
+import com.github.nalukit.nalu.client.context.AbstractModuleContext;
 import com.github.nalukit.nalu.client.context.IsContext;
 
 /**
  * A application context of the NaluMailApplication
  */
 public class NaluLoginApplicationContext
-    extends AbstractMainContext
+    extends AbstractModuleContext
     implements IsContext {
 
   private static final String LOGGED_IN   = "loggedIn";

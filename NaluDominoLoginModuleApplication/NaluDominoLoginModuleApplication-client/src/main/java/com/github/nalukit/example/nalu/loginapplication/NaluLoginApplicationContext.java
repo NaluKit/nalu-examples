@@ -16,7 +16,7 @@
 package com.github.nalukit.example.nalu.loginapplication;
 
 import com.github.nalukit.example.nalu.loginapplication.module.login.client.NaluLoginApplicationContextLoginModule;
-import com.github.nalukit.nalu.client.context.AbstractMainContext;
+import com.github.nalukit.nalu.client.context.AbstractModuleContext;
 import com.github.nalukit.nalu.client.context.IsContext;
 
 import elemental2.dom.DomGlobal;
@@ -25,7 +25,7 @@ import elemental2.dom.DomGlobal;
  * A application context of the NaluMailApplication
  */
 public class NaluLoginApplicationContext
-    extends AbstractMainContext
+    extends AbstractModuleContext
     implements IsContext {
 
   public static interface Keys {
@@ -33,7 +33,7 @@ public class NaluLoginApplicationContext
     public static final String SEARCH_CITY = "searchCity";
     public static final String VERSION     = "version";
   }
-  
+
   public NaluLoginApplicationContext() {
     super();
     initialize();
