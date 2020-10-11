@@ -192,7 +192,7 @@
             <!--Ask GWT to create the Story of Your Compile (SOYC) (gwt:compile)-->
             <arg>-compileReport</arg>
           </compilerArgs>
-          <localWorkers>6</localWorkers>
+          <localWorkers>2</localWorkers>
           <logLevel>INFO</logLevel>
           <skipModule>true</skipModule>
           <codeServerPort>9876</codeServerPort>

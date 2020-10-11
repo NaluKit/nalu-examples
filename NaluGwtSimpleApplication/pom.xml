@@ -228,7 +228,7 @@
             <gwt.persistentunitcachedir>${project.build.directory}/gwt/unitCache/</gwt.persistentunitcachedir>
             <gwt.war.directory>${project.basedir}/${project.build.finalName}</gwt.war.directory>
           </systemProperties>
-          <localWorkers>6</localWorkers>
+          <localWorkers>2</localWorkers>
           <logLevel>TRACE</logLevel>
         </configuration>
       </plugin>

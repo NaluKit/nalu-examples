@@ -66,7 +66,7 @@
         <inherited>false</inherited>
         <configuration>
           <launcherDir>${project.build.directory}/gwt/launcherDir</launcherDir>
-          <localWorkers>6</localWorkers>
+          <localWorkers>2</localWorkers>
         </configuration>
       </plugin>
       <plugin>
