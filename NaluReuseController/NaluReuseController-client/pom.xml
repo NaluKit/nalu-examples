@@ -96,7 +96,7 @@
         <configuration>
           <moduleName>com.github.nalukit.example.nalureusecontroller.NaluReuseController</moduleName>
           <moduleShortName>NaluReuseController</moduleShortName>
-          <localWorkers>6</localWorkers>
+          <localWorkers>2</localWorkers>
         </configuration>
       </plugin>
     </plugins>

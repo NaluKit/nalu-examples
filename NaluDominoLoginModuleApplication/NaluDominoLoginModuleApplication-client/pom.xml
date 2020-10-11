@@ -123,7 +123,7 @@
         <configuration>
           <moduleName>com.github.nalukit.example.nalu.loginapplication.Application</moduleName>
           <moduleShortName>app</moduleShortName>
-          <localWorkers>6</localWorkers>
+          <localWorkers>2</localWorkers>
         </configuration>
       </plugin>
       <plugin>

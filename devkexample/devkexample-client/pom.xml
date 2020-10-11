@@ -127,7 +127,7 @@
         <configuration>
           <moduleName>de.gishmo.example.devk.devkexample</moduleName>
           <moduleShortName>devkexample</moduleShortName>
-          <localWorkers>6</localWorkers>
+          <localWorkers>2</localWorkers>
         </configuration>
       </plugin>
     </plugins>

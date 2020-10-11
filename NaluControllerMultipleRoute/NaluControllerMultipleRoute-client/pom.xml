@@ -102,7 +102,7 @@
         <configuration>
           <moduleName>com.gihub.nalukit.example.nalucontrollermultipleroute.NaluControllerMultipleRoute</moduleName>
           <moduleShortName>NaluControllerMultipleRoute</moduleShortName>
-          <localWorkers>6</localWorkers>
+          <localWorkers>2</localWorkers>
         </configuration>
       </plugin>
     </plugins>
