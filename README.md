@@ -42,4 +42,4 @@ This example uses the GWT Material widgets and uses the Nalu-Plugin-Elemental2.
 Some things are nonsense and only implemented to show some features of Nalu.
 
 For example: 
-* If Bart Simpson is selected from the list, the application will route to the search view. This is the desired behavior: f. e.: see [BartSimpsonFilter-class](https://github.com/nalukit/nalu-examples/blob/master/NaluDominoSimpleApplication/src/main/java/de/gishmo/gwt/example/nalu/simpleapplication/client/filters/BartSimpsonFilter.java) for more informations.
+* If Bart Simpson is selected from the list, the application will route to the search view. This is the desired behavior: f. e.: see [BartSimpsonFilter-class](https://github.com/NaluKit/nalu-examples/blob/master/NaluDominoSimpleApplication/src/main/java/com/github/nalukit/example/nalu/simpleapplication/client/filters/BartSimpsonFilter.java) for more informations.
