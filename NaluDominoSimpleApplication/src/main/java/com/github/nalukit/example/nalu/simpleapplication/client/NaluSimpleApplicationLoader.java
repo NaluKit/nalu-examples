@@ -17,14 +17,14 @@
 
 package com.github.nalukit.example.nalu.simpleapplication.client;
 
-import com.github.nalukit.nalu.client.application.AbstractApplicationLoader;
+import com.github.nalukit.nalu.client.application.AbstractLoader;
 import elemental2.dom.DomGlobal;
 
 /**
  * A application loader of the NaluSimpleApplication
  */
 public class NaluSimpleApplicationLoader
-    extends AbstractApplicationLoader<NaluSimpleApplicationContext> {
+    extends AbstractLoader<NaluSimpleApplicationContext> {
 
   /**
    * The laoder of the application.
