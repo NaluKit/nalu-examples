@@ -38,17 +38,15 @@
       <scope>provided</scope>
     </dependency>
 
-
     <dependency>
       <groupId>org.dominokit</groupId>
-      <artifactId>domino-rest-shared</artifactId>
+      <artifactId>domino-rest-client</artifactId>
       <version>${domnio-rest}</version>
     </dependency>
     <dependency>
       <groupId>org.dominokit</groupId>
-      <artifactId>domino-rest-apt</artifactId>
+      <artifactId>domino-rest-processor</artifactId>
       <version>${domnio-rest}</version>
-      <scope>provided</scope>
     </dependency>
   </dependencies>
 

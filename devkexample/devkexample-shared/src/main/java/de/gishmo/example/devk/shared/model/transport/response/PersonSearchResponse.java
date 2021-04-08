@@ -1,7 +1,7 @@
 package de.gishmo.example.devk.shared.model.transport.response;
 
 import de.gishmo.example.devk.shared.model.dto.Person;
-import org.dominokit.jacksonapt.annotation.JSONMapper;
+import org.dominokit.jackson.annotation.JSONMapper;
 
 import java.util.ArrayList;
 import java.util.List;

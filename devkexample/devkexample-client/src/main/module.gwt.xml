@@ -32,7 +32,7 @@
   <inherits name='com.github.nalukit.nalu.plugin.elemental2.NaluPluginElemental2'/>
   <inherits name='de.gishmo.example.devk.DTO'/>
   <inherits name='org.dominokit.domino.ui.DominoUI'/>
-  <inherits name="org.dominokit.domino.rest.GwtRest"/>
+  <inherits name='org.dominokit.rest.Rest'/>
 
   <!-- Specify the app entry point class.                         -->
   <entry-point class='de.gishmo.example.devk.client.Devkexample'/>

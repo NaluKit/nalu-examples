@@ -1,7 +1,7 @@
 package de.gishmo.example.devk.shared.model.transport.response;
 
 import de.gishmo.example.devk.shared.model.AbstractDto;
-import org.dominokit.jacksonapt.annotation.JSONMapper;
+import org.dominokit.jackson.annotation.JSONMapper;
 
 @JSONMapper
 public class Status

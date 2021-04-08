@@ -2,7 +2,7 @@ package de.gishmo.example.devk.client;
 
 import com.github.nalukit.nalu.plugin.elemental2.client.NaluPluginElemental2;
 import com.google.gwt.core.client.EntryPoint;
-import org.dominokit.domino.rest.DominoRestConfig;
+import org.dominokit.rest.DominoRestConfig;
 
 /**
  * Copyright (C) 2018 - 2019 Frank Hossfeld <frank.hossfeld@googlemail.com>

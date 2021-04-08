@@ -11,8 +11,7 @@
 
 
   <!-- Other module inherits                                      -->
-  <inherits name="org.dominokit.domino.rest.Rest"/>
-  <inherits name="org.dominokit.jacksonapt.GwtJacksonApt"/>
+  <inherits name="org.dominokit.rest.Rest"/>
 
   <!-- Specify the paths for translatable code                    -->
   <source path='shared'/>

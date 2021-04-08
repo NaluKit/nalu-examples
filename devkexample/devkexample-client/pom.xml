@@ -37,8 +37,9 @@
     <!-- nalu version -->
     <nalu.version>HEAD-SNAPSHOT</nalu.version>
     <!-- DominoUI version -->
-    <domino.version>1.0-SNAPSHOT</domino.version>
-    <gwt.editor.version>HEAD-SNAPSHOT</gwt.editor.version>
+    <domino.version>1.0.0-RC2</domino.version>
+    <domnio-rest>1.0.0-RC3</domnio-rest>
+    <gwt.editor.version>1.0.0-RC1</gwt.editor.version>
   </properties>
 
   <dependencies>
@@ -103,18 +104,7 @@
 
     <dependency>
       <groupId>org.dominokit</groupId>
-      <artifactId>domino-rest-shared</artifactId>
-      <version>${domnio-rest}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.dominokit</groupId>
-      <artifactId>domino-rest-apt</artifactId>
-      <version>${domnio-rest}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.dominokit</groupId>
-      <artifactId>domino-rest-gwt</artifactId>
+      <artifactId>domino-rest-client</artifactId>
       <version>${domnio-rest}</version>
     </dependency>
   </dependencies>

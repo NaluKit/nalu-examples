@@ -1,7 +1,6 @@
 package de.gishmo.example.devk.client;
 
-import com.github.nalukit.nalu.client.application.AbstractApplicationLoader;
-import com.github.nalukit.nalu.client.application.IsApplicationLoader;
+import com.github.nalukit.nalu.client.application.AbstractLoader;
 
 /**
  * Copyright (C) 2018 - 2019 Frank Hossfeld <frank.hossfeld@googlemail.com>
@@ -19,10 +18,10 @@ import com.github.nalukit.nalu.client.application.IsApplicationLoader;
  * limitations under the License.
  */
 public class ApplicationLoader
-    extends AbstractApplicationLoader<ApplicationContext> {
+    extends AbstractLoader<ApplicationContext> {
 
   @Override
-  public void load(IsApplicationLoader.FinishLoadCommand finishLoadCommand) {
+  public void load(FinishLoadCommand finishLoadCommand) {
     // enter your code here ...
     finishLoadCommand.finishLoading();
   }

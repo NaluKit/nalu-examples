@@ -16,7 +16,7 @@
 
 package de.gishmo.example.devk.shared.model.dto;
 
-import org.dominokit.jacksonapt.annotation.JSONMapper;
+import org.dominokit.jackson.annotation.JSONMapper;
 
 import java.io.Serializable;
 

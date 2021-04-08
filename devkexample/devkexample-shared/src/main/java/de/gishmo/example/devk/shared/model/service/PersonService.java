@@ -5,8 +5,8 @@ import de.gishmo.example.devk.shared.model.dto.PersonSearch;
 import de.gishmo.example.devk.shared.model.transport.response.PersonChangeResponse;
 import de.gishmo.example.devk.shared.model.transport.response.PersonGetResponse;
 import de.gishmo.example.devk.shared.model.transport.response.PersonSearchResponse;
-import org.dominokit.domino.rest.shared.request.service.annotations.RequestBody;
-import org.dominokit.domino.rest.shared.request.service.annotations.RequestFactory;
+import org.dominokit.rest.shared.request.service.annotations.RequestBody;
+import org.dominokit.rest.shared.request.service.annotations.RequestFactory;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
