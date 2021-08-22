@@ -35,10 +35,10 @@
 
   <properties>
     <!-- nalu version -->
-    <nalu.version>HEAD-SNAPSHOT</nalu.version>
+    <nalu.version>2.6.0</nalu.version>
     <!-- DominoUI version -->
-    <domino.version>1.0.0-RC2</domino.version>
-    <domnio-rest>1.0.0-RC3</domnio-rest>
+    <domino.version>1.0.0-RC6</domino.version>
+    <domnio-rest>1.0.0-RC5</domnio-rest>
     <gwt.editor.version>1.0.0-RC1</gwt.editor.version>
   </properties>
 

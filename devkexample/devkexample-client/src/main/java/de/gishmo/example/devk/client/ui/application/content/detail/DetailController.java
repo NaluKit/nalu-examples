@@ -22,10 +22,11 @@ import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Composite;
 import com.github.nalukit.nalu.client.component.annotation.Composites;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
+import com.github.nalukit.nalu.client.constraint.annotation.ParameterConstraint;
 import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
-import com.google.gwt.core.client.GWT;
 import de.gishmo.example.devk.client.ApplicationContext;
 import de.gishmo.example.devk.client.Routes;
+import de.gishmo.example.devk.client.constraint.IdRule;
 import de.gishmo.example.devk.client.event.SelectEvent;
 import de.gishmo.example.devk.client.event.StatusChangeEvent;
 import de.gishmo.example.devk.client.ui.application.content.detail.composite.address.AddressComposite;
@@ -63,8 +64,10 @@ public class DetailController
 
   @Override
   public String mayStop() {
-    boolean isPersonCompositeDirty = super.<PersonComposite>getComposite("personComposite").isDirty(this.person);
-    boolean isAddressCompositeDirty = super.<AddressComposite>getComposite("AddressComposite").isDirty(this.person);
+    boolean isPersonCompositeDirty = super.<PersonComposite>getComposite("personComposite")
+                                          .isDirty(this.person);
+    boolean isAddressCompositeDirty = super.<AddressComposite>getComposite("AddressComposite")
+                                           .isDirty(this.person);
     return isPersonCompositeDirty || isAddressCompositeDirty ? "Would you like to cancel your edits?" : null;
   }
 
@@ -76,9 +79,12 @@ public class DetailController
     PersonServiceFactory.INSTANCE.get(Long.toString(id))
                                  .onSuccess(response -> {
                                    this.person = response.getPerson();
-                                   super.<PersonComposite>getComposite("personComposite").edit(this.person);
-                                   super.<AddressComposite>getComposite("AddressComposite").edit(this.person);
-                                   this.eventBus.fireEvent(new StatusChangeEvent("Edit person data with id: " + this.person.getId()));
+                                   super.<PersonComposite>getComposite("personComposite")
+                                        .edit(this.person);
+                                   super.<AddressComposite>getComposite("AddressComposite")
+                                        .edit(this.person);
+                                   this.eventBus.fireEvent(new StatusChangeEvent("Edit person data with id: " +
+                                                                                 this.person.getId()));
 
                                    this.eventBus.fireEvent(new SelectEvent(SelectEvent.Select.DETAIL));
                                  })
@@ -92,6 +98,8 @@ public class DetailController
   }
 
   @AcceptParameter("id")
+  @ParameterConstraint(rule = IdRule.class,
+                       illegalParameterRoute = Routes.ROUTE_ERROR)
   public void setId(String id)
       throws RoutingInterceptionException {
     try {
@@ -126,8 +134,10 @@ public class DetailController
 
   @Override
   public void doUpdate() {
-    this.person = super.<PersonComposite>getComposite("personComposite").flush(this.person);
-    this.person = super.<AddressComposite>getComposite("AddressComposite").flush(this.person);
+    this.person = super.<PersonComposite>getComposite("personComposite")
+                       .flush(this.person);
+    this.person = super.<AddressComposite>getComposite("AddressComposite")
+                       .flush(this.person);
     PersonServiceFactory.INSTANCE.update(this.person)
                                  .onSuccess(response -> {
                                    if (this.context.getSearchName() == null && this.context.getSearchCity() == null) {

@@ -33,7 +33,7 @@
 
   <properties>
     <!-- domino-rest version -->
-    <domnio-rest>1.0.0-RC3</domnio-rest>
+    <domnio-rest>1.0.0-RC5</domnio-rest>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>

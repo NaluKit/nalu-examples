@@ -10,7 +10,7 @@ To run the examples:
 
 * run in one terminal window:
 
-    - mvn clean verify
+    - mvn clean package
 
     - mvn gwt:codeserver -pl *-client -am
 
@@ -21,7 +21,7 @@ To run the examples:
 
 To start the application, call:
 
-http://localhost:8080/devkexample.html
+http://localhost:8080/index.html
 
 **To login, you can enter any string your like ... no validation!**
 Enter for 'S' or 'D' in the name search field to get a list of person.
