@@ -10,7 +10,7 @@ To run the examples:
 
 * run in one terminal window:
 
-    - mvn clean package
+    - mvn clean compile
 
     - mvn gwt:codeserver -pl *-client -am
 
