@@ -1,8 +1,8 @@
-package de.gishmo.example.devk.client.filter;
+package com.github.nalukit.nalu.complex.app.client.filter;
 
 import com.github.nalukit.nalu.client.filter.AbstractFilter;
-import de.gishmo.example.devk.client.ApplicationContext;
-import de.gishmo.example.devk.client.Routes;
+import com.github.nalukit.nalu.complex.app.common.AppContext;
+import com.github.nalukit.nalu.complex.app.common.ui.Routes;
 
 /**
  * Copyright (C) 2018 - 2019 Frank Hossfeld <frank.hossfeld@googlemail.com>
@@ -20,22 +20,22 @@ import de.gishmo.example.devk.client.Routes;
  * limitations under the License.
  */
 public class LoginFilter
-    extends AbstractFilter<ApplicationContext> {
+    extends AbstractFilter<AppContext> {
 
   @Override
   public boolean filter(String route,
                         String... parms) {
     if (!Routes.ROUTE_LOGON.equals(route)) {
-      if (!this.context.isLoggedIn()) {
-        return false;
-      }
+      //      if (!this.context.isLoggedIn()) {
+      //        return false;
+      //      }
     }
     return true;
   }
 
   @Override
   public String redirectTo() {
-    return Routes.ROUTE_LOGON;
+    return "/loginShell/login";
   }
 
   @Override

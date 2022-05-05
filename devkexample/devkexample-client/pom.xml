@@ -35,7 +35,7 @@
 
   <properties>
     <!-- nalu version -->
-    <nalu.version>2.6.0</nalu.version>
+    <nalu.version>2.10.0</nalu.version>
     <!-- DominoUI version -->
     <domino.version>1.0.0-RC6</domino.version>
     <domnio-rest>1.0.0-RC5</domnio-rest>

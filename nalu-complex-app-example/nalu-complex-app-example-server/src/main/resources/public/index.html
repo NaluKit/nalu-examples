@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<!--
+  ~ Copyright (C) 2018 - 2021 Frank Hossfeld <frank.hossfeld@googlemail.com>
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<!-- The DOCTYPE declaration above will set the     -->
+<!-- browser's rendering engine into                -->
+<!-- "Standards Mode". Replacing this declaration   -->
+<!-- with a "Quirks Mode" doctype is not supported. -->
+
+<html>
+    <head>
+        <meta content="text/html; charset=UTF-8"
+              http-equiv="content-type">
+        <meta charset="UTF-8"/>
+        <meta content="noindex"
+              name="robots">
+        <meta content="nofollow"
+              name="robots"/>
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+              name="viewport">
+
+        <title>Nalu - Complex - App - Example</title>
+
+        <meta content="#ffffff"
+              name="theme-color">
+
+        <!-- Consider inlining CSS to reduce the number of requested files -->
+        <link href="App/css/domino-ui.css"
+              rel="stylesheet"
+              type="text/css">
+        <link href="App/css/themes/all-themes.css"
+              rel="stylesheet"
+              type="text/css">
+        <link href="css/ahi.css"
+              rel="stylesheet"
+              type="text/css">
+
+        <!-- This script is for IE11-support only. -->
+        <script src="App/polyfill/polyfill-ie11.js"
+                type="text/javascript"></script>
+
+        <!-- This script loads your compiled module.   -->
+        <!-- If you add any GWT meta tags, they must   -->
+        <!-- be added before this line.                -->
+        <script src="App/App.nocache.js"
+                type="text/javascript"></script>
+
+        <style>
+            .bouncingBear {
+                margin: 100px auto 0;
+                width: 70px;
+                text-align: center;
+            }
+
+            .bouncingBear > div {
+                width: 18px;
+                height: 18px;
+                background-color: GREY;
+
+                border-radius: 100%;
+                display: inline-block;
+                -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+                animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+            }
+
+            .bouncingBear .bear1 {
+                -webkit-animation-delay: -0.32s;
+                animation-delay: -0.32s;
+            }
+
+            .bouncingBear .bear2 {
+                -webkit-animation-delay: -0.16s;
+                animation-delay: -0.16s;
+            }
+
+            @-webkit-keyframes sk-bouncedelay {
+                0%, 80%, 100% {
+                    -webkit-transform: scale(0)
+                }
+                40% {
+                    -webkit-transform: scale(1.0)
+                }
+            }
+
+            @keyframes sk-bouncedelay {
+                0%, 80%, 100% {
+                    -webkit-transform: scale(0);
+                    transform: scale(0);
+                }
+                40% {
+                    -webkit-transform: scale(1.0);
+                    transform: scale(1.0);
+                }
+            }
+
+            .centerMe {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                /* bring your own prefixes */
+                transform: translate(-50%, -50%);
+            }
+        </style>
+    </head>
+
+    <!-- The body can have arbitrary html, or      -->
+    <!-- you can leave the body empty if you want  -->
+    <!-- to create a completely dynamic UI.        -->
+    <body>
+        <!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
+        <noscript>
+            Your web browser must have JavaScript enabled
+            in order for this application to display correctly.
+        </noscript>
+
+        <div class="centerMe"
+             id="LoadingSpinner">
+            <div class="bouncingBear">
+                <div class="bear1"></div>
+                <div class="bear2"></div>
+                <div class="bear3"></div>
+            </div>
+        </div>
+    </body>
+</html>
