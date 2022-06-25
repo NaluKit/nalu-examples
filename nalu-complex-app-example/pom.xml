@@ -33,14 +33,14 @@
 
   <properties>
     <domino.version>1.0.0-RC13</domino.version>
-    <domino.rest.version>1.0.0-RC6</domino.rest.version>
+    <domino.rest.version>1.0.0-RC7</domino.rest.version>
 
     <!--    <gwt.version>2.9.0</gwt.version>-->
-    <gwt.version>2.10.0-new-groupid-3</gwt.version>
+    <gwt.version>2.10.0</gwt.version>
     <gwt-editor.version>1.0.0-RC1</gwt-editor.version>
 
     <javax.ws.rs-api.version>2.1.5</javax.ws.rs-api.version>
-    <nalu.version>2.10.0</nalu.version>
+    <nalu.version>2.10.1</nalu.version>
     <!--    <nalu.version>HEAD-SNAPSHOT</nalu.version>-->
     <spring-boot.version>2.6.7</spring-boot.version>
 
