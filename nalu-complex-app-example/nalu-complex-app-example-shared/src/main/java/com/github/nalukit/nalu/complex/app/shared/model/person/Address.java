@@ -14,34 +14,53 @@
  *  the License.
  */
 
-package com.github.nalukit.nalu.complex.app.shared.model;
+package com.github.nalukit.nalu.complex.app.shared.model.person;
 
 import org.dominokit.jackson.annotation.JSONMapper;
 
 @JSONMapper
-public class PersonSearch {
+public class Address {
 
-  private String name;
+  private long id;
+
+  private String street;
+
+  private String zip;
 
   private String city;
 
-  public PersonSearch() {
+  /* for serialization only */
+  @SuppressWarnings("unused")
+  public Address() {
     super();
   }
 
-  public PersonSearch(String name,
-                      String city) {
+  public Address(long id,
+                 String street,
+                 String zip,
+                 String city) {
     super();
-    this.name = name;
-    this.city = city;
+
+    this.id     = id;
+    this.street = street;
+    this.zip    = zip;
+    this.city   = city;
   }
 
-  public String getName() {
-    return name;
+  public String getStreet() {
+    return street;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setStreet(String street) {
+    this.street = street;
+  }
+
+  public String getZip() {
+    return zip;
+  }
+
+  public void setZip(String zip) {
+    this.zip = zip;
   }
 
   public String getCity() {
@@ -50,6 +69,14 @@ public class PersonSearch {
 
   public void setCity(String city) {
     this.city = city;
+  }
+
+  public long getId() {
+    return id;
+  }
+
+  public void setId(long id) {
+    this.id = id;
   }
 
 }

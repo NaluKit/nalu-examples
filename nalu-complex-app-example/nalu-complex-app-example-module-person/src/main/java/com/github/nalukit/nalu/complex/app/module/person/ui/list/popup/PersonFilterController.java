@@ -5,7 +5,7 @@ import com.github.nalukit.nalu.complex.app.common.ui.AbstractAppPopUpController;
 import com.github.nalukit.nalu.complex.app.common.ui.UiConstants;
 import com.github.nalukit.nalu.complex.app.common.ui.common.MessageFactory;
 import com.github.nalukit.nalu.complex.app.module.person.event.PersonListEvent;
-import com.github.nalukit.nalu.complex.app.shared.model.PersonSearch;
+import com.github.nalukit.nalu.complex.app.shared.model.person.PersonSearch;
 
 @PopUpController(name = UiConstants.POPUP_PERSON_FILTER,
                  componentInterface = IPersonFilterComponent.class,

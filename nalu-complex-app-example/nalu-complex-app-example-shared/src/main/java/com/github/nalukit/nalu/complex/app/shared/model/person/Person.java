@@ -14,7 +14,7 @@
  *  the License.
  */
 
-package com.github.nalukit.nalu.complex.app.shared.model;
+package com.github.nalukit.nalu.complex.app.shared.model.person;
 
 import org.dominokit.jackson.annotation.JSONMapper;
 

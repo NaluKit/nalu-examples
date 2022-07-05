@@ -17,9 +17,9 @@
 package com.github.nalukit.nalu.complex.app.server.service;
 
 import com.github.nalukit.nalu.complex.app.server.exception.DataNotFoundException;
-import com.github.nalukit.nalu.complex.app.shared.model.Address;
-import com.github.nalukit.nalu.complex.app.shared.model.Person;
-import com.github.nalukit.nalu.complex.app.shared.model.PersonSearch;
+import com.github.nalukit.nalu.complex.app.shared.model.person.Address;
+import com.github.nalukit.nalu.complex.app.shared.model.person.Person;
+import com.github.nalukit.nalu.complex.app.shared.model.person.PersonSearch;
 
 import java.util.*;
 

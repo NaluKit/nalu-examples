@@ -16,6 +16,7 @@
 
 package com.github.nalukit.nalu.complex.app.shared.model;
 
+import com.github.nalukit.nalu.complex.app.shared.model.person.PersonSearch;
 import org.dominokit.jackson.annotation.JSONMapper;
 
 @SuppressWarnings("serial")

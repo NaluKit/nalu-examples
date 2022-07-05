@@ -17,7 +17,7 @@
 package com.github.nalukit.nalu.complex.app.module.person.ui.list;
 
 import com.github.nalukit.nalu.complex.app.common.ui.IAppComponent;
-import com.github.nalukit.nalu.complex.app.shared.model.Person;
+import com.github.nalukit.nalu.complex.app.shared.model.person.Person;
 
 import java.util.List;
 

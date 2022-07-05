@@ -135,9 +135,6 @@
         <groupId>net.ltgt.gwt.maven</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
         <inherited>false</inherited>
-        <configuration>
-          <launcherDir>nalu-complex-app-example-server/target/classes/launcherDir/</launcherDir>
-        </configuration>
       </plugin>
     </plugins>
     <pluginManagement>
@@ -156,17 +153,14 @@
           <artifactId>gwt-maven-plugin</artifactId>
           <version>1.0.1</version>
           <extensions>true</extensions>
-          <!-- for all our Windows 10 users ... :-) -->
-          <dependencies>
-            <dependency>
-              <groupId>org.codehaus.plexus</groupId>
-              <artifactId>plexus-utils</artifactId>
-              <version>3.0.16</version>
-            </dependency>
-          </dependencies>
           <configuration>
             <sourceLevel>1.8</sourceLevel>
             <failOnError>true</failOnError>
+            <devmodeArgs>
+              <devmodeArg>-noserver</devmodeArg>
+            </devmodeArgs>
+            <launcherDir>nalu-complex-app-example-server/target/classes/launcherDir/</launcherDir>
+            <warDir>nalu-complex-app-example-server/target/classes/launcherDir/</warDir>
           </configuration>
         </plugin>
         <plugin>

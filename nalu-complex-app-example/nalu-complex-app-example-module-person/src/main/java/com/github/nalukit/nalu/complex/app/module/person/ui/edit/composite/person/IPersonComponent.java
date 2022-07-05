@@ -17,7 +17,7 @@
 package com.github.nalukit.nalu.complex.app.module.person.ui.edit.composite.person;
 
 import com.github.nalukit.nalu.client.component.IsCompositeComponent;
-import com.github.nalukit.nalu.complex.app.shared.model.Person;
+import com.github.nalukit.nalu.complex.app.shared.model.person.Person;
 import elemental2.dom.HTMLElement;
 
 public interface IPersonComponent

@@ -17,7 +17,7 @@
 package com.github.nalukit.nalu.complex.app.module.person.ui.list.popup;
 
 import com.github.nalukit.nalu.complex.app.common.ui.AbstractAppPopUpComponent;
-import com.github.nalukit.nalu.complex.app.shared.model.PersonSearch;
+import com.github.nalukit.nalu.complex.app.shared.model.person.PersonSearch;
 import elemental2.dom.Event;
 import elemental2.dom.HTMLDivElement;
 import org.dominokit.domino.ui.button.Button;

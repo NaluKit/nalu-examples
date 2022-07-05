@@ -20,7 +20,7 @@ Change directory to your generated project and issue the following commands:
 
     - mvn clean compile
 
-    - mvn gwt:codeserver -pl *-client -am
+    - mvn gwt:codeserver -pl *-client -am   (Windows-User: please use `mvn gwt:devmode -pl *-client -am`)
 
 Once you see the url of the code server, run:
 

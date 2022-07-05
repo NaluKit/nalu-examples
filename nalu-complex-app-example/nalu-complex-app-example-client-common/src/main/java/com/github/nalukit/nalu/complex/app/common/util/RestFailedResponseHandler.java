@@ -23,16 +23,21 @@ public class RestFailedResponseHandler {
   private final EventBus           eventBus;
   private final String             lastExecutedHash;
   private final FailedResponseBean response;
-  //  private final CommandBusinessError commandBusinessError;
   private final Command            commandNotFound;
 
   protected RestFailedResponseHandler(Builder builder) {
-    assert builder.router != null : "router is missing";
-    assert builder.callingClazz != null : "reference of calling class is missing";
-    assert builder.callingMethod != null : "name of the calling method is missing";
-    assert builder.response != null : "response is missing";
-    assert builder.lastExecutedHash != null : "lasExecutedHash is missing";
-    assert builder.eventBus != null : "event bus is missing";
+    assert builder.router !=
+           null : "router is missing";
+    assert builder.callingClazz !=
+           null : "reference of calling class is missing";
+    assert builder.callingMethod !=
+           null : "name of the calling method is missing";
+    assert builder.response !=
+           null : "response is missing";
+    assert builder.lastExecutedHash !=
+           null : "lasExecutedHash is missing";
+    assert builder.eventBus !=
+           null : "event bus is missing";
 
     this.router           = builder.router;
     this.callingClazz     = builder.callingClazz;
@@ -40,8 +45,7 @@ public class RestFailedResponseHandler {
     this.eventBus         = builder.eventBus;
     this.lastExecutedHash = builder.lastExecutedHash;
     this.response         = builder.response;
-    //    this.commandBusinessError = builder.commandBusinessError;
-    this.commandNotFound = builder.commandNotFound;
+    this.commandNotFound  = builder.commandNotFound;
   }
 
   public static Builder builder() {
@@ -52,7 +56,8 @@ public class RestFailedResponseHandler {
    * <p>Verarbeite die Response!</p>
    */
   public void handle() {
-    if (response.getStatusCode() == RestFailedResponseHandler.UNAUTHORIZED) {
+    if (response.getStatusCode() ==
+        RestFailedResponseHandler.UNAUTHORIZED) {
       MessageFactory.get()
                     .hideProgressBar();
       this.eventBus.fireEvent(new HideAllEvent());
@@ -60,8 +65,10 @@ public class RestFailedResponseHandler {
       return;
     }
 
-    if (response.getStatusCode() == RestFailedResponseHandler.NOT_FOUND) {
-      if (commandNotFound != null) {
+    if (response.getStatusCode() ==
+        RestFailedResponseHandler.NOT_FOUND) {
+      if (commandNotFound !=
+          null) {
         commandNotFound.execute();
       }
       MessageFactory.get()
@@ -74,8 +81,10 @@ public class RestFailedResponseHandler {
       return;
     }
 
-    if (response.getStatusCode() == RestFailedResponseHandler.INTERNAL_SERVER_ERROR) {
-      if (commandNotFound != null) {
+    if (response.getStatusCode() ==
+        RestFailedResponseHandler.INTERNAL_SERVER_ERROR) {
+      if (commandNotFound !=
+          null) {
         commandNotFound.execute();
       }
       MessageFactory.get()
@@ -85,75 +94,7 @@ public class RestFailedResponseHandler {
       return;
     }
 
-    //    if (response.getStatusCode() == RestFailedResponseHandler.CONFLICT) {
-    //      MessageFactory.get()
-    //                    .hideProgressBar();
-    //      this.eventBus.fireEvent(new HideAllEvent());
-    //      this.eventBus.fireEvent(ShowPopUpEvent.show(AhiConstants.POPUP_CONFLICT));
-    //      return;
-    //    }
-    //
-    //    try {
-    //      ApiError apiError = parseJson(response.getBody());
-    //
-    //      if (response.getStatusCode() == RestFailedResponseHandler.BAD_REQUEST) {
-    //        if (this.commandBusinessError != null) {
-    //          this.commandBusinessError.onBusinessError(apiError.getMessages());
-    //        }
-    //        MessageFactory.get()
-    //                      .hideProgressBar();
-    //        return;
-    //      }
-    //
-    //      MessageFactory.get()
-    //                    .hideProgressBar();
-    //      this.eventBus.fireEvent(NaluErrorEvent.createApplicationError()
-    //                                            .message(ApplicationConstantsFactory.get()
-    //                                                                                .get("errorFailed"))
-    //                                            .route(this.lastExecutedHash)
-    //                                            .data(AhiConstants.ERROR_PARAMETER_IDENT,
-    //                                                  apiError.getUuid())
-    //                                            .data(AhiConstants.ERROR_PARAMETER_CLASS,
-    //                                                  callingClazz.getSimpleName())
-    //                                            .data(AhiConstants.ERROR_PARAMETER_METHOD,
-    //                                                  callingMethod)
-    //                                            .data(AhiConstants.ERROR_PARAMETER_STATUSCODE,
-    //                                                  String.valueOf(response.getStatusCode()))
-    //                                            .data(AhiConstants.ERROR_PARAMETER_STATUSTEXT,
-    //                                                  apiError.getMessage()));
-    //    } catch (Exception e) {
-    //      MessageFactory.get()
-    //                    .hideProgressBar();
-    //      this.eventBus.fireEvent(NaluErrorEvent.createApplicationError()
-    //                                            .message(ApplicationConstantsFactory.get()
-    //                                                                                .get("errorFailed"))
-    //                                            .route(this.lastExecutedHash)
-    //                                            .data(AhiConstants.ERROR_PARAMETER_IDENT,
-    //                                                  "n/a")
-    //                                            .data(AhiConstants.ERROR_PARAMETER_CLASS,
-    //                                                  callingClazz.getSimpleName())
-    //                                            .data(AhiConstants.ERROR_PARAMETER_METHOD,
-    //                                                  callingMethod)
-    //                                            .data(AhiConstants.ERROR_PARAMETER_STATUSCODE,
-    //                                                  String.valueOf(response.getStatusCode()))
-    //                                            .data(AhiConstants.ERROR_PARAMETER_STATUSTEXT,
-    //                                                  "n/a"));
-    //    }
   }
-
-  //  private ApiError parseJson(String json) {
-  //    ObjectMapper<ApiError> apiErrorMapper = AhiJSONMapperJsonRegistry.getInstance()
-  //                                                                     .getMapper(TypeToken.of(ApiError.class));
-  //    return apiErrorMapper.read(json);
-  //  }
-  //
-  //  public interface CommandBusinessError {
-  //
-  //    void onBusinessError(List<ClMessage> messages);
-  //
-  //  }
-
-
 
   public static class Builder {
 
@@ -163,7 +104,6 @@ public class RestFailedResponseHandler {
     private EventBus           eventBus;
     private String             lastExecutedHash;
     private FailedResponseBean response;
-    //    private CommandBusinessError commandBusinessError;
     private Command            commandNotFound;
 
     public Builder router(IsRouter router) {
@@ -195,17 +135,6 @@ public class RestFailedResponseHandler {
       this.lastExecutedHash = lastExecutedHash;
       return this;
     }
-
-    //    /**
-    //     * <p>Setzen des Commands, das ausgefuehrt werden soll, wenn Response not authorized ist (Statusode: NOT_AUTHORIZED)</p>
-    //     *
-    //     * @param command das Command, das im Falle eines fachlichen Fehlers auszufuehren ist
-    //     * @return RestResponseHandler.Builder
-    //     */
-    //    public Builder executeIfStatuscodeBusinessError(CommandBusinessError command) {
-    //      this.commandBusinessError = command;
-    //      return this;
-    //    }
 
     public Builder executeIfNotFound(Command command) {
       this.commandNotFound = command;

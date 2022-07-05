@@ -3,7 +3,7 @@ package com.github.nalukit.nalu.complex.app.common;
 import com.github.nalukit.nalu.client.context.AbstractModuleContext;
 import com.github.nalukit.nalu.client.context.IsModuleContext;
 import com.github.nalukit.nalu.complex.app.shared.model.PersistanceData;
-import com.github.nalukit.nalu.complex.app.shared.model.PersonSearch;
+import com.github.nalukit.nalu.complex.app.shared.model.person.PersonSearch;
 
 /**
  * Copyright (C) 2018 - 2021 Frank Hossfeld <frank.hossfeld@googlemail.com>

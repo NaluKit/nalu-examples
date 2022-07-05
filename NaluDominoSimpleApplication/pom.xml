@@ -32,9 +32,9 @@
     <gwtVersion>2.9.0</gwtVersion>
 
     <!-- nalu version -->
-    <nalu.version>HEAD-SNAPSHOT</nalu.version>
+    <nalu.version>2.10.1</nalu.version>
 
-    <domino.version>1.0.0-RC2</domino.version>
+    <domino.version>1.0.0-RC13</domino.version>
 
     <!-- GWT needs at least java 1.6 -->
     <maven.compiler.source>1.8</maven.compiler.source>

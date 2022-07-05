@@ -4,7 +4,7 @@ import com.github.nalukit.nalu.client.application.AbstractLoader;
 import com.github.nalukit.nalu.complex.app.common.AppContext;
 import com.github.nalukit.nalu.complex.app.common.ui.common.MessageFactory;
 import com.github.nalukit.nalu.complex.app.shared.model.PersistanceData;
-import com.github.nalukit.nalu.complex.app.shared.model.PersonSearch;
+import com.github.nalukit.nalu.complex.app.shared.model.person.PersonSearch;
 import com.github.nalukit.nalu.complex.app.shared.service.LoadApplicationServiceFactory;
 import elemental2.dom.DomGlobal;
 

@@ -1,7 +1,7 @@
 package com.github.nalukit.nalu.complex.app.server.store;
 
 import com.github.nalukit.nalu.complex.app.shared.model.PersistanceData;
-import com.github.nalukit.nalu.complex.app.shared.model.PersonSearch;
+import com.github.nalukit.nalu.complex.app.shared.model.person.PersonSearch;
 
 public class Store {
 

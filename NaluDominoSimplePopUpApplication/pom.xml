@@ -32,7 +32,7 @@
     <gwtVersion>2.9.0</gwtVersion>
 
     <!-- nalu version -->
-    <nalu.version>HEAD-SNAPSHOT</nalu.version>
+    <nalu.version>2.10.l0</nalu.version>
 
     <domino.version>1.0-SNAPSHOT</domino.version>
 

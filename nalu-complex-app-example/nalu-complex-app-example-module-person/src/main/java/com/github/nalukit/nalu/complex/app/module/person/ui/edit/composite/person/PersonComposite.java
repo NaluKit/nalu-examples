@@ -19,7 +19,7 @@ package com.github.nalukit.nalu.complex.app.module.person.ui.edit.composite.pers
 import com.github.nalukit.nalu.client.component.IsComponentCreator;
 import com.github.nalukit.nalu.client.component.annotation.CompositeController;
 import com.github.nalukit.nalu.complex.app.common.ui.AbstractAppCompositeController;
-import com.github.nalukit.nalu.complex.app.shared.model.Person;
+import com.github.nalukit.nalu.complex.app.shared.model.person.Person;
 
 @CompositeController(componentInterface = IPersonComponent.class, component = PersonComponent.class)
 public class PersonComposite

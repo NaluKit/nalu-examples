@@ -1,7 +1,7 @@
 package com.github.nalukit.nalu.complex.app.server.resource;
 
 import com.github.nalukit.nalu.complex.app.server.store.Store;
-import com.github.nalukit.nalu.complex.app.shared.model.PersonSearch;
+import com.github.nalukit.nalu.complex.app.shared.model.person.PersonSearch;
 import com.github.nalukit.nalu.complex.app.shared.transport.request.LogonRequest;
 import com.github.nalukit.nalu.complex.app.shared.transport.response.LogonResponse;
 import org.slf4j.Logger;

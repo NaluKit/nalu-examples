@@ -17,7 +17,7 @@
 package com.github.nalukit.nalu.complex.app.module.person.ui.edit.composite.address;
 
 import com.github.nalukit.nalu.complex.app.common.ui.AbstractAppCompositeComponent;
-import com.github.nalukit.nalu.complex.app.shared.model.Person;
+import com.github.nalukit.nalu.complex.app.shared.model.person.Person;
 import elemental2.dom.HTMLDivElement;
 import org.dominokit.domino.ui.cards.Card;
 import org.dominokit.domino.ui.forms.TextBox;

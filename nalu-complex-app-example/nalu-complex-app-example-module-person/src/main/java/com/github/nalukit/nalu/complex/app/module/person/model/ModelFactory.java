@@ -1,6 +1,6 @@
 package com.github.nalukit.nalu.complex.app.module.person.model;
 
-import com.github.nalukit.nalu.complex.app.shared.model.Person;
+import com.github.nalukit.nalu.complex.app.shared.model.person.Person;
 
 public class ModelFactory {
 

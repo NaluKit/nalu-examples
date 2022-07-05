@@ -131,22 +131,11 @@
             <arg>-Xms1024m</arg>
             <arg>-Xmx16384m</arg>
           </jvmArgs>
-          <localWorkers>5</localWorkers>
+          <localWorkers>2</localWorkers>
           <logLevel>ERROR</logLevel>
           <style>OBF</style>
-          <!--          <style>PRETTY</style>-->
           <failOnError>true</failOnError>
-          <codeserverArgs>
-            <arg>-strict</arg>
-          </codeserverArgs>
-          <devmodeArgs>
-            <arg>-strict</arg>
-          </devmodeArgs>
           <workDir>${basedir}/target/gwt/workDir</workDir>
-          <compilerArgs>
-            <arg>-gen</arg>
-            <arg>${basedir}/target/gwt/gen</arg>
-          </compilerArgs>
         </configuration>
       </plugin>
     </plugins>

@@ -17,7 +17,7 @@
 package com.github.nalukit.nalu.complex.app.module.person.ui.list;
 
 import com.github.nalukit.nalu.complex.app.common.ui.AbstractAppComponent;
-import com.github.nalukit.nalu.complex.app.shared.model.Person;
+import com.github.nalukit.nalu.complex.app.shared.model.person.Person;
 import elemental2.dom.Text;
 import org.dominokit.domino.ui.cards.Card;
 import org.dominokit.domino.ui.datatable.ColumnConfig;
