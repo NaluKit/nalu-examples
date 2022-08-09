@@ -28,7 +28,7 @@
   <version>HEAD-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>Nalu Complex Example - Nalu Fullstack Example</name>
+  <name>Nalu Complex Example</name>
   <description>Nalu example showing how to set up a complex project</description>
 
   <properties>

@@ -28,12 +28,11 @@
   <version>HEAD-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>devkexample - Nalu Boot Starter Project</name>
-  <description>Nalu Boot Starter Project</description>
+  <name>devkexample - Demo project for the DEVK MeetUp</name>
+  <description>Demo project for the DEVK MeetUp</description>
 
   <properties>
-    <!-- domino-rest version -->
-    <domnio-rest>1.0.0-RC5</domnio-rest>
+    <domnio-rest>1.0.0-RC7</domnio-rest>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>

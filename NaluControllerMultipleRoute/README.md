@@ -15,7 +15,10 @@ To run the examples:
 
 * clone the repository
 
-* run `mvn clean install` & `mvn gwt:devmode`
+* run:
+  * `mvn clean compile`
+  * `mvn gwt:codeserver -pl *-client -am` (Windows: `mvn gwt:devmode -pl *-client -am`) in one terminal window
+  * 
 
 * copy the link and paste the link into the browser url
 

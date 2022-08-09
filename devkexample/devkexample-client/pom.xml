@@ -34,11 +34,8 @@
   <packaging>gwt-app</packaging>
 
   <properties>
-    <!-- nalu version -->
     <nalu.version>2.10.1</nalu.version>
-    <!-- DominoUI version -->
-    <domino.version>1.0.0-RC6</domino.version>
-    <domnio-rest>1.0.0-RC5</domnio-rest>
+    <domino.version>1.0.0-RC13</domino.version>
     <gwt.editor.version>1.0.0-RC1</gwt.editor.version>
   </properties>
 

@@ -1,5 +1,9 @@
-# Nalu Complex example
+# Nalu Complex App Example
+
 This example should give you an impression how to set up a Nalu project and how to do things in Nalu.
+It uses a lot of the Nalu features, shows Best Practice and can be use as base for your own complex application.
+
+
 
 THe example is based on 
 

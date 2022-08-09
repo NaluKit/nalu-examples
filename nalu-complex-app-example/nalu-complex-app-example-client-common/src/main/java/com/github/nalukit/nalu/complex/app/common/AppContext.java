@@ -24,26 +24,12 @@ public class AppContext
     extends AbstractModuleContext
     implements IsModuleContext {
 
-  //  private final static String EDIT_MODE                        = "EDIT_MODE";
   private final static String PERSISTANCE = "PERSISTANCE";
   private final static String USER_ID     = "USER_ID";
 
   public AppContext() {
     super();
-
-    //    this.setEditMode(EditMode.BROWSE);
   }
-
-  //  public EditMode getEditMode() {
-  //    return (EditMode) super.getApplicationContext()
-  //                           .get(AhiContext.EDIT_MODE);
-  //  }
-  //
-  //  public void setEditMode(EditMode editMode) {
-  //    super.getApplicationContext()
-  //         .put(AhiContext.EDIT_MODE,
-  //              editMode);
-  //  }
 
   public String getUserId() {
     return (String) super.getApplicationContext()

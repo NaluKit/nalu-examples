@@ -41,7 +41,7 @@
       <dependency>
         <groupId>com.google.gwt</groupId>
         <artifactId>gwt</artifactId>
-        <version>2.9.0</version>
+        <version>2.10.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -84,7 +84,7 @@
         <plugin>
           <groupId>net.ltgt.gwt.maven</groupId>
           <artifactId>gwt-maven-plugin</artifactId>
-          <version>1.0.0</version>
+          <version>1.0.1</version>
           <extensions>true</extensions>
           <configuration>
             <sourceLevel>1.8</sourceLevel>

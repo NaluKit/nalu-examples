@@ -50,6 +50,7 @@
     <modules>
         <module>devkexample</module>
         <module>nalu-complex-app-example</module>
+        <module>nalu-simple-app-example</module>
 <!--        <module>NaluControllerMultipleRoute</module>-->
 <!--        <module>NaluDominoCachedApplication</module>-->
 <!--        <module>NaluDominoCompositeCachedApplication</module>-->

@@ -6,9 +6,9 @@ Change directory to your generated project and issue the following commands:
 
 * run in one terminal window:
 
-    - mvn clean install
+    - mvn clean compile
 
-    - mvn gwt:codeserver -pl *-client -am
+    - mvn gwt:codeserver -pl *-client -am  (Windows: mvn gwt:devmode -pl *-client -am)
 
 * in another terminal window:
 
