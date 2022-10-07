@@ -7,7 +7,7 @@ import org.jboss.elemento.Elements;
 public class MessageFactory {
 
   /* instance of the MessageFactory */
-  public static MessageFactory INSTANCE = new MessageFactory();
+  private static MessageFactory instance;
 
   /* ProgressBar  */
   private ModalDialog modalDialog;
@@ -15,6 +15,13 @@ public class MessageFactory {
 
   private MessageFactory() {
     super();
+  }
+
+  public static MessageFactory get() {
+    if (instance == null) {
+      instance = new MessageFactory();
+    }
+    return instance;
   }
 
   public void hideProgressBar() {

@@ -25,8 +25,7 @@ public interface PersonService {
   @POST
   @Path("/getAll")
   PersonSearchResponse getAll(
-      @RequestBody
-      PersonSearchRequest request);
+      @RequestBody PersonSearchRequest request);
 
   @POST
   @Path("/insert")

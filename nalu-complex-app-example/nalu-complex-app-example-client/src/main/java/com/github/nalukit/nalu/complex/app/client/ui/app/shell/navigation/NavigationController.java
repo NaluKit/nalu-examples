@@ -48,14 +48,14 @@ public class NavigationController
 
   @Override
   public void doGotoHome() {
-    MessageFactory.get()
+    MessageFactory.INSTANCE
                   .showProgressBar();
     this.router.route(Routes.ROUTE_HOME);
   }
 
   @Override
   public void doGotoList() {
-    MessageFactory.get()
+    MessageFactory.INSTANCE
                   .showProgressBar();
     this.router.route(Routes.ROUTE_PERSON_LIST);
   }

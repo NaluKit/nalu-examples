@@ -15,7 +15,6 @@ public interface LoggingService {
   @POST
   @Path("/log")
   LoggingResponse log(
-      @RequestBody
-      LoggingRequest request);
+      @RequestBody LoggingRequest request);
 
 }

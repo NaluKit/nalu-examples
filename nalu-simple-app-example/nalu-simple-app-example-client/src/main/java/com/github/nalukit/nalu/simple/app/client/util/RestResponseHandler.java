@@ -1,6 +1,5 @@
 package com.github.nalukit.nalu.complex.app.common.util;
 
-
 import com.github.nalukit.nalu.complex.app.shared.model.common.Message;
 
 import java.util.List;

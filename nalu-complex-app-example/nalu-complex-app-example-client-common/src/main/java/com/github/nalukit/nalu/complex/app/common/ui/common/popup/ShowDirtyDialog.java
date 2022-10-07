@@ -28,7 +28,7 @@ public class ShowDirtyDialog
                                 .addClickListener(e -> {
                                   messageDialog.close();
                                   confirmHandler.onCancel();
-                                  MessageFactory.get()
+                                  MessageFactory.INSTANCE
                                                 .hideProgressBar();
                                 });
     Button revertButton = Button.create("Revert")

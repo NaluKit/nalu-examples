@@ -88,7 +88,7 @@ public class PersonEditController
                                    super.<AddressComposite>getComposite("addressComposite")
                                         .edit(this.person);
                                    this.eventBus.fireEvent(new StatusChangeEvent("Edit person data with id: " + this.person.getId()));
-                                   MessageFactory.get()
+                                   MessageFactory.INSTANCE
                                                  .hideProgressBar();
                                  })
                                  .onFailed(failedResponse -> DomGlobal.window.alert("Panic!"))
@@ -116,7 +116,7 @@ public class PersonEditController
 
   @Override
   public void doCallPerson1() {
-    MessageFactory.get()
+    MessageFactory.INSTANCE
                   .showProgressBar();
     this.router.route(Routes.ROUTE_PERSON_EDIT,
                       "1");
@@ -124,7 +124,7 @@ public class PersonEditController
 
   @Override
   public void doRevert() {
-    MessageFactory.get()
+    MessageFactory.INSTANCE
                   .showProgressBar();
     this.router.route(Routes.ROUTE_PERSON_LIST);
   }
@@ -143,7 +143,7 @@ public class PersonEditController
     PersonServiceFactory.INSTANCE.update(request)
                                  .onSuccess(response -> {
                                    this.saved = true;
-                                   MessageFactory.get()
+                                   MessageFactory.INSTANCE
                                                  .showProgressBar();
                                    this.router.route(Routes.ROUTE_PERSON_LIST);
                                  })

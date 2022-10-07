@@ -15,7 +15,6 @@ public interface LogonService {
   @POST
   @Path("/login")
   LogonResponse login(
-      @RequestBody
-      LogonRequest request);
+      @RequestBody LogonRequest request);
 
 }

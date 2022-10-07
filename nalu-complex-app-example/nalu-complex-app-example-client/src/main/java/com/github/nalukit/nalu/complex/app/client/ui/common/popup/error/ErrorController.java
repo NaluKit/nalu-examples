@@ -39,7 +39,7 @@ public class ErrorController
   @Override
   protected void show() {
     this.eventBus.fireEvent(new HideAllEvent());
-    MessageFactory.get()
+    MessageFactory.INSTANCE
                   .hideProgressBar();
     this.component.edit(this.errorEventType,
                         this.route,

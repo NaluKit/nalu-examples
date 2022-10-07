@@ -49,7 +49,7 @@ public class PersonListController
     if (this.context.isFilterPersonUsed()) {
       this.getData();
     } else {
-      MessageFactory.get()
+      MessageFactory.INSTANCE
                     .showProgressBar();
       this.eventBus.fireEvent(ShowPopUpEvent.show(UiConstants.POPUP_PERSON_FILTER));
     }
@@ -84,7 +84,7 @@ public class PersonListController
                                      this.eventBus.fireEvent(new StatusChangeEvent("Found " + reponse.getPersonList()
                                                                                                      .size() + " persons"));
                                    }
-                                   MessageFactory.get()
+                                   MessageFactory.INSTANCE
                                                  .hideProgressBar();
                                  })
                                  .onFailed(failedResponse -> DomGlobal.window.alert("PANIC!!!!!!"))
@@ -93,7 +93,7 @@ public class PersonListController
 
   @Override
   public void doEdit(long id) {
-    MessageFactory.get()
+    MessageFactory.INSTANCE
                   .showProgressBar();
     this.router.route(Routes.ROUTE_PERSON_EDIT,
                       String.valueOf(id));

@@ -47,7 +47,7 @@ public class AppLoader
                                             finishLoadCommand.finishLoading();
                                           })
                                           .onFailed(response -> {
-                                            MessageFactory.get()
+                                            MessageFactory.INSTANCE
                                                           .hideProgressBar();
                                             DomGlobal.window.alert("onFailure: Messagefactory aufrufen!");
                                           })

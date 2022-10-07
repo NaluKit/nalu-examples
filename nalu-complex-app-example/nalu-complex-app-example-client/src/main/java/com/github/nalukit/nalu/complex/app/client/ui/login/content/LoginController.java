@@ -42,7 +42,7 @@ public class LoginController
     // Merken wir uns zunächst die userId & mandantNr im Contrext...
     this.context.setUserId(userId);
     // und dann melden wir uns an ...
-    MessageFactory.get()
+    MessageFactory.INSTANCE
                   .showProgressBar();
     LogonRequest request = new LogonRequest(userId,
                                             password);
@@ -60,7 +60,7 @@ public class LoginController
                                                                      "doLogin",
                                                                      () -> {
                                                                        DomGlobal.window.alert("PANIC!!!!!");
-                                                                       MessageFactory.get()
+                                                                       MessageFactory.INSTANCE
                                                                                      .hideProgressBar();
                                                                      }))
                                 .send();

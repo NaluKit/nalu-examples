@@ -53,7 +53,7 @@ public class RestFailedResponseHandler {
    */
   public void handle() {
     if (response.getStatusCode() == RestFailedResponseHandler.UNAUTHORIZED) {
-      MessageFactory.INSTANCE
+      MessageFactory.get()
                     .hideProgressBar();
       this.eventBus.fireEvent(new HideAllEvent());
       this.router.route(Routes.ROUTE_LOGON);
@@ -64,7 +64,7 @@ public class RestFailedResponseHandler {
       if (commandNotFound != null) {
         commandNotFound.execute();
       }
-      MessageFactory.INSTANCE
+      MessageFactory.get()
                     .hideProgressBar();
       this.eventBus.fireEvent(new HideAllEvent());
       Notification.createDanger("Es wurden keine Daten gefunden!")
@@ -78,7 +78,7 @@ public class RestFailedResponseHandler {
       if (commandNotFound != null) {
         commandNotFound.execute();
       }
-      MessageFactory.INSTANCE
+      MessageFactory.get()
                     .hideProgressBar();
       this.eventBus.fireEvent(new HideAllEvent());
       this.router.route(Routes.ROUTE_HOME);
@@ -86,7 +86,7 @@ public class RestFailedResponseHandler {
     }
 
     //    if (response.getStatusCode() == RestFailedResponseHandler.CONFLICT) {
-    //      MessageFactory.INSTANCE
+    //      MessageFactory.get()
     //                    .hideProgressBar();
     //      this.eventBus.fireEvent(new HideAllEvent());
     //      this.eventBus.fireEvent(ShowPopUpEvent.show(AhiConstants.POPUP_CONFLICT));
@@ -100,12 +100,12 @@ public class RestFailedResponseHandler {
     //        if (this.commandBusinessError != null) {
     //          this.commandBusinessError.onBusinessError(apiError.getMessages());
     //        }
-    //        MessageFactory.INSTANCE
+    //        MessageFactory.get()
     //                      .hideProgressBar();
     //        return;
     //      }
     //
-    //      MessageFactory.INSTANCE
+    //      MessageFactory.get()
     //                    .hideProgressBar();
     //      this.eventBus.fireEvent(NaluErrorEvent.createApplicationError()
     //                                            .message(ApplicationConstantsFactory.get()
@@ -122,7 +122,7 @@ public class RestFailedResponseHandler {
     //                                            .data(AhiConstants.ERROR_PARAMETER_STATUSTEXT,
     //                                                  apiError.getMessage()));
     //    } catch (Exception e) {
-    //      MessageFactory.INSTANCE
+    //      MessageFactory.get()
     //                    .hideProgressBar();
     //      this.eventBus.fireEvent(NaluErrorEvent.createApplicationError()
     //                                            .message(ApplicationConstantsFactory.get()

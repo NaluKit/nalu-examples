@@ -24,13 +24,13 @@ public class HomeController
   public void start() {
     this.eventBus.fireEvent(new SelectEvent(SelectEvent.Item.HOME));
     this.eventBus.fireEvent(new StatusChangeEvent("You are here: HOME!"));
-    MessageFactory.get()
+    MessageFactory.INSTANCE
                   .hideProgressBar();
   }
 
   @Override
   public void bind(IsController.ControllerLoader loader) {
-    MessageFactory.get()
+    MessageFactory.INSTANCE
                   .showProgressBar();
     super.checkToken(loader);
   }

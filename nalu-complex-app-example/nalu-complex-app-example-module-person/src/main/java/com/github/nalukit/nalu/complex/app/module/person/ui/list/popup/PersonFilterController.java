@@ -19,7 +19,7 @@ public class PersonFilterController
 
   @Override
   public void show() {
-    MessageFactory.get()
+    MessageFactory.INSTANCE
                   .hideProgressBar();
     this.component.show();
     this.component.lock();
@@ -30,7 +30,7 @@ public class PersonFilterController
 
   @Override
   public void doSearch(PersonSearch model) {
-    MessageFactory.get()
+    MessageFactory.INSTANCE
                   .showProgressBar();
     this.context.setFilterPersonUsed(true);
     this.context.getPersistance()
