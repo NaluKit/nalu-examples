@@ -1,9 +1,9 @@
-package com.github.nalukit.nalu.complex.app.common.ui;
+package com.github.nalukit.nalu.simple.app.client.ui;
 
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
-import com.github.nalukit.nalu.complex.app.common.AppContext;
-import com.github.nalukit.nalu.complex.app.common.util.Command;
-import com.github.nalukit.nalu.complex.app.common.util.RestFailedResponseHandler;
+import com.github.nalukit.nalu.simple.app.client.AppContext;
+import com.github.nalukit.nalu.simple.app.client.util.Command;
+import com.github.nalukit.nalu.simple.app.client.util.RestFailedResponseHandler;
 import elemental2.dom.HTMLElement;
 import org.dominokit.rest.shared.request.FailedResponseBean;
 
@@ -12,11 +12,7 @@ public abstract class AbstractAppComponentController<V extends IAppComponent<?>>
     implements IAppComponent.Controller {
 
   protected void checkToken(ControllerLoader loader) {
-    if (!this.context.isLoggedIn()) {
-      this.router.route(Routes.ROUTE_LOGON);
-    } else {
       loader.continueLoading();
-    }
   }
 
   protected void handleOnFailed(Class<?> clazz,

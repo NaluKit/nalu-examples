@@ -1,9 +1,9 @@
-package com.github.nalukit.nalu.complex.app.common.util;
+package com.github.nalukit.nalu.simple.app.client.util;
 
 import com.github.nalukit.nalu.client.IsRouter;
-import com.github.nalukit.nalu.complex.app.common.event.HideAllEvent;
-import com.github.nalukit.nalu.complex.app.common.ui.Routes;
-import com.github.nalukit.nalu.complex.app.common.ui.common.MessageFactory;
+import com.github.nalukit.nalu.simple.app.client.event.HideAllEvent;
+import com.github.nalukit.nalu.simple.app.client.ui.Routes;
+import com.github.nalukit.nalu.simple.app.client.ui.common.MessageFactory;
 import org.dominokit.domino.ui.notifications.Notification;
 import org.dominokit.rest.shared.request.FailedResponseBean;
 import org.gwtproject.event.shared.EventBus;
@@ -53,10 +53,10 @@ public class RestFailedResponseHandler {
    */
   public void handle() {
     if (response.getStatusCode() == RestFailedResponseHandler.UNAUTHORIZED) {
-      MessageFactory.get()
+      MessageFactory.INSTANCE
                     .hideProgressBar();
       this.eventBus.fireEvent(new HideAllEvent());
-      this.router.route(Routes.ROUTE_LOGON);
+      this.router.route(Routes.ROUTE_HOME);
       return;
     }
 
@@ -64,7 +64,7 @@ public class RestFailedResponseHandler {
       if (commandNotFound != null) {
         commandNotFound.execute();
       }
-      MessageFactory.get()
+      MessageFactory.INSTANCE
                     .hideProgressBar();
       this.eventBus.fireEvent(new HideAllEvent());
       Notification.createDanger("Es wurden keine Daten gefunden!")
@@ -78,7 +78,7 @@ public class RestFailedResponseHandler {
       if (commandNotFound != null) {
         commandNotFound.execute();
       }
-      MessageFactory.get()
+      MessageFactory.INSTANCE
                     .hideProgressBar();
       this.eventBus.fireEvent(new HideAllEvent());
       this.router.route(Routes.ROUTE_HOME);
@@ -86,7 +86,7 @@ public class RestFailedResponseHandler {
     }
 
     //    if (response.getStatusCode() == RestFailedResponseHandler.CONFLICT) {
-    //      MessageFactory.get()
+    //      MessageFactory.INSTANCE
     //                    .hideProgressBar();
     //      this.eventBus.fireEvent(new HideAllEvent());
     //      this.eventBus.fireEvent(ShowPopUpEvent.show(AhiConstants.POPUP_CONFLICT));
@@ -100,12 +100,12 @@ public class RestFailedResponseHandler {
     //        if (this.commandBusinessError != null) {
     //          this.commandBusinessError.onBusinessError(apiError.getMessages());
     //        }
-    //        MessageFactory.get()
+    //        MessageFactory.INSTANCE
     //                      .hideProgressBar();
     //        return;
     //      }
     //
-    //      MessageFactory.get()
+    //      MessageFactory.INSTANCE
     //                    .hideProgressBar();
     //      this.eventBus.fireEvent(NaluErrorEvent.createApplicationError()
     //                                            .message(ApplicationConstantsFactory.get()
@@ -122,7 +122,7 @@ public class RestFailedResponseHandler {
     //                                            .data(AhiConstants.ERROR_PARAMETER_STATUSTEXT,
     //                                                  apiError.getMessage()));
     //    } catch (Exception e) {
-    //      MessageFactory.get()
+    //      MessageFactory.INSTANCE
     //                    .hideProgressBar();
     //      this.eventBus.fireEvent(NaluErrorEvent.createApplicationError()
     //                                            .message(ApplicationConstantsFactory.get()

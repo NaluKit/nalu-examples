@@ -1,4 +1,4 @@
-package com.github.nalukit.nalu.complex.app.common.util;
+package com.github.nalukit.nalu.simple.app.client.util;
 
 @FunctionalInterface
 public interface Command {

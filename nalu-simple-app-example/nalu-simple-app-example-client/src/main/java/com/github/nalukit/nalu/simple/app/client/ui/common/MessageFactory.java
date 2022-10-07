@@ -1,4 +1,4 @@
-package com.github.nalukit.nalu.complex.app.common.ui.common;
+package com.github.nalukit.nalu.simple.app.client.ui.common;
 
 import elemental2.dom.HTMLDivElement;
 import org.dominokit.domino.ui.modals.ModalDialog;
@@ -7,7 +7,7 @@ import org.jboss.elemento.Elements;
 public class MessageFactory {
 
   /* instance of the MessageFactory */
-  private static MessageFactory instance;
+  public static MessageFactory INSTANCE = new MessageFactory();
 
   /* ProgressBar  */
   private ModalDialog modalDialog;
@@ -15,13 +15,6 @@ public class MessageFactory {
 
   private MessageFactory() {
     super();
-  }
-
-  public static MessageFactory get() {
-    if (instance == null) {
-      instance = new MessageFactory();
-    }
-    return instance;
   }
 
   public void hideProgressBar() {

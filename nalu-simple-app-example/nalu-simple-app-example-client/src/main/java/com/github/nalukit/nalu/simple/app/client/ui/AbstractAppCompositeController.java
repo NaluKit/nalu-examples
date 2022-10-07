@@ -1,10 +1,10 @@
-package com.github.nalukit.nalu.complex.app.common.ui;
+package com.github.nalukit.nalu.simple.app.client.ui;
 
 import com.github.nalukit.nalu.client.component.AbstractCompositeController;
 import com.github.nalukit.nalu.client.component.IsCompositeComponent;
-import com.github.nalukit.nalu.complex.app.common.AppContext;
-import com.github.nalukit.nalu.complex.app.common.util.Command;
-import com.github.nalukit.nalu.complex.app.common.util.RestFailedResponseHandler;
+import com.github.nalukit.nalu.simple.app.client.AppContext;
+import com.github.nalukit.nalu.simple.app.client.util.Command;
+import com.github.nalukit.nalu.simple.app.client.util.RestFailedResponseHandler;
 import elemental2.dom.HTMLElement;
 import org.dominokit.rest.shared.request.FailedResponseBean;
 

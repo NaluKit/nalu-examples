@@ -14,7 +14,7 @@
  *  the License.
  */
 
-package com.github.nalukit.nalu.complex.app.common.event;
+package com.github.nalukit.nalu.simple.app.client.event;
 
 import org.gwtproject.event.shared.Event;
 

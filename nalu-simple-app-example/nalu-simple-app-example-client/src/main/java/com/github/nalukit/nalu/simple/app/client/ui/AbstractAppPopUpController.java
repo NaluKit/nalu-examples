@@ -1,11 +1,11 @@
-package com.github.nalukit.nalu.complex.app.common.ui;
+package com.github.nalukit.nalu.simple.app.client.ui;
 
 import com.github.nalukit.nalu.client.component.AbstractPopUpComponentController;
 import com.github.nalukit.nalu.client.event.annotation.EventHandler;
-import com.github.nalukit.nalu.complex.app.common.AppContext;
-import com.github.nalukit.nalu.complex.app.common.event.HideAllEvent;
-import com.github.nalukit.nalu.complex.app.common.util.Command;
-import com.github.nalukit.nalu.complex.app.common.util.RestFailedResponseHandler;
+import com.github.nalukit.nalu.simple.app.client.AppContext;
+import com.github.nalukit.nalu.simple.app.client.event.HideAllEvent;
+import com.github.nalukit.nalu.simple.app.client.util.Command;
+import com.github.nalukit.nalu.simple.app.client.util.RestFailedResponseHandler;
 import org.dominokit.rest.shared.request.FailedResponseBean;
 
 public abstract class AbstractAppPopUpController<V extends IAppPopUpComponent<?>>
