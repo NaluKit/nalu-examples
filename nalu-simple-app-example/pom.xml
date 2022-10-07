@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) 2018 - 2021 Frank Hossfeld <frank.hossfeld@googlemail.com>
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.github.nalukit.example</groupId>
+  <artifactId>nalu-simple-app-example</artifactId>
+  <version>HEAD-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Nalu Simple Example</name>
+  <description>Nalu example showing how to set up a basic Nalu project</description>
+
+  <properties>
+    <domino.version>1.0.0-RC13</domino.version>
+    <domino.rest.version>1.0.0-RC7</domino.rest.version>
+
+    <!--    <gwt.version>2.9.0</gwt.version>-->
+    <gwt.version>2.10.0</gwt.version>
+    <gwt-editor.version>1.0.0-RC1</gwt-editor.version>
+
+    <javax.ws.rs-api.version>2.1.5</javax.ws.rs-api.version>
+    <nalu.version>2.10.1</nalu.version>
+    <!--    <nalu.version>HEAD-SNAPSHOT</nalu.version>-->
+    <spring-boot.version>2.6.7</spring-boot.version>
+
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <!-- GWT BOM -->
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.gwtproject</groupId>
+        <artifactId>gwt</artifactId>
+        <version>${gwt.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring-boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+
+      <dependency>
+        <groupId>org.gwtproject.editor</groupId>
+        <artifactId>gwt-editor</artifactId>
+        <version>${gwt-editor.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.gwtproject.editor</groupId>
+        <artifactId>gwt-editor-processor</artifactId>
+        <version>${gwt-editor.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.gwtproject.regexp</groupId>
+        <artifactId>gwt-regexp</artifactId>
+        <version>1.0.0-RC1</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.github.nalukit</groupId>
+        <artifactId>nalu</artifactId>
+        <version>${nalu.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.nalukit</groupId>
+        <artifactId>nalu-processor</artifactId>
+        <version>${nalu.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.nalukit</groupId>
+        <artifactId>nalu-plugin-elemental2</artifactId>
+        <version>${nalu.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.dominokit</groupId>
+        <artifactId>domino-rest-client</artifactId>
+        <version>${domino.rest.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.dominokit</groupId>
+        <artifactId>domino-ui</artifactId>
+        <version>${domino.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.dominokit</groupId>
+        <artifactId>domino-ui-webjar</artifactId>
+        <version>${domino.version}</version>
+      </dependency>
+
+
+      <dependency>
+        <groupId>de.gishmo.makani</groupId>
+        <artifactId>nalu-simple-example-shared-model</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>net.ltgt.gwt.maven</groupId>
+        <artifactId>gwt-maven-plugin</artifactId>
+        <inherited>false</inherited>
+        <configuration>
+          <launcherDir>nalu-simple-app-example-server/target/classes/launcherDir/</launcherDir>
+        </configuration>
+      </plugin>
+    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.10.1</version>
+          <configuration>
+            <source>${maven.compiler.source}</source>
+            <target>${maven.compiler.target}</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>net.ltgt.gwt.maven</groupId>
+          <artifactId>gwt-maven-plugin</artifactId>
+          <version>1.0.1</version>
+          <extensions>true</extensions>
+          <!-- for all our Windows 10 users ... :-) -->
+          <dependencies>
+            <dependency>
+              <groupId>org.codehaus.plexus</groupId>
+              <artifactId>plexus-utils</artifactId>
+              <version>3.0.16</version>
+            </dependency>
+          </dependencies>
+          <configuration>
+            <sourceLevel>1.8</sourceLevel>
+            <failOnError>true</failOnError>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>3.2.1</version>
+          <executions>
+            <execution>
+              <id>attach-sources</id>
+              <phase>package</phase>
+              <goals>
+                <goal>jar-no-fork</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>${spring-boot.version}</version>
+          <configuration>
+            <skip>true</skip>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.3.1</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>sonatype-snapshots-repo</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <snapshots>
+        <enabled>true</enabled>
+        <!--<updatePolicy>always</updatePolicy>-->
+        <checksumPolicy>fail</checksumPolicy>
+      </snapshots>
+    </repository>
+    <!-- new GWT version -->
+    <repository>
+      <id>gwt-snapshot</id>
+      <url>https://repo.vertispan.com/gwt-groupid-migration-test/</url>
+      <snapshots>
+        <enabled>true</enabled>
+        <!--<updatePolicy>always</updatePolicy>-->
+        <checksumPolicy>fail</checksumPolicy>
+      </snapshots>
+    </repository>
+  </repositories>
+
+
+  <modules>
+    <module>nalu-simple-app-example-shared</module>
+    <module>nalu-simple-app-example-client</module>
+    <module>nalu-simple-app-example-server</module>
+  </modules>
+</project>
