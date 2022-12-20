@@ -1,4 +1,4 @@
-# Nalu Simple App Example
+# Nalu Simple App Example - WORK IN PROGRESS!
 
 This example shows the minimal coding to start with a Nalu project. Domino-UI and Domino-Rest are added as dependencies, just to make the start easier. Both depencies can be replaced / removed.
 
