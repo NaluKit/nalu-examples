@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2018 - 2019 - Frank Hossfeld
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License"); you may not
+  ~  use this file except in compliance with the License. You may obtain a copy of
+  ~  the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+  ~  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+  ~  License for the specific language governing permissions and limitations under
+  ~  the License.
+  ~
+  -->
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.github.nalukit.example.nalu</groupId>
+  <artifactId>NaluGxtSimpleApplication</artifactId>
+  <version>HEAD-SNAPSHOT</version>
+
+  <packaging>gwt-app</packaging>
+
+  <properties>
+    <!-- Convenience property to set the GWT version -->
+    <gwtVersion>2.9.0</gwtVersion>
+    <!-- GXT GPL version without support -->
+    <gxt.version>4.0.0</gxt.version>
+
+    <!-- nalu version -->
+    <nalu.version>HEAD-SNAPSHOT</nalu.version>
+
+    <gwt-events.version>HEAD-SNAPSHOT</gwt-events.version>
+
+    <!-- GWT needs at least java 1.6 -->
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+
+    <junit.version>4.12</junit.version>
+    <org.mockito.version>1.10.19</org.mockito.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <generated.source.directory>${project.build.directory}/generated-sources/annotations</generated.source.directory>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.gwt</groupId>
+        <artifactId>gwt</artifactId>
+        <version>${gwtVersion}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.gwt</groupId>
+      <artifactId>gwt-user</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt</groupId>
+      <artifactId>gwt-dev</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt</groupId>
+      <artifactId>gwt-codeserver</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt</groupId>
+      <artifactId>gwt-servlet</artifactId>
+    </dependency>
+
+    <!-- GXT -->
+    <dependency>
+      <groupId>com.sencha.gxt</groupId>
+      <artifactId>gxt</artifactId>
+      <version>${gxt.version}</version>
+    </dependency>
+    <!-- GXT 3.1+ - Neptune Theme -->
+    <dependency>
+      <groupId>com.sencha.gxt</groupId>
+      <artifactId>gxt-theme-neptune</artifactId>
+      <version>${gxt.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.github.nalukit</groupId>
+      <artifactId>nalu</artifactId>
+      <version>${nalu.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.nalukit</groupId>
+      <artifactId>nalu-processor</artifactId>
+      <version>${nalu.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.nalukit</groupId>
+      <artifactId>nalu-plugin-gwt</artifactId>
+      <version>${nalu.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.nalukit</groupId>
+      <artifactId>nalu-plugin-gwt-processor</artifactId>
+      <version>${nalu.version}</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <!-- ~/.m2/settings.xml add <server/> with the support portal credentials -->
+      <id>sencha-gxt-repository</id>
+      <name>Sencha GXT Repository</name>
+      <!-- GPL -->
+      <url>https://maven.sencha.com/repo/gxt-gpl-release</url>
+    </repository>
+
+    <repository>
+      <id>sonatype-snapshots-repo</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+        <checksumPolicy>fail</checksumPolicy>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.20</version>
+        <configuration>
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <showWarnings>true</showWarnings>
+          <showDeprecation>true</showDeprecation>
+          <meminitial>128m</meminitial>
+          <maxmem>1024m</maxmem>
+          <encoding>${project.build.sourceEncoding}</encoding>
+          <compilerArgs>
+            <compilerArgument>-Xlint:all</compilerArgument>
+          </compilerArgs>
+        </configuration>
+        <executions>
+          <execution>
+            <id>process-annotations</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+            <configuration>
+              <proc>only</proc>
+            </configuration>
+          </execution>
+          <execution>
+            <id>default-compile</id> <!-- using an id of default-compile will override the default execution -->
+            <phase>compile</phase>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+            <configuration>
+              <compilerArgs>
+                <arg>-proc:none</arg>
+              </compilerArgs>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${generated.source.directory}</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>net.ltgt.gwt.maven</groupId>
+        <artifactId>gwt-maven-plugin</artifactId>
+        <version>1.0.0</version>
+        <extensions>true</extensions>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>package-app</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <classpathScope>compile</classpathScope>
+          <moduleName>
+            com.github.nalukit.example.nalu.simpleapplication.Application
+          </moduleName>
+          <moduleShortName>Application</moduleShortName>
+          <modules>
+            com.github.nalukit.example.nalu.simpleapplication.Application
+          </modules>
+          <failOnError>true</failOnError>
+          <!-- GWT 2.8 requires 1.8, hence define sourceLevel here if you use
+           a different source language for java compilation -->
+          <sourceLevel>1.8</sourceLevel>
+          <logLevel>TRACE</logLevel>
+          <skipModule>true</skipModule>
+          <codeServerPort>9876</codeServerPort>
+          <devmodeArgs>
+            <arg>-port</arg>
+            <arg>8888</arg>
+            <arg>-codeServerPort</arg>
+            <arg>9876</arg>
+            <arg>-style</arg>
+            <arg>PRETTY</arg>
+            <arg>-bindAddress</arg>
+            <arg>0.0.0.0</arg>
+          </devmodeArgs>
+          <startupUrls>
+            <startupUrl>index.html</startupUrl>
+          </startupUrls>
+          <devmodeWorkDir>${project.build.directory}/devModeWorkDir</devmodeWorkDir>
+          <launcherDir>${project.build.directory}/classes/static</launcherDir>
+          <warDir>${project.build.directory}/${project.build.finalName}</warDir>
+          <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+          <systemProperties>
+            <gwt.persistentunitcachedir>${project.build.directory}/gwt/unitCache/</gwt.persistentunitcachedir>
+            <gwt.war.directory>${project.basedir}/${project.build.finalName}</gwt.war.directory>
+          </systemProperties>
+          <localWorkers>2</localWorkers>
+        </configuration>
+      </plugin>
+      <!-- only used to copy static resources -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <webResources>
+            <resource>
+              <directory>${project.build.directory}/classes/static</directory>
+            </resource>
+          </webResources>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+        <executions>
+          <execution>
+            <id>war</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>war</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

@@ -1,0 +1,125 @@
+/*
+ * Copyright (c) 2018 - 2019 - Frank Hossfeld
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ *  use this file except in compliance with the License. You may obtain a copy of
+ *  the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ *  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ *  License for the specific language governing permissions and limitations under
+ *  the License.
+ *
+ */
+
+@CHARSET "UTF-8";
+
+.headerPanel {
+    border-bottom: 1px solid black;
+}
+
+.header {
+    margin: 12px;
+}
+
+.footerLeft {
+    float: left;
+    padding: 12px;
+}
+
+.footerRight {
+    text-align: right;
+    padding: 12px;
+}
+
+.footerLabel {
+}
+
+.footerStatus {
+    white-space: nowrap;
+}
+
+.footerPanel {
+    border-top: 1px solid black;
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+.navigationButton {
+    width: 188px;
+    height: 36px;
+    margin: 6px;
+    background-color: grey;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border: 2px solid darkgrey;
+    margin: 12px;
+}
+
+.navigationPanel {
+    border-right: 1px solid black;
+}
+
+.resultPanel {
+    width: 100%;
+}
+
+.errorPanel {
+    width: 100%;
+}
+
+.errorPanelButtonBar {
+    text-align: right;
+    width: 100%;
+    float: left;
+}
+
+.searchPanel {
+    width: 100%;
+}
+
+.searchPanelButtonBar {
+    text-align: right;
+    width: 100%;
+    float: left;
+}
+
+.headline {
+    font-family: arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4200fe;
+    margin: 6px;
+}
+
+.title {
+    font-family: arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    margin: 6px;
+}
+
+.text {
+    font-family: arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: black;
+    margin: 12px;
+}
+
+.button {
+    width: 112px;
+    margin: 6px;
+}
+
+.detailPanel {
+    width: 100%;
+}
