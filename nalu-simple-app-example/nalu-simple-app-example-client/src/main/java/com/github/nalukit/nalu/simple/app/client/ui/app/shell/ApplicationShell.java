@@ -1,11 +1,17 @@
 package com.github.nalukit.nalu.simple.app.client.ui.app.shell;
 
 import com.github.nalukit.nalu.client.component.AbstractShell;
+import com.github.nalukit.nalu.client.component.annotation.Composite;
+import com.github.nalukit.nalu.client.component.annotation.Composites;
 import com.github.nalukit.nalu.client.component.annotation.Shell;
 import com.github.nalukit.nalu.simple.app.client.AppContext;
 import com.github.nalukit.nalu.simple.app.client.ui.Routes;
 import com.github.nalukit.nalu.simple.app.client.ui.Slots;
+import com.github.nalukit.nalu.simple.app.client.ui.app.shell.composite.ShellComposite;
 import elemental2.dom.DomGlobal;
+import org.dominokit.domino.ui.grid.flex.FlexDirection;
+import org.dominokit.domino.ui.grid.flex.FlexItem;
+import org.dominokit.domino.ui.grid.flex.FlexLayout;
 import org.dominokit.domino.ui.layout.Layout;
 import org.dominokit.domino.ui.mediaquery.MediaQuery;
 import org.dominokit.domino.ui.style.ColorScheme;
@@ -27,6 +33,9 @@ import org.dominokit.domino.ui.utils.DominoElement;
  * limitations under the License.
  */
 @Shell(Routes.SHELL_APP)
+@Composites(@Composite(name = "shellComposite",
+                       compositeController = ShellComposite.class,
+                       selector = Slots.SELECTOR_SHELL_COMPOSITE))
 public class ApplicationShell
     extends AbstractShell<AppContext> {
 
@@ -50,8 +59,17 @@ public class ApplicationShell
                .getLeftPanel()
                .setId(Slots.SELECTOR_NAVIGATION);
     this.layout.getContentPanel()
-               .appendChild(DominoElement.div()
-                                         .setId(Slots.SELECTOR_CONTENT_APPLICATION));
+               .appendChild(FlexLayout.create()
+                                      .setDirection(FlexDirection.TOP_TO_BOTTOM)
+                                      .appendChild(FlexItem.create()
+                                                           .setOrder(1)
+                                                           .appendChild(DominoElement.div()
+                                                                                     .setId(Slots.SELECTOR_SHELL_COMPOSITE)))
+                                      .appendChild(FlexItem.create()
+                                                           .setOrder(2)
+                                                           .setFlexGrow(1)
+                                                           .appendChild(DominoElement.div()
+                                                                                     .setId(Slots.SELECTOR_CONTENT_APPLICATION))));
 
     MediaQuery.addOnMediumAndDownListener(layout::unfixLeftPanelPosition);
     MediaQuery.addOnLargeAndUpListener(layout::fixLeftPanelPosition);

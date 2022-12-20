@@ -34,8 +34,8 @@
   <packaging>gwt-app</packaging>
 
   <properties>
-    <nalu.version>2.10.1</nalu.version>
-    <domino.version>1.0.0-RC13</domino.version>
+    <nalu.version>2.11.1</nalu.version>
+    <domino.version>1.0.0-RC14</domino.version>
     <gwt.editor.version>1.0.0-RC1</gwt.editor.version>
   </properties>
 
