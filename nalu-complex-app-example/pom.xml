@@ -32,14 +32,14 @@
   <description>Nalu example showing how to set up a complex project</description>
 
   <properties>
-    <domino.version>1.0.0-RC14</domino.version>
+    <domino.version>1.0.0-RC17</domino.version>
     <domino.rest.version>1.0.0-RC7</domino.rest.version>
 
     <gwt.version>2.10.0</gwt.version>
     <gwt-editor.version>1.0.0-RC1</gwt-editor.version>
 
     <javax.ws.rs-api.version>2.1.5</javax.ws.rs-api.version>
-    <nalu.version>2.11.1</nalu.version>
+    <nalu.version>2.11.3</nalu.version>
     <spring-boot.version>2.6.7</spring-boot.version>
 
     <maven.compiler.source>11</maven.compiler.source>

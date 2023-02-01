@@ -6,5 +6,6 @@ public class Slots {
   public final static String SELECTOR_CONTENT_APPLICATION = "contentApplication";
   public final static String SELECTOR_FOOTER              = "footer";
   public final static String SELECTOR_NAVIGATION          = "navigation";
+  public final static String SELECTOR_SHELL_COMPOSITE     = "shellComposite";
 
 }
