@@ -26,9 +26,9 @@ public class NavigationComponent
     extends AbstractComponent<INavigationComponent.Controller, HTMLElement>
     implements INavigationComponent {
 
-  private TreeItem searchItem;
+  private TreeItem<String> searchItem;
 
-  private TreeItem listItem;
+  private TreeItem<String> listItem;
 
   public NavigationComponent() {
   }
