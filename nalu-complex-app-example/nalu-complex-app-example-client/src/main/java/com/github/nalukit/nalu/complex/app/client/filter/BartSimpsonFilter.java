@@ -32,7 +32,7 @@ public class BartSimpsonFilter
                  .compareRoutes(route,
                                 Routes.ROUTE_PERSON_EDIT)) {
       if ("3".equals(parms[0])) {
-        DomGlobal.window.alert("Bart Simpsons is not selectable -> redirecting to search!");
+        DomGlobal.window.alert("Bart Simpsons is not selectable -> redirecting to list!");
         return false;
       }
     }
