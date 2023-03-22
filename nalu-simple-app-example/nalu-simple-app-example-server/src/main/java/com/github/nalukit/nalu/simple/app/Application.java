@@ -1,4 +1,4 @@
-package com.github.nalukit.nalu.simple.app.server;
+package com.github.nalukit.nalu.simple.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

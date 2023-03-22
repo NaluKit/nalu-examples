@@ -14,7 +14,7 @@
  *  the License.
  */
 
-package com.github.nalukit.nalu.complex.app.exception;
+package com.github.nalukit.nalu.simple.app.exception;
 
 public class NotAuthorizedException
     extends RuntimeException {

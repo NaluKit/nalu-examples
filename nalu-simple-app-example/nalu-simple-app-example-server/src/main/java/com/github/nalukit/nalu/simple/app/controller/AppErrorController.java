@@ -1,4 +1,4 @@
-package com.github.nalukit.nalu.complex.app.controller;
+package com.github.nalukit.nalu.simple.app.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;

@@ -1,6 +1,6 @@
-package com.github.nalukit.nalu.complex.app.resource;
+package com.github.nalukit.nalu.simple.app.resource;
 
-import com.github.nalukit.nalu.complex.app.store.Store;
+import com.github.nalukit.nalu.simple.app.store.Store;
 import com.github.nalukit.nalu.simple.app.shared.model.PersonSearch;
 import com.github.nalukit.nalu.simple.app.shared.transport.request.LogonRequest;
 import com.github.nalukit.nalu.simple.app.shared.transport.response.LogonResponse;

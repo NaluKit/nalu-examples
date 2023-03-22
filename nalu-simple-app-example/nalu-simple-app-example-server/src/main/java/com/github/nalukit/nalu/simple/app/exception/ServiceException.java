@@ -14,17 +14,17 @@
  *  the License.
  */
 
-package com.github.nalukit.nalu.complex.app.exception;
+package com.github.nalukit.nalu.simple.app.exception;
 
-public class DataNotFoundException
+public class ServiceException
     extends RuntimeException {
 
   /* for serialization only */
   @SuppressWarnings("unused")
-  private DataNotFoundException() {
+  private ServiceException() {
   }
 
-  public DataNotFoundException(String message) {
+  public ServiceException(String message) {
     super(message);
   }
 

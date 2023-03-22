@@ -14,9 +14,9 @@
  *  the License.
  */
 
-package com.github.nalukit.nalu.complex.app.service;
+package com.github.nalukit.nalu.simple.app.service;
 
-import com.github.nalukit.nalu.complex.app.exception.DataNotFoundException;
+import com.github.nalukit.nalu.simple.app.exception.DataNotFoundException;
 import com.github.nalukit.nalu.simple.app.shared.model.Address;
 import com.github.nalukit.nalu.simple.app.shared.model.Person;
 import com.github.nalukit.nalu.simple.app.shared.model.PersonSearch;

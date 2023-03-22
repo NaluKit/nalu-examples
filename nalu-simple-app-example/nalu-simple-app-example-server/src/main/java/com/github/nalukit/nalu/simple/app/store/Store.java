@@ -1,4 +1,4 @@
-package com.github.nalukit.nalu.complex.app.store;
+package com.github.nalukit.nalu.simple.app.store;
 
 import com.github.nalukit.nalu.simple.app.shared.model.PersistanceData;
 import com.github.nalukit.nalu.simple.app.shared.model.PersonSearch;

@@ -1,7 +1,7 @@
-package com.github.nalukit.nalu.complex.app.resource;
+package com.github.nalukit.nalu.simple.app.resource;
 
-import com.github.nalukit.nalu.complex.app.exception.NotAuthorizedException;
-import com.github.nalukit.nalu.complex.app.store.Store;
+import com.github.nalukit.nalu.simple.app.exception.NotAuthorizedException;
+import com.github.nalukit.nalu.simple.app.store.Store;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.CacheControl;
