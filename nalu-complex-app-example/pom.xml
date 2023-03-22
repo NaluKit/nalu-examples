@@ -39,7 +39,7 @@
     <gwt-editor.version>1.0.0-RC1</gwt-editor.version>
 
     <javax.ws.rs-api.version>2.1.5</javax.ws.rs-api.version>
-    <nalu.version>2.11.3</nalu.version>
+    <nalu.version>2.12.1</nalu.version>
     <spring-boot.version>3.0.4</spring-boot.version>
 
     <maven.compiler.source>17</maven.compiler.source>
