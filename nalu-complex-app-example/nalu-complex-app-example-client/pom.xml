@@ -129,7 +129,7 @@
           <moduleShortName>App</moduleShortName>
           <jvmArgs>
             <arg>-Xms1024m</arg>
-            <arg>-Xmx16384m</arg>
+            <arg>-Xmx4096m</arg>
           </jvmArgs>
           <localWorkers>5</localWorkers>
           <logLevel>ERROR</logLevel>
