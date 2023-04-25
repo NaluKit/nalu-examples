@@ -6,7 +6,7 @@ Change directory to your generated project and issue the following commands:
 
 * run in one terminal window:
 
-    - mvn clean package
+    - mvn clean compile
 
     - mvn gwt:codeserver -pl *-client -am
 
