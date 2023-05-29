@@ -1,6 +1,7 @@
 package com.github.nalukit.nalu.complex.app.resource;
 
 import com.github.nalukit.nalu.complex.app.shared.transport.request.LoggingRequest;
+import com.github.nalukit.nalu.complex.app.shared.transport.request.LoggingRequestMalioValidator;
 import com.github.nalukit.nalu.complex.app.shared.transport.response.LoggingResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +20,9 @@ public class LoggingResource
   public ResponseEntity<LoggingResponse> log(
       @RequestBody
       LoggingRequest request) {
+    // validate!
+    LoggingRequestMalioValidator.INSTANCE.check(request);
+
     LoggingResponse response = new LoggingResponse();
     request.getMessages()
            .forEach(m -> log.info("Client-Message: " + m));

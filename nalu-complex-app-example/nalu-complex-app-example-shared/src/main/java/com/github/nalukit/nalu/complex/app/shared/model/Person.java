@@ -16,6 +16,10 @@
 
 package com.github.nalukit.nalu.complex.app.shared.model;
 
+import com.github.nalukit.malio.shared.annotation.field.MaxLength;
+import com.github.nalukit.malio.shared.annotation.field.NotBlank;
+import com.github.nalukit.malio.shared.annotation.field.NotEmpty;
+import com.github.nalukit.malio.shared.annotation.field.NotNull;
 import org.dominokit.jackson.annotation.JSONMapper;
 
 @JSONMapper
@@ -23,10 +27,17 @@ public class Person {
 
   private long id;
 
+  @NotNull
+  @NotBlank
+  @MaxLength(64)
   private String name;
 
+  @NotNull
+  @NotBlank
+  @MaxLength(64)
   private String firstName;
 
+  @NotEmpty
   private Address address;
 
   /* for serialization only */

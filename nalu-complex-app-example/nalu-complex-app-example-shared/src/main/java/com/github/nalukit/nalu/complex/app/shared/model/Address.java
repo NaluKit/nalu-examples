@@ -16,17 +16,31 @@
 
 package com.github.nalukit.nalu.complex.app.shared.model;
 
+import com.github.nalukit.malio.shared.annotation.MalioValidator;
+import com.github.nalukit.malio.shared.annotation.field.MaxLength;
+import com.github.nalukit.malio.shared.annotation.field.NotBlank;
+import com.github.nalukit.malio.shared.annotation.field.NotNull;
 import org.dominokit.jackson.annotation.JSONMapper;
 
 @JSONMapper
+@MalioValidator(generateValidateMethod = false)
 public class Address {
 
   private long id;
 
+  @NotNull
+  @NotBlank
+  @MaxLength(64)
   private String street;
 
+  @NotNull
+  @NotBlank
+  @MaxLength(16)
   private String zip;
 
+  @NotNull
+  @NotBlank
+  @MaxLength(64)
   private String city;
 
   /* for serialization only */

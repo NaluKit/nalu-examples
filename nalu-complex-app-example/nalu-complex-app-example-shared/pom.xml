@@ -41,6 +41,16 @@
       <artifactId>domino-rest-processor</artifactId>
       <version>${domino.rest.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>com.github.nalukit</groupId>
+      <artifactId>malio</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.github.nalukit</groupId>
+      <artifactId>malio-processor</artifactId>
+    </dependency>
   </dependencies>
 
   <build>

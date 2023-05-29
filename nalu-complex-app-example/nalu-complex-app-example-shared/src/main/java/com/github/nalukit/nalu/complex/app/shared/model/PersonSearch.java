@@ -16,13 +16,18 @@
 
 package com.github.nalukit.nalu.complex.app.shared.model;
 
+import com.github.nalukit.malio.shared.annotation.MalioValidator;
+import com.github.nalukit.malio.shared.annotation.field.MaxLength;
 import org.dominokit.jackson.annotation.JSONMapper;
 
 @JSONMapper
+@MalioValidator(generateValidateMethod = false)
 public class PersonSearch {
 
+  @MaxLength(64)
   private String name;
 
+  @MaxLength(64)
   private String city;
 
   public PersonSearch() {

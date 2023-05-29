@@ -1,10 +1,12 @@
 package com.github.nalukit.nalu.complex.app.shared.transport.request;
 
+import com.github.nalukit.malio.shared.annotation.MalioValidator;
 import com.github.nalukit.nalu.complex.app.shared.model.PersistanceData;
 import org.dominokit.jackson.annotation.JSONMapper;
 import org.dominokit.rest.shared.request.RequestBean;
 
 @JSONMapper
+@MalioValidator(generateValidateMethod = false)
 public class PersonSearchRequest
     extends AbstractRequest
     implements RequestBean {

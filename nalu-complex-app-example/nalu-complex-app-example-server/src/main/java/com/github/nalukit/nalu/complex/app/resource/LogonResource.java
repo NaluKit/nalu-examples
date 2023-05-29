@@ -1,9 +1,10 @@
 package com.github.nalukit.nalu.complex.app.resource;
 
-import com.github.nalukit.nalu.complex.app.store.Store;
 import com.github.nalukit.nalu.complex.app.shared.model.PersonSearch;
 import com.github.nalukit.nalu.complex.app.shared.transport.request.LogonRequest;
+import com.github.nalukit.nalu.complex.app.shared.transport.request.LogonRequestMalioValidator;
 import com.github.nalukit.nalu.complex.app.shared.transport.response.LogonResponse;
+import com.github.nalukit.nalu.complex.app.store.Store;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +24,9 @@ public class LogonResource
   @PostMapping("/service/example/logon/login")
   public ResponseEntity<LogonResponse> login(
       @RequestBody LogonRequest request) {
+
+    // validate!
+    LogonRequestMalioValidator.INSTANCE.check(request);
 
     LogonResponse response = new LogonResponse();
 

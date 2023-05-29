@@ -28,6 +28,7 @@
   <inherits name='com.google.gwt.user.User'/>
 
   <!-- Other module inherits                                      -->
+  <inherits name="com.github.nalukit.malio.Malio" />
   <inherits name='com.github.nalukit.nalu.Nalu'/>
   <inherits name='com.github.nalukit.nalu.plugin.elemental2.NaluPluginElemental2'/>
   <inherits name='org.dominokit.rest.Rest'/>

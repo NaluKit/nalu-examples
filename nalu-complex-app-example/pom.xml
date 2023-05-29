@@ -39,8 +39,9 @@
     <gwt-editor.version>1.0.0-RC1</gwt-editor.version>
 
     <javax.ws.rs-api.version>2.1.5</javax.ws.rs-api.version>
+    <malio.version>HEAD-SNAPSHOT</malio.version>
     <nalu.version>2.12.1</nalu.version>
-    <spring-boot.version>3.0.6</spring-boot.version>
+    <spring-boot.version>3.1.0</spring-boot.version>
 
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
@@ -83,6 +84,19 @@
         <groupId>org.gwtproject.regexp</groupId>
         <artifactId>gwt-regexp</artifactId>
         <version>1.0.0-RC1</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.github.nalukit</groupId>
+        <artifactId>malio</artifactId>
+        <version>${malio.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.github.nalukit</groupId>
+        <artifactId>malio-processor</artifactId>
+        <version>${malio.version}</version>
+        <scope>provided</scope>
       </dependency>
 
       <dependency>
