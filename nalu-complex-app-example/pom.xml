@@ -32,15 +32,16 @@
   <description>Nalu example showing how to set up a complex project</description>
 
   <properties>
-    <domino.version>1.0.0-RC18</domino.version>
-    <domino.rest.version>1.0.0-RC7</domino.rest.version>
+    <domino.version>1.0.0</domino.version>
+    <domino.rest.version>1.0.0</domino.rest.version>
 
     <gwt.version>2.10.0</gwt.version>
     <gwt-editor.version>1.0.0-RC1</gwt-editor.version>
 
     <javax.ws.rs-api.version>2.1.5</javax.ws.rs-api.version>
-    <malio.version>HEAD-SNAPSHOT</malio.version>
-    <nalu.version>2.12.1</nalu.version>
+    <malio.version>1.0.0</malio.version>
+<!--    <nalu.version>HEAD-SNAPSHOT</nalu.version>-->
+    <nalu.version>2.12.4</nalu.version>
     <spring-boot.version>3.1.0</spring-boot.version>
 
     <maven.compiler.source>17</maven.compiler.source>
@@ -169,13 +170,6 @@
           <version>1.0.1</version>
           <extensions>true</extensions>
           <!-- for all our Windows 10 users ... :-) -->
-          <dependencies>
-            <dependency>
-              <groupId>org.codehaus.plexus</groupId>
-              <artifactId>plexus-utils</artifactId>
-              <version>3.0.16</version>
-            </dependency>
-          </dependencies>
           <configuration>
             <sourceLevel>1.8</sourceLevel>
             <failOnError>true</failOnError>
