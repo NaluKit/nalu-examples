@@ -68,68 +68,7 @@
         <scope>import</scope>
       </dependency>
 
-      <dependency>
-        <groupId>org.gwtproject.editor</groupId>
-        <artifactId>gwt-editor</artifactId>
-        <version>${gwt-editor.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.gwtproject.editor</groupId>
-        <artifactId>gwt-editor-processor</artifactId>
-        <version>${gwt-editor.version}</version>
-      </dependency>
 
-      <dependency>
-        <groupId>org.gwtproject.regexp</groupId>
-        <artifactId>gwt-regexp</artifactId>
-        <version>1.0.0-RC1</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.github.nalukit</groupId>
-        <artifactId>malio</artifactId>
-        <version>${malio.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.github.nalukit</groupId>
-        <artifactId>malio-processor</artifactId>
-        <version>${malio.version}</version>
-        <scope>provided</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>com.github.nalukit</groupId>
-        <artifactId>nalu</artifactId>
-        <version>${nalu.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.github.nalukit</groupId>
-        <artifactId>nalu-processor</artifactId>
-        <version>${nalu.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.github.nalukit</groupId>
-        <artifactId>nalu-plugin-elemental2</artifactId>
-        <version>${nalu.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.dominokit</groupId>
-        <artifactId>domino-rest-client</artifactId>
-        <version>${domino.rest.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.dominokit</groupId>
-        <artifactId>domino-ui</artifactId>
-        <version>${domino.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.dominokit</groupId>
-        <artifactId>domino-ui-webjar</artifactId>
-        <version>${domino.version}</version>
-      </dependency>
 
       <dependency>
         <groupId>de.gishmo.makani</groupId>

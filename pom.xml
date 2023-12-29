@@ -20,67 +20,65 @@
   <inceptionYear>2018</inceptionYear>
       
   <licenses>
-            
+
     <license>
-                  
+
       <name>The Apache Software License, Version 2.0</name>
-                  
+
       <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-                  
+
       <distribution>repo</distribution>
-              
+
     </license>
-        
+
   </licenses>
-      
+
   <developers>
-            
+
     <developer>
-                  
+
       <name>Frank Hossfeld</name>
-                  
+
       <id>frankhossfeld</id>
-                  
+
       <email>contact@nalu-solutions.de</email>
-                  
+
       <organization>Nalu Solutions GmbH</organization>
-                  
+
       <roles>
-                        
+
         <role>Java Developer</role>
-                    
+
       </roles>
-              
+
     </developer>
-        
+
   </developers>
-      
+
   <scm>
-            
+
     <connection>scm:git@github.com:nalukit/nalu-examples.git</connection>
-            
+
     <developerConnection>scm:git:git@github.com:nalukit/nalu-examples.git</developerConnection>
-            
+
     <url>scm:git:https://github.com/nalukit/nalu-examples</url>
-        
+
   </scm>
-      
+
   <issueManagement>
-            
+
     <system>GitHub</system>
-            
+
     <url>https://github.com/nalukit/nalu-examples/issues</url>
-        
+
   </issueManagement>
-      
+
   <modules>
-            
     <module>devkexample</module>
-            
     <module>nalu-complex-app-example</module>
-            
     <module>nalu-simple-app-example</module>
-    
+    <module>nalu-example-app</module>
+
     <!--        <module>NaluControllerMultipleRoute</module>-->
     
     <!--        <module>NaluDominoCachedApplication</module>-->
