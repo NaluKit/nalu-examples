@@ -43,6 +43,8 @@ public class Address {
   @MaxLength(64)
   private String city;
 
+  /* for serialization only */
+  @SuppressWarnings("unused")
   public Address() {
     super();
   }

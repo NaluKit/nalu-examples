@@ -16,14 +16,13 @@
 
 package com.github.nalukit.example.app.model;
 
-import com.github.nalukit.malio.shared.annotation.MalioValidator;
 import com.github.nalukit.malio.shared.annotation.field.MaxLength;
 import com.github.nalukit.malio.shared.annotation.field.NotBlank;
+import com.github.nalukit.malio.shared.annotation.field.NotEmpty;
 import com.github.nalukit.malio.shared.annotation.field.NotNull;
 import org.dominokit.jackson.annotation.JSONMapper;
 
 @JSONMapper
-@MalioValidator(generateValidateMethod = false)
 public class Person {
 
   private long id;
@@ -38,9 +37,11 @@ public class Person {
   @MaxLength(64)
   private String firstName;
 
-  @NotNull
+  @NotEmpty
   private Address address;
 
+  /* for serialization only */
+  @SuppressWarnings("unused")
   public Person() {
     super();
   }
