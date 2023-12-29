@@ -1,48 +1,29 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<!--
-  ~ Copyright (C) 2018 - 2021 Frank Hossfeld <frank.hossfeld@googlemail.com>
-  ~
-  ~ Licensed under the Apache License, Version 2.0 (the "License");
-  ~  you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at
-  ~
-  ~ http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License.
-  ~
-  -->
-
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
+  <parent>
+    <artifactId>nalu-examples-parent</artifactId>
+    <groupId>de.gishmo.example</groupId>
+    <version>2.1.0-SNAPSHOT</version>
+  </parent>
+
   <groupId>com.github.nalukit.example</groupId>
-  <artifactId>nalu-complex-app-example</artifactId>
+  <artifactId>nalu-example-app</artifactId>
   <version>HEAD-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>Nalu Complex Example</name>
-  <description>Nalu example showing how to set up a complex project</description>
-
   <properties>
-    <domino.version>1.0.0</domino.version>
-    <domino.rest.version>1.0.0</domino.rest.version>
-
-    <gwt.version>2.10.0</gwt.version>
+    <domino-ui.version>2.0.0-RC5</domino-ui.version>
+    <domino.rest.version>1.0.2</domino.rest.version>
     <gwt-editor.version>1.0.0-RC1</gwt-editor.version>
-
-    <javax.ws.rs-api.version>2.1.5</javax.ws.rs-api.version>
+    <gwt.version>2.10.0</gwt.version>
     <malio.version>1.0.0</malio.version>
-<!--    <nalu.version>HEAD-SNAPSHOT</nalu.version>-->
-    <nalu.version>2.12.4</nalu.version>
-    <spring-boot.version>3.1.0</spring-boot.version>
+    <nalu.version>2.12.7</nalu.version>
+    <snakeyaml.version>2.0</snakeyaml.version>
+    <spring-boot.version>3.1.6</spring-boot.version>
 
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
@@ -50,7 +31,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <!-- GWT BOM -->
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -67,6 +47,12 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
+      <dependency>
+        <groupId>org.yaml</groupId>
+        <artifactId>snakeyaml</artifactId>
+        <version>${snakeyaml.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.gwtproject.editor</groupId>
@@ -77,12 +63,6 @@
         <groupId>org.gwtproject.editor</groupId>
         <artifactId>gwt-editor-processor</artifactId>
         <version>${gwt-editor.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.gwtproject.regexp</groupId>
-        <artifactId>gwt-regexp</artifactId>
-        <version>1.0.0-RC1</version>
       </dependency>
 
       <dependency>
@@ -110,7 +90,7 @@
       </dependency>
       <dependency>
         <groupId>com.github.nalukit</groupId>
-        <artifactId>nalu-plugin-elemental2</artifactId>
+        <artifactId>nalu-plugin-domino-v2</artifactId>
         <version>${nalu.version}</version>
       </dependency>
 
@@ -119,22 +99,22 @@
         <artifactId>domino-rest-client</artifactId>
         <version>${domino.rest.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.dominokit</groupId>
+        <artifactId>domino-rest-processor</artifactId>
+        <version>${domino.rest.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.dominokit</groupId>
         <artifactId>domino-ui</artifactId>
-        <version>${domino.version}</version>
+        <version>${domino-ui.version}</version>
       </dependency>
       <dependency>
         <groupId>org.dominokit</groupId>
-        <artifactId>domino-ui-webjar</artifactId>
-        <version>${domino.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>de.gishmo.makani</groupId>
-        <artifactId>nalu-complex-example-shared-model</artifactId>
-        <version>${project.version}</version>
+        <artifactId>domino-ui</artifactId>
+        <version>${domino-ui.version}</version>
+        <classifier>sources</classifier>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -146,7 +126,7 @@
         <artifactId>gwt-maven-plugin</artifactId>
         <inherited>false</inherited>
         <configuration>
-          <launcherDir>nalu-complex-app-example-server/target/classes/launcherDir/</launcherDir>
+          <launcherDir>${basedir}/nalu-example-app-server/target/classes/launcherDir/</launcherDir>
         </configuration>
       </plugin>
     </plugins>
@@ -155,18 +135,17 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.10.1</version>
+          <version>3.11.0</version>
           <configuration>
-            <source>${maven.compiler.source}</source>
-            <target>${maven.compiler.target}</target>
+            <source>17</source>
+            <target>17</target>
           </configuration>
         </plugin>
         <plugin>
           <groupId>net.ltgt.gwt.maven</groupId>
           <artifactId>gwt-maven-plugin</artifactId>
-          <version>1.0.1</version>
+          <version>1.1.0</version>
           <extensions>true</extensions>
-          <!-- for all our Windows 10 users ... :-) -->
           <configuration>
             <sourceLevel>1.8</sourceLevel>
             <failOnError>true</failOnError>
@@ -202,34 +181,9 @@
     </pluginManagement>
   </build>
 
-  <repositories>
-    <repository>
-      <id>sonatype-snapshots-repo</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <snapshots>
-        <enabled>true</enabled>
-        <!--<updatePolicy>always</updatePolicy>-->
-        <checksumPolicy>fail</checksumPolicy>
-      </snapshots>
-    </repository>
-    <!-- new GWT version -->
-    <repository>
-      <id>gwt-snapshot</id>
-      <url>https://repo.vertispan.com/gwt-groupid-migration-test/</url>
-      <snapshots>
-        <enabled>true</enabled>
-        <!--<updatePolicy>always</updatePolicy>-->
-        <checksumPolicy>fail</checksumPolicy>
-      </snapshots>
-    </repository>
-  </repositories>
-
-
   <modules>
-    <module>nalu-complex-app-example-shared</module>
-    <module>nalu-complex-app-example-client-common</module>
-    <module>nalu-complex-app-example-module-person</module>
-    <module>nalu-complex-app-example-client</module>
-    <module>nalu-complex-app-example-server</module>
+    <module>nalu-example-app-client</module>
+    <module>nalu-example-app-shared</module>
+    <module>nalu-example-app-server</module>
   </modules>
 </project>
