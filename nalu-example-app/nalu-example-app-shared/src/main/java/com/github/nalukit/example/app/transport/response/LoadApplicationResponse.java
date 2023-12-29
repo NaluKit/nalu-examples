@@ -1,6 +1,6 @@
 package com.github.nalukit.example.app.transport.response;
 
-import com.github.nalukit.nalu.complex.app.shared.model.PersistanceData;
+import com.github.nalukit.example.app.model.PersistanceData;
 import org.dominokit.jackson.annotation.JSONMapper;
 
 @JSONMapper

@@ -1,7 +1,7 @@
 package com.github.nalukit.example.app.transport.request;
 
+import com.github.nalukit.example.app.model.Person;
 import com.github.nalukit.malio.shared.annotation.MalioValidator;
-import com.github.nalukit.nalu.complex.app.shared.model.Person;
 import org.dominokit.jackson.annotation.JSONMapper;
 import org.dominokit.rest.shared.request.RequestBean;
 

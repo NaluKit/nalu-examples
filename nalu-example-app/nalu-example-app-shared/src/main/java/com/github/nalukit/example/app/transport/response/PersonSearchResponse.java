@@ -1,6 +1,6 @@
 package com.github.nalukit.example.app.transport.response;
 
-import com.github.nalukit.nalu.complex.app.shared.model.Person;
+import com.github.nalukit.example.app.model.Person;
 import org.dominokit.jackson.annotation.JSONMapper;
 
 import java.util.ArrayList;
