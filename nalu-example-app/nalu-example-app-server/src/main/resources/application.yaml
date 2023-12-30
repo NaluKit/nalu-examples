@@ -1,10 +1,17 @@
 server:
   error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: on_param
+    include-exception: false
     whitelabel:
       enabled: false
-    path: /error
+    path: /error/error.html
   forward-headers-strategy: framework
   port: 8080
+  servlet:
+    session:
+      timeout: 0s
 
 spring:
   application:
