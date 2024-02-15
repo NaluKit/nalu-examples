@@ -13,7 +13,7 @@ As long as you do not start the server again, your changes will be kept.
 
 There is no real user & password validation. Just enter something and press Login ...  
 
-This example uses Java 17 and Spring Boot 3. To Downgrade set the java version to 11 and ths versopn of Spring Boot to something like 2.7.x.
+This example uses Java 17 and Spring Boot 3. To Downgrade set the java version to 11 and ths version of Spring Boot to something like 2.7.x.
 
 ## Run Instructions
 To run the project, use the following command:
